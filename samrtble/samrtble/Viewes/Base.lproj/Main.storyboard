@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="samrtble" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="samrtble" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,7 @@
                                             <color key="titleColor" red="0.70588235290000001" green="0.57647058819999997" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="loginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kzj-zb-oGi"/>
+                                            <action selector="loginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G3P-Rc-9VJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -87,15 +87,18 @@
                             <constraint firstItem="VQP-vu-G69" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tD6-Vm-sSj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="NTe-bB-biA"/>
+                    <navigationItem key="navigationItem" id="NTe-bB-biA">
+                        <barButtonItem key="leftBarButtonItem" title="English" id="i9k-0e-OQR"/>
+                        <barButtonItem key="rightBarButtonItem" title="عربي" id="w7h-tU-Ucy"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="phoneTextField" destination="1mQ-7r-Dhm" id="fIw-H4-XGV"/>
-                        <outlet property="phoneView" destination="Iqh-81-lG0" id="gc5-vo-jTi"/>
+                        <outlet property="phoneTextField" destination="1mQ-7r-Dhm" id="yYz-7L-V0R"/>
+                        <outlet property="phoneView" destination="Iqh-81-lG0" id="1UW-EL-qvj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126.0869565217392" y="71.651785714285708"/>
+            <point key="canvasLocation" x="1157" y="95"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="oJd-IY-494">
