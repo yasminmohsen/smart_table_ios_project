@@ -52,6 +52,7 @@ class ClassesViewController: UIViewController{
         spreadView.allowsMultipleSelection = false
         spreadView.allowsSelection = false
         spreadView.flashScrollIndicators()
+        spreadView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
    
         
   

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HlV-VK-3ot">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ScK-eK-N3Y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -88,8 +88,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NTe-bB-biA">
-                        <barButtonItem key="leftBarButtonItem" title="English" id="i9k-0e-OQR"/>
-                        <barButtonItem key="rightBarButtonItem" title="عربي" id="w7h-tU-Ucy"/>
+                        <barButtonItem key="rightBarButtonItem" title="عربي" id="w7h-tU-Ucy">
+                            <connections>
+                                <action selector="arabicBtn:" destination="BYZ-38-t0r" id="DnS-th-zSG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="phoneTextField" destination="1mQ-7r-Dhm" id="yYz-7L-V0R"/>
@@ -227,10 +230,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NT-zf-7jY" customClass="SpreadsheetView" customModule="SpreadsheetView">
-                                <rect key="frame" x="20" y="194" width="374" height="249"/>
+                                <rect key="frame" x="20" y="194" width="374" height="444"/>
                                 <color key="backgroundColor" red="0.89824813599999997" green="0.8976293206" blue="0.91765016320000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="249" id="l1s-vx-H9V"/>
+                                    <constraint firstAttribute="height" constant="444" id="l1s-vx-H9V"/>
                                 </constraints>
                             </view>
                         </subviews>

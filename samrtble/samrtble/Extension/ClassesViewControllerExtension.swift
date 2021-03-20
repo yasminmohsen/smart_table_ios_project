@@ -47,7 +47,7 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
                cell.label.text = "Day/class"
         
            
-                
+                cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
                 return cell
             }
             else{
@@ -65,6 +65,7 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
            
 
                 cell.setNeedsLayout()
+          cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
                 
                 return cell
             }
@@ -79,6 +80,7 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
             cell.label.text = tableInfoModel.days[indexPath.row-1]
             cell.label.backgroundColor = indexPath.row % 2 == 0 ? oddRowColor : evenRowColor
             cell.setNeedsLayout()
+            cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
             return cell
         }
         
@@ -88,7 +90,7 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
             
             cell.label.text = classesArray[indexPath.row - 1][indexPath.column-1]
             cell.color = indexPath.row % 2 == 0 ? oddRowColor : evenRowColor
-         
+            cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
             
                 return cell
             }

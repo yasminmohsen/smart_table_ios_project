@@ -52,6 +52,13 @@ class HomeViewController: UIViewController {
         /// Notification Handle
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        //call api
+        
+        
+    }
+    
 }
 
 
