@@ -11,7 +11,7 @@ import Foundation
 class LoginViewModel {
     
    
-    var bindLogingModel:(_ error:String?,_ data:String? )->()={erro,data in }
+    var bindLogingModel:(_ error:String?,_ data:[TableInfoModel]? )->()={erro,data in }
     
     var error :String = "" {
         
@@ -21,7 +21,7 @@ class LoginViewModel {
         }
         
     }
-    var data :String = "" {
+    var data : [TableInfoModel]! {
         
         didSet{
             
@@ -38,6 +38,7 @@ class LoginViewModel {
         let url = apiService.url
         if let  urlRequest = URL(string: url){
             let request = NSMutableURLRequest(url: urlRequest)
+           
             
             if let keyValue = key{
                 
@@ -49,14 +50,27 @@ class LoginViewModel {
             let task = session.dataTask(with: request as URLRequest){(data,respone,error) in
                 
                 if let apiData = data {
+                    print(data)
+                    let stringData = String(data: apiData, encoding: .utf8)!
+                    print(stringData)
                     
-                    self.data = String(data: apiData, encoding: .utf8)!
-                }
-                
-                
-                if let apiError = error {
+                    let jsonDecoder = JSONDecoder()
+                    let apiResponse = try? jsonDecoder.decode(Response.self, from: apiData)
                     
-                    self.error = apiError.localizedDescription
+                    if let result = apiResponse?.data {
+                        
+                        self.data = result
+                    }
+                    
+                    if let message = apiResponse?.message{
+                        if(!message.isEmpty){
+                            self.error = message
+                        }
+                        
+                    }
+                    
+                    
+                    
                 }
                 
             }

@@ -11,7 +11,7 @@ import Foundation
 struct TableCellModel : Codable{
     
 var day: String
-var class_number: String
-var cell_text: String
+var class_number:Int
+var cell_text: String?
 
 }

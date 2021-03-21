@@ -52,16 +52,28 @@ class ClassesViewController: UIViewController{
         spreadView.allowsMultipleSelection = false
         spreadView.allowsSelection = false
         spreadView.flashScrollIndicators()
-        spreadView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-   
+        
+        ///check language :-
+      /*  let preferredLanguage = NSLocale.preferredLanguages[0]
+
+
+        if preferredLanguage == "en" {
+            spreadView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        } else if preferredLanguage == "ar" {
+            spreadView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+       
+        }
+   */
+        
+      
         
   
       
         
         
-        tableInfoModel = TestModel.testModelObj()[0]
+      //  tableInfoModel = TestModel.testModelObj()[0]
         
-        classesArray = MappedModel.converTestModel(tableInfoModel)
+       // classesArray = MappedModel.converTestModel(tableInfoModel)
         
         
         

@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     var loginViewModel :LoginViewModel!
     var apiKey : String?
     var mobilePhoneNum : String = ""
+    var tableInfo : [TableInfoModel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,11 @@ class LoginViewController: UIViewController {
         
         loginViewModel = LoginViewModel()
         loginViewModel.bindLogingModel = {
-            (error:String? , data:String?) ->() in
+            (error:String? , data:[TableInfoModel]?) ->() in
             
             DispatchQueue.main.async {
                 if let error = error {
-                    
+                   // alert
                     print(error)
                     
                 }
@@ -64,10 +65,17 @@ class LoginViewController: UIViewController {
 // MARK:ButtonsAction :-
     @IBAction func loginBtn(_ sender: Any) {
         mobilePhoneNum = phoneTextField.text!
-        
-        loginViewModel.login(phone: mobilePhoneNum, key: apiKey)
-        phoneTextField.text = ""
-        
+        if((phoneTextField.text!.isEmpty)){
+            
+            print("enter mobile")
+        }
+        else{
+          
+            loginViewModel.login(phone: mobilePhoneNum, key: apiKey)
+            phoneTextField.text = ""
+            
+        }
+       
     }
     
     
@@ -94,6 +102,9 @@ class LoginViewController: UIViewController {
         let defaults = UserDefaults.standard
         if(defaults.string(forKey: LoginViewController.PHONE_KEY) != nil){
             var vc = self.storyboard?.instantiateViewController(withIdentifier: "home")as! HomeViewController
+            if let loginViewModelData = loginViewModel.data{
+                vc.tableInfoModel = loginViewModelData
+           
             
             self.navigationController?.pushViewController(vc, animated: true)
             
@@ -102,7 +113,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    
+    }
     
     
     

@@ -8,11 +8,11 @@
 import Foundation
 
 
-class TestModel {
+/*class TestModel {
     
     static func testModelObj() -> [TableInfoModel]{
         
-        var tableCellModelobj1 = TableCellModel(day: "sunday", class_number: "1", cell_text: "Quraan")
+       /* var tableCellModelobj1 = TableCellModel(day: "sunday", class_number: "1", cell_text: "Quraan")
         var tableCellModelobj2 = TableCellModel(day: "sunday", class_number: "2", cell_text: "None")
         var tableCellModelobj3 = TableCellModel(day: "sunday", class_number: "3", cell_text: "Tawheed")
         var tableCellModelobj4 = TableCellModel(day: "sunday", class_number: "4", cell_text: "English")
@@ -79,4 +79,4 @@ class TestModel {
     
     
     
-}
+ }*/*/

@@ -22,31 +22,56 @@ class MappedModel {
         for (index,obj) in tableInfo.teacher_cellModels.enumerated() {
             
             if(index<7){
-                
-                sunday.append(obj.cell_text)
+                if let text = obj.cell_text{
+                    sunday.append(text)
+                }
+                else{
+                    sunday.append("None")
+                }
             }
             
             if(index>=7 && index <= 13){
                 
-                monday.append(obj.cell_text)
+                if let text = obj.cell_text{
+                    monday.append(text)
+                }
+                else{
+                    monday.append("None")
+                }
             }
             
             
             if(index>13 && index <= 20){
                 
-                tuesday.append(obj.cell_text)
+                if let text = obj.cell_text{
+                    tuesday
+                        .append(text)
+                }
+                else{
+                    tuesday.append("None")
+                }
             }
             
             
             if(index>20 && index <= 27){
                 
-                wednsday.append(obj.cell_text)
+                if let text = obj.cell_text{
+                    wednsday.append(text)
+                }
+                else{
+                    wednsday.append("None")
+                }
             }
             
             
             if(index>27 && index <= 34){
                 
-                thursday.append(obj.cell_text)
+                if let text = obj.cell_text{
+                    thursday.append(text)
+                }
+                else{
+                    thursday.append("None")
+                }
             }
             
         }

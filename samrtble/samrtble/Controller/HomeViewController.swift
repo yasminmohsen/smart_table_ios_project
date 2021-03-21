@@ -18,6 +18,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var teacherNameLabel: UILabel!
     
+    var tableInfoModel : [TableInfoModel]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         customUi()
@@ -64,13 +66,13 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tableInfoModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! HomeTableViewCell
-        
+        cell.schoolNameBtn.setTitle("\(tableInfoModel[indexPath.row].school_name)", for: .normal) 
         cell.schoolNameBtn.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         cell.schoolNameBtn.tag = indexPath.row
        
