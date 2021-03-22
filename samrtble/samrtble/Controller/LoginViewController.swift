@@ -9,9 +9,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var phoneTextField: UITextField!
     
-    @IBOutlet weak var phoneView: UIView!
+    @IBOutlet weak var codeCountryTextField: UITextField!
+    
     static let PHONE_KEY :String = "phone"
     var loginViewModel :LoginViewModel!
     var apiKey : String?
@@ -21,8 +23,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         phoneTextField.delegate = self
-     
         
+     
+        cutsomUi()
         
 // MARK: CheckUserDeafaults :-
         
@@ -58,7 +61,31 @@ class LoginViewController: UIViewController {
                 
             }
         }
-  
+        
+        
+        
+//        let preferredLanguage = NSLocale.preferredLanguages[0]
+//
+//
+//         if preferredLanguage == "en" {print("hrllo")
+//             
+//         } else if preferredLanguage == "ar" {
+//            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+//                UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
+//        
+//         }
+//  
+        
+    }
+    
+    
+    
+    
+    
+    func cutsomUi(){
+        
+        CustomButton.customButtonWithShadow(button: loginBtn)
+      
         
     }
     
@@ -82,7 +109,11 @@ class LoginViewController: UIViewController {
     
     @IBAction func arabicBtn(_ sender: UIBarButtonItem) {
         
-        
+        UIView.appearance().semanticContentAttribute = .forceRightToLeft
+            UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "login") {
+                UIApplication.shared.keyWindow?.rootViewController = vc
+            }
         
         
     }
@@ -126,16 +157,21 @@ extension LoginViewController :UITextFieldDelegate{
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        phoneTextField.text = ""
-        phoneTextField.textAlignment = .left
-    }
+        if(textField == phoneTextField ){
+            phoneTextField.text = ""
+             phoneTextField.textAlignment = .left
+            
+        }
+       
+      
+        }
+        
+        
     
     
-    func cutsomUi(){
-        
-        //custom ui
-        
-    }
+    
+   
+    
     
     
     

@@ -15,10 +15,8 @@ class HomeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        schoolNameBtn.layer.borderWidth = 1.0
-        schoolNameBtn.layer.borderColor = UIColor.black.cgColor
         
-        
+        CustomButton.customButtonWithShadow(button: schoolNameBtn)
         
     }
 

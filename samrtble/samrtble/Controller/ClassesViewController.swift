@@ -20,25 +20,44 @@ class ClassesViewController: UIViewController{
     let oddRowColor: UIColor = .white
     
     
-    var myArr = [["1","2","3","4","5","6","7"],
-
-                 ["8","9","10","11","12","13","14"],
-                 ["15","16","17","18","19","20","21"],
-                 ["21","23","24","25","26","27","28"],
-                 ["29","30","31","32","33","34","35"]
-
-    ]
-    
-    
-    
-    
-    
-    
     @IBOutlet weak var spreadViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var schoolNameLbel: UILabel!
     
-    @IBOutlet weak var backBtn: UIBarButtonItem!
+   
+    
+    lazy var leftBarItem: Array = { () -> [UIBarButtonItem] in
+               let btnBack = UIButton(type: .custom)
+        CustomButton.customBarButton(btnBack: btnBack, title: "Back")
+
+               btnBack.addTarget(self, action: #selector(backClicked(_:)), for: .touchUpInside)
+               let item = UIBarButtonItem(customView: btnBack)
+               item.tag = 3
+               return [item]
+       }()
+    
+    
+    lazy var rightBarItem: Array = { () -> [UIBarButtonItem] in
+               let btnBack = UIButton(type: .custom)
+        CustomButton.customBarButton(btnBack: btnBack, title: "Notification")
+
+               btnBack.addTarget(self, action: #selector(notificationClicked(_:)), for: .touchUpInside)
+               let item = UIBarButtonItem(customView: btnBack)
+               item.tag = 3
+               return [item]
+       }()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,12 +66,9 @@ class ClassesViewController: UIViewController{
         spreadView.register(HeaderCell.self, forCellWithReuseIdentifier: String(describing: HeaderCell.self))
         spreadView.register(TextCell.self, forCellWithReuseIdentifier: String(describing: TextCell.self))
 
-        spreadView.bounces = false
-        spreadView.alwaysBounceVertical = false
-        spreadView.alwaysBounceHorizontal = false
-        spreadView.allowsMultipleSelection = false
-        spreadView.allowsSelection = false
-        spreadView.flashScrollIndicators()
+        classesArray = MappedModel.converTestModel(tableInfoModel)
+        customUi()
+        
         
         ///check language :-
       /*  let preferredLanguage = NSLocale.preferredLanguages[0]
@@ -68,9 +84,9 @@ class ClassesViewController: UIViewController{
         
       
         
-       classesArray = MappedModel.converTestModel(tableInfoModel)
+    
         
-        schoolNameLbel.text = tableInfoModel.school_name
+       
     
      }
 
@@ -79,7 +95,19 @@ class ClassesViewController: UIViewController{
     
     func customUi(){
      
-        //  ui component custom
+        spreadView.bounces = false
+        spreadView.alwaysBounceVertical = false
+        spreadView.alwaysBounceHorizontal = false
+        spreadView.allowsMultipleSelection = false
+        spreadView.allowsSelection = false
+        spreadView.flashScrollIndicators()
+    
+        schoolNameLbel.text = tableInfoModel.school_name
+        
+        self.navigationItem.setLeftBarButtonItems(self.leftBarItem, animated: true)
+        self.navigationItem.setRightBarButtonItems(self.rightBarItem, animated: true)
+        
+        
     }
     
     
@@ -92,33 +120,35 @@ class ClassesViewController: UIViewController{
     }
     
 
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-           super.viewWillTransition(to: size, with: coordinator)
-           if UIDevice.current.orientation.isLandscape {
-               print("Landscape")
-            spreadViewHeight.constant = 280
-         
-             
-           } else {
-               print("Portrait")
-            
-            spreadViewHeight.constant = 400
-           }
-       }
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//           super.viewWillTransition(to: size, with: coordinator)
+//           if UIDevice.current.orientation.isLandscape {
+//               print("Landscape")
+//           // spreadViewHeight.constant = 280
+//
+//
+//           } else {
+//               print("Portrait")
+//
+//            spreadViewHeight.constant = 400
+//           }
+//       }
+//
     
     
-    
-    
-    @IBAction func backBtn(_ sender: Any) {
-        
+    @objc func backClicked(_ sender: Any){
         self.navigationController?.popViewController(animated: true)
-    
     }
+   
     
-    
-    @IBAction func notificationBtn(_ sender: Any) {
-    }
  
+    @objc func notificationClicked(_ sender: Any){
+     
+        /// notification
+        
+    }
+   
+    
 }
 
 

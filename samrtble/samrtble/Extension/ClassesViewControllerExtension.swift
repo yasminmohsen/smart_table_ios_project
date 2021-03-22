@@ -14,14 +14,15 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
   
     
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, widthForColumn column: Int) -> CGFloat {
-            return 100
+            return 120
         }
 
         func spreadsheetView(_ spreadsheetView: SpreadsheetView, heightForRow row: Int) -> CGFloat {
             if case 0 = row {
-                return 60
+                return 80
             } else {
                 return 80
+                
             }
         }
     
