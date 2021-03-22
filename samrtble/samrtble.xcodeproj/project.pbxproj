@@ -151,8 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				6C7E21842604BCC800B10A74 /* Cells */,
-				6C7E21752604BC1F00B10A74 /* HomeViewController.swift */,
 				6C7E217A2604BC6200B10A74 /* ClassesViewController.swift */,
+				6C7E21752604BC1F00B10A74 /* HomeViewController.swift */,
 				6C7E21C0260611A300B10A74 /* LoginViewController.swift */,
 			);
 			path = Controller;

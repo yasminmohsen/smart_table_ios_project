@@ -1,16 +1,24 @@
 PODS:
+  - Alamofire (5.4.0)
   - SpreadsheetView (0.9.1)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - SpreadsheetView
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - SpreadsheetView
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: fc60ea10125ed31724506afdee5feaec39acb348
+PODFILE CHECKSUM: 0b3e2de9cfea8db37082f5a571b67bc904edd405
 
 COCOAPODS: 1.10.0

@@ -7,7 +7,12 @@
 
 import Foundation
 struct Response: Codable {
-    let success: Bool
-    let data: [TableInfoModel]
-    let message: String
+    
+    var success: Bool
+    var data: [TableInfoModel]
+    var message: String
+    
+    
+    
+    
 }

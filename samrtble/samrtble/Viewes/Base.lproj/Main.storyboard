@@ -159,7 +159,6 @@
                                         <color key="backgroundColor" red="1" green="0.91764705879999997" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="schoolNameBtn" destination="RjP-SF-Yjf" id="pgn-sH-bXM"/>
-                                            <segue destination="ScK-eK-N3Y" kind="push" id="4pm-O2-rn1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -218,19 +217,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Name :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2s-5U-qCQ">
-                                <rect key="frame" x="40" y="150" width="134.5" height="24"/>
+                                <rect key="frame" x="40" y="54" width="134.5" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.70588235290000001" green="0.57647058819999997" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhO-Tz-87M">
-                                <rect key="frame" x="194.5" y="150" width="50" height="24"/>
+                                <rect key="frame" x="194.5" y="54" width="50" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" red="0.70588235290000001" green="0.57647058819999997" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NT-zf-7jY" customClass="SpreadsheetView" customModule="SpreadsheetView">
-                                <rect key="frame" x="20" y="194" width="374" height="444"/>
+                                <rect key="frame" x="20" y="98" width="374" height="444"/>
                                 <color key="backgroundColor" red="0.89824813599999997" green="0.8976293206" blue="0.91765016320000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="444" id="l1s-vx-H9V"/>

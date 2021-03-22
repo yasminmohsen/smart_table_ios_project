@@ -49,6 +49,7 @@ class LoginViewController: UIViewController {
                     self.saveToUserDefult(phone:self.mobilePhoneNum)
                     
                     var vc = self.storyboard?.instantiateViewController(withIdentifier: "home")as! HomeViewController
+                    vc.tableInfoModel = data
                     
                     self.navigationController?.pushViewController(vc, animated: true)
                     

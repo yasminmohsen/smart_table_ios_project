@@ -6,7 +6,8 @@
 //
 
 import Foundation
-
+import Alamofire
+import SwiftyJSON
 
 class LoginViewModel {
     
@@ -32,9 +33,9 @@ class LoginViewModel {
     
     
     
-    func login(phone:String,key:String?){
+   func login(phone:String,key:String?){
         
-        let apiService = ApIService(phone: phone)
+    let apiService = ApIService(phone: "00201017670053")
         let url = apiService.url
         if let  urlRequest = URL(string: url){
             let request = NSMutableURLRequest(url: urlRequest)
@@ -50,26 +51,97 @@ class LoginViewModel {
             let task = session.dataTask(with: request as URLRequest){(data,respone,error) in
                 
                 if let apiData = data {
-                    print(data)
-                    let stringData = String(data: apiData, encoding: .utf8)!
-                    print(stringData)
+     
+                 var tableModelArray = [TableInfoModel]()
+     
+//                    print(data)
+                    let stringData = String(data: apiData, encoding:.utf8)!
+                    let parsedData = stringData.decodingUnicodeCharacters
                     
-                    let jsonDecoder = JSONDecoder()
-                    let apiResponse = try? jsonDecoder.decode(Response.self, from: apiData)
+    
+                    let jsonDict = try?JSON(data: apiData)
                     
-                    if let result = apiResponse?.data {
+                   if let tableInfoArray = jsonDict?["data"].array{
+                    
+                    var CellsModelArray = [TableCellModel]()
+                    var dayModelArray = [String]()
+                    var classesModelArray = [ClassModel]()
+                 
+                   
                         
-                        self.data = result
-                    }
+                        for tableInfoObj in tableInfoArray {
+                          
+                            let school_name = tableInfoObj["school_name"].string ?? ""
+                            let school_system = tableInfoObj["school_system"].string ?? ""
+                            let school_system_text = tableInfoObj["school_system_text"].string ?? ""
+                            let teacher_name = tableInfoObj["teacher_name"].string ?? ""
+                            let teacher_nickname = tableInfoObj["teacher_nickname"].string ?? ""
+                            let teacher_assigned_coun = tableInfoObj["teacher_assigned_count"].string ?? ""
+                            let teacherCellsArray =  tableInfoObj["teacher_cells"].array ?? nil
+                            let days =  tableInfoObj["days"].array! ?? nil
+                            let classes = tableInfoObj["classes"].array ?? nil
+                            
+                            if let teacherCellArray = teacherCellsArray {
+                                
+                                for teacherCellObj in teacherCellArray {
+                                  
+                                    let day = teacherCellObj["day"].string ?? ""
+                                    let class_number = teacherCellObj["class_number"].int ?? 0
+                                    let cell_text =  teacherCellObj["cell_text"].string ?? ""
+                                    
+                                    var obj = TableCellModel(day: day, class_number: class_number, cell_text: cell_text)
+                                    CellsModelArray.append(obj)
+                                    
+                                }
+                                
+                            }
+                            
+                            if let days = days {
+                                for d in days {
+                                let day = d.string ?? ""
+                                dayModelArray.append(day)
+                            }}
+                          
+
+                            
+                            if let classes = classes {
+                                
+                                for classobj in classes{
+                                    let number = classobj["number"].int ?? 0
+                                    let start_time = classobj["start_time"].string ?? ""
+                                    let end_time = classobj["end_time"].string ?? ""
+                                    
+                                    var obj = ClassModel(number: number, start_time: start_time, end_time: end_time)
+                                    classesModelArray.append(obj)
+                                    
+                                }
+                                
+                                
+                            }
+                            
+                        var tableObj = TableInfoModel(school_name: school_name, school_system: school_system, school_system_text: school_system_text, teacher_name: teacher_name, teacher_nickname: teacher_nickname, teacher_assigned_count: teacher_assigned_coun, teacher_cells: CellsModelArray, days: dayModelArray, classes: classesModelArray)
+                            
+                            tableModelArray.append(tableObj)
+                            
+                            
+                        }
                     
-                    if let message = apiResponse?.message{
+                    
+                    self.data = tableModelArray
+                    print (data)
+                        
+                    } // end
+                    
+                    
+                    if let message = jsonDict?["message"].string {
+                        
+                        
                         if(!message.isEmpty){
+                            
                             self.error = message
                         }
-                        
                     }
-                    
-                    
+
                     
                 }
                 
@@ -79,26 +151,99 @@ class LoginViewModel {
 
         }
         
-       
-        
-        
-        
-        
-        
-        
-        
-        
-        
+   
     }
     
     
     
+  /* func login(phone:String,key:String?){
+        
+        let apiService = ApIService(phone: "00201017670053")
+        let url = apiService.url
+        
+        AF.request(url, method: .get,encoding: JSONEncoding.prettyPrinted).responseJSON { response in
+            
+            
+            
+           print(response)
+            if let data = response.data ,let utf = String(data:data,encoding: .utf8){
+                
+                let jsonDict = try?JSON(data: data)
+               // print(jsonDict)
+                
+                let sucess = jsonDict?["data"].array
+                
+                for x in sucess! {
+                    
+                    let m = x["school_name"].string
+                    print(m)
+                }
+                
+            
+            
+           
+            
+                    
+                //print(sucess)
+                
+                
+                
+                
+               
+            }
+//            switch response.result {
+//
+//
+//
+//            case (.success(let value)) :
+//               // print(value)  //let json = JSON(value)
+//
+//
+//                                          print("this is what JSON is")
+//                //print(JSON)
+//                                          // print(JSON)//
+//              //  var stringData = String(data: value as! Data, encoding: .utf8)
+//               //print(stringData)
+//
+//
+//               // print(stringData)
+//
+//                 let jsonDecoder = JSONDecoder()
+//                let string = try? jsonDecoder.decode(Response.self, from:JSON as! Data)
+//
+//
+//                print(string)
+//
+//
+//            case(.failure(let error)):
+//
+//                print(error.localizedDescription)
+//
+//            default:
+//                break
+//
+//
+//
+//
+//
+//            }
+            
+            
+            
+            
+            
+        }
+        
+        
+    }
+    */
     
     
     
     
     
     
-    
-    
+}
+extension String {
+    var decodingUnicodeCharacters: String { applyingTransform(.init("Hex-Any"), reverse: false) ?? "" }
 }

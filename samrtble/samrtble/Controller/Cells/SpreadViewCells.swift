@@ -119,6 +119,8 @@ class TextCell: Cell {
            label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         label.font = UIFont.systemFont(ofSize: 14)
         label.textAlignment = .center
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
         contentView.addSubview(label)
        }
 

@@ -67,18 +67,8 @@ class ClassesViewController: UIViewController{
         
       
         
-  
-      
+       classesArray = MappedModel.converTestModel(tableInfoModel)
         
-        
-      //  tableInfoModel = TestModel.testModelObj()[0]
-        
-       // classesArray = MappedModel.converTestModel(tableInfoModel)
-        
-        
-        
-//        customUi()
-        // Do any additional setup after loading the view.
         
     
      }

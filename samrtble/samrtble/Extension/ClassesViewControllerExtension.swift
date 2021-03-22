@@ -21,7 +21,7 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
             if case 0 = row {
                 return 60
             } else {
-                return 80
+                return 100
             }
         }
     
@@ -53,12 +53,12 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
             }
             else{
                
-               /* var number = (tableInfoModel.classes[indexPath.column - 1 ].number)
+                var number = (tableInfoModel.classes[indexPath.column - 1 ].number)
                 var startTime = (tableInfoModel.classes[indexPath.column - 1 ].start_time)
                 var endTime = (tableInfoModel.classes[indexPath.column - 1 ].end_time)
                 
                 
-                cell.label.text = "\(number)\n\(startTime)-\(endTime)"*/
+                cell.label.text = "\(number)\n\(startTime)-\(endTime)"
                 cell.label.backgroundColor = .white
                 
                 
@@ -79,7 +79,7 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
 //
 //
              
-           // cell.label.text = tableInfoModel.days[indexPath.row-1]
+           cell.label.text = tableInfoModel.days[indexPath.row-1]
             cell.label.backgroundColor = indexPath.row % 2 == 0 ? oddRowColor : evenRowColor
             cell.setNeedsLayout()
            
@@ -91,7 +91,7 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
                
                 let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: TextCell.self), for: indexPath) as! TextCell
             
-           // cell.label.text = classesArray[indexPath.row - 1][indexPath.column-1]
+            cell.label.text = classesArray[indexPath.row - 1][indexPath.column-1]
             cell.color = indexPath.row % 2 == 0 ? oddRowColor : evenRowColor
             
             

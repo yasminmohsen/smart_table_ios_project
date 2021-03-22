@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         customUi()
 
+        schoolTable.delegate = self
        
     }
     
@@ -35,6 +36,14 @@ class HomeViewController: UIViewController {
 //        self.navigationController?.navigationBar.shadowImage = UIImage()
 //        self.navigationController?.navigationBar.layoutIfNeeded()
         /// btn ui custom
+        
+        for obj in tableInfoModel {
+            
+            teacherNameLabel.text = obj.teacher_nickname
+        }
+        
+        
+        
         
     
     }
@@ -83,12 +92,15 @@ extension HomeViewController : UITableViewDelegate , UITableViewDataSource {
     }
     
     
+   
+    
+    
     @objc func buttonAction(sender: UIButton!) {
             let btnsendtag: UIButton = sender
          print(sender.tag)
         
         var vc = storyboard?.instantiateViewController(withIdentifier: "classTable")as! ClassesViewController
-        
+        vc.tableInfoModel = tableInfoModel[sender.tag]
         navigationController?.pushViewController(vc, animated: true)
         
         

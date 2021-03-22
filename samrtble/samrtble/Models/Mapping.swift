@@ -19,7 +19,7 @@ class MappedModel {
         var thursday = [String]()
         
         
-        for (index,obj) in tableInfo.teacher_cellModels.enumerated() {
+        for (index,obj) in tableInfo.teacher_cells.enumerated() {
             
             if(index<7){
                 if let text = obj.cell_text{
@@ -56,6 +56,7 @@ class MappedModel {
             if(index>20 && index <= 27){
                 
                 if let text = obj.cell_text{
+                    
                     wednsday.append(text)
                 }
                 else{
