@@ -21,7 +21,7 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
             if case 0 = row {
                 return 60
             } else {
-                return 100
+                return 80
             }
         }
     
@@ -90,8 +90,15 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
         else {
                
                 let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: TextCell.self), for: indexPath) as! TextCell
-            
-            cell.label.text = classesArray[indexPath.row - 1][indexPath.column-1]
+            if(classesArray[indexPath.row - 1][indexPath.column-1] == "----"){
+                cell.label.text = classesArray[indexPath.row - 1][indexPath.column-1]
+                cell.label.textColor = .gray
+            }
+            else{
+                cell.label.text = classesArray[indexPath.row - 1][indexPath.column-1]
+                cell.label.textColor = .black
+            }
+          
             cell.color = indexPath.row % 2 == 0 ? oddRowColor : evenRowColor
             
             

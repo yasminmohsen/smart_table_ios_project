@@ -26,7 +26,7 @@ class MappedModel {
                     sunday.append(text)
                 }
                 else{
-                    sunday.append("None")
+                    sunday.append("----")
                 }
             }
             
@@ -36,7 +36,7 @@ class MappedModel {
                     monday.append(text)
                 }
                 else{
-                    monday.append("None")
+                    monday.append("----")
                 }
             }
             
@@ -48,7 +48,7 @@ class MappedModel {
                         .append(text)
                 }
                 else{
-                    tuesday.append("None")
+                    tuesday.append("----")
                 }
             }
             
@@ -60,7 +60,7 @@ class MappedModel {
                     wednsday.append(text)
                 }
                 else{
-                    wednsday.append("None")
+                    wednsday.append("----")
                 }
             }
             
@@ -71,7 +71,7 @@ class MappedModel {
                     thursday.append(text)
                 }
                 else{
-                    thursday.append("None")
+                    thursday.append("----")
                 }
             }
             

@@ -36,6 +36,7 @@ class ClassesViewController: UIViewController{
     
     @IBOutlet weak var spreadViewHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var schoolNameLbel: UILabel!
     
     @IBOutlet weak var backBtn: UIBarButtonItem!
     override func viewDidLoad() {
@@ -69,7 +70,7 @@ class ClassesViewController: UIViewController{
         
        classesArray = MappedModel.converTestModel(tableInfoModel)
         
-        
+        schoolNameLbel.text = tableInfoModel.school_name
     
      }
 
