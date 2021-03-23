@@ -7,6 +7,7 @@
 
 import UIKit
 import SpreadsheetView
+import MOLH
 
 
 class ClassesViewController: UIViewController{
@@ -18,6 +19,7 @@ class ClassesViewController: UIViewController{
     var classesArray = [[String]]()
     let evenRowColor = UIColor(red: 229/255, green: 229/255, blue: 234/255, alpha: 1.0)
     let oddRowColor: UIColor = .white
+    var lang:Language!
     
     
     @IBOutlet weak var spreadViewHeight: NSLayoutConstraint!
@@ -28,7 +30,7 @@ class ClassesViewController: UIViewController{
     
     lazy var leftBarItem: Array = { () -> [UIBarButtonItem] in
                let btnBack = UIButton(type: .custom)
-        CustomButton.customBarButton(btnBack: btnBack, title: "Back")
+        CustomButton.customBarButton(btnBack: btnBack, title: "Back".localized)
 
                btnBack.addTarget(self, action: #selector(backClicked(_:)), for: .touchUpInside)
                let item = UIBarButtonItem(customView: btnBack)
@@ -39,7 +41,7 @@ class ClassesViewController: UIViewController{
     
     lazy var rightBarItem: Array = { () -> [UIBarButtonItem] in
                let btnBack = UIButton(type: .custom)
-        CustomButton.customBarButton(btnBack: btnBack, title: "Notification")
+        CustomButton.customBarButton(btnBack: btnBack, title: "Notification".localized)
 
                btnBack.addTarget(self, action: #selector(notificationClicked(_:)), for: .touchUpInside)
                let item = UIBarButtonItem(customView: btnBack)
@@ -69,28 +71,53 @@ class ClassesViewController: UIViewController{
         classesArray = MappedModel.converTestModel(tableInfoModel)
         customUi()
         
-        
-        ///check language :-
-      /*  let preferredLanguage = NSLocale.preferredLanguages[0]
 
-
-        if preferredLanguage == "en" {
-            spreadView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        } else if preferredLanguage == "ar" {
-            spreadView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-       
-        }
-   */
-        
-      
-        
-    
-        
-       
     
      }
 
 
+    
+    func checkLanguage() -> Language {
+        let preferredLanguage = MOLHLanguage.currentAppleLanguage()
+
+        if preferredLanguage == "en" {
+            return.english
+        } else if preferredLanguage == "ar" {
+            return.arabic
+       
+        }
+        return .non
+    }
+    
+    
+    
+    func customTableLang(){
+        
+        lang = checkLanguage()
+        if(lang == .arabic){
+            
+            spreadView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        }
+        
+        if(lang == .english){
+            spreadView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        
+    }
+    
+    func customCellLang(cell:Cell){
+        
+        lang = checkLanguage()
+        if(lang == .arabic){
+            
+            cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        }
+        
+        if(lang == .english){
+            cell.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        
+    }
     
     
     func customUi(){
@@ -107,6 +134,8 @@ class ClassesViewController: UIViewController{
         self.navigationItem.setLeftBarButtonItems(self.leftBarItem, animated: true)
         self.navigationItem.setRightBarButtonItems(self.rightBarItem, animated: true)
         
+        
+        customTableLang()
         
     }
     

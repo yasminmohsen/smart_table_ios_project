@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import MOLH
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var plusBoxView: UILabel!
     
     @IBOutlet weak var codeCountryTextField: UITextField!
     
@@ -20,9 +23,35 @@ class LoginViewController: UIViewController {
     var mobilePhoneNum : String = ""
     var tableInfo : [TableInfoModel]!
     
+    
+    
+    lazy var righttBarItem: Array = { () -> [UIBarButtonItem] in
+               let btnBack = UIButton(type: .custom)
+     
+        CustomButton.customBarButton(btnBack: btnBack, title: "English".localized)
+        btnBack.addTarget(self, action: #selector(arabicBtn(_:)), for: .touchUpInside)
+               let item = UIBarButtonItem(customView: btnBack)
+               item.tag = 3
+               return [item]
+       }()
+    
+    
+    @IBOutlet weak var stackViewPhone: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        phoneTextField.delegate = self
+        
+//        phoneView.semanticContentAttribute = .forceRightToLeft
+       stackViewPhone.semanticContentAttribute = .forceLeftToRight
+        
+       /* plusBoxView.layer.addBorder(edge: UIRectEdge.top, color: UIColor.brown, thickness: 1.0)
+       plusBoxView.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.brown, thickness: 1.0)
+        plusBoxView.layer.addBorder(edge: UIRectEdge.left, color: UIColor.brown, thickness: 1.0)
+//
+       codeCountryTextField.layer.addBorder(edge: UIRectEdge.top, color: UIColor.brown, thickness: 1.0)
+        codeCountryTextField.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.brown, thickness: 1.0)
+        
+      //  phoneTextField.delegate = self
+        codeCountryTextField.delegate = self*/
         
      
         cutsomUi()
@@ -62,18 +91,7 @@ class LoginViewController: UIViewController {
             }
         }
         
-        
-        
-//        let preferredLanguage = NSLocale.preferredLanguages[0]
-//
-//
-//         if preferredLanguage == "en" {print("hrllo")
-//             
-//         } else if preferredLanguage == "ar" {
-//            UIView.appearance().semanticContentAttribute = .forceRightToLeft
-//                UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
-//        
-//         }
+ 
 //  
         
     }
@@ -85,19 +103,30 @@ class LoginViewController: UIViewController {
     func cutsomUi(){
         
         CustomButton.customButtonWithShadow(button: loginBtn)
-      
         
+       
+    
+        
+        self.navigationItem.setRightBarButtonItems(self.righttBarItem, animated: true)
+      
+        phoneTextField.layer.borderWidth = 1.0
+        phoneTextField.layer.borderColor = UIColor.brown.cgColor
+        phoneTextField.delegate = self
+        codeCountryTextField.delegate = self
     }
     
     
 // MARK:ButtonsAction :-
     @IBAction func loginBtn(_ sender: Any) {
-        mobilePhoneNum = phoneTextField.text!
+        print("\(codeCountryTextField.text!)\(phoneTextField.text!)")
+        mobilePhoneNum = "00\(codeCountryTextField.text!)\(phoneTextField.text!)"
+        print(mobilePhoneNum)
         if((phoneTextField.text!.isEmpty)){
             
             print("enter mobile")
         }
         else{
+            
           
             loginViewModel.login(phone: mobilePhoneNum, key: apiKey)
             phoneTextField.text = ""
@@ -107,17 +136,34 @@ class LoginViewController: UIViewController {
     }
     
     
-    @IBAction func arabicBtn(_ sender: UIBarButtonItem) {
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        print(MOLHLanguage.currentAppleLanguage())
+
+    }
+    
+   @objc func arabicBtn(_ sender: UIBarButtonItem) {
         
-        UIView.appearance().semanticContentAttribute = .forceRightToLeft
-            UINavigationBar.appearance().semanticContentAttribute = .forceRightToLeft
-            if let vc = storyboard?.instantiateViewController(withIdentifier: "login") {
-                UIApplication.shared.keyWindow?.rootViewController = vc
-            }
+       MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
         
+
+        
+        restartApplication()
         
     }
     
+    @IBAction func countryCodeChange(_ sender: Any) {
+        
+        
+        print("hhh")
+        if(codeCountryTextField.text!.count > 3){
+            
+            codeCountryTextField.deleteBackward()
+            
+        }
+        
+        
+    }
     
 // MARK:Functions :-
     
@@ -149,6 +195,7 @@ class LoginViewController: UIViewController {
     
     
     
+  
     
 }
 
@@ -157,23 +204,98 @@ extension LoginViewController :UITextFieldDelegate{
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if(textField == phoneTextField ){
+        
+        if(textField == phoneTextField){
             phoneTextField.text = ""
-             phoneTextField.textAlignment = .left
+             phoneTextField.textAlignment = .center
+        }
+        if(textField == codeCountryTextField){
+           
+            textField.text = ""
             
         }
-       
+    }
       
-        }
-        
-        
-    
-    
-    
    
+
+    override func viewDidLayoutSubviews() {
+     //Creates the bottom border
+           let borderBottom = CALayer()
+            let borderWidth = CGFloat(1.0)
+
+            plusBoxView.layer.addBorder(edge: UIRectEdge.top, color: UIColor.brown, thickness: 1.0)
+            plusBoxView.layer.addBorder(edge: UIRectEdge.left, color: UIColor.brown, thickness: 1.0)
+            
+             plusBoxView.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.brown, thickness: 1.0)
+            
+      
+             codeCountryTextField.layer.addBorder(edge: UIRectEdge.top, color: UIColor.brown, thickness: 1.0)
+              codeCountryTextField.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.brown, thickness: 1.0)
+        
+        
+        
+        
+        
+
+        }
     
     
+    
+    
+    
+    func restartApplication () {
+        var tableViewController = self.storyboard!.instantiateViewController(withIdentifier: "splashScreen") as! SplashViewController
+
+        let navCtrl = UINavigationController(rootViewController:tableViewController)
+        //
+        guard
+            let window = UIApplication.shared.keyWindow,
+            let rootViewController = window.rootViewController
+            else {
+                return
+        }
+ 
+
+        navCtrl.setNavigationBarHidden(false, animated: true)
+        navCtrl.navigationBar.prefersLargeTitles = true
+        UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            window.rootViewController = navCtrl
+        })
+
+    }
     
     
     
 }
+
+extension CALayer {
+
+    func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
+
+        let border = CALayer()
+
+        switch edge {
+        case UIRectEdge.top:
+            border.frame = CGRect(x: 0, y: 0, width: self.frame.height, height: thickness)
+            break
+        case UIRectEdge.bottom:
+            border.frame = CGRect(x: 0, y: self.frame.height - thickness, width: self.frame.width , height: thickness)
+            break
+        case UIRectEdge.left:
+            border.frame = CGRect(x: 0, y: 0, width: thickness, height: self.frame.height)
+            break
+        case UIRectEdge.right:
+            border.frame = CGRect(x: self.frame.width - thickness, y: 0, width: thickness, height: self.frame.height)
+            break
+            
+        default:
+            break
+        }
+
+        border.backgroundColor = color.cgColor;
+
+        self.addSublayer(border)
+    }
+
+}
+

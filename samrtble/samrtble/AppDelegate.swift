@@ -6,17 +6,57 @@
 //
 
 import UIKit
+import MOLH
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,MOLHResetable {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        MOLH.shared.activate(true)
+        print("language is \(NSLocale.current.languageCode!)")
+        reset()
+         
         return true
-    }
+    
 
+ }
+    
+    
+   
+       
+        func reset() {
+            if let app = UIApplication.shared.delegate?.window{
+                if let rootViewController: UIWindow = app {
+                    
+                    let story = UIStoryboard(name: "Main", bundle: nil)
+                                       rootViewController.rootViewController = story.instantiateViewController(withIdentifier: "splashScreen")
+                }
+                
+            }
+            
+//                        if let rootViewController: UIWindow = ((UIApplication.shared.delegate?.window)!)
+//                        {
+//                            let story = UIStoryboard(name: "Home", bundle: nil)
+//                                               rootViewController.rootViewController = story.instantiateViewController(withIdentifier: "tabBarSvc")
+//            }
+//
+         }
+       
+        
+       
+    
+        
+    
+        //if let rootViewController: UIWindow = ((UIApplication.shared.delegate?.window)!)!{
+            
+        
+        
+   
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

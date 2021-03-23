@@ -45,9 +45,9 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
                 
                 let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: HeaderCell.self), for: indexPath) as! HeaderCell
           
-               cell.label.text = "Day/class"
+                cell.label.text = "Day/class".localized
         
-           
+           customCellLang(cell: cell)
                
                 
                 return cell
@@ -68,7 +68,8 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
 
                 cell.setNeedsLayout()
             
-            
+            customCellLang(cell: cell)
+
                 
                 return cell
             }
@@ -84,7 +85,8 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
             cell.label.backgroundColor = indexPath.row % 2 == 0 ? oddRowColor : evenRowColor
             cell.setNeedsLayout()
            
-            
+            customCellLang(cell: cell)
+
             return cell
         }
         
@@ -102,7 +104,8 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
           
             cell.color = indexPath.row % 2 == 0 ? oddRowColor : evenRowColor
             
-            
+            customCellLang(cell: cell)
+
                 return cell
             }
         }

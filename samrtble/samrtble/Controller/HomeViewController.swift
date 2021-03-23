@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var logOutBtn: UIBarButtonItem!
     @IBOutlet weak var schoolTable: UITableView!
     
+    
    // @IBOutlet weak var notificationBtn: UIBarButtonItem!
     
     
@@ -29,7 +30,7 @@ class HomeViewController: UIViewController {
     
     lazy var leftBarItem: Array = { () -> [UIBarButtonItem] in
                let btnBack = UIButton(type: .custom)
-        CustomButton.customBarButton(btnBack: btnBack, title: "Logout")
+        CustomButton.customBarButton(btnBack: btnBack, title: "Logout".localized)
 
                btnBack.addTarget(self, action: #selector(logOutClicked(_:)), for: .touchUpInside)
                let item = UIBarButtonItem(customView: btnBack)
@@ -40,7 +41,7 @@ class HomeViewController: UIViewController {
     
     lazy var righttBarItem: Array = { () -> [UIBarButtonItem] in
                let btnBack = UIButton(type: .custom)
-        CustomButton.customBarButton(btnBack: btnBack, title: "Notification")
+        CustomButton.customBarButton(btnBack: btnBack, title: "Notification".localized)
 
                btnBack.addTarget(self, action: #selector(notificationClicked(_:)), for: .touchUpInside)
                let item = UIBarButtonItem(customView: btnBack)
