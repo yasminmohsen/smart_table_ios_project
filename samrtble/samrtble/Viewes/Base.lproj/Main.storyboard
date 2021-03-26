@@ -256,20 +256,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NT-zf-7jY" customClass="SpreadsheetView" customModule="SpreadsheetView">
-                                <rect key="frame" x="0.0" y="256" width="414" height="586"/>
-                                <color key="backgroundColor" red="1" green="0.91764705879999997" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="34" y="233" width="346" height="586"/>
+                                <color key="backgroundColor" red="0.97129194366349436" green="0.97470598029928779" blue="0.98494809020666829" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="36E-Mk-DtE"/>
                         <color key="backgroundColor" red="1" green="0.91764705879999997" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="36E-Mk-DtE" firstAttribute="bottom" secondItem="4NT-zf-7jY" secondAttribute="bottom" constant="20" id="5gK-tq-GzR"/>
+                            <constraint firstItem="36E-Mk-DtE" firstAttribute="bottom" secondItem="4NT-zf-7jY" secondAttribute="bottom" constant="43" id="5gK-tq-GzR"/>
                             <constraint firstItem="D2s-5U-qCQ" firstAttribute="top" secondItem="36E-Mk-DtE" secondAttribute="top" constant="10" id="6xV-pR-Hpl"/>
                             <constraint firstItem="jhO-Tz-87M" firstAttribute="top" secondItem="D2s-5U-qCQ" secondAttribute="bottom" constant="20" id="9jL-tl-BJ7"/>
-                            <constraint firstItem="4NT-zf-7jY" firstAttribute="leading" secondItem="36E-Mk-DtE" secondAttribute="leading" id="DdL-mb-X4j"/>
-                            <constraint firstItem="4NT-zf-7jY" firstAttribute="trailing" secondItem="36E-Mk-DtE" secondAttribute="trailing" id="OPP-2P-Bbq"/>
+                            <constraint firstItem="4NT-zf-7jY" firstAttribute="leading" secondItem="36E-Mk-DtE" secondAttribute="leading" constant="34" id="DdL-mb-X4j"/>
+                            <constraint firstItem="4NT-zf-7jY" firstAttribute="trailing" secondItem="36E-Mk-DtE" secondAttribute="trailing" constant="-34" id="OPP-2P-Bbq"/>
                             <constraint firstItem="36E-Mk-DtE" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D2s-5U-qCQ" secondAttribute="trailing" constant="20" id="Oqx-0N-DcX"/>
-                            <constraint firstItem="4NT-zf-7jY" firstAttribute="top" secondItem="jhO-Tz-87M" secondAttribute="bottom" constant="20" id="gpL-iL-Tfe"/>
+                            <constraint firstItem="4NT-zf-7jY" firstAttribute="top" secondItem="jhO-Tz-87M" secondAttribute="bottom" constant="-3" id="gpL-iL-Tfe"/>
                             <constraint firstItem="D2s-5U-qCQ" firstAttribute="leading" secondItem="36E-Mk-DtE" secondAttribute="leading" constant="20" id="kDn-WI-JrF"/>
                             <constraint firstItem="jhO-Tz-87M" firstAttribute="leading" secondItem="36E-Mk-DtE" secondAttribute="leading" constant="20" id="q3S-yX-rgn"/>
                             <constraint firstItem="36E-Mk-DtE" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jhO-Tz-87M" secondAttribute="trailing" constant="20" id="wbj-T8-A8T"/>

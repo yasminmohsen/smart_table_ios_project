@@ -17,8 +17,9 @@ class ClassesViewController: UIViewController{
     
     var tableInfoModel:TableInfoModel!
     var classesArray = [[String]]()
-    let evenRowColor = UIColor(red: 229/255, green: 229/255, blue: 234/255, alpha: 1.0)
-    let oddRowColor: UIColor = .white
+    //let evenRowColor = UIColor(red: 229/255, green: 229/255, blue: 234/255, alpha: 1.0)
+    let evenRowColor: UIColor =  UIColor(red: 248/255, green: 249/255, blue: 251/255, alpha: 1.0)
+   // let oddRowColor: UIColor = .secondarySystemBackground
     var lang:Language!
     
     
@@ -71,7 +72,7 @@ class ClassesViewController: UIViewController{
         classesArray = MappedModel.converTestModel(tableInfoModel)
         customUi()
         
-
+        spreadView.layer.cornerRadius = 30
     
      }
 

@@ -119,7 +119,8 @@ class LoginViewController: UIViewController {
 // MARK:ButtonsAction :-
     @IBAction func loginBtn(_ sender: Any) {
         print("\(codeCountryTextField.text!)\(phoneTextField.text!)")
-        mobilePhoneNum = "00\(codeCountryTextField.text!)\(phoneTextField.text!)"
+       // mobilePhoneNum = "00\(codeCountryTextField.text!)\(phoneTextField.text!)"
+        mobilePhoneNum = "00201017670053"
         print(mobilePhoneNum)
         if((phoneTextField.text!.isEmpty)){
             

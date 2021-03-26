@@ -14,7 +14,7 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
   
     
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, widthForColumn column: Int) -> CGFloat {
-            return 120
+            return 50
         }
 
         func spreadsheetView(_ spreadsheetView: SpreadsheetView, heightForRow row: Int) -> CGFloat {
@@ -48,6 +48,7 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
                 cell.label.text = "Day/class".localized
         
            customCellLang(cell: cell)
+              
                
                 
                 return cell
@@ -60,32 +61,34 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
                 
                 
                 cell.label.text = "\(number)\n\(startTime)-\(endTime)"
-                cell.label.backgroundColor = .white
+               
                 
                 
             }
            
 
                 cell.setNeedsLayout()
+           // cell.contentView.layer.borderColor = UIColor.black.cgColor;
+            // cell.contentView.layer.borderWidth = 3.0;
+           
+            
             
             customCellLang(cell: cell)
 
-                
+          
                 return cell
             }
         
         if case 0 =  indexPath.column {
             let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: HeaderCell.self), for: indexPath) as! HeaderCell
             
-
-//
-//
              
            cell.label.text = tableInfoModel.days[indexPath.row-1]
-            cell.label.backgroundColor = indexPath.row % 2 == 0 ? oddRowColor : evenRowColor
+            //cell.label.backgroundColor = indexPath.row % 2 == 0 ? evenRowColor : evenRowColor
             cell.setNeedsLayout()
            
             customCellLang(cell: cell)
+       
 
             return cell
         }
@@ -102,7 +105,7 @@ extension ClassesViewController : SpreadsheetViewDelegate,SpreadsheetViewDataSou
                 cell.label.textColor = .black
             }
           
-            cell.color = indexPath.row % 2 == 0 ? oddRowColor : evenRowColor
+//            cell.color = indexPath.row % 2 == 0 ? .blue : .blue
             
             customCellLang(cell: cell)
 

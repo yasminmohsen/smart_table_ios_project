@@ -105,6 +105,8 @@ extension HomeViewController : UITableViewDelegate , UITableViewDataSource {
         cell.schoolNameBtn.titleLabel?.lineBreakMode = .byWordWrapping
        
        
+      
+        
     return cell
             
         
