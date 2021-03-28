@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Classes Table View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="TableHome" id="BYZ-38-t0r" customClass="ClassesTableViewController" customModule="samrtble" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tlc-r0-W8G">
+                                <rect key="frame" x="20" y="414" width="374" height="449"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.15677632794832574" green="0.82872052161522158" blue="0.71892255128335814" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0o-ds-Iuw">
+                                <rect key="frame" x="20" y="64" width="374" height="330"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cef-lZ-ogI">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="330"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WaZ-pQ-HWR" customClass="SpreadsheetView" customModule="SpreadsheetView">
+                                                <rect key="frame" x="10" y="15" width="354" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="4md-xK-2YK"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="fGk-Sq-DSd">
+                                                <rect key="frame" x="10" y="75" width="354" height="240"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpx-f7-1sa" customClass="SpreadsheetView" customModule="SpreadsheetView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="53" height="240"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G17-dI-ldY" customClass="SpreadsheetView" customModule="SpreadsheetView">
+                                                        <rect key="frame" x="60" y="0.0" width="53.5" height="240"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bg2-5x-GP4" customClass="SpreadsheetView" customModule="SpreadsheetView">
+                                                        <rect key="frame" x="120.5" y="0.0" width="53" height="240"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1t-55-5Uc" customClass="SpreadsheetView" customModule="SpreadsheetView">
+                                                        <rect key="frame" x="180.5" y="0.0" width="53" height="240"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTD-Vk-oxp" customClass="SpreadsheetView" customModule="SpreadsheetView">
+                                                        <rect key="frame" x="240.5" y="0.0" width="53.5" height="240"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osS-bb-1zh" customClass="SpreadsheetView" customModule="SpreadsheetView">
+                                                        <rect key="frame" x="301" y="0.0" width="53" height="240"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="fGk-Sq-DSd" firstAttribute="top" secondItem="WaZ-pQ-HWR" secondAttribute="bottom" constant="10" id="UCr-SE-4fa"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="15" left="10" bottom="15" right="10"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="cef-lZ-ogI" firstAttribute="top" secondItem="q0o-ds-Iuw" secondAttribute="top" id="Yp7-4W-h2B"/>
+                                    <constraint firstItem="cef-lZ-ogI" firstAttribute="leading" secondItem="q0o-ds-Iuw" secondAttribute="leading" id="nYY-9W-fqW"/>
+                                    <constraint firstAttribute="bottom" secondItem="cef-lZ-ogI" secondAttribute="bottom" id="xiG-AO-V66"/>
+                                    <constraint firstAttribute="trailing" secondItem="cef-lZ-ogI" secondAttribute="trailing" id="yqc-8S-tnw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="q0o-ds-Iuw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="2Ng-Kz-u7b"/>
+                            <constraint firstItem="q0o-ds-Iuw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Cqh-cn-4F9"/>
+                            <constraint firstItem="q0o-ds-Iuw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="CxZ-x1-dhs"/>
+                            <constraint firstItem="tlc-r0-W8G" firstAttribute="top" secondItem="q0o-ds-Iuw" secondAttribute="bottom" constant="20" id="Hjz-Jc-UHy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tlc-r0-W8G" secondAttribute="trailing" constant="20" id="VFK-H2-GKe"/>
+                            <constraint firstItem="tlc-r0-W8G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="X60-Yj-Ycq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q0o-ds-Iuw" secondAttribute="trailing" constant="20" id="fRn-Nc-2C2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q0o-ds-Iuw" secondAttribute="trailing" constant="20" id="mQ3-Fw-WrI"/>
+                            <constraint firstItem="q0o-ds-Iuw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="s67-7c-g3D"/>
+                            <constraint firstItem="tlc-r0-W8G" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uof-fv-Blm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uxZ-IS-jsY">
+                        <barButtonItem key="leftBarButtonItem" title="hello" id="EMO-jW-9pl"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="classesView" destination="WaZ-pQ-HWR" id="vn8-79-EYi"/>
+                        <outlet property="dayView" destination="osS-bb-1zh" id="y5f-jQ-7aR"/>
+                        <outlet property="monday" destination="s1t-55-5Uc" id="xJ6-pI-yik"/>
+                        <outlet property="sunday" destination="HTD-Vk-oxp" id="Hdu-cz-7m0"/>
+                        <outlet property="thursday" destination="gpx-f7-1sa" id="gtV-Hg-OIF"/>
+                        <outlet property="tuesday" destination="Bg2-5x-GP4" id="UEq-rY-Mvd"/>
+                        <outlet property="wednsday" destination="G17-dI-ldY" id="aK9-nr-RNd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1345" y="386"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zZS-Al-Wbc">
+            <objects>
+                <viewController id="oJA-Bj-JVq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3G5-Cd-U3Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Group 58" translatesAutoresizingMaskIntoConstraints="NO" id="YMq-gC-y2q">
+                                <rect key="frame" x="61" y="307" width="287" height="296"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pcp-r2-eZV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0x3-35-SNo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oew-9o-OhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2350.7246376811595" y="368.97321428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Group 58" width="289.23300170898438" height="226.0989990234375"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
