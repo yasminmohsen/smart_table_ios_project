@@ -10,6 +10,7 @@ import MOLH
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var enterYourNumberLabel: UILabel!
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var phoneTextField: UITextField!
@@ -41,7 +42,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
 //        phoneView.semanticContentAttribute = .forceRightToLeft
-       stackViewPhone.semanticContentAttribute = .forceLeftToRight
+//       stackViewPhone.semanticContentAttribute = .forceLeftToRight
         
        /* plusBoxView.layer.addBorder(edge: UIRectEdge.top, color: UIColor.brown, thickness: 1.0)
        plusBoxView.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.brown, thickness: 1.0)
@@ -102,17 +103,22 @@ class LoginViewController: UIViewController {
     
     func cutsomUi(){
         
-        CustomButton.customButtonWithShadow(button: loginBtn)
-        
+       
        
     
         
         self.navigationItem.setRightBarButtonItems(self.righttBarItem, animated: true)
       
-        phoneTextField.layer.borderWidth = 1.0
-        phoneTextField.layer.borderColor = UIColor.brown.cgColor
-        phoneTextField.delegate = self
-        codeCountryTextField.delegate = self
+        if let phoneTextFiled = phoneTextField {
+            if let codeCountryTextField = codeCountryTextField{
+                phoneTextField.layer.borderWidth = 1.0
+                phoneTextField.layer.borderColor = UIColor.brown.cgColor
+                phoneTextField.delegate = self
+                codeCountryTextField.delegate = self
+            }
+            
+        }
+       
     }
     
     
@@ -269,34 +275,34 @@ extension LoginViewController :UITextFieldDelegate{
     
 }
 
-extension CALayer {
-
-    func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
-
-        let border = CALayer()
-
-        switch edge {
-        case UIRectEdge.top:
-            border.frame = CGRect(x: 0, y: 0, width: self.frame.height, height: thickness)
-            break
-        case UIRectEdge.bottom:
-            border.frame = CGRect(x: 0, y: self.frame.height - thickness, width: self.frame.width , height: thickness)
-            break
-        case UIRectEdge.left:
-            border.frame = CGRect(x: 0, y: 0, width: thickness, height: self.frame.height)
-            break
-        case UIRectEdge.right:
-            border.frame = CGRect(x: self.frame.width - thickness, y: 0, width: thickness, height: self.frame.height)
-            break
-            
-        default:
-            break
-        }
-
-        border.backgroundColor = color.cgColor;
-
-        self.addSublayer(border)
-    }
-
-}
+//extension CALayer {
+//
+//    func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
+//
+//        let border = CALayer()
+//
+//        switch edge {
+//        case UIRectEdge.top:
+//            border.frame = CGRect(x: 0, y: 0, width: self.frame.height, height: thickness)
+//            break
+//        case UIRectEdge.bottom:
+//            border.frame = CGRect(x: 0, y: self.frame.height - thickness, width: self.frame.width , height: thickness)
+//            break
+//        case UIRectEdge.left:
+//            border.frame = CGRect(x: 0, y: 0, width: thickness, height: self.frame.height)
+//            break
+//        case UIRectEdge.right:
+//            border.frame = CGRect(x: self.frame.width - thickness, y: 0, width: thickness, height: self.frame.height)
+//            break
+//            
+//        default:
+//            break
+//        }
+//
+//        border.backgroundColor = color.cgColor;
+//
+//        self.addSublayer(border)
+//    }
+//
+//}
 
