@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-samrtble/Pods-samrtble-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/MOLH/MOLH.framework
+${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework
 ${BUILT_PRODUCTS_DIR}/SpreadsheetView/SpreadsheetView.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

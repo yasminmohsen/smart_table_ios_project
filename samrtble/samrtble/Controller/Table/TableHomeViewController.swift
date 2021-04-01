@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SideMenu
 class TableHomeViewController: UIViewController {
     
     
@@ -168,6 +168,38 @@ class TableHomeViewController: UIViewController {
             loginViewModel.login(phone: mobilePhone, key: apiKey)
         
     }
+    
+    
+    @IBAction func minueAction(_ sender: Any) {
+        
+       let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! SideMenuNavigationController
+     
+        
+      let language = LanguageOperation.checkLanguage()
+        print(language)
+        switch language {
+        case .arabic:
+            menu.leftSide = false
+        case .english :
+            menu.leftSide = true
+        
+        default:
+            break
+        }
+        
+        menu.presentationStyle = .menuSlideIn
+        menu.view.layer.shadowColor =  UIColor(red: 0, green: 0, blue: 0 ,alpha: 0.5).cgColor
+        menu.view.layer.shadowOffset = CGSize(width: 3.0, height:3.0)
+        menu.view.layer.shadowOpacity = 1.0
+        menu.view.layer.shadowRadius = 3.0
+        menu.view.layer.borderWidth = 0.2
+        menu.view.layer.borderColor = UIColor(red: 0, green: 0, blue: 0 ,alpha: 0.16).cgColor
+        
+        present(menu, animated: true, completion: nil)
+        
+        
+    }
+    
 }
 
 

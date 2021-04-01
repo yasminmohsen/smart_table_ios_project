@@ -8,5 +8,5 @@ target 'samrtble' do
 pod 'SpreadsheetView'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'MOLH'
-
+pod 'SideMenu'
 end

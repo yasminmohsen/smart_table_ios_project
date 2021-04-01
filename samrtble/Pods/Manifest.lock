@@ -1,24 +1,28 @@
 PODS:
   - MOLH (1.4.3)
+  - SideMenu (6.5.0)
   - SpreadsheetView (0.9.1)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - MOLH
+  - SideMenu
   - SpreadsheetView
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - MOLH
+    - SideMenu
     - SpreadsheetView
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   MOLH: e45827d200aeb1310641090fd8cd03ad2b42ae72
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: a4731c14ab441f9635aa06607432a363dbd516b4
+PODFILE CHECKSUM: 95cca33c168cde1110383ef2ce10cb15831a357c
 
 COCOAPODS: 1.10.0
