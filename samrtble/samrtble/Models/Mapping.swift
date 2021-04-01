@@ -10,7 +10,7 @@ import Foundation
 
 class MappedModel {
     
-   static func converTestModel(_ tableInfo:TableInfoModel) -> [[String]] {
+     func converTableModelToClasses(_ tableInfo:TableInfoModel) -> [[String]] {
         
         var sunday = [String]()
         var monday = [String]()
@@ -26,7 +26,7 @@ class MappedModel {
                     sunday.append(text)
                 }
                 else{
-                    sunday.append("----")
+                    sunday.append("-")
                 }
             }
             
@@ -36,7 +36,7 @@ class MappedModel {
                     monday.append(text)
                 }
                 else{
-                    monday.append("----")
+                    monday.append("-")
                 }
             }
             
@@ -48,7 +48,7 @@ class MappedModel {
                         .append(text)
                 }
                 else{
-                    tuesday.append("----")
+                    tuesday.append("-")
                 }
             }
             
@@ -60,7 +60,7 @@ class MappedModel {
                     wednsday.append(text)
                 }
                 else{
-                    wednsday.append("----")
+                    wednsday.append("-")
                 }
             }
             
@@ -71,18 +71,18 @@ class MappedModel {
                     thursday.append(text)
                 }
                 else{
-                    thursday.append("----")
+                    thursday.append("-")
                 }
             }
             
         }
         
   
-        var classesArray = [sunday,monday,tuesday,wednsday,thursday]
+         
         
         
         
-        return classesArray
+        return [sunday,monday,tuesday,wednsday,thursday]
     }
     
     

@@ -31,14 +31,29 @@ class FirstScreenViewController: UIViewController {
         pageControl.currentPageIndicatorTintColor = Colors.getColor(type: .customorange)[0]
         
         
-        
+        CheckUserDeafaults()
         
     }
   
 
         
     
+    func CheckUserDeafaults()  {
+        let defaults = UserDefaults.standard
+        if(defaults.string(forKey: LoginViewController.PHONE_KEY) != nil){
+            var vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController 
+            
+               // vc.tableInfoModel = loginViewModelData
+           
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        
+        
+        
+    }
     
+    }
 
 }
 

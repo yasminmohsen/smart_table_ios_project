@@ -10,19 +10,18 @@ import UIKit
 class CustomButton {
     
     
-    static func customButtonWithShadow ( button:UIButton){
-        
+    static func customViewWithShadow ( view:UIView){
         
        
-            button.layer.shadowColor =  UIColor(red: 180/255, green: 147/255, blue: 108/255, alpha: 1.0).cgColor
-            button.layer.shadowOffset = CGSize(width: 0.0, height:2.0)
-            button.layer.shadowOpacity = 1.0
-            button.layer.shadowRadius = 4.0
-            button.layer.masksToBounds = false
-            button.layer.cornerRadius = 12.0
-            
-            
-            
+       view.layer.cornerRadius = 12
+        view.clipsToBounds = false
+     
+      view.layer.shadowColor =  UIColor(red: 0, green: 0, blue: 0 ,alpha: 0.16).cgColor
+        view.layer.shadowOffset = CGSize(width: 0.0, height:3.0)
+        view.layer.shadowOpacity = 1.0
+        view.layer.shadowRadius = 3.0
+  
+
         
     
         
@@ -48,10 +47,68 @@ class CustomButton {
     }
     
     
-    
+ 
    
     
     
 }
 
 
+extension UIView {
+
+    func applyShadowWithCornerRadius(color:UIColor, opacity:Float, radius: CGFloat, edge:AIEdge, shadowSpace:CGFloat)    {
+
+        var sizeOffset:CGSize = CGSize.zero
+        switch edge {
+        case .Top:
+            sizeOffset = CGSize(width: 0, height: -shadowSpace)
+        case .Left:
+            sizeOffset = CGSize(width: -shadowSpace, height: 0)
+        case .Bottom:
+            sizeOffset = CGSize(width: 0, height: shadowSpace)
+        case .Right:
+            sizeOffset = CGSize(width: shadowSpace, height: 0)
+
+
+        case .Top_Left:
+            sizeOffset = CGSize(width: -shadowSpace, height: -shadowSpace)
+        case .Top_Right:
+            sizeOffset = CGSize(width: shadowSpace, height: -shadowSpace)
+        case .Bottom_Left:
+            sizeOffset = CGSize(width: -shadowSpace, height: shadowSpace)
+        case .Bottom_Right:
+            sizeOffset = CGSize(width: shadowSpace, height: shadowSpace)
+
+
+        case .All:
+            sizeOffset = CGSize(width: 0, height: 0)
+        case .None:
+            sizeOffset = CGSize.zero
+        }
+
+        self.layer.cornerRadius = self.frame.size.height / 2
+        self.layer.masksToBounds = true;
+
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowOffset = sizeOffset
+        self.layer.shadowRadius = radius
+        self.layer.masksToBounds = false
+
+        self.layer.shadowPath = UIBezierPath(roundedRect:self.bounds, cornerRadius:self.layer.cornerRadius).cgPath
+    }
+}
+
+enum AIEdge:Int {
+    case
+    Top,
+    Left,
+    Bottom,
+    Right,
+    Top_Left,
+    Top_Right,
+    Bottom_Left,
+    Bottom_Right,
+    All,
+    None
+}

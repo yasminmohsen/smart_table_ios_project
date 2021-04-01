@@ -16,7 +16,7 @@ class HomeTableViewCell: UITableViewCell {
         // Initialization code
         
         
-        CustomButton.customButtonWithShadow(button: schoolNameBtn)
+        CustomButton.customViewWithShadow(view: schoolNameBtn) 
         
     }
 

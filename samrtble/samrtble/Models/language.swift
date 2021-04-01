@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MOLH
 
 enum Language {
     
@@ -13,4 +14,20 @@ enum Language {
     case english
     case non
     
+}
+
+
+class LanguageOperation {
+   static func checkLanguage() -> Language {
+        let preferredLanguage = MOLHLanguage.currentAppleLanguage()
+
+        if preferredLanguage == "en" {
+            return.english
+        } else if preferredLanguage == "ar" {
+            return.arabic
+       
+        }
+        return .non
+    }
+
 }

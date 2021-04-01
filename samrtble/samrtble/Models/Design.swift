@@ -57,8 +57,8 @@ enum ColorsName {
     case gradientWhite
     case gradientGreen
     case customGreen
-    case customorange
-    
+    case customorange  //rgb 255 227 172
+    case customBej
     
 }
 
@@ -76,6 +76,8 @@ class Colors{
             return [UIColor(red: 0/255, green: 149/255, blue: 154/255, alpha: 1.0)]
         case .customorange :
             return [#colorLiteral(red: 0.9215686275, green: 0.6705882353, blue: 0.1764705882, alpha: 1)]
+        case .customBej :
+            return [#colorLiteral(red: 1, green: 0.8901960784, blue: 0.6745098039, alpha: 1)]
             
         default:
             break
@@ -142,5 +144,78 @@ public class GradientButton: UIButton {
 private extension GradientButton {
     func updateColors() {
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+    }
+}
+
+
+// for borders :- 
+
+extension CALayer {
+
+    func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
+
+        let border = CALayer()
+
+        switch edge {
+        case UIRectEdge.top:
+            border.frame = CGRect(x: 0, y: 0, width: self.frame.height, height: thickness)
+            break
+        case UIRectEdge.bottom:
+            border.frame = CGRect(x: 0, y: self.frame.height - thickness, width: self.frame.width , height: thickness)
+            break
+        case UIRectEdge.left:
+            border.frame = CGRect(x: 0, y: 0, width: thickness, height: self.frame.height)
+            break
+        case UIRectEdge.right:
+            border.frame = CGRect(x: self.frame.width - thickness, y: 0, width: thickness, height: self.frame.height)
+            break
+            
+        default:
+            break
+        }
+
+        border.backgroundColor = color.cgColor;
+
+        self.addSublayer(border)
+    }
+
+}
+
+
+
+
+extension UISegmentedControl {
+func setSegmentStyle() {
+    setBackgroundImage(imageWithColor(color: UIColor.white), for: .normal, barMetrics: .default)
+    setBackgroundImage(imageWithColor(color:  UIColor(red: 52/255, green: 192/255, blue: 196/255, alpha: 1.0)), for: .selected, barMetrics: .default)
+    setDividerImage(imageWithColor(color: UIColor.clear), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
+
+
+
+     let segAttributes: NSDictionary = [
+        NSAttributedString.Key.foregroundColor: UIColor.white,
+        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .regular)
+        ]
+
+    setTitleTextAttributes(segAttributes as! [NSAttributedString.Key : Any] , for: UIControl.State.selected)
+    
+    let segAttributes_normal: NSDictionary = [
+       NSAttributedString.Key.foregroundColor: UIColor.black,
+       NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .regular)
+       ]
+    
+    setTitleTextAttributes(segAttributes_normal as! [NSAttributedString.Key : Any] , for: UIControl.State.normal)
+    }
+
+    // create a 1x1 image with this color
+    private func imageWithColor(color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0.0, y: 0.0, width:  1.0, height: 1.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        context!.setFillColor(color.cgColor);
+        context!.fill(rect);
+        let image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return image!
     }
 }

@@ -69,7 +69,7 @@ class ClassesViewController: UIViewController{
         spreadView.register(HeaderCell.self, forCellWithReuseIdentifier: String(describing: HeaderCell.self))
         spreadView.register(TextCell.self, forCellWithReuseIdentifier: String(describing: TextCell.self))
 
-        classesArray = MappedModel.converTestModel(tableInfoModel)
+      //  classesArray = MappedModel.converTablModel(tableInfoModel)
         customUi()
         
         spreadView.layer.cornerRadius = 30

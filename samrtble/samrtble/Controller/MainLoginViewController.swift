@@ -10,7 +10,6 @@ import UIKit
 class MainLoginViewController: UIViewController {
 
     
-    
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var enteraYourMobileLabel: UILabel!
     
@@ -18,6 +17,16 @@ class MainLoginViewController: UIViewController {
     
     @IBOutlet weak var countryCode: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var notFoundLabel: UILabel!
+    
+    
+    static let PHONE_KEY :String = "phone"
+    var loginViewModel :LoginViewModel!
+    var apiKey : String?
+    var mobilePhoneNum : String = ""
+    var tableInfo : [TableInfoModel]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +36,41 @@ class MainLoginViewController: UIViewController {
         phoneTextField.delegate = self
         countryCode.delegate = self
         
+    
+        // MARK: Binding :-
+                
+                loginViewModel = LoginViewModel()
+                loginViewModel.bindLogingModel = {
+                    (error:String? , data:[TableInfoModel]?) ->() in
+                    
+                    DispatchQueue.main.async {
+                        if let error = error {
+                           // alert
+                            print(error)
+                            
+                            self.notFoundLabel.alpha = 1
+                            
+                        }
+                        
+                        
+                        if let data = data {
+                            
+                            //Save Phone to UserDefault :-
+                            self.saveToUserDefult(phone:self.mobilePhoneNum)
+                            
+                            
+                            var vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController
+                            vc.tableInfoModel = data
+                            
+                            self.navigationController?.pushViewController(vc, animated: true)
+                            
+                            
+                        }
+                        
+                    }
+                }
+        
+        
        
     }
     
@@ -35,25 +79,67 @@ class MainLoginViewController: UIViewController {
            let borderBottom = CALayer()
             let borderWidth = CGFloat(1.0)
 
-//        plusBox.layer.addBorder(edge: UIRectEdge.top, color: UIColor.lightGray, thickness: 1.0)
-//        plusBox.layer.addBorder(edge: UIRectEdge.left, color: UIColor.lightGray, thickness: 1.0)
-//            
-//        plusBox.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.lightGray, thickness: 1.0)
-//            
-//      
-//        countryCode.layer.addBorder(edge: UIRectEdge.top, color: UIColor.lightGray, thickness: 1.0)
-//        countryCode.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.lightGray, thickness: 1.0)
         
         countryCode.layer.addBorder(edge: UIRectEdge.right, color: UIColor.lightGray, thickness: 1.0)
-        
-        
-        
         
 
         }
     
     
+    
+    @IBAction func countryCodeChanged(_ sender: Any) {
+   
+        if(countryCode.text!.count > 3){
+            
+            countryCode.deleteBackward()
+            
+        }
+        
+    }
+    
+    
+    // MARK:Functions :-
+        
+        func saveToUserDefult(phone:String) {
+            
+            let defaults = UserDefaults.standard
+            defaults.set(phone, forKey: LoginViewController.PHONE_KEY)
+            
+            
+        }
+    
+    
 
+
+
+    
+    
+    
+    @IBAction func loginBtn(_ sender: Any) {
+        
+        
+        mobilePhoneNum = "00\(countryCode.text!)\(phoneTextField.text!)"
+         print(mobilePhoneNum)
+         if((phoneTextField.text!.isEmpty)){
+             
+             print("enter mobile")
+         }
+         else{
+            if(LanguageOperation.checkLanguage() == .arabic){
+                apiKey = "ar"
+            }
+            else{
+                apiKey = nil
+            }
+           
+             loginViewModel.login(phone: mobilePhoneNum, key: apiKey)
+             phoneTextField.text = ""
+             
+         }
+        
+        
+    }
+    
 }
 
 extension MainLoginViewController : UITextFieldDelegate{
@@ -74,33 +160,3 @@ extension MainLoginViewController : UITextFieldDelegate{
 }
 
 
-extension CALayer {
-
-    func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
-
-        let border = CALayer()
-
-        switch edge {
-        case UIRectEdge.top:
-            border.frame = CGRect(x: 0, y: 0, width: self.frame.height, height: thickness)
-            break
-        case UIRectEdge.bottom:
-            border.frame = CGRect(x: 0, y: self.frame.height - thickness, width: self.frame.width , height: thickness)
-            break
-        case UIRectEdge.left:
-            border.frame = CGRect(x: 0, y: 0, width: thickness, height: self.frame.height)
-            break
-        case UIRectEdge.right:
-            border.frame = CGRect(x: self.frame.width - thickness, y: 0, width: thickness, height: self.frame.height)
-            break
-            
-        default:
-            break
-        }
-
-        border.backgroundColor = color.cgColor;
-
-        self.addSublayer(border)
-    }
-
-}

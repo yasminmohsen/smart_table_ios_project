@@ -121,7 +121,7 @@ class LoginViewModel {
                             
                             tableModelArray.append(tableObj)
                             
-                            
+                            CellsModelArray.removeAll()
                         }
                         
                         
