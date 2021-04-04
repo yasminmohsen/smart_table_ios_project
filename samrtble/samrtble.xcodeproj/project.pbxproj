@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		00B8BFD5FF6B94924B742110 /* Pods_samrtble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA70A3D39E9D98CD477B709 /* Pods_samrtble.framework */; };
+		4E04D4492619859000F3A713 /* Myriad Pro Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E04D4482619855400F3A713 /* Myriad Pro Semibold.ttf */; };
+		4E04D44D2619859300F3A713 /* Myriad Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E04D4472619854F00F3A713 /* Myriad Pro Regular.ttf */; };
+		4E04D4512619859500F3A713 /* Myriad Pro Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C532479261779E1000CBB1A /* Myriad Pro Bold.ttf */; };
 		6C38EC3326189A300093B4DA /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C38EC3226189A300093B4DA /* NotificationModel.swift */; };
 		6C38EC3826189A890093B4DA /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C38EC3726189A890093B4DA /* NotificationViewModel.swift */; };
 		6C38EC4D2618CA620093B4DA /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C38EC4C2618CA620093B4DA /* NotificationTableViewCell.swift */; };
@@ -65,14 +68,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E04D4472619854F00F3A713 /* Myriad Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Regular.ttf"; sourceTree = "<group>"; };
+		4E04D4482619855400F3A713 /* Myriad Pro Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Semibold.ttf"; sourceTree = "<group>"; };
 		6C38EC3226189A300093B4DA /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		6C38EC3726189A890093B4DA /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		6C38EC4C2618CA620093B4DA /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		6C38EC512619179D0093B4DA /* CustomDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesignView.swift; sourceTree = "<group>"; };
 		6C38EC57261926290093B4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		6C38EC602619262C0093B4DA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Home.strings; sourceTree = "<group>"; };
-		6C53247426177936000CBB1A /* Myriad Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Regular.ttf"; sourceTree = "<group>"; };
-		6C532478261779D4000CBB1A /* Myriad Pro Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Semibold.ttf"; sourceTree = "<group>"; };
 		6C532479261779E1000CBB1A /* Myriad Pro Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Bold.ttf"; sourceTree = "<group>"; };
 		6C53247D2617BD7A000CBB1A /* samrtble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = samrtble.entitlements; sourceTree = "<group>"; };
 		6C5E1DF62609D06900C35700 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
@@ -153,6 +156,16 @@
 				ECA70A3D39E9D98CD477B709 /* Pods_samrtble.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E04D446261984CB00F3A713 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4E04D4482619855400F3A713 /* Myriad Pro Semibold.ttf */,
+				4E04D4472619854F00F3A713 /* Myriad Pro Regular.ttf */,
+				6C532479261779E1000CBB1A /* Myriad Pro Bold.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		6C38EC6426193FEB0093B4DA /* out */ = {
@@ -301,6 +314,7 @@
 		6CA117D02604B07C006B1AA1 /* samrtble */ = {
 			isa = PBXGroup;
 			children = (
+				4E04D446261984CB00F3A713 /* fonts */,
 				6C53247D2617BD7A000CBB1A /* samrtble.entitlements */,
 				6C7E21CD2606147D00B10A74 /* NetWorkLayer */,
 				6C7E21032604B66400B10A74 /* Extension */,
@@ -310,9 +324,6 @@
 				6C7E20FF2604B61300B10A74 /* Models */,
 				6CA117D12604B07C006B1AA1 /* AppDelegate.swift */,
 				6CA117D32604B07C006B1AA1 /* SceneDelegate.swift */,
-				6C532479261779E1000CBB1A /* Myriad Pro Bold.ttf */,
-				6C53247426177936000CBB1A /* Myriad Pro Regular.ttf */,
-				6C532478261779D4000CBB1A /* Myriad Pro Semibold.ttf */,
 				6CA117DA2604B07D006B1AA1 /* Assets.xcassets */,
 				6CA117DC2604B07D006B1AA1 /* LaunchScreen.storyboard */,
 				6CA117DF2604B07D006B1AA1 /* Info.plist */,
@@ -453,11 +464,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E04D44D2619859300F3A713 /* Myriad Pro Regular.ttf in Resources */,
 				6CA117DE2604B07D006B1AA1 /* LaunchScreen.storyboard in Resources */,
 				6C38EC56261926290093B4DA /* Home.storyboard in Resources */,
 				6C5E1E182609DC2700C35700 /* Localizable.strings in Resources */,
 				6CA117DB2604B07D006B1AA1 /* Assets.xcassets in Resources */,
 				6CA117D92604B07C006B1AA1 /* Main.storyboard in Resources */,
+				4E04D4492619859000F3A713 /* Myriad Pro Semibold.ttf in Resources */,
+				4E04D4512619859500F3A713 /* Myriad Pro Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
