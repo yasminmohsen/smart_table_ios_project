@@ -18,13 +18,12 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var codeCountryTextField: UITextField!
     
-    static let PHONE_KEY :String = "phone"
+   // static let PHONE_KEY :String = "phone"
     var loginViewModel :LoginViewModel!
     var apiKey : String?
     var mobilePhoneNum : String = ""
     var tableInfo : [TableInfoModel]!
-    
-    
+    var isfrom : Bool!
     
     lazy var righttBarItem: Array = { () -> [UIBarButtonItem] in
                let btnBack = UIButton(type: .custom)
@@ -40,7 +39,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var stackViewPhone: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
 //        phoneView.semanticContentAttribute = .forceRightToLeft
 //       stackViewPhone.semanticContentAttribute = .forceLeftToRight
         
@@ -81,11 +80,11 @@ class LoginViewController: UIViewController {
                     //Save Phone to UserDefault :-
                     self.saveToUserDefult(phone:self.mobilePhoneNum)
                     
-                    var vc = self.storyboard?.instantiateViewController(withIdentifier: "home")as! HomeViewController
-                    vc.tableInfoModel = data
-                    
-                    self.navigationController?.pushViewController(vc, animated: true)
-                    
+//                    var vc = self.storyboard?.instantiateViewController(withIdentifier: "home")as! HomeViewController
+//                    vc.tableInfoModel = data
+//
+//                    self.navigationController?.pushViewController(vc, animated: true)
+//
                     
                 }
                 
@@ -135,7 +134,7 @@ class LoginViewController: UIViewController {
         else{
             
           
-            loginViewModel.login(phone: mobilePhoneNum, key: apiKey)
+            loginViewModel.fetchData(phone: mobilePhoneNum)
             phoneTextField.text = ""
             
         }
@@ -177,7 +176,7 @@ class LoginViewController: UIViewController {
     func saveToUserDefult(phone:String) {
         
         let defaults = UserDefaults.standard
-        defaults.set(phone, forKey: LoginViewController.PHONE_KEY)
+        //defaults.set(phone, forKey: LoginViewController.PHONE_KEY)
         
         
     }
@@ -185,15 +184,15 @@ class LoginViewController: UIViewController {
     
     func CheckUserDeafaults()  {
         let defaults = UserDefaults.standard
-        if(defaults.string(forKey: LoginViewController.PHONE_KEY) != nil){
-            var vc = self.storyboard?.instantiateViewController(withIdentifier: "home")as! HomeViewController
-            if let loginViewModelData = loginViewModel.data{
-                vc.tableInfoModel = loginViewModelData
-           
+        //if(defaults.string(forKey: LoginViewController.PHONE_KEY) != nil){
+//            var vc = self.storyboard?.instantiateViewController(withIdentifier: "home")as! HomeViewController
+//            if let loginViewModelData = loginViewModel.data{
+//                vc.tableInfoModel = loginViewModelData
+//           
+//            
+//            self.navigationController?.pushViewController(vc, animated: true)
             
-            self.navigationController?.pushViewController(vc, animated: true)
-            
-        }
+       // }
         
         
     }
@@ -204,7 +203,7 @@ class LoginViewController: UIViewController {
     
   
     
-}
+
 
 
 extension LoginViewController :UITextFieldDelegate{

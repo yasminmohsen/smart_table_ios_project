@@ -18,19 +18,29 @@ class FirstScreenViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         
-        titleLabel.font = UIFont(name: CustomFonts.MyriadProBold.rawValue, size: 18)
-        
+//    titleLabel.font = UIFont(name: CustomFonts.MyriadProBold.rawValue, size: 18)
+//        
         titleLabel.textColor = Colors.getColor(type: .customGreen)[0]
+//        
+//        descriotionLabel.font = UIFont(name: CustomFonts.MyriadPro.rawValue, size: 18)
         
-        descriotionLabel.font = UIFont(name: CustomFonts.MyriadPro.rawValue, size: 18)
+//        descriotionLabel.textColor = Colors.getColor(type: .customGreen)[0]
         
-        descriotionLabel.textColor = Colors.getColor(type: .customGreen)[0]
         
         
       
         pageControl.currentPageIndicatorTintColor = Colors.getColor(type: .customorange)[0]
         
         
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        
+        leftSwipe.direction = .left
+            self.view.addGestureRecognizer(leftSwipe)
+
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        
+        rightSwipe.direction = .right
+            self.view.addGestureRecognizer(rightSwipe)
         CheckUserDeafaults()
         
     }
@@ -40,7 +50,7 @@ class FirstScreenViewController: UIViewController {
     
     func CheckUserDeafaults()  {
         let defaults = UserDefaults.standard
-        if(defaults.string(forKey: LoginViewController.PHONE_KEY) != nil){
+        if(defaults.string(forKey: MainLoginViewController.PHONE_KEY) != nil){
             var vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController 
             
                // vc.tableInfoModel = loginViewModelData
@@ -55,5 +65,49 @@ class FirstScreenViewController: UIViewController {
     
     }
 
+    
+    
+    @objc func swipe(gesture :UISwipeGestureRecognizer) {
+        let lang = LanguageOperation.checkLanguage()
+        let vc = storyboard?.instantiateViewController(identifier: "secondVc") as! SecondScreenViewController
+        switch gesture.direction {
+        case .right:
+            
+            switch lang {
+            case .arabic:
+                self.navigationController?.pushViewController(vc, animated: true)
+        
+            default:
+                break
+            }
+            
+            
+        case .left:
+            
+            switch lang {
+            case .english:
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            default:
+                break
+            }
+            
+            
+            
+            
+        default:
+            break
+        }
+        
+        
+        
+        
+       
+        
+        
+        
+    }
+    
+    
 }
 

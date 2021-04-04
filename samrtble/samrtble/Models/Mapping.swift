@@ -11,78 +11,17 @@ import Foundation
 class MappedModel {
     
      func converTableModelToClasses(_ tableInfo:TableInfoModel) -> [[String]] {
-        
-        var sunday = [String]()
-        var monday = [String]()
-        var tuesday = [String]()
-        var wednsday = [String]()
-        var thursday = [String]()
-        
-        
-        for (index,obj) in tableInfo.teacher_cells.enumerated() {
-            
-            if(index<7){
-                if let text = obj.cell_text{
-                    sunday.append(text)
-                }
-                else{
-                    sunday.append("-")
-                }
+        var nameArray = [[String]]()
+     
+            let numbers = tableInfo.teacher_cells
+            let chunkSize = 7
+            let chunks = stride(from: 0, to: numbers.count, by: chunkSize).map {
+                Array(numbers[$0..<min($0 + chunkSize, numbers.count)])
             }
-            
-            if(index>=7 && index <= 13){
-                
-                if let text = obj.cell_text{
-                    monday.append(text)
-                }
-                else{
-                    monday.append("-")
-                }
-            }
-            
-            
-            if(index>13 && index <= 20){
-                
-                if let text = obj.cell_text{
-                    tuesday
-                        .append(text)
-                }
-                else{
-                    tuesday.append("-")
-                }
-            }
-            
-            
-            if(index>20 && index <= 27){
-                
-                if let text = obj.cell_text{
-                    
-                    wednsday.append(text)
-                }
-                else{
-                    wednsday.append("-")
-                }
-            }
-            
-            
-            if(index>27 && index <= 34){
-                
-                if let text = obj.cell_text{
-                    thursday.append(text)
-                }
-                else{
-                    thursday.append("-")
-                }
-            }
-            
-        }
-        
   
-         
+        nameArray = chunks.map({$0.map({$0.cell_text!})})
         
-        
-        
-        return [sunday,monday,tuesday,wednsday,thursday]
+        return nameArray
     }
     
     
@@ -90,5 +29,8 @@ class MappedModel {
     
     
     
+        
+        
+        
     
 }

@@ -20,6 +20,11 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
     var subjectsArray = [[String]]()
     var spreedSheetArray : [SpreadsheetView]!
     var classNumberArray = [ClassModel]()
+    var daysArray = [String]()
+    var day : String!
+    var result :ColoredDay!
+    
+    
     
     
     override func viewDidLoad() {
@@ -66,29 +71,45 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, cellForItemAt indexPath: IndexPath) -> Cell? {
       
                 let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: TableCell.self), for: indexPath) as! TableCell
-            
+                 
       
         if(subjectsArray .count > 0){
             switch spreadsheetView {
-            case thursday:
-            
-                cell.label.text = subjectsArray[indexPath.column + 4][indexPath.row]
-               
+           
             case sunday:
                 
+                if(result == .coloredSunday){
+                   customColoredSheet(sunday, cell)
+                }
                 cell.label.text = subjectsArray[indexPath.column][indexPath.row]
-                sunday.gridStyle = .solid(width:2, color: Colors.getColor(type: .customBej)[0])
-                sunday.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
-                cell.label.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
+               
             case monday:
+                if(result == .coloredMonday){
+
+                    customColoredSheet(monday, cell)
+                }
                 
                 cell.label.text = subjectsArray[indexPath.column + 1][indexPath.row]
             case tuesday:
-                
+                if(result == .coloredTuesday){
+                    
+                    customColoredSheet(tuesday, cell)
+                }
                 cell.label.text = subjectsArray[indexPath.column + 2][indexPath.row]
-            case wednsday:
                 
+            case wednsday:
+                if(result == .coloredWednsday){
+
+                    customColoredSheet(wednsday, cell)
+                }
                 cell.label.text = subjectsArray[indexPath.column + 3][indexPath.row]
+                
+            case thursday:
+                if(result == .coloredThursday){
+
+                    customColoredSheet(thursday, cell)
+                }
+                cell.label.text = subjectsArray[indexPath.column + 4][indexPath.row]
                 
             case classesView:
                 cell.label.text = "\(classNumberArray[indexPath.row].number)"
@@ -97,7 +118,6 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
             default:
                 break
             }
-              //  cell.label.text = "hello table"
                    
         }
        
@@ -126,7 +146,7 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
             
             for v in embededViewCollection {
                 
-                CustomButton.customViewWithShadow(view: v)
+                CustomDesignView.customViewWithShadow(view: v)
               
             }
            
@@ -136,14 +156,63 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
     
     
     
-    func updateUi(_ subjectArray :[[String]],_ classNumber :[ClassModel]){
+    func updateUi(_ subjectArray :[[String]],_ classNumber :[ClassModel],day:String,daysArray:[String]){
         self.subjectsArray = subjectArray
         self.classNumberArray = classNumber
-    
+        self.day = day
+        self.daysArray = daysArray
+        result = checkColoredItem()
         for obj in spreedSheetArray{
             obj.reloadData()
         }
         
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    func checkColoredItem() -> ColoredDay {
+    
+        if(daysArray != nil){
+            for (index ,dayObj) in daysArray.enumerated() {
+                
+                if(dayObj == day){
+                    switch index {
+                    case 0:
+                        return .coloredSunday
+                    case 1:
+                        return .coloredMonday
+                    case 2:
+                        return .coloredTuesday
+                    case 3:
+                        return .coloredWednsday
+                    case 4:
+                        return .coloredThursday
+                    default:
+                        break
+                    }
+                    
+                }
+
+            }
+        }
+        
+       
+        return .non
+    }
+    
+    
+    
+    
+    func customColoredSheet(_ spreedSheet:SpreadsheetView ,_ cell : TableCell  )  {
+        spreedSheet.gridStyle = .solid(width:2, color: Colors.getColor(type: .customBej)[0])
+        spreedSheet.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
+        cell.label.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
         
     }
     

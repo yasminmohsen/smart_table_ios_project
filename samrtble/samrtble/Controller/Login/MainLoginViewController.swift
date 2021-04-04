@@ -9,6 +9,7 @@ import UIKit
 
 class MainLoginViewController: UIViewController {
 
+    @IBOutlet weak var activityIndecator: UIActivityIndicatorView!
     
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var enteraYourMobileLabel: UILabel!
@@ -18,11 +19,9 @@ class MainLoginViewController: UIViewController {
     @IBOutlet weak var countryCode: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var notFoundLabel: UILabel!
-    
-    
+
     static let PHONE_KEY :String = "phone"
     var loginViewModel :LoginViewModel!
-    var apiKey : String?
     var mobilePhoneNum : String = ""
     var tableInfo : [TableInfoModel]!
     
@@ -49,6 +48,8 @@ class MainLoginViewController: UIViewController {
                             print(error)
                             
                             self.notFoundLabel.alpha = 1
+                            self.activityIndecator.stopAnimating()
+                            self.activityIndecator.alpha = 0
                             
                         }
                         
@@ -57,10 +58,14 @@ class MainLoginViewController: UIViewController {
                             
                             //Save Phone to UserDefault :-
                             self.saveToUserDefult(phone:self.mobilePhoneNum)
-                            
+                         
                             
                             var vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController
                             vc.tableInfoModel = data
+                            
+                            
+                            self.activityIndecator.stopAnimating()
+                            self.activityIndecator.alpha = 0
                             
                             self.navigationController?.pushViewController(vc, animated: true)
                             
@@ -80,7 +85,24 @@ class MainLoginViewController: UIViewController {
             let borderWidth = CGFloat(1.0)
 
         
-        countryCode.layer.addBorder(edge: UIRectEdge.right, color: UIColor.lightGray, thickness: 1.0)
+        let lang = LanguageOperation.checkLanguage()
+            
+        switch lang{
+        
+        
+        
+        case .arabic:
+            countryCode.layer.addBorder(edge: UIRectEdge.left, color: UIColor.lightGray, thickness: 1.0)
+            
+        case .english:
+            countryCode.layer.addBorder(edge: UIRectEdge.right, color: UIColor.lightGray, thickness: 1.0)
+        default :
+            break
+        }
+            
+        countryCode.textAlignment = .center
+        
+        
         
 
         }
@@ -103,36 +125,25 @@ class MainLoginViewController: UIViewController {
         func saveToUserDefult(phone:String) {
             
             let defaults = UserDefaults.standard
-            defaults.set(phone, forKey: LoginViewController.PHONE_KEY)
+            defaults.set(phone, forKey: MainLoginViewController.PHONE_KEY)
             
             
         }
     
-    
 
-
-
-    
-    
-    
     @IBAction func loginBtn(_ sender: Any) {
         
-        
+        activityIndecator.startAnimating()
+        activityIndecator.alpha = 1
         mobilePhoneNum = "00\(countryCode.text!)\(phoneTextField.text!)"
-         print(mobilePhoneNum)
          if((phoneTextField.text!.isEmpty)){
              
              print("enter mobile")
          }
          else{
-            if(LanguageOperation.checkLanguage() == .arabic){
-                apiKey = "ar"
-            }
-            else{
-                apiKey = nil
-            }
+    
            
-             loginViewModel.login(phone: mobilePhoneNum, key: apiKey)
+            loginViewModel.fetchData(phone: mobilePhoneNum)
              phoneTextField.text = ""
              
          }

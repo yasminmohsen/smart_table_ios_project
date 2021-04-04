@@ -19,15 +19,23 @@ class ThirdScreenViewController: UIViewController {
         
         startBtn.layer.cornerRadius = 12
         
-        titleLabel.font = UIFont(name: CustomFonts.MyriadProBold.rawValue, size: 18)
-        
+
         titleLabel.textColor = Colors.getColor(type: .customGreen)[0]
+      /* titleLabel.font = UIFont(name: CustomFonts.MyriadProBold.rawValue, size: 18)
+
+       descriotionLabel.font = UIFont(name: CustomFonts.MyriadPro.rawValue, size: 18)
+      
+       */
         
-        descriotionLabel.font = UIFont(name: CustomFonts.MyriadPro.rawValue, size: 18)
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
         
-        descriotionLabel.textColor = Colors.getColor(type: .customGreen)[0]
+        leftSwipe.direction = .left
+            self.view.addGestureRecognizer(leftSwipe)
+
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
         
-        
+        rightSwipe.direction = .right
+            self.view.addGestureRecognizer(rightSwipe)
       
         pageControl.currentPageIndicatorTintColor = Colors.getColor(type: .customorange)[0]
         
@@ -35,5 +43,37 @@ class ThirdScreenViewController: UIViewController {
       
     }
     
-
+    @objc func swipe(gesture :UISwipeGestureRecognizer) {
+        let lang = LanguageOperation.checkLanguage()
+        let vc = storyboard?.instantiateViewController(identifier: "thirdVc") as! ThirdScreenViewController
+        switch gesture.direction {
+        case .right:
+            
+            switch lang {
+            case .english :
+                
+                self.navigationController?.popViewController(animated: true)
+            
+            default:
+                break
+            }
+            
+            
+        case .left:
+            
+            switch lang {
+            
+            case .arabic:
+                self.navigationController?.popViewController(animated: true)
+            default:
+                break
+            }
+            
+            
+            
+            
+        default:
+            break
+        }
+}
 }

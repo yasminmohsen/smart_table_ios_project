@@ -9,11 +9,11 @@ import UIKit
 import SideMenu
 class TableHomeViewController: UIViewController {
     
-    
+
+    @IBOutlet weak var teacher: UILabel!
     @IBOutlet weak var teacherName: UILabel!
-    
+    @IBOutlet weak var activityIndecator: UIActivityIndicatorView!
     @IBOutlet weak var connectedWith: UILabel!
-    
     @IBOutlet var segmentedBtnView: [UIView]!
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var dayStackView: UIStackView!
@@ -26,49 +26,69 @@ class TableHomeViewController: UIViewController {
     var mobilePhone :String!
     var apiKey :String?
     var classesNumber = [[ClassModel]]()
- 
-    
+    var day :String!
+    var daysArray = [String]()
+    var schoolNames = [String]()
+    let hi = "Hi".localized
+    let connected = "Connected with ".localized
+    let school = "school".localized
+    let teacherWord = "Teacher".localized
     override func viewDidLoad() {
         super.viewDidLoad()
         
         customUi()
       
-            
         bindingData()
         
         if(tableInfoModel == nil){
             callApi()
         }
      
+        else{
+            updateUi()
+            self.updateTableInContainer(index: 0)
+        }
             
         }
         
     
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarSegmentedBtn.selectedSegmentIndex = 1
+    }
+    
+    
     func customUi(){
-        CustomButton.customViewWithShadow(view: dayStackView)
-        dayStackView.layer.borderColor =  UIColor(red: 112/250, green: 112/250, blue: 112/250 ,alpha: 1.0).cgColor
+        CustomDesignView.customViewWithShadow(view: dayStackView)
+        dayStackView.layer.borderColor = UIColor(red: 112/250, green: 112/250, blue: 112/250 ,alpha: 1.0).cgColor
         dayStackView.layer.borderWidth = 0.2
-        dayStackView.layer.cornerRadius = 12
     
         schoolSegmentedBtn.setSegmentStyle()
         tabBarSegmentedBtn.setSegmentStyle()
         
-        
         for segView in segmentedBtnView{
-            CustomButton.customViewWithShadow(view: segView)
+            CustomDesignView.customViewWithShadow(view: segView)
             segView.layer.borderColor =  UIColor(red: 112/250, green: 112/250, blue: 112/250 ,alpha: 1.0).cgColor
-            segView.layer.cornerRadius = 12
+           
         }
     }
 
+    
+    
+    
+    
     @IBAction func schoolSegmentAction(_ sender: Any) {
         
      let index = schoolSegmentedBtn.selectedSegmentIndex
-        if(tableInfoModel != nil){
+        if(classesArray.count > 0){
             updateTableInContainer(index: index)
         }
        
     }
+    
+    
+    
     
     @IBAction func tabBarAction(_ sender: Any) {
         
@@ -89,11 +109,7 @@ class TableHomeViewController: UIViewController {
     
     
     func updateUi(){
-        var schoolNames = [String]()
-        let hi = "Hi".localized
-        let connected = "Connected with ".localized
-        let school = "school".localized
-        
+        teacher.text = teacherWord
         for obj in tableInfoModel {
           
             teacherName.text =  "\(hi) \(obj.teacher_nickname)"
@@ -101,18 +117,23 @@ class TableHomeViewController: UIViewController {
             schoolNames.append(obj.school_name)
             classesArray.append(MappingModel.converTableModelToClasses(obj))
             classesNumber.append(obj.classes)
+            day = obj.day
+            daysArray = obj.days
+            
             
         }
         schoolSegmentedBtn.removeAllSegments()
+        
         for (index,school) in schoolNames.enumerated()
        {
         
         schoolSegmentedBtn.insertSegment(withTitle: school, at: index, animated: false)
        }
         
+        
         schoolSegmentedBtn.selectedSegmentIndex = 0
         
-        connectedWith.text = "\(connected)\(schoolNames.count)\(school)"
+        connectedWith.text = "\(connected)\(schoolNames.count) \(school)"
         
     }
     
@@ -124,7 +145,7 @@ class TableHomeViewController: UIViewController {
         let classArrayObj = classesArray[index]
         let classNumberObj = classesNumber[index]
         let CVC = children.last as! ClassesTableViewController
-        CVC.updateUi(classArrayObj,classNumberObj)
+        CVC.updateUi(classArrayObj,classNumberObj,day: day , daysArray: daysArray)
         
     }
     
@@ -135,21 +156,23 @@ class TableHomeViewController: UIViewController {
         loginViewModel.bindLogingModel = {
             (error:String? , data:[TableInfoModel]?) ->() in
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 if let error = error {
                    // alert
                     print(error)
+                    
+                    self.activityIndecator.stopAnimating()
+                    self.activityIndecator.alpha = 0
                     
                 }
                 
                 
                 if let data = data {
-                    
-                    //Save Phone to UserDefault :-
-                    
                    self.tableInfoModel = data
                     self.updateUi()
                     self.updateTableInContainer(index: 0)
+                    self.activityIndecator.stopAnimating()
+                    self.activityIndecator.alpha = 0
                     
                 }
                 
@@ -161,11 +184,12 @@ class TableHomeViewController: UIViewController {
     
     
     func callApi(){
+        activityIndecator.startAnimating()
+        activityIndecator.alpha = 1
         let defaults = UserDefaults.standard
         mobilePhone = defaults.string(forKey: MainLoginViewController.PHONE_KEY)
-        //mobilePhone = "00201017670053"
         
-            loginViewModel.login(phone: mobilePhone, key: apiKey)
+        loginViewModel.fetchData(phone: mobilePhone)
         
     }
     
@@ -188,12 +212,8 @@ class TableHomeViewController: UIViewController {
         }
         
         menu.presentationStyle = .menuSlideIn
-        menu.view.layer.shadowColor =  UIColor(red: 0, green: 0, blue: 0 ,alpha: 0.5).cgColor
-        menu.view.layer.shadowOffset = CGSize(width: 3.0, height:3.0)
-        menu.view.layer.shadowOpacity = 1.0
-        menu.view.layer.shadowRadius = 3.0
-        menu.view.layer.borderWidth = 0.2
-        menu.view.layer.borderColor = UIColor(red: 0, green: 0, blue: 0 ,alpha: 0.16).cgColor
+    
+        CustomDesignView.customMenuShadowView(menu)
         
         present(menu, animated: true, completion: nil)
         

@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "Sun."; ObjectID = "05e-70-yJB"; */
+"05e-70-yJB.text" = "الأحد";
+
+/* Class = "UILabel"; text = "App Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her App Details you can add her App Details you can add her App Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her "; ObjectID = "8jr-Yb-4TF"; */
+"8jr-Yb-4TF.text" = "App Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her App Details you can add her App Details you can add her App Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her ";
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "A0e-if-aEu"; */
+"A0e-if-aEu.text" = "الإشعارات";
+
+/* Class = "UIButton"; normalTitle = "اللغة العربية"; ObjectID = "CHW-Nn-Nmd"; */
+"CHW-Nn-Nmd.normalTitle" = "English";
+
+/* Class = "UILabel"; text = "Mon."; ObjectID = "Idx-9T-lMu"; */
+"Idx-9T-lMu.text" = "الآثنين";
+
+/* Class = "UILabel"; text = "Smart Table App"; ObjectID = "TgF-Ls-1Nx"; */
+"TgF-Ls-1Nx.text" = "تطبيق الجدول الذكي";
+
+/* Class = "UILabel"; text = "Tues."; ObjectID = "U2r-AR-UKf"; */
+"U2r-AR-UKf.text" = "الثلاثاء";
+
+/* Class = "UILabel"; text = "Wed."; ObjectID = "UR3-Zf-UZA"; */
+"UR3-Zf-UZA.text" = "الأربعاء";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XXs-Mt-Lc2"; */
+"XXs-Mt-Lc2.text" = "معلم";
+
+/* Class = "UIButton"; normalTitle = "about app"; ObjectID = "bbQ-hc-5Zw"; */
+"bbQ-hc-5Zw.normalTitle" = "عن التطبيق";
+
+/* Class = "UILabel"; text = "Thur."; ObjectID = "nws-QF-7Gs"; */
+"nws-QF-7Gs.text" = "الخميس";
+
+/* Class = "UIButton"; normalTitle = "Rate app"; ObjectID = "qyG-gN-BxR"; */
+"qyG-gN-BxR.normalTitle" = "قيم التطبيق";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "scX-xq-EmI"; */
+"scX-xq-EmI.normalTitle" = "تسجيل الخروج";
+
+/* Class = "UILabel"; text = "D/#"; ObjectID = "siw-ct-Wqy"; */
+"siw-ct-Wqy.text" = "يوم/#";
+
+/* Class = "UIButton"; normalTitle = "Contact us"; ObjectID = "wnk-db-Y6b"; */
+"wnk-db-Y6b.normalTitle" = "تواصل معنا ";

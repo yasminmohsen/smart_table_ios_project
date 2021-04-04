@@ -10,6 +10,7 @@ import SwiftyJSON
 
 class LoginViewModel {
     
+    var apiKey :String?
     
     var bindLogingModel:(_ error:String?,_ data:[TableInfoModel]? )->()={erro,data in }
     
@@ -32,15 +33,23 @@ class LoginViewModel {
     
     
     
-    func login(phone:String,key:String?){
+    func fetchData(phone:String){
         
-        let apiService = ApIService(phone: phone)
+       let apiService = ApIService(phone: phone, type: "teacher-table")
+        
         let url = apiService.url
         if let  urlRequest = URL(string: url){
             let request = NSMutableURLRequest(url: urlRequest)
             
+            if(LanguageOperation.checkLanguage() == .arabic){
+                apiKey = "ar"
+            }
+            else{
+                apiKey = nil
+            }
             
-            if let keyValue = key{
+            
+            if let keyValue = apiKey{
                 
                 request.setValue(keyValue, forHTTPHeaderField: apiService.headerValue)
             }
@@ -76,6 +85,9 @@ class LoginViewModel {
                             let teacher_nickname = tableInfoObj["teacher_nickname"].string ?? ""
                             let teacher_assigned_coun = tableInfoObj["teacher_assigned_count"].string ?? ""
                             let teacherCellsArray =  tableInfoObj["teacher_cells"].array ?? nil
+                            let coloredDay = tableInfoObj["day"].string ?? ""
+                            let time = tableInfoObj["time"].string ?? ""
+                            let date = tableInfoObj["date"].string ?? ""
                             let days =  tableInfoObj["days"].array! ?? nil
                             let classes = tableInfoObj["classes"].array ?? nil
                             
@@ -85,7 +97,7 @@ class LoginViewModel {
                                     
                                     let day = teacherCellObj["day"].string ?? ""
                                     let class_number = teacherCellObj["class_number"].int ?? 0
-                                    let cell_text =  teacherCellObj["cell_text"].string ?? nil
+                                    let cell_text =  teacherCellObj["cell_text"].string ?? "_"
                                     
                                     var obj = TableCellModel(day: day, class_number: class_number, cell_text: cell_text)
                                     CellsModelArray.append(obj)
@@ -117,11 +129,13 @@ class LoginViewModel {
                                 
                             }
                             
-                            var tableObj = TableInfoModel(school_name: school_name, school_system: school_system, school_system_text: school_system_text, teacher_name: teacher_name, teacher_nickname: teacher_nickname, teacher_assigned_count: teacher_assigned_coun, teacher_cells: CellsModelArray, days: dayModelArray, classes: classesModelArray)
+                            var tableObj = TableInfoModel(school_name: school_name, school_system: school_system, school_system_text: school_system_text, teacher_name: teacher_name, teacher_nickname: teacher_nickname, teacher_assigned_count: teacher_assigned_coun, teacher_cells: CellsModelArray, days: dayModelArray, classes: classesModelArray,date: date ,time: time,day: coloredDay )
                             
                             tableModelArray.append(tableObj)
                             
                             CellsModelArray.removeAll()
+                            dayModelArray.removeAll()
+                            classesModelArray.removeAll()
                         }
                         
                         
