@@ -45,7 +45,19 @@ class MenueTableTableViewController: UITableViewController {
     
     
     @IBAction func logoutBtn(_ sender: Any) {
+        
+        UserDefaults.standard.setValue(nil, forKey: MainLoginViewController.PHONE_KEY)
+        
+        let launchScreen = UIStoryboard(name: "Main", bundle: nil)
+        var tableViewController = launchScreen.instantiateViewController(withIdentifier: "splashScreen") as! SplashViewController
+        
+        
     }
+    
+    
+    
+    
+    
     func restartApplication () {
      
         let launchScreen = UIStoryboard(name: "Main", bundle: nil)
