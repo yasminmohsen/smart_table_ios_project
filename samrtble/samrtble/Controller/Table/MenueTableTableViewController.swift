@@ -49,7 +49,9 @@ class MenueTableTableViewController: UITableViewController {
         UserDefaults.standard.setValue(nil, forKey: MainLoginViewController.PHONE_KEY)
         
         let launchScreen = UIStoryboard(name: "Main", bundle: nil)
-        var tableViewController = launchScreen.instantiateViewController(withIdentifier: "splashScreen") as! SplashViewController
+        var vc = launchScreen.instantiateViewController(withIdentifier: "loginVc") as! LoginViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
         
         
     }

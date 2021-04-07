@@ -30,6 +30,8 @@
 		<string>Myriad Pro Regular.ttf</string>
 		<string>Myriad Pro Semibold.ttf</string>
 		<string>Myriad Pro Bold.ttf</string>
+		<string>Myriad Pro Light.otf</string>
+		<string>Cairo-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

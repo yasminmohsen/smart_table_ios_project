@@ -12,188 +12,24 @@
         <array key="Myriad Pro Bold.ttf">
             <string>MyriadPro-Bold</string>
         </array>
+        <array key="Myriad Pro Light.otf">
+            <string>MyriadPro-Light</string>
+        </array>
         <array key="Myriad Pro Regular.ttf">
             <string>MyriadPro-Regular</string>
         </array>
     </customFonts>
     <scenes>
         <!--Login View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="samrtble" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="qNJ-0h-AgU">
-                                <rect key="frame" x="43" y="124" width="289" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="j5l-PM-88U"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pop-na-xga">
-                                <rect key="frame" x="16" y="317" width="343" height="50"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Enter your phone number to login">
-                                        <attributes>
-                                            <color key="NSColor" red="0.35574526141609014" green="0.59253965035658795" blue="0.6221519208917714" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="25" name="MyriadPro-Bold"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAp-Kd-7zk">
-                                <rect key="frame" x="16" y="398" width="343" height="50"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="fillProportionally" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGu-iY-yf5">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcv-Yh-ez9">
-                                                <rect key="frame" x="0.0" y="0.0" width="22" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="22" id="rG9-d3-8UI"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="966" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vYX-Pr-Z0g">
-                                                <rect key="frame" x="22" y="0.0" width="39" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="39" id="DAh-Ej-S2C"/>
-                                                </constraints>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                <connections>
-                                                    <action selector="countryCodeChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="AT5-8M-2YJ"/>
-                                                    <action selector="touchCoddCountry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E6c-8C-Ort"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1mQ-7r-Dhm">
-                                                <rect key="frame" x="61" y="0.0" width="282" height="50"/>
-                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="laU-Yh-kUs"/>
-                                                </constraints>
-                                                <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
-                                            </textField>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="1mQ-7r-Dhm" secondAttribute="trailing" id="5p6-7s-KPo"/>
-                                            <constraint firstItem="Gcv-Yh-ez9" firstAttribute="leading" secondItem="IGu-iY-yf5" secondAttribute="leading" id="RaO-LI-GUW"/>
-                                            <constraint firstItem="vYX-Pr-Z0g" firstAttribute="leading" secondItem="Gcv-Yh-ez9" secondAttribute="trailing" id="dFW-bv-oSW"/>
-                                            <constraint firstItem="Gcv-Yh-ez9" firstAttribute="top" secondItem="IGu-iY-yf5" secondAttribute="top" id="gYR-QB-nTW"/>
-                                            <constraint firstItem="1mQ-7r-Dhm" firstAttribute="leading" secondItem="vYX-Pr-Z0g" secondAttribute="trailing" id="jAT-1q-ThV"/>
-                                            <constraint firstItem="1mQ-7r-Dhm" firstAttribute="top" secondItem="IGu-iY-yf5" secondAttribute="top" id="mog-iP-mKF"/>
-                                            <constraint firstAttribute="bottom" secondItem="1mQ-7r-Dhm" secondAttribute="bottom" id="pbo-nS-FOD"/>
-                                            <constraint firstItem="1mQ-7r-Dhm" firstAttribute="leading" secondItem="vYX-Pr-Z0g" secondAttribute="trailing" id="zXt-YE-tvG"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <constraints>
-                                    <constraint firstItem="IGu-iY-yf5" firstAttribute="leading" secondItem="UAp-Kd-7zk" secondAttribute="leading" id="5hW-6H-dh0"/>
-                                    <constraint firstItem="IGu-iY-yf5" firstAttribute="top" secondItem="UAp-Kd-7zk" secondAttribute="top" id="I7t-n7-ae6"/>
-                                    <constraint firstAttribute="trailing" secondItem="IGu-iY-yf5" secondAttribute="trailing" id="PoZ-XS-H9r"/>
-                                    <constraint firstAttribute="bottom" secondItem="IGu-iY-yf5" secondAttribute="bottom" id="dcM-dH-h8Q"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omv-h1-w37">
-                                <rect key="frame" x="26" y="459" width="323" height="16"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Not found number">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="16" name="MyriadPro-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OMs-uC-EWi" customClass="GradientButton" customModule="samrtble" customModuleProvider="target">
-                                <rect key="frame" x="16" y="508" width="343" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0Kg-0d-AFx"/>
-                                </constraints>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Login">
-                                            <attributes>
-                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="16" name="MyriadPro-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                            </button>
-                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="gradient_down" translatesAutoresizingMaskIntoConstraints="NO" id="MwG-oG-4UV">
-                                <rect key="frame" x="0.0" y="580" width="375" height="232"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UAp-Kd-7zk" secondAttribute="trailing" constant="16" id="C4F-75-UTd"/>
-                            <constraint firstItem="qNJ-0h-AgU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="43" id="DWn-vX-Rh0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Omv-h1-w37" secondAttribute="trailing" constant="26" id="Dif-X8-wmQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OMs-uC-EWi" secondAttribute="trailing" constant="16" id="JsI-Kh-SJI"/>
-                            <constraint firstItem="pop-na-xga" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="K1e-2h-fTG"/>
-                            <constraint firstItem="UAp-Kd-7zk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Nak-ip-0st"/>
-                            <constraint firstItem="qNJ-0h-AgU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qxr-ep-rjz"/>
-                            <constraint firstItem="Omv-h1-w37" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="Wqc-I2-aRs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qNJ-0h-AgU" secondAttribute="trailing" constant="43" id="ZDQ-35-jnj"/>
-                            <constraint firstItem="UAp-Kd-7zk" firstAttribute="top" secondItem="pop-na-xga" secondAttribute="bottom" constant="31" id="aRB-d9-x4t"/>
-                            <constraint firstItem="qNJ-0h-AgU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="agD-vc-KO3"/>
-                            <constraint firstItem="OMs-uC-EWi" firstAttribute="top" secondItem="Omv-h1-w37" secondAttribute="bottom" constant="33" id="baK-0Z-xhC"/>
-                            <constraint firstAttribute="trailing" secondItem="pop-na-xga" secondAttribute="trailing" constant="16" id="bbp-mz-MOI"/>
-                            <constraint firstItem="Omv-h1-w37" firstAttribute="top" secondItem="UAp-Kd-7zk" secondAttribute="bottom" constant="11" id="iwX-yh-Ugf"/>
-                            <constraint firstItem="pop-na-xga" firstAttribute="top" secondItem="qNJ-0h-AgU" secondAttribute="bottom" constant="43" id="lQw-3g-4YT"/>
-                            <constraint firstItem="OMs-uC-EWi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="nlX-0E-mxA"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="NTe-bB-biA">
-                        <leftBarButtonItems>
-                            <barButtonItem id="XxJ-Lw-fOS"/>
-                            <barButtonItem style="plain" id="Zzb-9J-KgO">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="cFa-FO-eYe">
-                                    <rect key="frame" x="16" y="7" width="46" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Button"/>
-                                </button>
-                            </barButtonItem>
-                        </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" title="عربي" style="done" id="w7h-tU-Ucy">
-                            <color key="tintColor" red="0.70588235290000001" green="0.57647058819999997" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="stackViewPhone" destination="IGu-iY-yf5" id="A3b-cp-Bn1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3967" y="701"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="IHs-Ie-CmQ">
             <objects>
-                <viewController id="vwl-RE-RFH" sceneMemberID="viewController">
+                <viewController restorationIdentifier="loginVc" storyboardIdentifier="loginVc" id="vwl-RE-RFH" customClass="LoginViewController" customModule="samrtble" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DUp-VH-pZe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEQ-HI-WFH">
-                                <rect key="frame" x="0.0" y="44" width="375" height="552"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVu-R2-0gA">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
@@ -214,7 +50,7 @@
                                 </constraints>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="gradient_down" translatesAutoresizingMaskIntoConstraints="NO" id="9ZV-7u-Igf">
-                                <rect key="frame" x="0.0" y="606" width="375" height="206"/>
+                                <rect key="frame" x="0.0" y="552" width="375" height="206"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EJk-42-VsG"/>
@@ -318,26 +154,19 @@
                                 <rect key="frame" x="47" y="170" width="281" height="213"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Class schedules" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQe-Xf-9ew">
-                                <rect key="frame" x="125.66666666666669" y="463" width="124" height="18"/>
-                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="18"/>
+                                <rect key="frame" x="108.33333333333333" y="463" width="158.33333333333337" height="23"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.58431372549019611" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-FQ-DuE">
-                                <rect key="frame" x="16" y="502" width="343" height="54"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="The application helps the teacher in following up the lessons and timings related to each school he works in">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="18" name="MyriadPro-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The application helps the teacher in following up the lessons and timings related to each school he works in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax6-FQ-DuE">
+                                <rect key="frame" x="16" y="507" width="343" height="54"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="iMi-6O-j5Q">
-                                <rect key="frame" x="16" y="612" width="343" height="28"/>
+                                <rect key="frame" x="16" y="617" width="343" height="28"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.92156862745098034" green="0.6705882352941176" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
@@ -420,19 +249,19 @@
                                 <rect key="frame" x="47" y="170" width="281" height="211"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Notificatios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odu-Kg-AKF">
-                                <rect key="frame" x="141" y="461" width="93" height="18"/>
-                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="18"/>
+                                <rect key="frame" x="128.66666666666666" y="461" width="118" height="23"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.58431372550000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The application sends notifications to the teacher, including reminders of class dates, cancellation of classes, etc." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmo-GH-RMD">
-                                <rect key="frame" x="16" y="500" width="343" height="54"/>
+                                <rect key="frame" x="16" y="505" width="343" height="54"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
-                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="CF0-l4-aVS">
-                                <rect key="frame" x="16" y="610" width="343" height="28"/>
+                                <rect key="frame" x="16" y="615" width="343" height="28"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray2Color"/>
                                 <color key="currentPageIndicatorTintColor" red="0.92156862750000001" green="0.6705882353" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
@@ -486,48 +315,35 @@
                                                 <rect key="frame" x="47" y="142" width="281" height="211"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgG-kJ-DRL">
-                                                <rect key="frame" x="16" y="433" width="343" height="23"/>
+                                                <rect key="frame" x="16" y="433" width="343" height="27"/>
                                                 <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="23"/>
                                                 <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="highlightedColor" red="0.0" green="0.58431372550000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivP-ZC-Zb8">
-                                                <rect key="frame" x="16" y="477" width="343" height="54"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment>
-                                                        <string key="content">If you have any problem, the application provides you with special data to contact us
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivP-ZC-Zb8">
+                                                <rect key="frame" x="16" y="481" width="343" height="84"/>
+                                                <string key="text">If you have any problem, the application provides you with special data to contact us
  Do not hesitate to do so</string>
-                                                        <attributes>
-                                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="18" name="MyriadPro-Regular"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
+                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="HTk-Bj-WJu">
-                                                <rect key="frame" x="16" y="587" width="343" height="28"/>
+                                                <rect key="frame" x="16" y="621" width="343" height="28"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="pageIndicatorTintColor" systemColor="opaqueSeparatorColor"/>
                                                 <color key="currentPageIndicatorTintColor" red="0.92156862750000001" green="0.6705882353" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                             </pageControl>
-                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D40-gx-vc2" customClass="GradientButton" customModule="samrtble" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="657" width="343" height="50"/>
+                                            <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D40-gx-vc2" customClass="GradientButton" customModule="samrtble" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="691" width="343" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Q3k-34-YBj"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="25"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="Start">
-                                                            <attributes>
-                                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <font key="NSFont" metaFont="system" size="21"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <state key="normal" title="START">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="vwl-RE-RFH" kind="push" id="G0P-OC-Xxg"/>
@@ -646,11 +462,6 @@
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                                    <connections>
-                                                                        <action selector="countryCodeChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="85c-KC-6CS"/>
-                                                                        <action selector="touchCoddCountry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PH7-hC-wXE"/>
-                                                                        <outlet property="delegate" destination="BYZ-38-t0r" id="VF8-Ch-Fz0"/>
-                                                                    </connections>
                                                                 </textField>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OrZ-Li-OAa">
                                                                     <rect key="frame" x="61" y="0.0" width="282" height="50"/>
@@ -757,7 +568,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93o-7r-Hfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-239" y="792"/>
+            <point key="canvasLocation" x="1377" y="832"/>
         </scene>
         <!--Main Login View Controller-->
         <scene sceneID="rOE-9h-oUI">
@@ -775,20 +586,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="leL-1f-e0v">
                                 <rect key="frame" x="43" y="40.000000000000014" width="289" height="219.33333333333337"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjS-GV-IxA">
-                                <rect key="frame" x="16" y="289.33333333333331" width="343" height="50"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Enter your phone number to login">
-                                        <attributes>
-                                            <color key="NSColor" red="0.35574526141609014" green="0.59253965035658795" blue="0.6221519208917714" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="25" name="MyriadPro-Bold"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Enter your phone number to login" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjS-GV-IxA">
+                                <rect key="frame" x="16" y="289.33333333333331" width="343" height="58.333333333333314"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="25"/>
+                                <color key="textColor" red="0.35574526141609014" green="0.59253965035658795" blue="0.6221519208917714" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nU-3P-3TT">
-                                <rect key="frame" x="16" y="369.33333333333331" width="343" height="50"/>
+                                <rect key="frame" x="16" y="377.66666666666669" width="343" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="fillProportionally" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jpA-qs-dex">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
@@ -799,7 +604,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="22" id="MJk-Yk-Vb1"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="20"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -810,12 +615,10 @@
                                                     <constraint firstAttribute="width" constant="39" id="ENW-5h-YE3"/>
                                                 </constraints>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
                                                     <action selector="countryCodeChanged:" destination="b27-jK-SUG" eventType="editingChanged" id="KlK-Ll-in7"/>
-                                                    <action selector="touchCoddCountry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="stm-EH-RXw"/>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nzo-9y-LtB"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1r-C1-FDB">
@@ -826,7 +629,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="TvS-nN-z4C"/>
                                                 </constraints>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                                             </textField>
                                         </subviews>
@@ -851,16 +654,17 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not found number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTJ-o7-vYD">
-                                <rect key="frame" x="42" y="433.33333333333331" width="291" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="42" y="441.66666666666669" width="291" height="18.666666666666686"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Light" family="Myriad Pro" pointSize="16"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92H-WU-iln" customClass="GradientButton" customModule="samrtble" customModuleProvider="target">
-                                <rect key="frame" x="16" y="478.66666666666669" width="343" height="50.000000000000057"/>
+                                <rect key="frame" x="16" y="485.33333333333331" width="343" height="49.999999999999943"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="VF8-79-UIL"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="25"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -936,20 +740,17 @@
     </scenes>
     <designables>
         <designable name="92H-WU-iln">
-            <size key="intrinsicContentSize" width="38" height="30"/>
+            <size key="intrinsicContentSize" width="63" height="42"/>
         </designable>
         <designable name="D40-gx-vc2">
-            <size key="intrinsicContentSize" width="45" height="37"/>
+            <size key="intrinsicContentSize" width="76" height="42"/>
         </designable>
         <designable name="Mcb-Ne-FFY">
             <size key="intrinsicContentSize" width="38" height="30"/>
         </designable>
-        <designable name="OMs-uC-EWi">
-            <size key="intrinsicContentSize" width="41" height="28"/>
-        </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="rG4-6E-N0l"/>
+        <segue reference="wq0-mm-B1i"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FourthScreen" width="302.66665649414062" height="210.66667175292969"/>

@@ -34,7 +34,9 @@ class MainLoginViewController: UIViewController {
         phoneView.layer.borderColor = UIColor.lightGray.cgColor
         phoneTextField.delegate = self
         countryCode.delegate = self
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
+        view.addGestureRecognizer(tap)
     
         // MARK: Binding :-
                 
@@ -79,6 +81,9 @@ class MainLoginViewController: UIViewController {
        
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     override func viewDidLayoutSubviews() {
      //Creates the bottom border
            let borderBottom = CALayer()
@@ -168,6 +173,8 @@ extension MainLoginViewController : UITextFieldDelegate{
             
         }
     }
+    
+   
 }
 
 

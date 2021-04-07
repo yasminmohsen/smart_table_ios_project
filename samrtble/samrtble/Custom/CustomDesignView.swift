@@ -1,0 +1,55 @@
+//
+//  CustomDesignView.swift
+//  samrtble
+//
+//  Created by Yasmin Mohsen on 03/04/2021.
+//
+
+import Foundation
+import UIKit
+import SideMenu
+class CustomDesignView {
+    
+    static func customMenuShadowView (_ menu :SideMenuNavigationController){
+        
+        
+//                menu.view.layer.shadowColor =  UIColor(red: 0, green: 0, blue: 0 ,alpha: 0.5).cgColor
+//                menu.view.layer.shadowOffset = CGSize(width: 3.0, height:3.0)
+//                menu.view.layer.shadowOpacity = 1.0
+//                menu.view.layer.shadowRadius = 3.0
+//                menu.view.layer.borderWidth = 0.2
+//                menu.view.layer.borderColor = UIColor(red: 0, green: 0, blue: 0 ,alpha: 0.16).cgColor
+    }
+    
+    
+    
+    static func customViewWithShadow ( view:UIView){
+        
+       
+       view.layer.cornerRadius = 12
+        view.clipsToBounds = false
+     
+      view.layer.shadowColor =  UIColor(red: 0, green: 0, blue: 0 ,alpha: 0.16).cgColor
+        view.layer.shadowOffset = CGSize(width: 0.0, height:3.0)
+        view.layer.shadowOpacity = 1.0
+        view.layer.shadowRadius = 3.0
+ 
+        
+    }
+    
+    
+    static func customTextView ( view:UIView){
+        
+       
+       view.layer.cornerRadius = 12
+        view.clipsToBounds = true
+     
+        view.layer.borderColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0).cgColor
+        view.layer.borderWidth = 0.2
+        
+    }
+    
+    
+    
+    
+}
