@@ -8,6 +8,7 @@
 import UIKit
 import MessageUI
 class ContactUsViewController: UIViewController ,UITextViewDelegate,UITextFieldDelegate{
+    @IBOutlet weak var backBtn: UIButton!
     
     @IBOutlet weak var sendBtn: GradientButton!
     
@@ -27,17 +28,27 @@ class ContactUsViewController: UIViewController ,UITextViewDelegate,UITextFieldD
         let lang = LanguageOperation.checkLanguage()
         if(lang == .arabic){
             contentTextArea.textAlignment = .right
+            backBtn.setImage(UIImage(named: "left-arrow ")?.flippedImage(), for: .normal)
         }
         else{
             contentTextArea.textAlignment = .left
+            backBtn.setImage(UIImage(named: "left-arrow "), for: .normal)
         }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
         view.addGestureRecognizer(tap)
+    
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.backItem?.title = ""
+        
+        
     }
     
-    
+    @objc func back(sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated:true)
+    }
+
     // MARK: KeyBoardDismiss :-
     
     

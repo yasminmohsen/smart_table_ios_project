@@ -394,7 +394,6 @@
         <!--Table View Controller-->
         <scene sceneID="mQO-0Z-ZZ8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="93o-7r-Hfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="vHE-Sl-zp2" sceneMemberID="viewController">
                     <tableView key="view" autoresizesSubviews="NO" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" contentViewInsetsToSafeArea="NO" id="oyb-n3-Yaw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -555,6 +554,7 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93o-7r-Hfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1377" y="832"/>
         </scene>
