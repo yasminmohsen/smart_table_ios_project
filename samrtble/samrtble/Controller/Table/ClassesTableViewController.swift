@@ -66,8 +66,6 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
     }
     
 
-    
-    
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, cellForItemAt indexPath: IndexPath) -> Cell? {
       
                 let cell = spreadsheetView.dequeueReusableCell(withReuseIdentifier: String(describing: TableCell.self), for: indexPath) as! TableCell
@@ -129,27 +127,17 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
     
     
     func customUi(){
-        
-       
+ 
         for i in spreedSheetArray{
-            i.register(TableCell.self, forCellWithReuseIdentifier: String(describing: TableCell.self))
             i.delegate = self
             i.dataSource = self
-
-            i.bounces = false
-            i.isScrollEnabled = false
-            i.layer.masksToBounds = false
-            i.backgroundView?.layer.cornerRadius = 12
-            i.clipsToBounds = true
-            i.layer.cornerRadius = 12
-            i.gridStyle = .none
-            
+            CustomDesignView.customSpreadSheetView(i)
+           
             for v in embededViewCollection {
                 
                 CustomDesignView.customViewWithShadow(view: v)
               
             }
-           
         }
 
     }
@@ -165,12 +153,7 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
         for obj in spreedSheetArray{
             obj.reloadData()
         }
-        
-        
-        
-        
-        
-        
+   
     }
     
     

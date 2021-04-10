@@ -21,11 +21,20 @@ class MenueTableTableViewController: UITableViewController {
     
     
     @IBAction func contactUsBtn(_ sender: Any) {
+        
+        let vc = self.storyboard?.instantiateViewController(identifier: "contactUsVc") as! ContactUsViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     
     
     @IBAction func rateUsBtn(_ sender: Any) {
+        var appId = ""
+        if let url = URL(string: "itms-apps://apple.com/app/\(appId)") {
+            UIApplication.shared.open(url)
+        }
     }
     
     

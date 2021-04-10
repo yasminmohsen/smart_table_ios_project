@@ -1,36 +1,48 @@
 
-/* Class = "UITextField"; text = "Enter your Phone Number"; ObjectID = "1mQ-7r-Dhm"; */
-"1mQ-7r-Dhm.text" = "أدخل رقم الهاتف";
+/* Class = "UITextField"; text = "966"; ObjectID = "1fx-A6-8sW"; */
+"1fx-A6-8sW.text" = "966";
 
-/* Class = "UILabel"; text = "Teacher Name :"; ObjectID = "48g-dO-ZmC"; */
-"48g-dO-ZmC.text" = "أسم المعلم:";
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "92H-WU-iln"; */
+"92H-WU-iln.normalTitle" = "تسجيل الدخول";
 
-/* Class = "UILabel"; text = "School Name :"; ObjectID = "D2s-5U-qCQ"; */
-"D2s-5U-qCQ.text" = "أسم المدرسة:";
+/* Class = "UILabel"; text = "The application helps the teacher in following up the lessons and timings related to each school he works in"; ObjectID = "Ax6-FQ-DuE"; */
+"Ax6-FQ-DuE.text" = "يساعد التطبيق المعلم في متابعة الدروس والتوقيتات الخاصة بكل مدرسة يعمل بها";
 
-/* Class = "UIBarButtonItem"; title = "Notifications"; ObjectID = "MBo-xF-h4T"; */
-"MBo-xF-h4T.title" = "الإشعارات";
+/* Class = "UIButton"; normalTitle = "START"; ObjectID = "D40-gx-vc2"; */
+"D40-gx-vc2.normalTitle" = "ابدأ";
 
-/* Class = "UIButton"; normalTitle = "School Name"; ObjectID = "RjP-SF-Yjf"; */
-"RjP-SF-Yjf.normalTitle" = "إسم المدرسه";
+/* Class = "UITextField"; text = "966"; ObjectID = "IRh-yd-lgs"; */
+"IRh-yd-lgs.text" = "966";
 
-/* Class = "UILabel"; text = "Yasmin"; ObjectID = "TmF-Wa-LzK"; */
-"TmF-Wa-LzK.text" = "";
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Mcb-Ne-FFY"; */
+"Mcb-Ne-FFY.normalTitle" = "تسجيل الدخول";
 
-/* Class = "UILabel"; text = "School List :"; ObjectID = "b4i-6H-oSh"; */
-"b4i-6H-oSh.text" = "قائمة المدارس :";
+/* Class = "UILabel"; text = "Enter your phone number to login"; ObjectID = "MjS-GV-IxA"; */
+"MjS-GV-IxA.text" = "أدخل رقم الجوال لتسجيل الدخول";
 
-/* Class = "UILabel"; text = "label"; ObjectID = "jhO-Tz-87M"; */
-"jhO-Tz-87M.text" = "";
+/* Class = "UILabel"; text = "Notificatios"; ObjectID = "Odu-Kg-AKF"; */
+"Odu-Kg-AKF.text" = "الإشعارات";
 
-/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "km8-l3-KxK"; */
-"km8-l3-KxK.normalTitle" = "تسجيل الدخول";
+/* Class = "UILabel"; text = "Contact Us"; ObjectID = "TgG-kJ-DRL"; */
+"TgG-kJ-DRL.text" = "تواصل معنا";
 
-/* Class = "UIBarButtonItem"; title = "Logout"; ObjectID = "tjX-8f-63w"; */
-"tjX-8f-63w.title" = "تسجيل الخروج";
+/* Class = "UILabel"; text = "Not found Number"; ObjectID = "Xfw-Yb-9QA"; */
+"Xfw-Yb-9QA.text" = "رقم غير موجود";
 
-/* Class = "UITextField"; placeholder = "+20"; ObjectID = "vYX-Pr-Z0g"; */
-"vYX-Pr-Z0g.placeholder" = "20";
+/* Class = "UILabel"; text = "Not found number"; ObjectID = "fTJ-o7-vYD"; */
+"fTJ-o7-vYD.text" = "رقم غير موجود";
 
-/* Class = "UIBarButtonItem"; title = "عربي"; ObjectID = "w7h-tU-Ucy"; */
-"w7h-tU-Ucy.title" = "English";
+/* Class = "UILabel"; text = "Class schedules"; ObjectID = "hQe-Xf-9ew"; */
+"hQe-Xf-9ew.text" = "جداول الحصص";
+
+/* Class = "UILabel"; text = "If you have any problem, the application provides you with special data to contact us\n Do not hesitate to do so"; ObjectID = "ivP-ZC-Zb8"; */
+"ivP-ZC-Zb8.text" = "إذا كانت لديك أي مشكلة ، فإن التطبيق يوفر لك بيانات خاصة للاتصال بنا ، لا تتردد في القيام بذلك";
+
+/* Class = "UILabel"; text = "The application sends notifications to the teacher, including reminders of class dates, cancellation of classes, etc."; ObjectID = "jmo-GH-RMD"; */
+"jmo-GH-RMD.text" = "يرسل التطبيق إشعارات إلى المعلم ، بما في ذلك التذكيرات بمواعيد الحصص وإلغاء الفصول وما إلى ذلك.";
+
+/* Class = "UILabel"; text = "+"; ObjectID = "kag-9L-Rc3"; */
+"kag-9L-Rc3.text" = "+";
+
+/* Class = "UILabel"; text = "+"; ObjectID = "ppI-xd-CET"; */
+"ppI-xd-CET.text" = "+";

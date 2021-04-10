@@ -36,6 +36,19 @@ class TableHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+            
+        }
+        
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+        tabBarSegmentedBtn.selectedSegmentIndex = 1
+        schoolNames.removeAll()
+        daysArray.removeAll()
+        
         customUi()
       
         bindingData()
@@ -48,14 +61,7 @@ class TableHomeViewController: UIViewController {
             updateUi()
             self.updateTableInContainer(index: 0)
         }
-            
-        }
         
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        tabBarSegmentedBtn.selectedSegmentIndex = 1
     }
     
     
@@ -74,6 +80,11 @@ class TableHomeViewController: UIViewController {
         }
     }
 
+    
+    
+    
+    
+    
     
     
     
@@ -156,9 +167,12 @@ class TableHomeViewController: UIViewController {
         loginViewModel.bindLogingModel = {
             (error:String? , data:[TableInfoModel]?) ->() in
             
-            DispatchQueue.main.async { [self] in
+            DispatchQueue.main.async { [weak self] in
+                
+                guard let self = self else {return}
+                
                 if let error = error {
-                   // alert
+                    Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
                     print(error)
                     
                     self.activityIndecator.stopAnimating()

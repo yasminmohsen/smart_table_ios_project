@@ -9,6 +9,7 @@ import UIKit
 
 class FirstScreenViewController: UIViewController {
 
+    @IBOutlet weak var skipBtn: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -18,13 +19,10 @@ class FirstScreenViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
         
-//    titleLabel.font = UIFont(name: CustomFonts.MyriadProBold.rawValue, size: 18)
-//        
+   
         titleLabel.textColor = Colors.getColor(type: .customGreen)[0]
-//        
-//        descriotionLabel.font = UIFont(name: CustomFonts.MyriadPro.rawValue, size: 18)
+        skipBtn.setTitle("Skip".localized, for: .normal)
         
-//        descriotionLabel.textColor = Colors.getColor(type: .customGreen)[0]
         
         
         

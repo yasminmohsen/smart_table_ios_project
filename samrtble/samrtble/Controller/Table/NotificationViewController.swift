@@ -7,14 +7,95 @@
 
 import UIKit
 
-class NotificationViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
-
+class NotificationViewController: UIViewController {
+    @IBOutlet weak var noNotificationView: UIView!
+    
     @IBOutlet weak var activityIndecator: UIActivityIndicatorView!
     
     @IBOutlet weak var tableView: UITableView!
     var notificationTableResult = [ResultNotification]()
     let notificationViewModel = NotificationViewModel()
+    
 
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let refreshControl = UIRefreshControl()
+       refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+
+        tableView.refreshControl = refreshControl
+        tableView.delegate = self
+        tableView.dataSource = self
+        activityIndecator.alpha = 1
+        activityIndecator.startAnimating()
+        notificationViewModel.fetchData()
+        
+        notificationViewModel.bindNotificationModel = { (error:String? , data:[ResultNotification]?) ->() in
+            
+            
+            DispatchQueue.main.async {[weak self] in
+                
+                guard let self = self else {return}
+                
+                if let error = error {
+                    
+                    
+                    print(error)
+                    self.activityIndecator.startAnimating()
+                }
+                
+                if let data = data {
+                    
+                    self.activityIndecator.stopAnimating()
+                    self.activityIndecator.alpha = 0
+                    self.notificationTableResult = data
+                    if(self.notificationTableResult.count == 0){
+                        self.noNotificationView.alpha = 1
+                        
+                    }
+                    else{
+                        self.noNotificationView.alpha = 0
+                    }
+                    self.tableView.reloadData()
+                    
+                    refreshControl.endRefreshing()
+                    
+                }
+            }
+
+            
+        }
+   
+    }
+    
+    
+    
+    
+    @objc func refreshTable (){
+        notificationTableResult.removeAll()
+        notificationViewModel.fetchData()
+     
+    }
+    
+   
+    @IBAction func segmentedBtnAction(_ sender: UISegmentedControl) {
+        
+        if (sender.selectedSegmentIndex == 1 ){
+            
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+    }
+    
+    
+}
+
+
+extension NotificationViewController : UITableViewDelegate,UITableViewDataSource{
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
@@ -61,13 +142,13 @@ class NotificationViewController: UIViewController ,UITableViewDelegate,UITableV
 
 
     
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = UIColor.black
-        let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = UIColor.black
-        header.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-    }
-    
+//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//        view.tintColor = UIColor.black
+//        let header = view as! UITableViewHeaderFooterView
+//        header.textLabel?.textColor = UIColor.black
+//        header.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+//    }
+//
 
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -81,71 +162,6 @@ class NotificationViewController: UIViewController ,UITableViewDelegate,UITableV
 
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let refreshControl = UIRefreshControl()
-       refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
-
-        tableView.refreshControl = refreshControl
-        tableView.delegate = self
-        tableView.dataSource = self
-        activityIndecator.alpha = 1
-        activityIndecator.startAnimating()
-        notificationViewModel.fetchData()
-        
-        notificationViewModel.bindNotificationModel = { (error:String? , data:[ResultNotification]?) ->() in
-            
-            
-            DispatchQueue.main.async {[self] in
-                
-                if let error = error {
-                    
-                    
-                    print(error)
-                    activityIndecator.startAnimating()
-                }
-                
-                if let data = data {
-                    
-                    activityIndecator.stopAnimating()
-                    activityIndecator.alpha = 0
-                    notificationTableResult = data
-                    
-                    tableView.reloadData()
-                    
-                    refreshControl.endRefreshing()
-                    
-                }
-                
-                
-                
-            }
-
-            
-        }
-   
-    }
-    
-    
-    
-    
-    @objc func refreshTable (){
-        notificationTableResult.removeAll()
-        notificationViewModel.fetchData()
-     
-    }
-    
-   
-    @IBAction func segmentedBtnAction(_ sender: UISegmentedControl) {
-        
-        if (sender.selectedSegmentIndex == 1 ){
-            
-            self.navigationController?.popViewController(animated: true)
-        }
-        
-    }
     
     
 }

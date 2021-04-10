@@ -120,7 +120,6 @@
                                                             </state>
                                                             <connections>
                                                                 <action selector="contactUsBtn:" destination="zsj-DK-ks8" eventType="touchUpInside" id="BbG-Ct-mTT"/>
-                                                                <segue destination="7DP-YJ-7gb" kind="push" id="V19-Zi-iNg"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -194,8 +193,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GnJ-fv-Hev">
                                                     <rect key="frame" x="290" y="10" width="110" height="31"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_info_24px" translatesAutoresizingMaskIntoConstraints="NO" id="9yy-5t-2MY">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe" translatesAutoresizingMaskIntoConstraints="NO" id="9yy-5t-2MY">
                                                             <rect key="frame" x="0.0" y="0.0" width="18.5" height="31"/>
+                                                            <color key="tintColor" red="0.92156862750000001" green="0.6705882353" blue="0.1764705882" alpha="0.98837959340000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="18.5" id="2ZL-nX-U16"/>
+                                                                <constraint firstAttribute="height" constant="31" id="2rE-eR-frD"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHW-Nn-Nmd">
                                                             <rect key="frame" x="27" y="0.0" width="83" height="31"/>
@@ -211,8 +215,11 @@
                                                     <constraints>
                                                         <constraint firstItem="9yy-5t-2MY" firstAttribute="leading" secondItem="GnJ-fv-Hev" secondAttribute="leading" id="9vf-Kx-10u"/>
                                                         <constraint firstAttribute="width" constant="110" id="FbP-aJ-J3G"/>
+                                                        <constraint firstAttribute="bottom" secondItem="CHW-Nn-Nmd" secondAttribute="bottom" id="IDs-ZD-4AY"/>
                                                         <constraint firstItem="9yy-5t-2MY" firstAttribute="top" secondItem="GnJ-fv-Hev" secondAttribute="top" id="eA4-6W-WgT"/>
                                                         <constraint firstAttribute="bottom" secondItem="9yy-5t-2MY" secondAttribute="bottom" id="nrb-fj-wOk"/>
+                                                        <constraint firstAttribute="trailing" secondItem="CHW-Nn-Nmd" secondAttribute="trailing" id="sAo-Ml-i33"/>
+                                                        <constraint firstItem="CHW-Nn-Nmd" firstAttribute="top" secondItem="GnJ-fv-Hev" secondAttribute="top" id="yEr-Wh-MJe"/>
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
@@ -315,8 +322,8 @@
                                     <action selector="minueAction:" destination="0ff-1h-SWx" eventType="touchUpInside" id="TXa-5H-GvD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Ahmed Ali" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZ0-2H-VFp">
-                                <rect key="frame" x="149" y="84" width="116" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZ0-2H-VFp">
+                                <rect key="frame" x="195" y="84" width="24.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="20"/>
                                 <color key="textColor" red="0.15686274509803921" green="0.62352941176470589" blue="0.6588235294117647" alpha="0.98837959340076564" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -327,7 +334,7 @@
                                 <color key="textColor" red="0.92156862745098034" green="0.6705882352941176" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected with 2 school" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa9-dq-kJ9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected with 0 school" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa9-dq-kJ9">
                                 <rect key="frame" x="112.5" y="162.5" width="189.5" height="20"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="17"/>
                                 <color key="textColor" red="0.92156862745098034" green="0.6705882352941176" blue="0.1764705882352941" alpha="0.98837959340076564" colorSpace="custom" customColorSpace="sRGB"/>
@@ -676,36 +683,57 @@
                                 </constraints>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M43-HV-68e">
+                                <rect key="frame" x="16" y="187.5" width="382" height="575.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-zc-EkC">
+                                        <rect key="frame" x="119.5" y="276" width="143.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
+                                        <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstItem="N4g-zc-EkC" firstAttribute="centerX" secondItem="M43-HV-68e" secondAttribute="centerX" id="lFx-6k-YRh"/>
+                                    <constraint firstItem="N4g-zc-EkC" firstAttribute="centerY" secondItem="M43-HV-68e" secondAttribute="centerY" id="ubd-xB-sTQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F30-Z2-nmD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="A0e-if-aEu" firstAttribute="top" secondItem="F30-Z2-nmD" secondAttribute="top" constant="80" id="7EC-S1-TYj"/>
+                            <constraint firstItem="F30-Z2-nmD" firstAttribute="trailing" secondItem="M43-HV-68e" secondAttribute="trailing" constant="16" id="AUx-1p-zih"/>
                             <constraint firstItem="F30-Z2-nmD" firstAttribute="trailing" secondItem="DPw-FS-MjZ" secondAttribute="trailing" constant="16" id="COo-FN-yBw"/>
                             <constraint firstItem="A0e-if-aEu" firstAttribute="centerX" secondItem="DPw-FS-MjZ" secondAttribute="centerX" id="DEH-w4-vH1"/>
                             <constraint firstItem="m0f-lY-hCf" firstAttribute="top" secondItem="DPw-FS-MjZ" secondAttribute="bottom" constant="30" id="Gde-mK-1OB"/>
                             <constraint firstItem="DPw-FS-MjZ" firstAttribute="top" secondItem="A0e-if-aEu" secondAttribute="bottom" constant="40" id="OZ3-HY-gan"/>
+                            <constraint firstItem="M43-HV-68e" firstAttribute="top" secondItem="A0e-if-aEu" secondAttribute="bottom" constant="40" id="QnL-LY-zyp"/>
                             <constraint firstItem="F30-Z2-nmD" firstAttribute="trailing" secondItem="m0f-lY-hCf" secondAttribute="trailing" constant="16" id="Smg-PF-Zl9"/>
                             <constraint firstItem="DPw-FS-MjZ" firstAttribute="leading" secondItem="F30-Z2-nmD" secondAttribute="leading" constant="16" id="VMH-76-Ml3"/>
+                            <constraint firstItem="M43-HV-68e" firstAttribute="leading" secondItem="F30-Z2-nmD" secondAttribute="leading" constant="16" id="cC1-tX-YEf"/>
                             <constraint firstItem="F30-Z2-nmD" firstAttribute="bottom" secondItem="m0f-lY-hCf" secondAttribute="bottom" constant="25" id="gSU-Yk-G2R"/>
                             <constraint firstItem="iGD-1x-dkE" firstAttribute="centerY" secondItem="EPf-sE-4Bp" secondAttribute="centerY" id="kKr-DZ-zx8"/>
                             <constraint firstItem="m0f-lY-hCf" firstAttribute="leading" secondItem="F30-Z2-nmD" secondAttribute="leading" constant="16" id="myr-xO-PTu"/>
+                            <constraint firstItem="m0f-lY-hCf" firstAttribute="top" secondItem="M43-HV-68e" secondAttribute="bottom" constant="30" id="nOG-Ko-sDC"/>
                             <constraint firstItem="iGD-1x-dkE" firstAttribute="centerX" secondItem="EPf-sE-4Bp" secondAttribute="centerX" id="vvY-we-QK7"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndecator" destination="iGD-1x-dkE" id="Fep-7T-hsn"/>
+                        <outlet property="noNotificationView" destination="M43-HV-68e" id="ONK-dC-7lI"/>
                         <outlet property="tableView" destination="DPw-FS-MjZ" id="drq-SX-NPA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qip-hT-uXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4474" y="293"/>
+            <point key="canvasLocation" x="4473.913043478261" y="292.63392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--About App View Controller-->
         <scene sceneID="B2t-ey-Vh7">
             <objects>
-                <viewController id="ChW-DO-Tqq" sceneMemberID="viewController">
+                <viewController id="ChW-DO-Tqq" customClass="AboutAppViewController" customModule="samrtble" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zy2-5V-J0q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -749,10 +777,10 @@ App Details you can add her </string>
             </objects>
             <point key="canvasLocation" x="4188" y="-443"/>
         </scene>
-        <!--Contact Us View Controller-->
+        <!--View Controller-->
         <scene sceneID="EGn-4M-uhb">
             <objects>
-                <viewController id="7DP-YJ-7gb" customClass="ContactUsViewController" customModule="samrtble" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7DP-YJ-7gb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m5b-LW-sof">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -901,9 +929,6 @@ App Details you can add her </string>
                                                 <color key="textColor" red="0.61176470588235299" green="0.61176470588235299" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="7DP-YJ-7gb" id="Mtu-0m-gbc"/>
-                                                </connections>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPZ-a4-cK9" customClass="GradientButton" customModule="samrtble" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="838" width="382" height="50"/>
@@ -919,9 +944,6 @@ App Details you can add her </string>
                                                         <real key="value" value="12"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="sendButton:" destination="7DP-YJ-7gb" eventType="touchUpInside" id="ZH3-hA-bL2"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeN-e9-2Q6">
                                                 <rect key="frame" x="20" y="40" width="61" height="53"/>
@@ -930,17 +952,16 @@ App Details you can add her </string>
                                                 <state key="normal" title="Back">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="eKr-Vk-Zo7" kind="unwind" unwindAction="unwinToHomeWithSegue:" id="OhX-zt-rdi"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="a4L-CZ-hIA" secondAttribute="trailing" constant="16" id="0du-o3-xBc"/>
                                             <constraint firstItem="Z9B-Nh-Atl" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" constant="16" id="4ko-J7-TSL"/>
+                                            <constraint firstAttribute="trailing" secondItem="XEK-Pa-yxk" secondAttribute="trailing" constant="16" id="5HC-FP-iJ5"/>
                                             <constraint firstAttribute="trailing" secondItem="bPZ-a4-cK9" secondAttribute="trailing" constant="16" id="5Zl-EF-6nX"/>
                                             <constraint firstItem="Z9B-Nh-Atl" firstAttribute="top" secondItem="X5w-jW-Bsr" secondAttribute="bottom" id="6hJ-dr-N1d"/>
+                                            <constraint firstItem="XEK-Pa-yxk" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" constant="16" id="8iR-Rl-ih1"/>
                                             <constraint firstItem="G1d-aq-hKV" firstAttribute="top" secondItem="9D1-e4-tMu" secondAttribute="bottom" constant="20" id="9V3-Vv-Yoa"/>
                                             <constraint firstItem="xgC-Hg-hXf" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" constant="16" id="FTO-8S-dmS"/>
                                             <constraint firstItem="dme-uA-BuB" firstAttribute="top" secondItem="WRr-ub-okj" secondAttribute="bottom" constant="14" id="FtT-by-Ont"/>
@@ -948,6 +969,7 @@ App Details you can add her </string>
                                             <constraint firstItem="bPZ-a4-cK9" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" constant="16" id="J2d-z5-ODn"/>
                                             <constraint firstItem="TeN-e9-2Q6" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" constant="20" id="L85-2C-Ofb"/>
                                             <constraint firstItem="X5w-jW-Bsr" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" id="LEm-7N-h5V"/>
+                                            <constraint firstItem="XEK-Pa-yxk" firstAttribute="top" secondItem="QZe-ed-gbj" secondAttribute="bottom" constant="23" id="Lag-4w-pnq"/>
                                             <constraint firstItem="QZe-ed-gbj" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" constant="15" id="LeR-CH-5eA"/>
                                             <constraint firstItem="IgV-C1-aab" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" constant="16" id="NzH-2f-2C8"/>
                                             <constraint firstItem="X5w-jW-Bsr" firstAttribute="top" secondItem="lJP-9s-Ly0" secondAttribute="top" id="OX3-sV-PEG"/>
@@ -1001,17 +1023,148 @@ App Details you can add her </string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mKy-hF-ygn"/>
-                    <connections>
-                        <outlet property="contentTextArea" destination="Hen-r0-UNo" id="Eqy-gb-1ZC"/>
-                        <outlet property="emailTextField" destination="dme-uA-BuB" id="jH1-cc-R8a"/>
-                        <outlet property="scrollView" destination="nIm-JN-NjZ" id="zmF-dy-3iS"/>
-                        <outlet property="userNameTextField" destination="WRr-ub-okj" id="7NT-Fs-BYn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzg-af-zop" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="eKr-Vk-Zo7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5244.9275362318849" y="-408.48214285714283"/>
+        </scene>
+        <!--Contact Us View Controller-->
+        <scene sceneID="HKA-9A-MFg">
+            <objects>
+                <viewController storyboardIdentifier="contactUsVc" id="jM6-f8-hfz" customClass="ContactUsViewController" customModule="samrtble" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gax-G4-SQe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="gradient_Up" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-zV-d3I">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" you can contact us via email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02h-8L-4Dc">
+                                <rect key="frame" x="16" y="309" width="382" height="20"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="J7q-1h-4YB">
+                                <rect key="frame" x="16" y="352" width="382" height="16"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mail_24px" translatesAutoresizingMaskIntoConstraints="NO" id="ppA-AX-bWi">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="n8K-tX-nbT"/>
+                                            <constraint firstAttribute="width" constant="20" id="q8I-RB-0fW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info@smartble.com" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWP-T9-Oy1">
+                                        <rect key="frame" x="33" y="0.0" width="349" height="16"/>
+                                        <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NKd-cn-i5S">
+                                <rect key="frame" x="16" y="388" width="382" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EgZ-3f-iG7"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="boq-fI-MbM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jM6-f8-hfz" id="moG-gT-aqj"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Content" translatesAutoresizingMaskIntoConstraints="NO" id="UX1-dp-Pg2">
+                                <rect key="frame" x="16" y="452" width="382" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="eHc-g5-ngd"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jM6-f8-hfz" id="WE7-gs-c77"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-I5-PpP" customClass="GradientButton" customModule="samrtble" customModuleProvider="target">
+                                <rect key="frame" x="16" y="622" width="382" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="IyQ-Fp-mOX"/>
+                                    <constraint firstAttribute="height" constant="50" id="ifG-BF-M0g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="25"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendButton:" destination="jM6-f8-hfz" eventType="touchUpInside" id="khr-8s-l3z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITL-aM-xrL">
+                                <rect key="frame" x="20" y="102" width="40" height="34"/>
+                                <color key="backgroundColor" red="0.61176470589999998" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1eL-hj-vxw" kind="unwind" unwindAction="unwinToHomeWithSegue:" id="g8t-c1-OGy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gl-nL-jqj">
+                                <rect key="frame" x="16" y="265" width="382" height="21"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZbH-Tu-7B8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YW1-zV-d3I" firstAttribute="leading" secondItem="ZbH-Tu-7B8" secondAttribute="leading" id="068-uh-8Qc"/>
+                            <constraint firstItem="YW1-zV-d3I" firstAttribute="trailing" secondItem="ZbH-Tu-7B8" secondAttribute="trailing" id="10x-Lw-fJY"/>
+                            <constraint firstItem="ZbH-Tu-7B8" firstAttribute="trailing" secondItem="02h-8L-4Dc" secondAttribute="trailing" constant="16" id="5jX-1a-ktS"/>
+                            <constraint firstItem="J7q-1h-4YB" firstAttribute="leading" secondItem="ZbH-Tu-7B8" secondAttribute="leading" constant="16" id="DJ8-nd-F2M"/>
+                            <constraint firstItem="ITL-aM-xrL" firstAttribute="leading" secondItem="Gax-G4-SQe" secondAttribute="leadingMargin" id="F6y-8S-Yiu"/>
+                            <constraint firstItem="02h-8L-4Dc" firstAttribute="leading" secondItem="ZbH-Tu-7B8" secondAttribute="leading" constant="16" id="KdM-Nd-e6S"/>
+                            <constraint firstItem="ITL-aM-xrL" firstAttribute="top" secondItem="ZbH-Tu-7B8" secondAttribute="top" constant="14" id="LLX-XE-yx5"/>
+                            <constraint firstItem="d6d-I5-PpP" firstAttribute="top" secondItem="UX1-dp-Pg2" secondAttribute="bottom" constant="20" id="PXD-nx-hKZ"/>
+                            <constraint firstItem="ZbH-Tu-7B8" firstAttribute="trailing" secondItem="NKd-cn-i5S" secondAttribute="trailing" constant="16" id="WFA-2T-uEY"/>
+                            <constraint firstItem="UX1-dp-Pg2" firstAttribute="leading" secondItem="ZbH-Tu-7B8" secondAttribute="leading" constant="16" id="Zcf-Q0-uh1"/>
+                            <constraint firstItem="NKd-cn-i5S" firstAttribute="top" secondItem="J7q-1h-4YB" secondAttribute="bottom" constant="20" id="buz-4N-epk"/>
+                            <constraint firstItem="d6d-I5-PpP" firstAttribute="leading" secondItem="ZbH-Tu-7B8" secondAttribute="leading" constant="16" id="c1j-3Z-opz"/>
+                            <constraint firstItem="ZbH-Tu-7B8" firstAttribute="trailing" secondItem="d6d-I5-PpP" secondAttribute="trailing" constant="16" id="foc-Ek-wfk"/>
+                            <constraint firstItem="J7q-1h-4YB" firstAttribute="top" secondItem="02h-8L-4Dc" secondAttribute="bottom" constant="23" id="hac-jS-FRr"/>
+                            <constraint firstItem="ZbH-Tu-7B8" firstAttribute="trailing" secondItem="0Gl-nL-jqj" secondAttribute="trailing" constant="16" id="kfB-yX-56g"/>
+                            <constraint firstItem="UX1-dp-Pg2" firstAttribute="top" secondItem="NKd-cn-i5S" secondAttribute="bottom" constant="14" id="lFm-e0-xdJ"/>
+                            <constraint firstItem="ZbH-Tu-7B8" firstAttribute="trailing" secondItem="UX1-dp-Pg2" secondAttribute="trailing" constant="16" id="m9w-0I-PNH"/>
+                            <constraint firstItem="ZbH-Tu-7B8" firstAttribute="trailing" secondItem="J7q-1h-4YB" secondAttribute="trailing" constant="16" id="mWv-hT-brD"/>
+                            <constraint firstItem="NKd-cn-i5S" firstAttribute="leading" secondItem="ZbH-Tu-7B8" secondAttribute="leading" constant="16" id="mpN-K4-MiE"/>
+                            <constraint firstItem="0Gl-nL-jqj" firstAttribute="leading" secondItem="ZbH-Tu-7B8" secondAttribute="leading" constant="16" id="ngv-ML-QDl"/>
+                            <constraint firstItem="YW1-zV-d3I" firstAttribute="top" secondItem="Gax-G4-SQe" secondAttribute="top" id="rDb-66-IHW"/>
+                            <constraint firstItem="02h-8L-4Dc" firstAttribute="top" secondItem="0Gl-nL-jqj" secondAttribute="bottom" constant="23" id="tC3-bX-dKw"/>
+                            <constraint firstItem="0Gl-nL-jqj" firstAttribute="top" secondItem="YW1-zV-d3I" secondAttribute="bottom" constant="16" id="uK6-bt-iJt"/>
+                            <constraint firstItem="0Gl-nL-jqj" firstAttribute="centerX" secondItem="Gax-G4-SQe" secondAttribute="centerX" id="z02-K3-S4S"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vii-QZ-O0p"/>
+                    <connections>
+                        <outlet property="contentTextArea" destination="UX1-dp-Pg2" id="a5M-Xu-hBO"/>
+                        <outlet property="sendBtn" destination="d6d-I5-PpP" id="bLL-UV-GZn"/>
+                        <outlet property="userNameTextField" destination="NKd-cn-i5S" id="mqE-Gd-4kC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="97p-6b-271" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="1eL-hj-vxw" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="7773.9130434782619" y="-408.48214285714283"/>
         </scene>
         <!--loginVc-->
         <scene sceneID="9a2-W3-PhE">
@@ -1253,15 +1406,37 @@ App Details you can add her </string>
             </objects>
             <point key="canvasLocation" x="4730" y="-492"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xtf-Hk-PN9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yh2-k5-ZOT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KBy-l0-Mfg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jM6-f8-hfz" kind="relationship" relationship="rootViewController" id="ihq-2a-bcw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GhB-ZP-YRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6863.7681159420299" y="-408.48214285714283"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="bPZ-a4-cK9">
+            <size key="intrinsicContentSize" width="59" height="42"/>
+        </designable>
+        <designable name="d6d-I5-PpP">
             <size key="intrinsicContentSize" width="59" height="42"/>
         </designable>
     </designables>
     <resources>
         <image name="Logo" width="284" height="273"/>
         <image name="facebook" width="34.5" height="34.5"/>
+        <image name="globe" width="512" height="512"/>
         <image name="gradient_Up" width="378" height="249"/>
         <image name="ic_assignment_24px" width="22" height="24.5"/>
         <image name="ic_call_24px" width="18" height="18"/>
@@ -1283,6 +1458,9 @@ App Details you can add her </string>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

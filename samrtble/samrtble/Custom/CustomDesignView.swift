@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SideMenu
+import SpreadsheetView
 class CustomDesignView {
     
     static func customMenuShadowView (_ menu :SideMenuNavigationController){
@@ -48,6 +49,25 @@ class CustomDesignView {
         view.layer.borderWidth = 0.2
         
     }
+    
+    
+    
+    static func customSpreadSheetView(_ i : SpreadsheetView){
+        
+        i.register(TableCell.self, forCellWithReuseIdentifier: String(describing: TableCell.self))
+    
+        i.bounces = false
+        i.isScrollEnabled = false
+        i.layer.masksToBounds = false
+        i.backgroundView?.layer.cornerRadius = 12
+        i.clipsToBounds = true
+        i.layer.cornerRadius = 12
+        i.gridStyle = .none
+        
+        
+        
+    }
+    
     
     
     

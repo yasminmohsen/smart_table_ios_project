@@ -8,6 +8,7 @@
 import UIKit
 
 class SecondScreenViewController: UIViewController {
+    @IBOutlet weak var skipBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var descriotionLabel: UILabel!
@@ -17,10 +18,7 @@ class SecondScreenViewController: UIViewController {
         super.viewDidLoad()
       
        titleLabel.textColor = Colors.getColor(type: .customGreen)[0]
-/*
-       descriotionLabel.font = UIFont(name: CustomFonts.MyriadPro.rawValue, size: 18)
-        titleLabel.font = UIFont(name: CustomFonts.MyriadProBold.rawValue, size: 18)
-        */
+        skipBtn.setTitle("Skip".localized, for: .normal)
         
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
         

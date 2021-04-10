@@ -29,6 +29,15 @@ class MainLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let lang = LanguageOperation.checkLanguage()
+        switch lang {
+        case .arabic:
+            enteraYourMobileLabel.textAlignment = .right
+        default:
+            enteraYourMobileLabel.textAlignment = .left
+        }
+        
+        
         phoneView.layer.borderWidth = 1.0
         phoneView.layer.cornerRadius = 12
         phoneView.layer.borderColor = UIColor.lightGray.cgColor
@@ -44,7 +53,9 @@ class MainLoginViewController: UIViewController {
                 loginViewModel.bindLogingModel = {
                     (error:String? , data:[TableInfoModel]?) ->() in
                     
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async {[weak self] in
+                        
+                        guard let self = self else {return}
                         if let error = error {
                            // alert
                             print(error)
@@ -138,16 +149,15 @@ class MainLoginViewController: UIViewController {
 
     @IBAction func loginBtn(_ sender: Any) {
         
-        activityIndecator.startAnimating()
-        activityIndecator.alpha = 1
         mobilePhoneNum = "00\(countryCode.text!)\(phoneTextField.text!)"
          if((phoneTextField.text!.isEmpty)){
              
-             print("enter mobile")
+            Alert.showSimpleAlert(title: "Alert", message: "Enter mobile number", viewRef: self)
          }
          else{
     
-           
+            activityIndecator.startAnimating()
+            activityIndecator.alpha = 1
             loginViewModel.fetchData(phone: mobilePhoneNum)
              phoneTextField.text = ""
              

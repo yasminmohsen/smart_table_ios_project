@@ -7,22 +7,23 @@
 
 import UIKit
 import MessageUI
-class ContactUsViewController: UIViewController ,UITextViewDelegate{
+class ContactUsViewController: UIViewController ,UITextViewDelegate,UITextFieldDelegate{
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var sendBtn: GradientButton!
+    
     @IBOutlet weak var userNameTextField: UITextField!
     
     @IBOutlet weak var contentTextArea: UITextView!
-    @IBOutlet weak var emailTextField: UITextField!
-    
+    var keyBoardFlag = false
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.alpha = 0
+        registerForKeyboardNotifications()
         CustomDesignView.customTextView(view: userNameTextField)
         CustomDesignView.customTextView(view: contentTextArea)
-        CustomDesignView.customTextView(view: emailTextField)
          
-        registerForKeyboardNotifications()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
@@ -34,9 +35,13 @@ class ContactUsViewController: UIViewController ,UITextViewDelegate{
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
+    
+     
         textView.text = ""
         textView.textColor = UIColor.black
+       
     }
+    
   
   
     @IBAction func sendButton(_ sender: Any) {
@@ -60,35 +65,44 @@ class ContactUsViewController: UIViewController ,UITextViewDelegate{
             name: UIResponder.keyboardWillHideNotification,
             object: nil)
         
-      
+        
      
         }
      
-        @objc func keyboardWasShown(_ notificiation: NSNotification) {
+    @objc func keyboardWasShown(_ notificiation: NSNotification) {
             guard let info = notificiation.userInfo,
                 let keyboardFrameValue =
                 info[UIResponder.keyboardFrameBeginUserInfoKey]
                 as? NSValue else { return }
-     
+
             let keyboardFrame = keyboardFrameValue.cgRectValue
             let keyboardSize = keyboardFrame.size
-     
+
             let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0,
             bottom: keyboardSize.height, right: 0.0)
-            
-            scrollView.contentInset = contentInsets
-            
-            scrollView.scrollIndicatorInsets = contentInsets
+        
+       
+      
+       
+        self.view.frame.origin.y =  -200
+        navigationController?.navigationBar.alpha = 1
         }
+    
+    
      
         @objc func keyboardWillBeHidden(_ notification:
            NSNotification) {
             let contentInsets = UIEdgeInsets.zero
-            scrollView.contentInset = contentInsets
-            scrollView.scrollIndicatorInsets = contentInsets
-   
-}
-       
+
+            self.view.frame.origin.y = 0
+            navigationController?.navigationBar.alpha = 0
+
+        }
+    
+
+    
+    
+    
 }
 
 
@@ -102,10 +116,10 @@ extension ContactUsViewController :MFMailComposeViewControllerDelegate {
         let mailComposer = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
 
-        if (contentTextArea.text.count > 0 && emailTextField.text!.count > 0 ) {
-            mailComposer.setToRecipients([emailTextField.text!])
+        if (contentTextArea.text.count > 0 && userNameTextField.text!.count > 0 ) {
+            mailComposer.setToRecipients(["info@smartble.com"])
             mailComposer.setSubject("Clients issue")
-            mailComposer.setMessageBody(contentTextArea.text, isHTML: false)
+            mailComposer.setMessageBody("\(contentTextArea.text!)\n ....\n\(userNameTextField.text!)" ,isHTML: false)
             present(mailComposer, animated: true, completion: nil)
         }
         else{
