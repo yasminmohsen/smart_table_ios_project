@@ -25,11 +25,11 @@
             <objects>
                 <viewController restorationIdentifier="loginVc" storyboardIdentifier="loginVc" id="vwl-RE-RFH" customClass="LoginViewController" customModule="samrtble" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DUp-VH-pZe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEQ-HI-WFH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="552"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVu-R2-0gA">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
@@ -50,7 +50,7 @@
                                 </constraints>
                             </scrollView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="gradient_down" translatesAutoresizingMaskIntoConstraints="NO" id="9ZV-7u-Igf">
-                                <rect key="frame" x="0.0" y="552" width="375" height="206"/>
+                                <rect key="frame" x="0.0" y="606" width="375" height="206"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EJk-42-VsG"/>
@@ -161,7 +161,7 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="iMi-6O-j5Q">
                                 <rect key="frame" x="16" y="613" width="343" height="28"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="pageIndicatorTintColor" red="0.7591751375027288" green="0.83870384489693162" blue="0.96333307027816772" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="currentPageIndicatorTintColor" red="0.92156862745098034" green="0.6705882352941176" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
                         </subviews>
@@ -738,7 +738,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="wq0-mm-B1i"/>
+        <segue reference="rG4-6E-N0l"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FourthScreen" width="302.66665649414062" height="210.66667175292969"/>

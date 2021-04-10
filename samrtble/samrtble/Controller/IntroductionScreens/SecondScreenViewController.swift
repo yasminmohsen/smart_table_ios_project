@@ -29,7 +29,7 @@ class SecondScreenViewController: UIViewController {
         
         rightSwipe.direction = .right
             self.view.addGestureRecognizer(rightSwipe)
-        pageControl.currentPageIndicatorTintColor = Colors.getColor(type: .customorange)[0]
+        CustomDesignView.customPageController(pageControl)
    }
     
     @objc func swipe(gesture :UISwipeGestureRecognizer) {

@@ -3,31 +3,31 @@
 "1fx-A6-8sW.text" = "966";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "92H-WU-iln"; */
-"92H-WU-iln.normalTitle" = "تسجيل الدخول";
+"92H-WU-iln.normalTitle" = "دخول";
 
 /* Class = "UILabel"; text = "The application helps the teacher in following up the lessons and timings related to each school he works in"; ObjectID = "Ax6-FQ-DuE"; */
 "Ax6-FQ-DuE.text" = "يساعد التطبيق المعلم في متابعة الدروس والتوقيتات الخاصة بكل مدرسة يعمل بها";
 
 /* Class = "UIButton"; normalTitle = "START"; ObjectID = "D40-gx-vc2"; */
-"D40-gx-vc2.normalTitle" = "ابدأ";
+"D40-gx-vc2.normalTitle" = "ابدأ الآن";
 
 /* Class = "UITextField"; text = "966"; ObjectID = "IRh-yd-lgs"; */
 "IRh-yd-lgs.text" = "966";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Mcb-Ne-FFY"; */
-"Mcb-Ne-FFY.normalTitle" = "تسجيل الدخول";
+"Mcb-Ne-FFY.normalTitle" = "دخول";
 
 /* Class = "UILabel"; text = "Enter your phone number to login"; ObjectID = "MjS-GV-IxA"; */
-"MjS-GV-IxA.text" = "أدخل رقم الجوال لتسجيل الدخول";
+"MjS-GV-IxA.text" = "قم بإدخال رقم الجوال لاتمام تسجيل الدخول";
 
 /* Class = "UILabel"; text = "Notificatios"; ObjectID = "Odu-Kg-AKF"; */
 "Odu-Kg-AKF.text" = "الإشعارات";
 
 /* Class = "UILabel"; text = "Contact Us"; ObjectID = "TgG-kJ-DRL"; */
-"TgG-kJ-DRL.text" = "تواصل معنا";
+"TgG-kJ-DRL.text" = "اتصل بنا";
 
 /* Class = "UILabel"; text = "Not found Number"; ObjectID = "Xfw-Yb-9QA"; */
-"Xfw-Yb-9QA.text" = "رقم غير موجود";
+"Xfw-Yb-9QA.text" = " !خطأ في الرقم";
 
 /* Class = "UILabel"; text = "Not found number"; ObjectID = "fTJ-o7-vYD"; */
 "fTJ-o7-vYD.text" = "رقم غير موجود";
@@ -39,7 +39,7 @@
 "ivP-ZC-Zb8.text" = "إذا كانت لديك أي مشكلة ، فإن التطبيق يوفر لك بيانات خاصة للاتصال بنا ، لا تتردد في القيام بذلك";
 
 /* Class = "UILabel"; text = "The application sends notifications to the teacher, including reminders of class dates, cancellation of classes, etc."; ObjectID = "jmo-GH-RMD"; */
-"jmo-GH-RMD.text" = "يرسل التطبيق إشعارات إلى المعلم ، بما في ذلك التذكيرات بمواعيد الحصص وإلغاء الفصول وما إلى ذلك.";
+"jmo-GH-RMD.text" = "يرسل التطبيق إخطارات إلى المعلم ، وهي تشمل التنبيهات بمواعيد الحصص وإلغاء الدوام وما إلى ذلك.";
 
 /* Class = "UILabel"; text = "+"; ObjectID = "kag-9L-Rc3"; */
 "kag-9L-Rc3.text" = "+";

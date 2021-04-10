@@ -85,10 +85,10 @@ class NotificationViewModel {
                         
                         var notificationTableResult = Dictionary(grouping: notificationTableModel, by: {$0.dateCreated})
                         
-                        
+                        resultNotification.removeAll()
                         
                         for obj in notificationTableResult{
-                            resultNotification.removeAll()
+                           
                             resultNotification.append(ResultNotification(date: obj.key, data: obj.value))
                         }
                         
@@ -103,7 +103,7 @@ class NotificationViewModel {
                         
                         if(!message.isEmpty){
                             
-                           // self.error = message
+                           self.error = message
                             // alert here 
                         }
                     }

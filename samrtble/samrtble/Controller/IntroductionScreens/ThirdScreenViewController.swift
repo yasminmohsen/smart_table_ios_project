@@ -21,11 +21,7 @@ class ThirdScreenViewController: UIViewController {
         
 
         titleLabel.textColor = Colors.getColor(type: .customGreen)[0]
-      /* titleLabel.font = UIFont(name: CustomFonts.MyriadProBold.rawValue, size: 18)
-
-       descriotionLabel.font = UIFont(name: CustomFonts.MyriadPro.rawValue, size: 18)
-      
-       */
+   
         
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
         
@@ -37,7 +33,7 @@ class ThirdScreenViewController: UIViewController {
         rightSwipe.direction = .right
             self.view.addGestureRecognizer(rightSwipe)
       
-        pageControl.currentPageIndicatorTintColor = Colors.getColor(type: .customorange)[0]
+        CustomDesignView.customPageController(pageControl)
         
     
       

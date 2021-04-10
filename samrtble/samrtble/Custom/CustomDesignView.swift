@@ -68,7 +68,34 @@ class CustomDesignView {
         
     }
     
+    static func customPageController(_ pageControl :UIPageControl){
+        
+        //        let imageView = UIImageView()
+        //        imageView.frame = CGRect(x: 0, y: 0, width: 0.25, height: 0.25)
+        //        let image = UIImage(named:"Path 37")
+        //        imageView.image = image
+            //    pageControl.pageIndicatorTintColor = UIColor(patternImage: imageView.image!)
+        pageControl.currentPageIndicatorTintColor = Colors.getColor(type: .customorange)[0]
+      
+ 
+        pageControl.pageIndicatorTintColor = Colors.getColor(type: .gradientWhite)[3]
+        pageControl.subviews.forEach {
+            $0.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+
+
+//            $0.applyGradient(colours:Colors.getColor(type: .gradientWhite))
+         
+
+        }
+    }
     
+    
+   static func customColoredSheet(_ spreedSheet:SpreadsheetView ,_ cell : TableCell  )  {
+        spreedSheet.gridStyle = .solid(width:2, color: Colors.getColor(type: .customBej)[0])
+        spreedSheet.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
+        cell.label.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
+        
+    }
     
     
     

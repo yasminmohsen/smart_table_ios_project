@@ -36,7 +36,9 @@ class TableHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        customUi()
+      
+        bindingData()
             
         }
         
@@ -49,9 +51,7 @@ class TableHomeViewController: UIViewController {
         schoolNames.removeAll()
         daysArray.removeAll()
         
-        customUi()
-      
-        bindingData()
+        
         
         if(tableInfoModel == nil){
             callApi()
@@ -102,6 +102,7 @@ class TableHomeViewController: UIViewController {
     
     
     @IBAction func tabBarAction(_ sender: Any) {
+        print(tabBarSegmentedBtn.selectedSegmentIndex)
         
         switch tabBarSegmentedBtn.selectedSegmentIndex {
         case 0:

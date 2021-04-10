@@ -80,6 +80,7 @@ class NotificationViewController: UIViewController {
     
    
     @IBAction func segmentedBtnAction(_ sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
         
         if (sender.selectedSegmentIndex == 1 ){
             
@@ -142,26 +143,12 @@ extension NotificationViewController : UITableViewDelegate,UITableViewDataSource
 
 
     
-//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
 //        view.tintColor = UIColor.black
-//        let header = view as! UITableViewHeaderFooterView
-//        header.textLabel?.textColor = UIColor.black
-//        header.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-//    }
-//
-
-    
-    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-
-        // This changes the header background
-        view.tintColor = UIColor.white
-
-        // Gets the header view as a UITableViewHeaderFooterView and changes the text colour
-        var headerView: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        headerView.textLabel!.textColor = UIColor.black
-
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.font = UIFont(name:"Myriad Pro Bold", size: 16)
     }
-    
-    
+
     
 }

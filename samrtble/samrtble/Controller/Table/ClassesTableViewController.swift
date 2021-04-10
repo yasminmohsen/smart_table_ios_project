@@ -77,35 +77,35 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
             case sunday:
                 
                 if(result == .coloredSunday){
-                   customColoredSheet(sunday, cell)
+                    CustomDesignView.customColoredSheet(sunday, cell)
                 }
                 cell.label.text = subjectsArray[indexPath.column][indexPath.row]
                
             case monday:
                 if(result == .coloredMonday){
 
-                    customColoredSheet(monday, cell)
+                    CustomDesignView.customColoredSheet(monday, cell)
                 }
                 
                 cell.label.text = subjectsArray[indexPath.column + 1][indexPath.row]
             case tuesday:
                 if(result == .coloredTuesday){
                     
-                    customColoredSheet(tuesday, cell)
+                    CustomDesignView.customColoredSheet(tuesday, cell)
                 }
                 cell.label.text = subjectsArray[indexPath.column + 2][indexPath.row]
                 
             case wednsday:
                 if(result == .coloredWednsday){
 
-                    customColoredSheet(wednsday, cell)
+                    CustomDesignView.customColoredSheet(wednsday, cell)
                 }
                 cell.label.text = subjectsArray[indexPath.column + 3][indexPath.row]
                 
             case thursday:
                 if(result == .coloredThursday){
 
-                    customColoredSheet(thursday, cell)
+                    CustomDesignView.customColoredSheet(thursday, cell)
                 }
                 cell.label.text = subjectsArray[indexPath.column + 4][indexPath.row]
                 
@@ -192,12 +192,7 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
     
     
     
-    func customColoredSheet(_ spreedSheet:SpreadsheetView ,_ cell : TableCell  )  {
-        spreedSheet.gridStyle = .solid(width:2, color: Colors.getColor(type: .customBej)[0])
-        spreedSheet.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
-        cell.label.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
-        
-    }
+   
     
     
 }
