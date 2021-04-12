@@ -39,6 +39,14 @@ class TableHomeViewController: UIViewController {
         customUi()
       
         bindingData()
+        if(tableInfoModel == nil){
+            callApi()
+        }
+     
+        else{
+            updateUi()
+            self.updateTableInContainer(index: 0)
+        }
             
         }
         
@@ -53,14 +61,7 @@ class TableHomeViewController: UIViewController {
         
         
         
-        if(tableInfoModel == nil){
-            callApi()
-        }
-     
-        else{
-            updateUi()
-            self.updateTableInContainer(index: 0)
-        }
+       
         
     }
     

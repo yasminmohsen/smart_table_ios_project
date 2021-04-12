@@ -77,7 +77,7 @@
                                                                 <color key="titleColor" red="0.60392156862745094" green="0.58823529411764708" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="aboutAppBtn:" destination="zsj-DK-ks8" eventType="touchUpInside" id="cM3-Hz-pFs"/>
+                                                                <segue destination="ChW-DO-Tqq" kind="push" id="c7U-MO-OQy"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -371,7 +371,7 @@
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpF-vF-AIv">
                                 <rect key="frame" x="12" y="259.5" width="390" height="50"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="icJ-Ks-Yu0">
+                                    <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="icJ-Ks-Yu0">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D/#" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siw-ct-Wqy">
@@ -741,41 +741,46 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="gradient_Up" translatesAutoresizingMaskIntoConstraints="NO" id="62m-fQ-vjk">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smart Table App" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgF-Ls-1Nx">
-                                <rect key="frame" x="16" y="249" width="382" height="18"/>
-                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jr-Yb-4TF">
-                                <rect key="frame" x="16" y="284" width="382" height="193.5"/>
-                                <string key="text">App Details you can add her App Details you can add her App Details you can add her
-App Details you can add her App Details you can add her App Details you can add her
-App Details you can add her App Details you can add her App Details you can add her App Details you can add her App Details you can add her App Details you can add her
-App Details you can add her </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7z-Ob-JHP">
+                                <rect key="frame" x="20" y="58" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="xhP-Cb-1lK"/>
+                                    <constraint firstAttribute="height" constant="24" id="yIa-HF-FIs"/>
+                                </constraints>
+                                <state key="normal" image="left-arrow "/>
+                                <connections>
+                                    <segue destination="fKl-Xm-urf" kind="unwind" unwindAction="unwinToHomeWithSegue:" id="jU3-kg-F7w"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fd4-xI-Vd2">
+                                <rect key="frame" x="20" y="249" width="374" height="593"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </webView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JV4-0m-iKN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JV4-0m-iKN" firstAttribute="trailing" secondItem="TgF-Ls-1Nx" secondAttribute="trailing" constant="16" id="1g2-gb-9op"/>
-                            <constraint firstItem="8jr-Yb-4TF" firstAttribute="top" secondItem="TgF-Ls-1Nx" secondAttribute="bottom" constant="17" id="2ic-gk-XUg"/>
+                            <constraint firstItem="Fd4-xI-Vd2" firstAttribute="leading" secondItem="JV4-0m-iKN" secondAttribute="leading" constant="20" id="0Y7-dl-BzS"/>
                             <constraint firstItem="62m-fQ-vjk" firstAttribute="trailing" secondItem="JV4-0m-iKN" secondAttribute="trailing" id="7AM-Xz-TtP"/>
-                            <constraint firstItem="TgF-Ls-1Nx" firstAttribute="leading" secondItem="JV4-0m-iKN" secondAttribute="leading" constant="16" id="D6z-Xs-mc1"/>
-                            <constraint firstItem="8jr-Yb-4TF" firstAttribute="leading" secondItem="JV4-0m-iKN" secondAttribute="leading" constant="16" id="HAO-ov-to7"/>
-                            <constraint firstItem="TgF-Ls-1Nx" firstAttribute="top" secondItem="62m-fQ-vjk" secondAttribute="bottom" id="hEP-8B-Nbd"/>
-                            <constraint firstAttribute="trailing" secondItem="8jr-Yb-4TF" secondAttribute="trailing" constant="16" id="ive-R2-e4I"/>
+                            <constraint firstItem="O7z-Ob-JHP" firstAttribute="leading" secondItem="zy2-5V-J0q" secondAttribute="leadingMargin" id="FZo-sL-sQu"/>
+                            <constraint firstItem="O7z-Ob-JHP" firstAttribute="top" secondItem="JV4-0m-iKN" secondAttribute="top" constant="14" id="H86-zO-hhW"/>
+                            <constraint firstItem="JV4-0m-iKN" firstAttribute="trailing" secondItem="Fd4-xI-Vd2" secondAttribute="trailing" constant="20" id="Hb9-F1-ov0"/>
+                            <constraint firstItem="JV4-0m-iKN" firstAttribute="bottom" secondItem="Fd4-xI-Vd2" secondAttribute="bottom" constant="20" id="wIM-vS-jkQ"/>
                             <constraint firstItem="62m-fQ-vjk" firstAttribute="leading" secondItem="JV4-0m-iKN" secondAttribute="leading" id="x4s-ok-jyi"/>
+                            <constraint firstItem="Fd4-xI-Vd2" firstAttribute="top" secondItem="62m-fQ-vjk" secondAttribute="bottom" id="xaz-Hi-u9Y"/>
                             <constraint firstItem="62m-fQ-vjk" firstAttribute="top" secondItem="zy2-5V-J0q" secondAttribute="top" id="zAP-Uu-wY6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="R7M-NL-hwX"/>
+                    <connections>
+                        <outlet property="backBtn" destination="O7z-Ob-JHP" id="MtE-Yj-XXx"/>
+                        <outlet property="webView" destination="Fd4-xI-Vd2" id="zrU-Pi-i3q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jK8-79-QJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fKl-Xm-urf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4188" y="-443"/>
+            <point key="canvasLocation" x="5384.057971014493" y="-429.24107142857139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EGn-4M-uhb">
@@ -967,7 +972,7 @@ App Details you can add her </string>
                                             <constraint firstItem="dme-uA-BuB" firstAttribute="top" secondItem="WRr-ub-okj" secondAttribute="bottom" constant="14" id="FtT-by-Ont"/>
                                             <constraint firstAttribute="trailing" secondItem="XEK-Pa-yxk" secondAttribute="trailing" constant="16" id="Hyf-Uy-nSe"/>
                                             <constraint firstItem="bPZ-a4-cK9" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" constant="16" id="J2d-z5-ODn"/>
-                                            <constraint firstItem="TeN-e9-2Q6" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" constant="20" id="L85-2C-Ofb"/>
+                                            <constraint firstItem="TeN-e9-2Q6" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" id="L85-2C-Ofb"/>
                                             <constraint firstItem="X5w-jW-Bsr" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" id="LEm-7N-h5V"/>
                                             <constraint firstItem="XEK-Pa-yxk" firstAttribute="top" secondItem="QZe-ed-gbj" secondAttribute="bottom" constant="23" id="Lag-4w-pnq"/>
                                             <constraint firstItem="QZe-ed-gbj" firstAttribute="leading" secondItem="lJP-9s-Ly0" secondAttribute="leading" constant="15" id="LeR-CH-5eA"/>
@@ -1026,7 +1031,7 @@ App Details you can add her </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzg-af-zop" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5244.9275362318849" y="-408.48214285714283"/>
+            <point key="canvasLocation" x="6155.072463768116" y="-408.48214285714283"/>
         </scene>
         <!--Contact Us View Controller-->
         <scene sceneID="HKA-9A-MFg">
@@ -1114,7 +1119,7 @@ App Details you can add her </string>
                                     <constraint firstAttribute="width" constant="24" id="LLV-Do-hL0"/>
                                 </constraints>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="arrow">
+                                <state key="normal" image="left-arrow ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1168,7 +1173,7 @@ App Details you can add her </string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97p-6b-271" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1eL-hj-vxw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7773.9130434782619" y="-408.48214285714283"/>
+            <point key="canvasLocation" x="8684.0579710144939" y="-408.48214285714283"/>
         </scene>
         <!--loginVc-->
         <scene sceneID="9a2-W3-PhE">
@@ -1189,17 +1194,17 @@ App Details you can add her </string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFV-Rv-RHQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="420"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dyg-xm-2Nc">
+                                    <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dyg-xm-2Nc">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="420"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="equalSpacing" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="APn-jy-K1H">
-                                                <rect key="frame" x="16" y="44" width="382" height="365"/>
+                                                <rect key="frame" x="16" y="0.0" width="382" height="409"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oq1-Kc-TR4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="365"/>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oq1-Kc-TR4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="409"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIW-HI-afI" customClass="SpreadsheetView" customModule="SpreadsheetView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="365"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="409"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="KCb-TM-gb6"/>
@@ -1214,11 +1219,11 @@ App Details you can add her </string>
                                                             <constraint firstItem="aIW-HI-afI" firstAttribute="leading" secondItem="Oq1-Kc-TR4" secondAttribute="leading" id="zlc-dS-9Tl"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8m-Gi-5Wt">
-                                                        <rect key="frame" x="45.5" y="0.0" width="55" height="365"/>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8m-Gi-5Wt">
+                                                        <rect key="frame" x="45.5" y="0.0" width="55" height="409"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4l-Xj-aNT" customClass="SpreadsheetView" customModule="SpreadsheetView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="365"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="409"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="55" id="0G9-7C-2IK"/>
@@ -1233,11 +1238,11 @@ App Details you can add her </string>
                                                             <constraint firstAttribute="bottom" secondItem="K4l-Xj-aNT" secondAttribute="bottom" id="WXk-hl-ygs"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-L4-cxX">
-                                                        <rect key="frame" x="116" y="0.0" width="55" height="365"/>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9BZ-L4-cxX">
+                                                        <rect key="frame" x="116" y="0.0" width="55" height="409"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eg-ai-bkR" customClass="SpreadsheetView" customModule="SpreadsheetView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="365"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="409"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="55" id="CeG-bS-QCP"/>
@@ -1252,11 +1257,11 @@ App Details you can add her </string>
                                                             <constraint firstItem="9eg-ai-bkR" firstAttribute="leading" secondItem="9BZ-L4-cxX" secondAttribute="leading" id="asw-3Z-QkS"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvJ-X7-eY1">
-                                                        <rect key="frame" x="186" y="0.0" width="55" height="365"/>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NvJ-X7-eY1">
+                                                        <rect key="frame" x="186" y="0.0" width="55" height="409"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTF-Tp-DRO" customClass="SpreadsheetView" customModule="SpreadsheetView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="365"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="409"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="55" id="g9M-Pp-zSa"/>
@@ -1271,11 +1276,11 @@ App Details you can add her </string>
                                                             <constraint firstAttribute="trailing" secondItem="OTF-Tp-DRO" secondAttribute="trailing" id="zNQ-8d-lk9"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYz-fE-tVX">
-                                                        <rect key="frame" x="256.5" y="0.0" width="55" height="365"/>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYz-fE-tVX">
+                                                        <rect key="frame" x="256.5" y="0.0" width="55" height="409"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKO-Yd-6pb" customClass="SpreadsheetView" customModule="SpreadsheetView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="365"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="409"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="55" id="PWM-ww-20O"/>
@@ -1290,11 +1295,11 @@ App Details you can add her </string>
                                                             <constraint firstAttribute="trailing" secondItem="TKO-Yd-6pb" secondAttribute="trailing" id="fQO-vy-ebL"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fI1-oH-b9Y">
-                                                        <rect key="frame" x="327" y="0.0" width="55" height="365"/>
+                                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fI1-oH-b9Y">
+                                                        <rect key="frame" x="327" y="0.0" width="55" height="409"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9I-IX-EQy" customClass="SpreadsheetView" customModule="SpreadsheetView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="365"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="409"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="55" id="tCh-TN-iS2"/>
@@ -1407,7 +1412,7 @@ App Details you can add her </string>
                 <viewControllerPlaceholder id="T4O-eN-u9E" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jaX-xm-arh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4730" y="-492"/>
+            <point key="canvasLocation" x="5639.8550724637689" y="-492.1875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xtf-Hk-PN9">
@@ -1426,7 +1431,7 @@ App Details you can add her </string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhB-ZP-YRP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6863.7681159420299" y="-408.48214285714283"/>
+            <point key="canvasLocation" x="7773.9130434782619" y="-408.48214285714283"/>
         </scene>
     </scenes>
     <designables>
@@ -1455,6 +1460,7 @@ App Details you can add her </string>
         <image name="ic_notifications_selected_24px" width="20" height="24.5"/>
         <image name="ic_schedule_24px" width="17.5" height="17.5"/>
         <image name="instagram-logo" width="34" height="34"/>
+        <image name="left-arrow " width="330" height="330"/>
         <image name="logout_iC" width="20.5" height="22.5"/>
         <image name="selected_ic_assignment_24px" width="22" height="24.5"/>
         <image name="twitter" width="33" height="33"/>
