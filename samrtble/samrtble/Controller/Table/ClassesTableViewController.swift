@@ -18,7 +18,7 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
     @IBOutlet weak var classesView: SpreadsheetView!
     @IBOutlet weak var sunday: SpreadsheetView!
     var subjectsArray = [[String]]()
-    var spreedSheetArray : [SpreadsheetView]!
+    var spreedSheetArray = [SpreadsheetView]()
     var classNumberArray = [ClassModel]()
     var daysArray = [String]()
     var day : String!
@@ -37,7 +37,7 @@ class ClassesTableViewController: UIViewController , SpreadsheetViewDelegate ,Sp
     
     
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, widthForColumn column: Int) -> CGFloat {
-      
+
         if(spreadsheetView == classesView){
             return 30
         }

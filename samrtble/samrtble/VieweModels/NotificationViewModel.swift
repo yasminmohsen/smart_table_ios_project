@@ -66,7 +66,8 @@ class NotificationViewModel {
                     
                     if let NotificationInfoArray = jsonDict?["data"].array{
                         
-            
+                        
+                        resultNotification.removeAll()
                         notificationTableModel.removeAll()
                         
                         for notifObj in NotificationInfoArray {
@@ -76,24 +77,58 @@ class NotificationViewModel {
                             let date = notifObj["date_created"].string ?? ""
                             let time_created = notifObj["time_created"].string ?? ""
                             let actionId = notifObj["action_id"].string ?? ""
-                            
+ 
                             var notifcationObj = NotificationData(title: title, body: body, actionID: actionId, dateCreated: date, timeCreated: time_created, priority: nil, clickAction: nil)
                             
                             self.notificationTableModel.append(notifcationObj)
                             
                         }
                         
-                        var notificationTableResult = Dictionary(grouping: notificationTableModel, by: {$0.dateCreated})
+               
+                       
+                        var arr = notificationTableModel.map({$0.dateCreated});
+                        var sortArray = [String]()
+                       
+                                for (index,d) in arr.enumerated(){
+                                    if(sortArray.contains(d) == false){
+                                        sortArray.append(d)
+                                    }
+                                
                         
-                        resultNotification.removeAll()
-                        
-                        for obj in notificationTableResult{
-                           
-                            resultNotification.append(ResultNotification(date: obj.key, data: obj.value))
                         }
                         
-               
+                            
+                        print("---------------------------------------------------------------")
+                        print(sortArray)
+                        print("---------------------------------------------------------------")
+//
+//
+                        
+                        for (index,dateName) in sortArray.enumerated() {
+                            resultNotification.append(ResultNotification(date: dateName, data: []))
+                        }
+                        
+                        for (index,dateName) in sortArray.enumerated() {
+                            
+                            for obj in notificationTableModel{
+                                
+                                if(obj.dateCreated == dateName){
+                                    
+                                    resultNotification[index].data.append(obj)
+                                }
+                                else{
+                                    continue
+                                }
+                                
+                                
+                            }
+                            
+                            
+                        }
+                        
+                        
                         self.data = resultNotification
+                       
                         
                     }
                     

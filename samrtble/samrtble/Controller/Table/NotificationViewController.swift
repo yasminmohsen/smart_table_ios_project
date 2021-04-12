@@ -46,7 +46,7 @@ class NotificationViewController: UIViewController {
                 }
                 
                 if let data = data {
-                    
+                    self.notificationTableResult.removeAll()
                     self.activityIndecator.stopAnimating()
                     self.activityIndecator.alpha = 0
                     self.notificationTableResult = data
@@ -57,9 +57,10 @@ class NotificationViewController: UIViewController {
                     else{
                         self.noNotificationView.alpha = 0
                     }
+                    refreshControl.endRefreshing()
                     self.tableView.reloadData()
                     
-                    refreshControl.endRefreshing()
+                  
                     
                 }
             }
@@ -73,7 +74,7 @@ class NotificationViewController: UIViewController {
     
     
     @objc func refreshTable (){
-        notificationTableResult.removeAll()
+        
         notificationViewModel.fetchData()
      
     }
@@ -118,7 +119,9 @@ extension NotificationViewController : UITableViewDelegate,UITableViewDataSource
             //255 253 207
             cell.viewCell.layer.backgroundColor = UIColor(red: 255/255, green: 253/255, blue: 207/255, alpha: 1.0).cgColor
         }
-        
+        else{
+            cell.viewCell.layer.backgroundColor = UIColor.white.cgColor
+        }
         return cell
     }
     
