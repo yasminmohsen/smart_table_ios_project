@@ -107,8 +107,13 @@ class TableHomeViewController: UIViewController {
         
         switch tabBarSegmentedBtn.selectedSegmentIndex {
         case 0:
-            let vc = self.storyboard?.instantiateViewController(identifier: "notificationVC") as! NotificationViewController
-            
+//            let vc = self.storyboard?.instantiateViewController(identifier: "notificationVC") as! NotificationViewController
+//
+//            self.navigationController?.pushViewController(vc, animated: true)
+        
+            let vc = self.storyboard?.instantiateViewController(identifier: "customTable") as! CustomClassViewController
+            vc.classArrayObj = classesArray[0]
+            vc.classNumberObj = classesNumber[0]
             self.navigationController?.pushViewController(vc, animated: true)
    
         default:
@@ -157,8 +162,11 @@ class TableHomeViewController: UIViewController {
         
         let classArrayObj = classesArray[index]
         let classNumberObj = classesNumber[index]
-        let CVC = children.last as! ClassesTableViewController
-        CVC.updateUi(classArrayObj,classNumberObj,day: day , daysArray: daysArray)
+//        let CVC = children.last as! ClassesTableViewController
+//        CVC.updateUi(classArrayObj,classNumberObj,day: day , daysArray: daysArray)
+//        
+//        let CVC = children.last as! CustomClassTableViewController
+//        CVC.updateUi(classArrayObj,classNumberObj)
         
     }
     
