@@ -76,31 +76,33 @@ extension CustomClassTableViewController :UICollectionViewDelegate , UICollectio
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TableCollectionViewCell
-        
-        cell.label.lineBreakMode = .byWordWrapping
-        cell.label.numberOfLines = 0
-        cell.label.font = UIFont.systemFont(ofSize: 12)
-        cell.label.textAlignment = .center
-        switch collectionView {
-        case sunday:
-            cell.label.text = subjectsArray[indexPath.column][indexPath.row]
-        case monday:
-            cell.label.text = subjectsArray[indexPath.column+1][indexPath.row]
-        case tuesday:
-            cell.label.text = subjectsArray[indexPath.column+2][indexPath.row]
-        case wendsday:
-            cell.label.text = subjectsArray[indexPath.column+3][indexPath.row]
-        case thursday:
+      
+        if(subjectsArray.count > 0){
             
-            cell.label.text = subjectsArray[indexPath.column+4][indexPath.row]
-        case classesNumber:
-            cell.label.text = "\(classNumberArray[indexPath.row].number)"
-        default:
-            break
+            cell.label.lineBreakMode = .byWordWrapping
+            cell.label.numberOfLines = 0
+            cell.label.font = UIFont.systemFont(ofSize: 12)
+            cell.label.textAlignment = .center
+            switch collectionView {
+            case sunday:
+                cell.label.text = subjectsArray[indexPath.column][indexPath.row]
+            case monday:
+                cell.label.text = subjectsArray[indexPath.column+1][indexPath.row]
+            case tuesday:
+                cell.label.text = subjectsArray[indexPath.column+2][indexPath.row]
+            case wendsday:
+                cell.label.text = subjectsArray[indexPath.column+3][indexPath.row]
+            case thursday:
+                
+                cell.label.text = subjectsArray[indexPath.column+4][indexPath.row]
+            case classesNumber:
+                cell.label.text = "\(classNumberArray[indexPath.row].number)"
+            default:
+                break
+            }
         }
+        
         
         
         

@@ -20,6 +20,15 @@ class TableHomeViewController: UIViewController {
     @IBOutlet weak var schoolSegmentedBtn: UISegmentedControl!
     @IBOutlet weak var tabBarSegmentedBtn: UISegmentedControl!
     
+    
+    
+    @IBOutlet weak var classesNumberView: UICollectionView!
+    @IBOutlet weak var sunday: UICollectionView!
+    @IBOutlet weak var monday: UICollectionView!
+    @IBOutlet weak var tuesday: UICollectionView!
+    @IBOutlet weak var wednsday: UICollectionView!
+    @IBOutlet weak var thuresday: UICollectionView!
+    
     var tableInfoModel : [TableInfoModel]!
     var classesArray = [[[String]]]()
     var loginViewModel = LoginViewModel()
@@ -33,12 +42,28 @@ class TableHomeViewController: UIViewController {
     let connected = "Connected with ".localized
     let school = "school".localized
     let teacherWord = "Teacher".localized
+    var classNumberArray = [ClassModel]()
+    var subjectsArray = [[String]]()
+    var collectionArray = [UICollectionView]()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        collectionArray = [classesNumberView,sunday,monday,tuesday,wednsday,thuresday]
         customUi()
       
         bindingData()
+       
+            
+        }
+        
+
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+        tabBarSegmentedBtn.selectedSegmentIndex = 1
+        schoolNames.removeAll()
+        daysArray.removeAll()
         if(tableInfoModel == nil){
             callApi()
         }
@@ -47,22 +72,8 @@ class TableHomeViewController: UIViewController {
             updateUi()
             self.updateTableInContainer(index: 0)
         }
-            
-        }
-        
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
-        tabBarSegmentedBtn.selectedSegmentIndex = 1
-        schoolNames.removeAll()
-        daysArray.removeAll()
-        
-        
-        
        
-        
+
     }
     
     
@@ -79,17 +90,20 @@ class TableHomeViewController: UIViewController {
             segView.layer.borderColor =  UIColor(red: 112/250, green: 112/250, blue: 112/250 ,alpha: 1.0).cgColor
            
         }
+        
+        
+        for i in collectionArray {
+            
+            
+            i.delegate = self
+            i.dataSource = self
+            i.layer.backgroundColor = UIColor.white.cgColor
+            CustomDesignView.customViewWithShadow(view: i)
+            
+        }
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     @IBAction func schoolSegmentAction(_ sender: Any) {
         
      let index = schoolSegmentedBtn.selectedSegmentIndex
@@ -107,15 +121,10 @@ class TableHomeViewController: UIViewController {
         
         switch tabBarSegmentedBtn.selectedSegmentIndex {
         case 0:
-//            let vc = self.storyboard?.instantiateViewController(identifier: "notificationVC") as! NotificationViewController
-//
-//            self.navigationController?.pushViewController(vc, animated: true)
-        
-            let vc = self.storyboard?.instantiateViewController(identifier: "customTable") as! CustomClassViewController
-            vc.classArrayObj = classesArray[0]
-            vc.classNumberObj = classesNumber[0]
+            let vc = self.storyboard?.instantiateViewController(identifier: "notificationVC") as! NotificationViewController
+
             self.navigationController?.pushViewController(vc, animated: true)
-   
+               
         default:
       break
  
@@ -160,11 +169,17 @@ class TableHomeViewController: UIViewController {
     func updateTableInContainer(index : Int){
         
         
-        let classArrayObj = classesArray[index]
-        let classNumberObj = classesNumber[index]
+        subjectsArray = classesArray[index]
+        classNumberArray = classesNumber[index]
+        
+        for collectionObj in collectionArray {
+            
+            collectionObj.reloadData()
+        }
+        
 //        let CVC = children.last as! ClassesTableViewController
 //        CVC.updateUi(classArrayObj,classNumberObj,day: day , daysArray: daysArray)
-//        
+        
 //        let CVC = children.last as! CustomClassTableViewController
 //        CVC.updateUi(classArrayObj,classNumberObj)
         
