@@ -75,7 +75,7 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
         }
         else{
             
-            return CGSize(width: 50.0, height: 55.0)
+            return CGSize(width: 55.0, height: 55.0)
         }
         
           

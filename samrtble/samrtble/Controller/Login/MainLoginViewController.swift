@@ -59,7 +59,7 @@ class MainLoginViewController: UIViewController {
                         if let error = error {
                            // alert
                             print(error)
-                            
+                            Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
                             self.notFoundLabel.alpha = 1
                             self.activityIndecator.stopAnimating()
                             self.activityIndecator.alpha = 0

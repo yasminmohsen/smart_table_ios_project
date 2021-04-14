@@ -8,6 +8,14 @@
 import UIKit
 import MessageUI
 class ContactUsViewController: UIViewController ,UITextViewDelegate,UITextFieldDelegate{
+    
+    @IBOutlet weak var youCanContactLabel: UILabel!
+    
+    
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    
+    
     @IBOutlet weak var backBtn: UIButton!
     
     @IBOutlet weak var sendBtn: GradientButton!
@@ -29,6 +37,10 @@ class ContactUsViewController: UIViewController ,UITextViewDelegate,UITextFieldD
         if(lang == .arabic){
             contentTextArea.textAlignment = .right
             backBtn.setImage(UIImage(named: "left-arrow ")?.flippedImage(), for: .normal)
+            userNameTextField.textAlignment = .right
+            youCanContactLabel.textAlignment = .right
+            infoLabel.textAlignment = .right
+            
         }
         else{
             contentTextArea.textAlignment = .left
@@ -158,7 +170,9 @@ extension ContactUsViewController :MFMailComposeViewControllerDelegate {
         
     }
     
-    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        dismiss(animated: true, completion: nil)
+    }
     
 }
 

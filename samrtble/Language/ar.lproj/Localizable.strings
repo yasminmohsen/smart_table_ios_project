@@ -4,7 +4,7 @@
 "Back" ="رجوع";
 "English" = "English";
 "Day/class" = "اليوم / الحصة" ;
-"Hi" = "مرحباً";
+"Hi," = "اهلاً،";
 "Connected with " = "مشترك بـ ";
 "school" = "مدرسة";
 "Teacher" = "معلم";
@@ -13,3 +13,4 @@
 "Skip" = "تخطي";
 "Alert" = "تنبيه";
 "Enter mobile number" = "ادخل رقم الجوال";
+"Enter mobile number in english "= "ادخل رقم الجوال باللغة الإنجليزية";

@@ -18,7 +18,7 @@ import Foundation
 struct ApIService {
     var phone :String = ""
     var type :String = ""
-    //teacher-table
+    
      var url :String {
         
        "https://www.smartble.net/api/\(type)/\(phone)/"

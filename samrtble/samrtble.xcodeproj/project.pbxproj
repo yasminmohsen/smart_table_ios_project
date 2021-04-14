@@ -83,11 +83,11 @@
 		6C38EC4C2618CA620093B4DA /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		6C38EC512619179D0093B4DA /* CustomDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDesignView.swift; sourceTree = "<group>"; };
 		6C38EC57261926290093B4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
-		6C38EC602619262C0093B4DA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Home.strings; sourceTree = "<group>"; };
 		6C53247426177936000CBB1A /* Myriad Pro Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Regular.ttf"; sourceTree = "<group>"; };
 		6C532478261779D4000CBB1A /* Myriad Pro Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Semibold.ttf"; sourceTree = "<group>"; };
 		6C532479261779E1000CBB1A /* Myriad Pro Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Bold.ttf"; sourceTree = "<group>"; };
 		6C53247D2617BD7A000CBB1A /* samrtble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = samrtble.entitlements; sourceTree = "<group>"; };
+		6C559C942627071500177BE0 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Home.strings; sourceTree = "<group>"; };
 		6C58CA1426219FF500A7BA99 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		6C5E1DFA2609D06900C35700 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6C5E1DFE2609D6B100C35700 /* language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = language.swift; sourceTree = "<group>"; };
@@ -176,13 +176,6 @@
 				ECA70A3D39E9D98CD477B709 /* Pods_samrtble.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6C38EC6426193FEB0093B4DA /* out */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = out;
 			sourceTree = "<group>";
 		};
 		6C5E1E122609DC0800C35700 /* Language */ = {
@@ -298,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				6C6F79E3261C632800A92359 /* Menue */,
-				6C38EC6426193FEB0093B4DA /* out */,
 				6C6BF9AD26165EC800A8A3EB /* Login */,
 				6C6BF9A926165E9B00A8A3EB /* IntroductionScreens */,
 				6C6F3C782613DAEE005928EB /* Table */,
@@ -359,9 +351,9 @@
 		6CA117D02604B07C006B1AA1 /* samrtble */ = {
 			isa = PBXGroup;
 			children = (
-				6C6F79ED261D170F00A92359 /* Custom */,
 				6C53247D2617BD7A000CBB1A /* samrtble.entitlements */,
 				6C6F7960261A2CB700A92359 /* GoogleService-Info.plist */,
+				6C6F79ED261D170F00A92359 /* Custom */,
 				6C7E21CD2606147D00B10A74 /* NetWorkLayer */,
 				6C6F7990261A436000A92359 /* FontList */,
 				6C7E21022604B63E00B10A74 /* Controller */,
@@ -663,7 +655,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C38EC57261926290093B4DA /* Base */,
-				6C38EC602619262C0093B4DA /* ar */,
+				6C559C942627071500177BE0 /* ar */,
 			);
 			name = Home.storyboard;
 			sourceTree = "<group>";

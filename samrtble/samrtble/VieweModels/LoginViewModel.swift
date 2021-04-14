@@ -151,6 +151,7 @@ class LoginViewModel {
                         if(!message.isEmpty){
                             
                             self.error = message
+                            print(message)
                         }
                     }
                     
@@ -161,6 +162,10 @@ class LoginViewModel {
             task.resume()
             
             
+        }
+        else{
+           
+            self.error = "Enter mobile number in english "
         }
         
         

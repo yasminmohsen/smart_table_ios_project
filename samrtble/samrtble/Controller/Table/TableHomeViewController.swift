@@ -38,7 +38,7 @@ class TableHomeViewController: UIViewController {
     var day :String!
     var daysArray = [String]()
     var schoolNames = [String]()
-    let hi = "Hi".localized
+    let hi = "Hi,".localized
     let connected = "Connected with ".localized
     let school = "school".localized
     let teacherWord = "Teacher".localized

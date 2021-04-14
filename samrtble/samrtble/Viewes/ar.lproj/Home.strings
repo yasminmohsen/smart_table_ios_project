@@ -1,9 +1,12 @@
 
+/* Class = "UILabel"; text = " you can contact us via email:"; ObjectID = "02h-8L-4Dc"; */
+"02h-8L-4Dc.text" = "بإمكانكم التواصل عبر الايميل:";
+
 /* Class = "UILabel"; text = "Sun."; ObjectID = "05e-70-yJB"; */
 "05e-70-yJB.text" = "الأحد";
 
-/* Class = "UILabel"; text = "App Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her App Details you can add her App Details you can add her App Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her "; ObjectID = "8jr-Yb-4TF"; */
-"8jr-Yb-4TF.text" = "App Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her App Details you can add her App Details you can add her App Details you can add her App Details you can add her App Details you can add her\nApp Details you can add her ";
+/* Class = "UILabel"; text = "Contact Us"; ObjectID = "0Gl-nL-jqj"; */
+"0Gl-nL-jqj.text" = "اتصل بنا";
 
 /* Class = "UILabel"; text = "Notification"; ObjectID = "A0e-if-aEu"; */
 "A0e-if-aEu.text" = "الإشعارات";
@@ -12,25 +15,70 @@
 "CHW-Nn-Nmd.normalTitle" = "English";
 
 /* Class = "UILabel"; text = "Mon."; ObjectID = "Idx-9T-lMu"; */
-"Idx-9T-lMu.text" = "الآثنين";
+"Idx-9T-lMu.text" = "الأثنين";
 
-/* Class = "UILabel"; text = "Smart Table App"; ObjectID = "TgF-Ls-1Nx"; */
-"TgF-Ls-1Nx.text" = "تطبيق الجدول الذكي";
+/* Class = "UILabel"; text = "No Notifications"; ObjectID = "N4g-zc-EkC"; */
+"N4g-zc-EkC.text" = "لا يوجد إشعارات";
+
+/* Class = "UITextField"; placeholder = "User name"; ObjectID = "NKd-cn-i5S"; */
+"NKd-cn-i5S.placeholder" = "اسم المستخدم";
+
+/* Class = "UILabel"; text = "info@smartble.com"; ObjectID = "OWP-T9-Oy1"; */
+"OWP-T9-Oy1.text" = "info@smartble.com";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SiS-kJ-VLC"; */
+"SiS-kJ-VLC.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "T02-5a-k9W"; */
+"T02-5a-k9W.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TXb-uP-c13"; */
+"TXb-uP-c13.text" = "Label";
 
 /* Class = "UILabel"; text = "Tues."; ObjectID = "U2r-AR-UKf"; */
 "U2r-AR-UKf.text" = "الثلاثاء";
 
+/* Class = "UILabel"; text = "Label"; ObjectID = "UC4-0V-Wke"; */
+"UC4-0V-Wke.text" = "Label";
+
 /* Class = "UILabel"; text = "Wed."; ObjectID = "UR3-Zf-UZA"; */
 "UR3-Zf-UZA.text" = "الأربعاء";
 
+/* Class = "UITextView"; text = "Content"; ObjectID = "UX1-dp-Pg2"; */
+"UX1-dp-Pg2.text" = "نص الرسالة";
+
+/* Class = "UILabel"; text = "Connected with 0 school"; ObjectID = "Wa9-dq-kJ9"; */
+"Wa9-dq-kJ9.text" = "مشترك في 0 مدرسة";
+
 /* Class = "UILabel"; text = "Label"; ObjectID = "XXs-Mt-Lc2"; */
-"XXs-Mt-Lc2.text" = "معلم";
+"XXs-Mt-Lc2.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "afk-ZT-Rxa"; */
+"afk-ZT-Rxa.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ayD-tL-o2D"; */
+"ayD-tL-o2D.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "about app"; ObjectID = "bbQ-hc-5Zw"; */
 "bbQ-hc-5Zw.normalTitle" = "عن التطبيق";
 
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "d6d-I5-PpP"; */
+"d6d-I5-PpP.normalTitle" = "إرسال";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eXK-ip-CKV"; */
+"eXK-ip-CKV.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hHe-QS-2LS"; */
+"hHe-QS-2LS.text" = "Label";
+
 /* Class = "UILabel"; text = "Thur."; ObjectID = "nws-QF-7Gs"; */
 "nws-QF-7Gs.text" = "الخميس";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "o8m-gz-qXm"; */
+"o8m-gz-qXm.text" = "Label";
+
+/* Class = "UILabel"; text = "Hi "; ObjectID = "oZ0-2H-VFp"; */
+"oZ0-2H-VFp.text" = "اهلاً، ";
 
 /* Class = "UIButton"; normalTitle = "Rate app"; ObjectID = "qyG-gN-BxR"; */
 "qyG-gN-BxR.normalTitle" = "قيم التطبيق";
@@ -41,5 +89,8 @@
 /* Class = "UILabel"; text = "D/#"; ObjectID = "siw-ct-Wqy"; */
 "siw-ct-Wqy.text" = "يوم/#";
 
+/* Class = "UILabel"; text = "Teacher"; ObjectID = "ts1-D8-4sT"; */
+"ts1-D8-4sT.text" = "معلم";
+
 /* Class = "UIButton"; normalTitle = "Contact us"; ObjectID = "wnk-db-Y6b"; */
-"wnk-db-Y6b.normalTitle" = "تواصل معنا ";
+"wnk-db-Y6b.normalTitle" = "اتصل بنا";

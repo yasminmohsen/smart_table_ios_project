@@ -29,7 +29,7 @@ class NotificationViewController: UIViewController {
         tableView.dataSource = self
         activityIndecator.alpha = 1
         activityIndecator.startAnimating()
-        notificationViewModel.fetchData()
+       
         
         notificationViewModel.bindNotificationModel = { (error:String? , data:[ResultNotification]?) ->() in
             
@@ -71,6 +71,9 @@ class NotificationViewController: UIViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        notificationViewModel.fetchData()
+    }
     
     
     @objc func refreshTable (){

@@ -70,11 +70,6 @@ class CustomDesignView {
     
     static func customPageController(_ pageControl :UIPageControl){
         
-        //        let imageView = UIImageView()
-        //        imageView.frame = CGRect(x: 0, y: 0, width: 0.25, height: 0.25)
-        //        let image = UIImage(named:"Path 37")
-        //        imageView.image = image
-            //    pageControl.pageIndicatorTintColor = UIColor(patternImage: imageView.image!)
         pageControl.currentPageIndicatorTintColor = Colors.getColor(type: .customorange)[0]
       
  
@@ -83,7 +78,6 @@ class CustomDesignView {
             $0.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
 
 
-//            $0.applyGradient(colours:Colors.getColor(type: .gradientWhite))
          
 
         }
