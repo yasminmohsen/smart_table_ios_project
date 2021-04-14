@@ -323,31 +323,31 @@
                                     <action selector="minueAction:" destination="0ff-1h-SWx" eventType="touchUpInside" id="TXa-5H-GvD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi," textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZ0-2H-VFp">
-                                <rect key="frame" x="178.5" y="84" width="24.5" height="23.5"/>
-                                <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi," textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZ0-2H-VFp">
+                                <rect key="frame" x="177" y="84" width="27" height="26"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="22"/>
                                 <color key="textColor" red="0.15686274509803921" green="0.62352941176470589" blue="0.6588235294117647" alpha="0.98837959340076564" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts1-D8-4sT">
-                                <rect key="frame" x="159" y="124.5" width="63" height="21"/>
+                                <rect key="frame" x="159" y="127" width="63" height="21"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="18"/>
                                 <color key="textColor" red="0.92156862745098034" green="0.6705882352941176" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected with 0 school" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa9-dq-kJ9">
-                                <rect key="frame" x="96" y="162.5" width="189.5" height="20"/>
-                                <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="17"/>
+                                <rect key="frame" x="90.5" y="165" width="200.5" height="21"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="18"/>
                                 <color key="textColor" red="0.92156862745098034" green="0.6705882352941176" blue="0.1764705882352941" alpha="0.98837959340076564" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gay-5F-dzO">
-                                <rect key="frame" x="16" y="201.5" width="349" height="44"/>
+                                <rect key="frame" x="16" y="205" width="349" height="50"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8ss-Zh-kll">
-                                        <rect key="frame" x="0.0" y="0.0" width="349" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="51"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="S9L-Dz-0Wq"/>
+                                            <constraint firstAttribute="height" constant="50" id="S9L-Dz-0Wq"/>
                                         </constraints>
                                         <segments>
                                             <segment title=""/>
@@ -370,7 +370,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpF-vF-AIv">
-                                <rect key="frame" x="12" y="259.5" width="357" height="50"/>
+                                <rect key="frame" x="12" y="269" width="357" height="50"/>
                                 <subviews>
                                     <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="icJ-Ks-Yu0">
                                         <rect key="frame" x="0.0" y="0.0" width="357" height="50"/>
@@ -447,7 +447,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJS-vc-FvH">
-                                <rect key="frame" x="0.0" y="321.5" width="381" height="476.5"/>
+                                <rect key="frame" x="0.0" y="331" width="381" height="467"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AH6-TI-oro">
                                         <rect key="frame" x="0.0" y="8" width="381" height="420"/>
@@ -1021,7 +1021,7 @@
                                         </constraints>
                                     </view>
                                     <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="C4U-RR-W0j">
-                                        <rect key="frame" x="172" y="220" width="37" height="37"/>
+                                        <rect key="frame" x="172" y="215" width="37" height="37"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.072683210958677164" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </activityIndicatorView>
@@ -1039,12 +1039,12 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmB-tQ-hJ8" userLabel="BtnView">
-                                <rect key="frame" x="16" y="793" width="349" height="44"/>
+                                <rect key="frame" x="16" y="783" width="349" height="54"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="7o9-ZN-DsQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="349" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="cZB-bJ-SGo"/>
+                                            <constraint firstAttribute="height" constant="54" id="cZB-bJ-SGo"/>
                                         </constraints>
                                         <segments>
                                             <segment title="" image="ic_notifications_24px"/>
@@ -1126,7 +1126,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="DPw-FS-MjZ">
-                                <rect key="frame" x="16" y="187.5" width="382" height="575.5"/>
+                                <rect key="frame" x="16" y="107.5" width="382" height="645.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1141,33 +1141,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZn-xZ-GYJ">
-                                                    <rect key="frame" x="0.0" y="10" width="382" height="80"/>
+                                                    <rect key="frame" x="5" y="10" width="372" height="80"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXs-Mt-Lc2">
-                                                            <rect key="frame" x="339.5" y="17" width="34.5" height="20"/>
-                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="14"/>
+                                                            <rect key="frame" x="324.5" y="17" width="39.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="16"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_schedule_24px" translatesAutoresizingMaskIntoConstraints="NO" id="BJU-Nr-qC9">
-                                                            <rect key="frame" x="311.5" y="18" width="18" height="18"/>
+                                                            <rect key="frame" x="296.5" y="18" width="18" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="18" id="JrQ-xk-FH7"/>
                                                                 <constraint firstAttribute="width" constant="18" id="yhF-5h-fPz"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UC4-0V-Wke">
-                                                            <rect key="frame" x="8" y="15" width="200" height="17.5"/>
+                                                            <rect key="frame" x="8" y="15" width="200" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="uwx-3V-1NO"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="16"/>
                                                             <color key="textColor" red="0.15686274510000001" green="0.62352941179999999" blue="0.6588235294" alpha="0.98837959340000003" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayD-tL-o2D">
-                                                            <rect key="frame" x="14" y="42.5" width="34.5" height="16.5"/>
-                                                            <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="14"/>
+                                                            <rect key="frame" x="14" y="44" width="34.5" height="16.5"/>
+                                                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="14"/>
                                                             <color key="textColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1189,10 +1189,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="CZn-xZ-GYJ" secondAttribute="trailing" id="8qI-lM-pH9"/>
+                                                <constraint firstAttribute="trailing" secondItem="CZn-xZ-GYJ" secondAttribute="trailing" constant="5" id="8qI-lM-pH9"/>
                                                 <constraint firstItem="CZn-xZ-GYJ" firstAttribute="top" secondItem="KzS-Lc-e22" secondAttribute="top" constant="10" id="RK8-rM-h6K"/>
                                                 <constraint firstAttribute="bottom" secondItem="CZn-xZ-GYJ" secondAttribute="bottom" constant="10" id="lU4-BU-bjQ"/>
-                                                <constraint firstItem="CZn-xZ-GYJ" firstAttribute="leading" secondItem="KzS-Lc-e22" secondAttribute="leading" id="rd7-7k-aFI"/>
+                                                <constraint firstItem="CZn-xZ-GYJ" firstAttribute="leading" secondItem="KzS-Lc-e22" secondAttribute="leading" constant="5" id="rd7-7k-aFI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1210,12 +1210,12 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0f-lY-hCf">
-                                <rect key="frame" x="16" y="793" width="382" height="44"/>
+                                <rect key="frame" x="16" y="783" width="382" height="54"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mwc-7i-g2m">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="55"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="dOQ-gF-Smb"/>
+                                            <constraint firstAttribute="height" constant="54" id="dOQ-gF-Smb"/>
                                         </constraints>
                                         <segments>
                                             <segment title="" image="ic_notifications_selected_24px"/>
@@ -1238,9 +1238,9 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0e-if-aEu">
-                                <rect key="frame" x="156" y="124" width="102" height="23.5"/>
+                                <rect key="frame" x="156" y="64" width="102" height="23.5"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="iGD-1x-dkE">
@@ -1252,10 +1252,10 @@
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M43-HV-68e">
-                                <rect key="frame" x="16" y="187.5" width="382" height="575.5"/>
+                                <rect key="frame" x="16" y="127.5" width="382" height="625.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4g-zc-EkC">
-                                        <rect key="frame" x="119.5" y="276" width="143.5" height="23.5"/>
+                                        <rect key="frame" x="119.5" y="301" width="143.5" height="23.5"/>
                                         <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
                                         <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1271,12 +1271,12 @@
                         <viewLayoutGuide key="safeArea" id="F30-Z2-nmD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="A0e-if-aEu" firstAttribute="top" secondItem="F30-Z2-nmD" secondAttribute="top" constant="80" id="7EC-S1-TYj"/>
+                            <constraint firstItem="A0e-if-aEu" firstAttribute="top" secondItem="F30-Z2-nmD" secondAttribute="top" constant="20" id="7EC-S1-TYj"/>
                             <constraint firstItem="F30-Z2-nmD" firstAttribute="trailing" secondItem="M43-HV-68e" secondAttribute="trailing" constant="16" id="AUx-1p-zih"/>
                             <constraint firstItem="F30-Z2-nmD" firstAttribute="trailing" secondItem="DPw-FS-MjZ" secondAttribute="trailing" constant="16" id="COo-FN-yBw"/>
                             <constraint firstItem="A0e-if-aEu" firstAttribute="centerX" secondItem="DPw-FS-MjZ" secondAttribute="centerX" id="DEH-w4-vH1"/>
                             <constraint firstItem="m0f-lY-hCf" firstAttribute="top" secondItem="DPw-FS-MjZ" secondAttribute="bottom" constant="30" id="Gde-mK-1OB"/>
-                            <constraint firstItem="DPw-FS-MjZ" firstAttribute="top" secondItem="A0e-if-aEu" secondAttribute="bottom" constant="40" id="OZ3-HY-gan"/>
+                            <constraint firstItem="DPw-FS-MjZ" firstAttribute="top" secondItem="A0e-if-aEu" secondAttribute="bottom" constant="20" id="OZ3-HY-gan"/>
                             <constraint firstItem="M43-HV-68e" firstAttribute="top" secondItem="A0e-if-aEu" secondAttribute="bottom" constant="40" id="QnL-LY-zyp"/>
                             <constraint firstItem="F30-Z2-nmD" firstAttribute="trailing" secondItem="m0f-lY-hCf" secondAttribute="trailing" constant="16" id="Smg-PF-Zl9"/>
                             <constraint firstItem="DPw-FS-MjZ" firstAttribute="leading" secondItem="F30-Z2-nmD" secondAttribute="leading" constant="16" id="VMH-76-Ml3"/>
@@ -1321,7 +1321,7 @@
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fd4-xI-Vd2">
-                                <rect key="frame" x="20" y="249" width="374" height="593"/>
+                                <rect key="frame" x="20" y="257" width="374" height="585"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </webView>
                         </subviews>
@@ -1335,7 +1335,7 @@
                             <constraint firstItem="JV4-0m-iKN" firstAttribute="trailing" secondItem="Fd4-xI-Vd2" secondAttribute="trailing" constant="20" id="Hb9-F1-ov0"/>
                             <constraint firstItem="JV4-0m-iKN" firstAttribute="bottom" secondItem="Fd4-xI-Vd2" secondAttribute="bottom" constant="20" id="wIM-vS-jkQ"/>
                             <constraint firstItem="62m-fQ-vjk" firstAttribute="leading" secondItem="JV4-0m-iKN" secondAttribute="leading" id="x4s-ok-jyi"/>
-                            <constraint firstItem="Fd4-xI-Vd2" firstAttribute="top" secondItem="62m-fQ-vjk" secondAttribute="bottom" id="xaz-Hi-u9Y"/>
+                            <constraint firstItem="Fd4-xI-Vd2" firstAttribute="top" secondItem="62m-fQ-vjk" secondAttribute="bottom" constant="8" id="xaz-Hi-u9Y"/>
                             <constraint firstItem="62m-fQ-vjk" firstAttribute="top" secondItem="zy2-5V-J0q" secondAttribute="top" id="zAP-Uu-wY6"/>
                         </constraints>
                     </view>
@@ -1348,7 +1348,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jK8-79-QJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="fKl-Xm-urf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4568" y="-439"/>
+            <point key="canvasLocation" x="4566.666666666667" y="-439.28571428571428"/>
         </scene>
         <!--Contact Us View Controller-->
         <scene sceneID="HKA-9A-MFg">
@@ -1362,13 +1362,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" you can contact us via email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02h-8L-4Dc">
-                                <rect key="frame" x="16" y="309" width="382" height="20"/>
-                                <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="17"/>
+                                <rect key="frame" x="16" y="311.5" width="382" height="21"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="18"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="J7q-1h-4YB">
-                                <rect key="frame" x="16" y="352" width="382" height="16"/>
+                                <rect key="frame" x="16" y="355.5" width="382" height="16"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mail_24px" translatesAutoresizingMaskIntoConstraints="NO" id="ppA-AX-bWi">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="16"/>
@@ -1386,7 +1386,7 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NKd-cn-i5S">
-                                <rect key="frame" x="16" y="388" width="382" height="50"/>
+                                <rect key="frame" x="16" y="391.5" width="382" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="EgZ-3f-iG7"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="boq-fI-MbM"/>
@@ -1398,7 +1398,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Content" translatesAutoresizingMaskIntoConstraints="NO" id="UX1-dp-Pg2">
-                                <rect key="frame" x="16" y="452" width="382" height="150"/>
+                                <rect key="frame" x="16" y="455.5" width="382" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="eHc-g5-ngd"/>
                                 </constraints>
@@ -1411,12 +1411,12 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-I5-PpP" customClass="GradientButton" customModule="samrtble" customModuleProvider="target">
-                                <rect key="frame" x="16" y="622" width="382" height="50"/>
+                                <rect key="frame" x="16" y="625.5" width="382" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="IyQ-Fp-mOX"/>
                                     <constraint firstAttribute="height" constant="50" id="ifG-BF-M0g"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="21"/>
                                 <state key="normal" title="Send">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1444,8 +1444,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gl-nL-jqj">
-                                <rect key="frame" x="161.5" y="265" width="91.5" height="21"/>
-                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="18"/>
+                                <rect key="frame" x="156.5" y="265" width="101.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2379,7 +2379,7 @@
     </scenes>
     <designables>
         <designable name="d6d-I5-PpP">
-            <size key="intrinsicContentSize" width="59" height="42"/>
+            <size key="intrinsicContentSize" width="50" height="37"/>
         </designable>
     </designables>
     <resources>

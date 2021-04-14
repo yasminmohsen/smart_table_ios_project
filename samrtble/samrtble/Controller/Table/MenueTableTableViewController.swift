@@ -31,7 +31,7 @@ class MenueTableTableViewController: UITableViewController {
     
     
     @IBAction func rateUsBtn(_ sender: Any) {
-        var appId = ""
+        var appId = "com.optimalsoft.samrtble"
         if let url = URL(string: "itms-apps://apple.com/app/\(appId)") {
             UIApplication.shared.open(url)
         }
