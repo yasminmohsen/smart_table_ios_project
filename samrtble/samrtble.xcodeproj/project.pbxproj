@@ -56,6 +56,7 @@
 		6CA117DE2604B07D006B1AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA117DC2604B07D006B1AA1 /* LaunchScreen.storyboard */; };
 		6CA117E92604B07D006B1AA1 /* samrtbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA117E82604B07D006B1AA1 /* samrtbleTests.swift */; };
 		6CA117F42604B07E006B1AA1 /* samrtbleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA117F32604B07E006B1AA1 /* samrtbleUITests.swift */; };
+		6CA8A23D2628704F00A9752C /* AppIcons in Resources */ = {isa = PBXBuildFile; fileRef = 6CA8A23C2628704F00A9752C /* AppIcons */; };
 		6CAD278026072C1E00BBED74 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD277F26072C1E00BBED74 /* ResponseModel.swift */; };
 		6CC307DA262628320097FA06 /* TableHomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC307D9262628310097FA06 /* TableHomeExtension.swift */; };
 /* End PBXBuildFile section */
@@ -137,6 +138,7 @@
 		6CA117EF2604B07D006B1AA1 /* samrtbleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = samrtbleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA117F32604B07E006B1AA1 /* samrtbleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = samrtbleUITests.swift; sourceTree = "<group>"; };
 		6CA117F52604B07E006B1AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CA8A23C2628704F00A9752C /* AppIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppIcons; path = ../../../../../../../../Downloads/AppIcons; sourceTree = "<group>"; };
 		6CAD277F26072C1E00BBED74 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		6CC307D9262628310097FA06 /* TableHomeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHomeExtension.swift; sourceTree = "<group>"; };
 		8922138A86744855F7C5FAF8 /* Pods-samrtble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-samrtble.release.xcconfig"; path = "Target Support Files/Pods-samrtble/Pods-samrtble.release.xcconfig"; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				6CA117D12604B07C006B1AA1 /* AppDelegate.swift */,
 				6CA117D32604B07C006B1AA1 /* SceneDelegate.swift */,
 				6CA117DA2604B07D006B1AA1 /* Assets.xcassets */,
+				6CA8A23C2628704F00A9752C /* AppIcons */,
 				6CA117DC2604B07D006B1AA1 /* LaunchScreen.storyboard */,
 				6CA117DF2604B07D006B1AA1 /* Info.plist */,
 			);
@@ -511,6 +514,7 @@
 				6C6F7995261A469500A92359 /* Cairo-Regular.ttf in Resources */,
 				6CA117DB2604B07D006B1AA1 /* Assets.xcassets in Resources */,
 				6CA117D92604B07C006B1AA1 /* Main.storyboard in Resources */,
+				6CA8A23D2628704F00A9752C /* AppIcons in Resources */,
 				6C6F798C261A3BB700A92359 /* Myriad Pro Light.otf in Resources */,
 				6C6F795C261A280500A92359 /* Myriad Pro Bold.ttf in Resources */,
 			);

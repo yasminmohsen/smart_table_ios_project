@@ -10,10 +10,11 @@ import MOLH
 class MenueTableTableViewController: UITableViewController {
 
   
+    @IBOutlet weak var contactUs: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        contactUs.titleLabel?.textAlignment = .center
     }
 
     @IBAction func aboutAppBtn(_ sender: Any) {
@@ -32,6 +33,7 @@ class MenueTableTableViewController: UITableViewController {
     
     @IBAction func rateUsBtn(_ sender: Any) {
         var appId = "com.optimalsoft.samrtble"
+        https://itunes.apple.com/us/app/urbanspoon/id284708449
         if let url = URL(string: "itms-apps://apple.com/app/\(appId)") {
             UIApplication.shared.open(url)
         }

@@ -11,15 +11,23 @@ class NotificationViewController: UIViewController {
     @IBOutlet weak var noNotificationView: UIView!
     
     @IBOutlet weak var activityIndecator: UIActivityIndicatorView!
+    @IBOutlet weak var segemntedBtn: UISegmentedControl!
     
     @IBOutlet weak var tableView: UITableView!
     var notificationTableResult = [ResultNotification]()
     let notificationViewModel = NotificationViewModel()
     
-
+    @IBOutlet weak var segmentedBtnView: UIView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        segemntedBtn.setSegmentStyle()
+     
+            CustomDesignView.customViewWithShadow(view: segmentedBtnView)
+        segmentedBtnView.layer.borderColor =  UIColor(red: 112/250, green: 112/250, blue: 112/250 ,alpha: 1.0).cgColor
+           
+        
         
         let refreshControl = UIRefreshControl()
        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
