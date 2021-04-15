@@ -81,5 +81,11 @@ class SecondScreenViewController: UIViewController {
     }
     
     
-
+    @IBAction func skip(_ sender: Any) {
+        
+        
+        let defults = UserDefaults.standard
+        defults.setValue("goLogin", forKey: FirstScreenViewController.GO_LOGIN)
+    }
+    
 }

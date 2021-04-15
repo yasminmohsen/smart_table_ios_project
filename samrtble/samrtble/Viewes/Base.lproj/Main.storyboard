@@ -127,6 +127,7 @@
                                     <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
+                                    <action selector="skip:" destination="hP3-Y3-YSc" eventType="touchUpInside" id="PV9-nB-LkD"/>
                                     <segue destination="vwl-RE-RFH" kind="push" id="buA-aG-2sa"/>
                                 </connections>
                             </button>
@@ -216,6 +217,7 @@
                                     <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <connections>
+                                    <action selector="skip:" destination="zGW-fm-eTU" eventType="touchUpInside" id="niW-g7-K6n"/>
                                     <segue destination="vwl-RE-RFH" kind="push" id="Rbq-SB-6EI"/>
                                 </connections>
                             </button>
@@ -321,6 +323,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="start:" destination="0Cu-c3-NVo" eventType="touchUpInside" id="Ozh-yW-eUU"/>
                                                     <segue destination="vwl-RE-RFH" kind="push" id="G0P-OC-Xxg"/>
                                                 </connections>
                                             </button>

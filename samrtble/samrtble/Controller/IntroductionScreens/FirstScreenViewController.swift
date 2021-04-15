@@ -16,6 +16,8 @@ class FirstScreenViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var descriotionLabel: UILabel!
+    static let GO_LOGIN = "goLogin"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
@@ -111,6 +113,12 @@ class FirstScreenViewController: UIViewController {
         
     }
     
+    @IBAction func skip(_ sender: Any) {
+        
+        
+        let defults = UserDefaults.standard
+        defults.setValue("goLogin", forKey: FirstScreenViewController.GO_LOGIN)
+    }
     
 }
 

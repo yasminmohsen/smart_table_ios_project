@@ -18,16 +18,29 @@ class SplashViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             
-            let defaults = UserDefaults.standard
-            if let mobilePhone = defaults.string(forKey: MainLoginViewController.PHONE_KEY){
+            
+            
+            if let mobilePhone = UserDefaults.standard.string(forKey: MainLoginViewController.PHONE_KEY){
                 
         let  vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController
             self.navigationController?.pushViewController(vc, animated: true)
             }
             
             else{
-                let  vc = self.storyboard?.instantiateViewController(withIdentifier: "firstVC")as! FirstScreenViewController
-                    self.navigationController?.pushViewController(vc, animated: true)
+                
+                if let checkValue = UserDefaults.standard.string(forKey: FirstScreenViewController.GO_LOGIN){
+                    
+                    let  vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVc")as! LoginViewController
+                        self.navigationController?.pushViewController(vc, animated: true)
+                }
+                else{
+                    let  vc = self.storyboard?.instantiateViewController(withIdentifier: "firstVC")as! FirstScreenViewController
+                        self.navigationController?.pushViewController(vc, animated: true)
+                }
+                
+                
+                
+               
             }
     
             

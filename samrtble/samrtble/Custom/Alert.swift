@@ -14,6 +14,30 @@ struct Alert {
         alert.addAction(UIAlertAction(title: "Ok".localized, style: UIAlertAction.Style.cancel, handler: nil))
         viewRef.present(alert, animated: true, completion: nil)
     }
+    
+    
+    
+    static func showAdvanceedAlert(title: String,message: String, viewRef: UIViewController, actionClosure:@escaping()->Void)
+    {
+        
+        let advancedAlert = UIAlertController(title: title.localized, message: message.localized, preferredStyle: UIAlertController.Style.alert)
+        
+        
+        advancedAlert.addAction(UIAlertAction(title: "Yes".localized, style: .default, handler: {
+            action in
+            
+             actionClosure()
+            
+        }))
+        
+        
+        advancedAlert.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
+        
+        viewRef.present(advancedAlert, animated: true, completion: nil)
+        
+    }
+    
+    
 }
 protocol IView : UIViewController {
 

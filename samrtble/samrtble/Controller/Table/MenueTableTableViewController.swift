@@ -55,14 +55,13 @@ class MenueTableTableViewController: UITableViewController {
     
     @IBAction func logoutBtn(_ sender: Any) {
         
-        UserDefaults.standard.setValue(nil, forKey: MainLoginViewController.PHONE_KEY)
-        
-        let launchScreen = UIStoryboard(name: "Main", bundle: nil)
-        var vc = launchScreen.instantiateViewController(withIdentifier: "loginVc") as! LoginViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-        
-        
+        Alert.showAdvanceedAlert(title: "Alert", message: "Do you want to log out ?", viewRef: self) {
+            UserDefaults.standard.set(nil, forKey: MainLoginViewController.PHONE_KEY)
+            let launchScreen = UIStoryboard(name: "Main", bundle: nil)
+            var vc = launchScreen.instantiateViewController(withIdentifier: "loginVc") as! LoginViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
     }
     
     

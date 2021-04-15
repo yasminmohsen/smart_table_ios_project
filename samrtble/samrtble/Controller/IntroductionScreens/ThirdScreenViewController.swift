@@ -72,4 +72,13 @@ class ThirdScreenViewController: UIViewController {
             break
         }
 }
+    
+    
+    @IBAction func start(_ sender: Any) {
+        
+        let defults = UserDefaults.standard
+        defults.setValue("goLogin", forKey: FirstScreenViewController.GO_LOGIN)
+    }
+    
+    
 }

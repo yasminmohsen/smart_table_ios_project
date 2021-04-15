@@ -14,3 +14,7 @@
 "Alert" = "تنبيه";
 "Enter mobile number" = "ادخل رقم الجوال";
 "Enter mobile number in english "= "ادخل رقم الجوال باللغة الإنجليزية";
+"Please enter valid phone number" = "الرجاء إدخال رقم هاتف صحيح";
+"Do you want to log out ?" = "هل تريد تسجيل الخروج ؟";
+"Yes" = "نعم";
+"Cancel" = "إلغاء";

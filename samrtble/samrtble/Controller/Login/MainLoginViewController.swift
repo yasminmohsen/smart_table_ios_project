@@ -58,9 +58,17 @@ class MainLoginViewController: UIViewController {
                         guard let self = self else {return}
                         if let error = error {
                            // alert
-                            print(error)
-                            Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
-                            self.notFoundLabel.alpha = 1
+                            
+                            if error == "Enter mobile number in english "{
+                                print(error)
+                                Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
+                            }
+                            else{
+                                self.notFoundLabel.alpha = 1
+                                self.notFoundLabel.text = error
+                            }
+                           
+                           
                             self.activityIndecator.stopAnimating()
                             self.activityIndecator.alpha = 0
                             
@@ -153,6 +161,11 @@ class MainLoginViewController: UIViewController {
          if((phoneTextField.text!.isEmpty)){
              
             Alert.showSimpleAlert(title: "Alert", message: "Enter mobile number", viewRef: self)
+         }
+         
+         else if (phoneTextField.text!.count < 9){
+            Alert.showSimpleAlert(title: "Alert", message: "Please enter valid phone number", viewRef: self)
+            
          }
          else{
     
