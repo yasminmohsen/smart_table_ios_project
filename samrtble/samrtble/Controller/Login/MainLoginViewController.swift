@@ -16,7 +16,7 @@ class MainLoginViewController: UIViewController {
     
     @IBOutlet weak var plusBox: UILabel!
     
-    @IBOutlet weak var countryCode: UITextField!
+   // @IBOutlet weak var countryCode: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var notFoundLabel: UILabel!
 
@@ -41,8 +41,8 @@ class MainLoginViewController: UIViewController {
         phoneView.layer.borderWidth = 1.0
         phoneView.layer.cornerRadius = 12
         phoneView.layer.borderColor = UIColor.lightGray.cgColor
-        phoneTextField.delegate = self
-        countryCode.delegate = self
+     //   phoneTextField.delegate = self
+       // countryCode.delegate = self
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
         view.addGestureRecognizer(tap)
@@ -59,7 +59,7 @@ class MainLoginViewController: UIViewController {
                         if let error = error {
                            // alert
                             
-                            if error == "Enter mobile number in english "{
+                            if error == "Error!"{
                                 print(error)
                                 Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
                             }
@@ -108,41 +108,9 @@ class MainLoginViewController: UIViewController {
            let borderBottom = CALayer()
             let borderWidth = CGFloat(1.0)
 
-        
-        let lang = LanguageOperation.checkLanguage()
-            
-        switch lang{
-        
-        
-        
-        case .arabic:
-            countryCode.layer.addBorder(edge: UIRectEdge.left, color: UIColor.lightGray, thickness: 1.0)
-            
-        case .english:
-            countryCode.layer.addBorder(edge: UIRectEdge.right, color: UIColor.lightGray, thickness: 1.0)
-        default :
-            break
         }
-            
-        countryCode.textAlignment = .center
-        
-        
-        
+    
 
-        }
-    
-    
-    
-    @IBAction func countryCodeChanged(_ sender: Any) {
-   
-        if(countryCode.text!.count > 3){
-            
-            countryCode.deleteBackward()
-            
-        }
-        
-    }
-    
     
     // MARK:Functions :-
         
@@ -157,22 +125,18 @@ class MainLoginViewController: UIViewController {
 
     @IBAction func loginBtn(_ sender: Any) {
         
-        mobilePhoneNum = "00\(countryCode.text!)\(phoneTextField.text!)"
+        mobilePhoneNum = "\(phoneTextField.text!)"
          if((phoneTextField.text!.isEmpty)){
              
-            Alert.showSimpleAlert(title: "Alert", message: "Enter mobile number", viewRef: self)
+            Alert.showSimpleAlert(title: "Alert", message: "Enter user name", viewRef: self)
          }
-         
-         else if (phoneTextField.text!.count < 9){
-            Alert.showSimpleAlert(title: "Alert", message: "Please enter valid phone number", viewRef: self)
-            
-         }
+        
          else{
     
             activityIndecator.startAnimating()
             activityIndecator.alpha = 1
-            loginViewModel.fetchData(phone: mobilePhoneNum)
-             phoneTextField.text = ""
+            loginViewModel.fetchDataFromApi(phone: mobilePhoneNum)
+           //loginViewModel.fetchData(phone: mobilePhoneNum)
              
          }
         
@@ -181,23 +145,23 @@ class MainLoginViewController: UIViewController {
     
 }
 
-extension MainLoginViewController : UITextFieldDelegate{
-    
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if(textField == phoneTextField){
-            phoneTextField.text = ""
-             phoneTextField.textAlignment = .center
-        }
-        if(textField == countryCode){
-           
-            textField.text = ""
-            
-        }
-    }
-    
-   
-}
+//extension MainLoginViewController : UITextFieldDelegate{
+//
+//
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//
+//        if(textField == phoneTextField){
+//            phoneTextField.text = ""
+//             phoneTextField.textAlignment = .center
+//        }
+//        if(textField == countryCode){
+//
+//            textField.text = ""
+//
+//        }
+//    }
+//
+//
+//}
 
 

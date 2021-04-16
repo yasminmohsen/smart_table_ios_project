@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftyJSON
+import Network
 
 class LoginViewModel {
     
@@ -30,6 +31,47 @@ class LoginViewModel {
         }
         
     }
+    
+    
+    func fetchDataFromApi(phone:String) {
+      
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "InternetConnectionMonitor")
+                          
+
+               
+               monitor.pathUpdateHandler = { pathUpdateHandler in
+                          if pathUpdateHandler.status == .satisfied {
+                              print("Internet connection is on.")
+                            
+                            fetchData(phone: phone)
+                            DispatchQueue.main.async {
+                            
+                               
+                            
+                                                   }
+                            
+                            
+                          }
+                          else{
+                            print("Internet connection is off.")
+                          DispatchQueue.main.async {
+                                            
+                                                error = "no internet connection"
+                                                                       }
+                             
+                   }
+               
+           
+           }
+                monitor.start(queue: queue)
+        
+    }
+    
+    
+    
+    
+    
     
     
     
@@ -165,7 +207,7 @@ class LoginViewModel {
         }
         else{
            
-            self.error = "Enter mobile number in english "
+            self.error = "Error!"
         }
         
         
