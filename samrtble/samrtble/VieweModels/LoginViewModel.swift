@@ -144,9 +144,14 @@ class LoginViewModel {
                                     
                                     let day = teacherCellObj["day"].string ?? ""
                                     let class_number = teacherCellObj["class_number"].int ?? 0
-                                    let cell_text =  teacherCellObj["cell_text"].string ?? "_"
+                                    var cell_text =  teacherCellObj["cell_text"].string ?? "-"
+                                    let isWaiting = teacherCellObj["is_waiting"].boolValue ?? false
+                                    if (isWaiting == true){
+                                        cell_text = "-"
+                                    }
                                     
-                                    var obj = TableCellModel(day: day, class_number: class_number, cell_text: cell_text)
+                                    
+                                    var obj = TableCellModel(day: day, class_number: class_number, cell_text: cell_text,isWaiting: isWaiting)
                                     CellsModelArray.append(obj)
                                     
                                 }

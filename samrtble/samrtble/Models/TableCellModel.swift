@@ -13,5 +13,6 @@ struct TableCellModel : Codable{
 var day: String
 var class_number:Int
 var cell_text: String?
+var isWaiting :Bool
 
 }
