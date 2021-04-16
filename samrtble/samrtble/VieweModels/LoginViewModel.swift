@@ -13,13 +13,13 @@ class LoginViewModel {
     
     var apiKey :String?
     
-    var bindLogingModel:(_ error:String?,_ data:[TableInfoModel]? )->()={erro,data in }
+    var bindLogingModel:(_ error:String?,_ data:[TableInfoModel]? , _ networkError :String?)->()={erro,data,newtWorkError in }
     
     var error :String = "" {
         
         didSet{
             
-            bindLogingModel(error, nil)
+            bindLogingModel(error, nil,nil)
         }
         
     }
@@ -27,44 +27,49 @@ class LoginViewModel {
         
         didSet{
             
-            bindLogingModel(nil, data)
+            bindLogingModel(nil,data,nil)
         }
+    
+    }
+    
+    
+    var netWorkError :String = "" {
+        
+        didSet{
+            bindLogingModel(nil,nil,netWorkError)
+        }
+        
         
     }
     
     
     func fetchDataFromApi(phone:String) {
       
-        let monitor = NWPathMonitor()
+        let monitor = NWPathMonitor(requiredInterfaceType: .wifi)
         let queue = DispatchQueue(label: "InternetConnectionMonitor")
                           
 
                
                monitor.pathUpdateHandler = { pathUpdateHandler in
-                          if pathUpdateHandler.status == .satisfied {
+                if pathUpdateHandler.status == .satisfied {
                               print("Internet connection is on.")
-                            
-                            fetchData(phone: phone)
-                            DispatchQueue.main.async {
-                            
-                               
-                            
-                                                   }
-                            
-                            
+                          
+                                self.fetchData(phone: phone)
+              
                           }
                           else{
-                            print("Internet connection is off.")
-                          DispatchQueue.main.async {
-                                            
-                                                error = "no internet connection"
-                                                                       }
-                             
+                          
+                                print("Internet connection is off.")
+                                self.netWorkError = "no internet connection"
+                      
+                           
+                         
                    }
                
            
            }
-                monitor.start(queue: queue)
+               
+        monitor.start(queue: queue)
         
     }
     

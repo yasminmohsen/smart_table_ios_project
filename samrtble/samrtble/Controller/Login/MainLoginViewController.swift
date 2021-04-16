@@ -51,14 +51,22 @@ class MainLoginViewController: UIViewController {
                 
                 loginViewModel = LoginViewModel()
                 loginViewModel.bindLogingModel = {
-                    (error:String? , data:[TableInfoModel]?) ->() in
+                    (error:String? , data:[TableInfoModel]?, netWorkError) ->() in
                     
                     DispatchQueue.main.async {[weak self] in
                         
                         guard let self = self else {return}
+                        
+                        
+                        if let netWorkError = netWorkError {
+                            Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
+                        }
+                        
+                        
+                        
+                        
                         if let error = error {
                            // alert
-                            
                             if error == "Error!"{
                                 print(error)
                                 Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)

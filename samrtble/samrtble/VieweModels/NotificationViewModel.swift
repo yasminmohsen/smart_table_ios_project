@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftyJSON
+import Network
 class NotificationViewModel {
     
     var notificationTableModel = [NotificationData]()
@@ -14,13 +15,13 @@ class NotificationViewModel {
     var resultNotification = [ResultNotification]()
     var apiKey :String?
     
-    var bindNotificationModel:(_ error:String?,_ data:[ResultNotification]? )->()={erro,data in }
+    var bindNotificationModel:(_ error:String?,_ data:[ResultNotification]?, _ netWorkError:String?)->()={erro,data,netWorkError in }
     
     var error :String = "" {
         
         didSet{
             
-            bindNotificationModel(error, nil)
+            bindNotificationModel(error, nil,nil)
         }
         
     }
@@ -28,10 +29,60 @@ class NotificationViewModel {
         
         didSet{
             
-            bindNotificationModel(nil, data)
+            bindNotificationModel(nil, data,nil)
         }
         
     }
+    
+    
+    
+    var netWorkError :String = ""{
+        
+        didSet{
+            
+            bindNotificationModel(nil,nil,netWorkError)
+            
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
+    func fetchDataFromApi() {
+      
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "InternetConnectionMonitor")
+                          
+
+               
+               monitor.pathUpdateHandler = { pathUpdateHandler in
+                if pathUpdateHandler.status == .satisfied {
+                              print("Internet connection is on.")
+                          
+                                self.fetchData()
+              
+                          }
+                          else{
+                          
+                                print("Internet connection is off.")
+                                self.netWorkError = "no internet connection"
+                      
+                           
+                         
+                   }
+               
+           
+           }
+               
+        monitor.start(queue: queue)
+        
+    }
+    
+    
+    
     
     
     

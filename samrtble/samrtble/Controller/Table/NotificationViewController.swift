@@ -24,7 +24,7 @@ class NotificationViewController: UIViewController {
         super.viewDidLoad()
         segemntedBtn.setSegmentStyle()
      
-            CustomDesignView.customViewWithShadow(view: segmentedBtnView)
+        CustomDesignView.customViewWithShadow(view: segmentedBtnView)
         segmentedBtnView.layer.borderColor =  UIColor(red: 112/250, green: 112/250, blue: 112/250 ,alpha: 1.0).cgColor
            
         
@@ -39,17 +39,22 @@ class NotificationViewController: UIViewController {
         activityIndecator.startAnimating()
        
         
-        notificationViewModel.bindNotificationModel = { (error:String? , data:[ResultNotification]?) ->() in
+        notificationViewModel.bindNotificationModel = { (error:String? , data:[ResultNotification]?,netWorkError:String?) ->() in
             
             
             DispatchQueue.main.async {[weak self] in
                 
                 guard let self = self else {return}
                 
+                if let netWorkError = netWorkError {
+
+                    Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
+                }
+              
+                
+                
                 if let error = error {
                     
-                    
-                    print(error)
                     self.activityIndecator.startAnimating()
                 }
                 
@@ -80,13 +85,13 @@ class NotificationViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        notificationViewModel.fetchData()
+        notificationViewModel.fetchDataFromApi()
     }
     
     
     @objc func refreshTable (){
         
-        notificationViewModel.fetchData()
+        notificationViewModel.fetchDataFromApi()
      
     }
     

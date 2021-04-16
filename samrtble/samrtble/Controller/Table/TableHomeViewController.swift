@@ -62,17 +62,16 @@ class TableHomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
         tabBarSegmentedBtn.selectedSegmentIndex = 1
-        schoolNames.removeAll()
-        daysArray.removeAll()
+        callApi()
         if(tableInfoModel == nil){
-            callApi()
+
         }
-     
+
         else{
             updateUi()
             self.updateTableInContainer(index: 0)
         }
-       
+//
 
     }
     
@@ -137,6 +136,9 @@ class TableHomeViewController: UIViewController {
     
     func updateUi(){
         teacher.text = teacherWord
+        schoolNames.removeAll()
+        classesArray.removeAll()
+        classesNumber.removeAll()
         for obj in tableInfoModel {
           
             teacherName.text =  "\(hi) \(obj.teacher_nickname)"
@@ -167,21 +169,15 @@ class TableHomeViewController: UIViewController {
     
     
     func updateTableInContainer(index : Int){
+        if(classesArray.count>0 && classesNumber.count>0){subjectsArray = classesArray[index]
+            classNumberArray = classesNumber[index]}
         
-        
-        subjectsArray = classesArray[index]
-        classNumberArray = classesNumber[index]
         
         for collectionObj in collectionArray {
             
             collectionObj.reloadData()
         }
-        
-//        let CVC = children.last as! ClassesTableViewController
-//        CVC.updateUi(classArrayObj,classNumberObj,day: day , daysArray: daysArray)
-        
-//        let CVC = children.last as! CustomClassTableViewController
-//        CVC.updateUi(classArrayObj,classNumberObj)
+    
         
     }
     
@@ -190,11 +186,18 @@ class TableHomeViewController: UIViewController {
         
         
         loginViewModel.bindLogingModel = {
-            (error:String? , data:[TableInfoModel]?) ->() in
+            (error:String? , data:[TableInfoModel]?, netWorkError:String?) ->() in
             
             DispatchQueue.main.async { [weak self] in
                 
                 guard let self = self else {return}
+                
+                
+                if let netWorkError = netWorkError {
+                    Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
+                }
+                
+                
                 
                 if let error = error {
                     Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
@@ -228,7 +231,7 @@ class TableHomeViewController: UIViewController {
         let defaults = UserDefaults.standard
         mobilePhone = defaults.string(forKey: MainLoginViewController.PHONE_KEY)
         
-        loginViewModel.fetchData(phone: mobilePhone)
+        loginViewModel.fetchDataFromApi(phone: mobilePhone)
         
     }
     
