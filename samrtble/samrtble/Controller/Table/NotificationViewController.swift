@@ -49,6 +49,8 @@ class NotificationViewController: UIViewController {
                 if let netWorkError = netWorkError {
 
                     Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
+                    self.activityIndecator.stopAnimating()
+                    self.activityIndecator.alpha = 0
                 }
               
                 
