@@ -17,7 +17,6 @@
 		6C5E1E182609DC2700C35700 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C5E1E1A2609DC2700C35700 /* Localizable.strings */; };
 		6C5E1E202609DC5000C35700 /* Extension String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E1E1F2609DC5000C35700 /* Extension String.swift */; };
 		6C5E1E2C2609E3F500C35700 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E1E2B2609E3F500C35700 /* SplashViewController.swift */; };
-		6C6750BF260E08F200DB22F6 /* ClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6750BE260E08F200DB22F6 /* ClassesTableViewController.swift */; };
 		6C6750D5260E6C6400DB22F6 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6750D4260E6C6400DB22F6 /* Design.swift */; };
 		6C6750DA260E6F1B00DB22F6 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6750D9260E6F1B00DB22F6 /* FirstScreenViewController.swift */; };
 		6C6750E52611155100DB22F6 /* SecondScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6750E42611155100DB22F6 /* SecondScreenViewController.swift */; };
@@ -47,8 +46,6 @@
 		6C7E21C92606133700B10A74 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7E21C82606133700B10A74 /* LoginViewModel.swift */; };
 		6C7E21D72606155800B10A74 /* Api_Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7E21D62606155800B10A74 /* Api_Service.swift */; };
 		6C7E21DF2606176200B10A74 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7E21DE2606176200B10A74 /* Result.swift */; };
-		6C92D89626258FD0001059F5 /* CustomClassTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C92D89526258FD0001059F5 /* CustomClassTableViewController.swift */; };
-		6C92D89B26258FE7001059F5 /* CustomClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C92D89A26258FE7001059F5 /* CustomClassViewController.swift */; };
 		6C92D8A0262590B4001059F5 /* TableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C92D89F262590B4001059F5 /* TableCollectionViewCell.swift */; };
 		6C9889362609399E004F7B8B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9889352609399E004F7B8B /* CustomButton.swift */; };
 		6CA117D22604B07C006B1AA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA117D12604B07C006B1AA1 /* AppDelegate.swift */; };
@@ -97,7 +94,6 @@
 		6C5E1E1E2609DC2C00C35700 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C5E1E1F2609DC5000C35700 /* Extension String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension String.swift"; sourceTree = "<group>"; };
 		6C5E1E2B2609E3F500C35700 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		6C6750BE260E08F200DB22F6 /* ClassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesTableViewController.swift; sourceTree = "<group>"; };
 		6C6750D4260E6C6400DB22F6 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		6C6750D9260E6F1B00DB22F6 /* FirstScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
 		6C6750E42611155100DB22F6 /* SecondScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenViewController.swift; sourceTree = "<group>"; };
@@ -124,8 +120,6 @@
 		6C7E21C82606133700B10A74 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6C7E21D62606155800B10A74 /* Api_Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api_Service.swift; sourceTree = "<group>"; };
 		6C7E21DE2606176200B10A74 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		6C92D89526258FD0001059F5 /* CustomClassTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomClassTableViewController.swift; sourceTree = "<group>"; };
-		6C92D89A26258FE7001059F5 /* CustomClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomClassViewController.swift; sourceTree = "<group>"; };
 		6C92D89F262590B4001059F5 /* TableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCollectionViewCell.swift; sourceTree = "<group>"; };
 		6C9889352609399E004F7B8B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		6CA117CE2604B07C006B1AA1 /* samrtble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = samrtble.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,11 +210,8 @@
 			children = (
 				6C7E21032604B66400B10A74 /* Extension */,
 				6C6F3C732613DAE6005928EB /* TableHomeViewController.swift */,
-				6C6750BE260E08F200DB22F6 /* ClassesTableViewController.swift */,
 				6C6BF94C2615077C00A8A3EB /* NotificationViewController.swift */,
 				6C6BF9B92616763100A8A3EB /* MenueTableTableViewController.swift */,
-				6C92D89526258FD0001059F5 /* CustomClassTableViewController.swift */,
-				6C92D89A26258FE7001059F5 /* CustomClassViewController.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -600,12 +591,9 @@
 				6C6C0246261E05E000DD8C7B /* AboutAppViewController.swift in Sources */,
 				6C7E21DF2606176200B10A74 /* Result.swift in Sources */,
 				6CC307DA262628320097FA06 /* TableHomeExtension.swift in Sources */,
-				6C6750BF260E08F200DB22F6 /* ClassesTableViewController.swift in Sources */,
-				6C92D89B26258FE7001059F5 /* CustomClassViewController.swift in Sources */,
 				6C7E21C92606133700B10A74 /* LoginViewModel.swift in Sources */,
 				6C5E1E2C2609E3F500C35700 /* SplashViewController.swift in Sources */,
 				6C6F79E5261C635000A92359 /* ContactUsViewController.swift in Sources */,
-				6C92D89626258FD0001059F5 /* CustomClassTableViewController.swift in Sources */,
 				6C6750E52611155100DB22F6 /* SecondScreenViewController.swift in Sources */,
 				6C38EC522619179D0093B4DA /* CustomDesignView.swift in Sources */,
 				6C38EC3826189A890093B4DA /* NotificationViewModel.swift in Sources */,
