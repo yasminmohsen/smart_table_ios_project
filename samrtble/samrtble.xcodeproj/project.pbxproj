@@ -37,6 +37,7 @@
 		6C6F79E5261C635000A92359 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F79E4261C635000A92359 /* ContactUsViewController.swift */; };
 		6C6F79EF261D173000A92359 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F79EE261D173000A92359 /* Alert.swift */; };
 		6C6F79FC261D245700A92359 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F79FB261D245700A92359 /* LoginViewController.swift */; };
+		6C753DCC262C331D000D4DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C753DCB262C331D000D4DFE /* Assets.xcassets */; };
 		6C7E21392604B8CB00B10A74 /* TableInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7E21382604B8CB00B10A74 /* TableInfoModel.swift */; };
 		6C7E21462604BA7000B10A74 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7E21452604BA7000B10A74 /* ClassModel.swift */; };
 		6C7E214B2604BAA500B10A74 /* TableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7E214A2604BAA500B10A74 /* TableCellModel.swift */; };
@@ -56,7 +57,6 @@
 		6CA117DE2604B07D006B1AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA117DC2604B07D006B1AA1 /* LaunchScreen.storyboard */; };
 		6CA117E92604B07D006B1AA1 /* samrtbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA117E82604B07D006B1AA1 /* samrtbleTests.swift */; };
 		6CA117F42604B07E006B1AA1 /* samrtbleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA117F32604B07E006B1AA1 /* samrtbleUITests.swift */; };
-		6CA8A23D2628704F00A9752C /* AppIcons in Resources */ = {isa = PBXBuildFile; fileRef = 6CA8A23C2628704F00A9752C /* AppIcons */; };
 		6CAD278026072C1E00BBED74 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAD277F26072C1E00BBED74 /* ResponseModel.swift */; };
 		6CC307DA262628320097FA06 /* TableHomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC307D9262628310097FA06 /* TableHomeExtension.swift */; };
 /* End PBXBuildFile section */
@@ -113,6 +113,7 @@
 		6C6F79E4261C635000A92359 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		6C6F79EE261D173000A92359 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		6C6F79FB261D245700A92359 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6C753DCB262C331D000D4DFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../../../../Downloads/new AppIcons/Assets.xcassets"; sourceTree = "<group>"; };
 		6C7E21382604B8CB00B10A74 /* TableInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableInfoModel.swift; sourceTree = "<group>"; };
 		6C7E21452604BA7000B10A74 /* ClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
 		6C7E214A2604BAA500B10A74 /* TableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellModel.swift; sourceTree = "<group>"; };
@@ -138,7 +139,6 @@
 		6CA117EF2604B07D006B1AA1 /* samrtbleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = samrtbleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA117F32604B07E006B1AA1 /* samrtbleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = samrtbleUITests.swift; sourceTree = "<group>"; };
 		6CA117F52604B07E006B1AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6CA8A23C2628704F00A9752C /* AppIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppIcons; path = ../../../../../../../../Downloads/AppIcons; sourceTree = "<group>"; };
 		6CAD277F26072C1E00BBED74 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		6CC307D9262628310097FA06 /* TableHomeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHomeExtension.swift; sourceTree = "<group>"; };
 		8922138A86744855F7C5FAF8 /* Pods-samrtble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-samrtble.release.xcconfig"; path = "Target Support Files/Pods-samrtble/Pods-samrtble.release.xcconfig"; sourceTree = "<group>"; };
@@ -365,7 +365,7 @@
 				6CA117D12604B07C006B1AA1 /* AppDelegate.swift */,
 				6CA117D32604B07C006B1AA1 /* SceneDelegate.swift */,
 				6CA117DA2604B07D006B1AA1 /* Assets.xcassets */,
-				6CA8A23C2628704F00A9752C /* AppIcons */,
+				6C753DCB262C331D000D4DFE /* Assets.xcassets */,
 				6CA117DC2604B07D006B1AA1 /* LaunchScreen.storyboard */,
 				6CA117DF2604B07D006B1AA1 /* Info.plist */,
 			);
@@ -511,10 +511,10 @@
 				6C5E1E182609DC2700C35700 /* Localizable.strings in Resources */,
 				6C6F795B261A280500A92359 /* Myriad Pro Semibold.ttf in Resources */,
 				6C6F795A261A280500A92359 /* Myriad Pro Regular.ttf in Resources */,
+				6C753DCC262C331D000D4DFE /* Assets.xcassets in Resources */,
 				6C6F7995261A469500A92359 /* Cairo-Regular.ttf in Resources */,
 				6CA117DB2604B07D006B1AA1 /* Assets.xcassets in Resources */,
 				6CA117D92604B07C006B1AA1 /* Main.storyboard in Resources */,
-				6CA8A23D2628704F00A9752C /* AppIcons in Resources */,
 				6C6F798C261A3BB700A92359 /* Myriad Pro Light.otf in Resources */,
 				6C6F795C261A280500A92359 /* Myriad Pro Bold.ttf in Resources */,
 			);

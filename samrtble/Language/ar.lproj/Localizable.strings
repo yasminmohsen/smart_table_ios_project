@@ -20,4 +20,5 @@
 "Cancel" = "إلغاء";
 "About App" = "عن التطبيق";
 "Error!" = "حدث خطأ!";
-"Enter user name" = "أدخل أسم المستخدم";
+"Enter user id" = "أدخل أسم المستخدم";
+"Enter Id" = "";

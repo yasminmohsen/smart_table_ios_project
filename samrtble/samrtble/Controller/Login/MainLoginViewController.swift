@@ -33,10 +33,15 @@ class MainLoginViewController: UIViewController {
         switch lang {
         case .arabic:
             enteraYourMobileLabel.textAlignment = .right
+            phoneTextField.textAlignment = .right
         default:
             enteraYourMobileLabel.textAlignment = .left
+            phoneTextField.textAlignment = .left
         }
         
+        phoneTextField.placeholder = "Enter Id".localized
+        phoneTextField.setLeftPaddingPoints(10)
+        phoneTextField.setRightPaddingPoints(10)
         
         phoneView.layer.borderWidth = 1.0
         phoneView.layer.cornerRadius = 12
@@ -138,7 +143,7 @@ class MainLoginViewController: UIViewController {
         mobilePhoneNum = "\(phoneTextField.text!)"
          if((phoneTextField.text!.isEmpty)){
              
-            Alert.showSimpleAlert(title: "Alert", message: "Enter user name", viewRef: self)
+            Alert.showSimpleAlert(title: "Alert", message: "Enter user id", viewRef: self)
          }
         
          else{
@@ -146,7 +151,6 @@ class MainLoginViewController: UIViewController {
             activityIndecator.startAnimating()
             activityIndecator.alpha = 1
             loginViewModel.fetchDataFromApi(phone: mobilePhoneNum)
-           //loginViewModel.fetchData(phone: mobilePhoneNum)
              
          }
         
@@ -155,6 +159,19 @@ class MainLoginViewController: UIViewController {
     
 }
 
+
+extension UITextField {
+    func setLeftPaddingPoints(_ amount:CGFloat){
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.leftView = paddingView
+        self.leftViewMode = .always
+    }
+    func setRightPaddingPoints(_ amount:CGFloat) {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
+        self.rightView = paddingView
+        self.rightViewMode = .always
+    }
+}
 //extension MainLoginViewController : UITextFieldDelegate{
 //
 //
