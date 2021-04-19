@@ -41,7 +41,7 @@ class TableHomeViewController: UIViewController {
     let hi = "Hi,".localized
     let connected = "Connected with ".localized
     let school = "school".localized
-    let teacherWord = "Teacher".localized
+    let teacherWord = "Teacher in".localized
     var classNumberArray = [ClassModel]()
     var subjectsArray = [[String]]()
     var collectionArray = [UICollectionView]()
@@ -162,7 +162,7 @@ class TableHomeViewController: UIViewController {
         
         schoolSegmentedBtn.selectedSegmentIndex = 0
         
-        connectedWith.text = "\(connected)\(schoolNames.count) \(school)"
+        connectedWith.text = "\(schoolNames[0])"
         
     }
     

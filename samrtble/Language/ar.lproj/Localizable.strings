@@ -7,7 +7,7 @@
 "Hi," = "اهلاً،";
 "Connected with " = "مشترك بـ ";
 "school" = "مدرسة";
-"Teacher" = "معلم";
+"Teacher in" = "معلم في ";
 "Invalid email" = "بريد إلكتروني غير صالح" ;
 "Fill empty fields" = "أملأ الخانات الفارغه";
 "Skip" = "تخطي";
@@ -21,5 +21,5 @@
 "About App" = "عن التطبيق";
 "Error!" = "حدث خطأ!";
 "Enter user id" = "أدخل أسم المستخدم";
-"Enter Id" = "";
+"Enter Id" = "أدخل الرمز التعريفي";
 "no internet connection"="لا يوجد إتصال بالنت";

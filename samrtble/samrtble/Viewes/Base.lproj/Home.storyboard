@@ -325,25 +325,25 @@
                                 <color key="textColor" red="0.15686274509803921" green="0.62352941176470589" blue="0.6588235294117647" alpha="0.98837959340076564" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts1-D8-4sT">
-                                <rect key="frame" x="175.5" y="127" width="63" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts1-D8-4sT">
+                                <rect key="frame" x="166" y="127" width="82.5" height="21"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="18"/>
                                 <color key="textColor" red="0.92156862745098034" green="0.6705882352941176" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected with 0 school" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa9-dq-kJ9">
-                                <rect key="frame" x="107" y="165" width="200.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa9-dq-kJ9">
+                                <rect key="frame" x="207" y="165" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="18"/>
                                 <color key="textColor" red="0.92156862745098034" green="0.6705882352941176" blue="0.1764705882352941" alpha="0.98837959340076564" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gay-5F-dzO">
-                                <rect key="frame" x="16" y="205" width="382" height="50"/>
+                                <rect key="frame" x="16" y="184" width="382" height="0.0"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8ss-Zh-kll">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="51"/>
+                                    <segmentedControl opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8ss-Zh-kll">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="1"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="S9L-Dz-0Wq"/>
+                                            <constraint firstAttribute="height" id="S9L-Dz-0Wq"/>
                                         </constraints>
                                         <segments>
                                             <segment title=""/>
@@ -366,7 +366,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DpF-vF-AIv">
-                                <rect key="frame" x="12" y="269" width="390" height="50"/>
+                                <rect key="frame" x="12" y="198" width="390" height="50"/>
                                 <subviews>
                                     <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="icJ-Ks-Yu0">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
@@ -443,7 +443,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJS-vc-FvH">
-                                <rect key="frame" x="0.0" y="331" width="414" height="467"/>
+                                <rect key="frame" x="0.0" y="260" width="414" height="538"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AH6-TI-oro">
                                         <rect key="frame" x="0.0" y="8" width="406" height="420"/>
@@ -1017,7 +1017,7 @@
                                         </constraints>
                                     </view>
                                     <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="C4U-RR-W0j">
-                                        <rect key="frame" x="184.5" y="215" width="37" height="37"/>
+                                        <rect key="frame" x="184.5" y="250.5" width="37" height="37"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.072683210958677164" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </activityIndicatorView>

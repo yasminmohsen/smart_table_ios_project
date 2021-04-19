@@ -168,7 +168,7 @@ extension NotificationViewController : UITableViewDelegate,UITableViewDataSource
 //        view.tintColor = UIColor.black
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.black
-        header.textLabel?.font = UIFont(name:"Myriad Pro Bold", size: 16)
+        header.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
     }
 
     

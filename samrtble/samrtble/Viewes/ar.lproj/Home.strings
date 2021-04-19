@@ -48,7 +48,7 @@
 "UX1-dp-Pg2.text" = "نص الرسالة";
 
 /* Class = "UILabel"; text = "Connected with 0 school"; ObjectID = "Wa9-dq-kJ9"; */
-"Wa9-dq-kJ9.text" = "مشترك في 0 مدرسة";
+"Wa9-dq-kJ9.text" = " ";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "XXs-Mt-Lc2"; */
 "XXs-Mt-Lc2.text" = "Label";
@@ -90,7 +90,7 @@
 "siw-ct-Wqy.text" = "يوم/#";
 
 /* Class = "UILabel"; text = "Teacher"; ObjectID = "ts1-D8-4sT"; */
-"ts1-D8-4sT.text" = "معلم";
+"ts1-D8-4sT.text" = "معلم في";
 
 /* Class = "UIButton"; normalTitle = "Contact us"; ObjectID = "wnk-db-Y6b"; */
 "wnk-db-Y6b.normalTitle" = "اتصل بنا";
