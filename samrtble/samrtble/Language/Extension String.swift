@@ -15,3 +15,8 @@ extension String {
         return NSLocalizedString(self, comment: "")
     }
 }
+
+
+extension String {
+    var decodingUnicodeCharacters: String { applyingTransform(.init("Hex-Any"), reverse: false) ?? "" }
+}

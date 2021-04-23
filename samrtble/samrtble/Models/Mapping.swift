@@ -24,13 +24,5 @@ class MappedModel {
         return nameArray
     }
     
-    
-    
-    
-    
-    
-        
-        
-        
-    
+   
 }

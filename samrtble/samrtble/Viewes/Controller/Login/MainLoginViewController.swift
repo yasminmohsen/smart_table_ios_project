@@ -29,6 +29,53 @@ class MainLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        customUi()
+    
+        // MARK: Binding :-
+                
+                loginViewModel = LoginViewModel()
+                loginViewModel.bindLogingModel = {
+                    (error:String? , result:Result?, netWorkError:String?) ->() in
+                    
+                    DispatchQueue.main.async {[weak self] in
+                        
+                        guard let self = self else {return}
+                        
+                        
+                        if let netWorkError = netWorkError {
+                            self.onFiluer(error: nil, netWorkError: netWorkError)
+                        }
+                        
+                        if let error = error {
+                            self.onFiluer(error: error, netWorkError: nil)
+                          
+                        }
+                        
+                        
+                        if let result = result {
+                            
+                            self.onSucessUpdateView()
+                           
+                            
+                        }
+                        
+                    }
+                }
+    }
+    
+  
+    override func viewDidLayoutSubviews() {
+     //Creates the bottom border
+           let borderBottom = CALayer()
+            let borderWidth = CGFloat(1.0)
+
+        }
+    
+
+    
+    // MARK:Functions :-
+    
+    func customUi(){
         let lang = LanguageOperation.checkLanguage()
         switch lang {
         case .arabic:
@@ -51,84 +98,10 @@ class MainLoginViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
         view.addGestureRecognizer(tap)
-    
-        // MARK: Binding :-
-                
-                loginViewModel = LoginViewModel()
-                loginViewModel.bindLogingModel = {
-                    (error:String? , data:[TableInfoModel]?, netWorkError) ->() in
-                    
-                    DispatchQueue.main.async {[weak self] in
-                        
-                        guard let self = self else {return}
-                        
-                        
-                        if let netWorkError = netWorkError {
-                            Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
-                            self.activityIndecator.stopAnimating()
-                            self.activityIndecator.alpha = 0
-                        }
-                        
-                        
-                        
-                        
-                        if let error = error {
-                           // alert
-                            if error == "Error!"{
-                                print(error)
-                                Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
-                            }
-                            else{
-                                self.notFoundLabel.alpha = 1
-                                self.notFoundLabel.text = error
-                            }
-                           
-                           
-                            self.activityIndecator.stopAnimating()
-                            self.activityIndecator.alpha = 0
-                            
-                        }
-                        
-                        
-                        if let data = data {
-                            
-                            //Save Phone to UserDefault :-
-                            self.saveToUserDefult(phone:self.mobilePhoneNum)
-                         
-                            
-                            var vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController
-                            vc.tableInfoModel = data
-                            
-                            
-                            self.activityIndecator.stopAnimating()
-                            self.activityIndecator.alpha = 0
-                            
-                            self.navigationController?.pushViewController(vc, animated: true)
-                            
-                            
-                        }
-                        
-                    }
-                }
         
-        
-       
     }
     
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    override func viewDidLayoutSubviews() {
-     //Creates the bottom border
-           let borderBottom = CALayer()
-            let borderWidth = CGFloat(1.0)
-
-        }
-    
-
-    
-    // MARK:Functions :-
-        
+    ///Save To UserDefults :-
         func saveToUserDefult(phone:String) {
             
             let defaults = UserDefaults.standard
@@ -136,6 +109,62 @@ class MainLoginViewController: UIViewController {
             
             
         }
+    
+
+       
+
+    
+    // MARK: After Binding Functions :-
+    
+    func onSucessUpdateView(){
+        
+        self.saveToUserDefult(phone:self.mobilePhoneNum)
+     
+        
+        var vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController
+
+        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+    }
+    
+    
+    func onFiluer(error:String? ,netWorkError:String?){
+        if let netWorkError = netWorkError {
+            Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
+                        
+        }
+        
+        if let error = error {
+            if error == "Error!"{
+                print(error)
+                Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
+            }
+            else{
+                self.notFoundLabel.alpha = 1
+                self.notFoundLabel.text = error
+            }
+           
+           
+          
+            
+        }
+        
+        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
+    }
+    
+    
+    
+   
+    
+    
+    // MARK:Action Functions :-
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
 
     @IBAction func loginBtn(_ sender: Any) {
@@ -148,8 +177,8 @@ class MainLoginViewController: UIViewController {
         
          else{
     
-            activityIndecator.startAnimating()
-            activityIndecator.alpha = 1
+
+            ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .start)
             loginViewModel.fetchDataFromApi(phone: mobilePhoneNum)
              
          }
@@ -159,19 +188,8 @@ class MainLoginViewController: UIViewController {
     
 }
 
+   //*****************************************************************************************************//
 
-extension UITextField {
-    func setLeftPaddingPoints(_ amount:CGFloat){
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
-    }
-    func setRightPaddingPoints(_ amount:CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.rightView = paddingView
-        self.rightViewMode = .always
-    }
-}
 //extension MainLoginViewController : UITextFieldDelegate{
 //
 //

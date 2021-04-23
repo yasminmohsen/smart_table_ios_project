@@ -20,18 +20,17 @@ class TableHomeViewController: UIViewController {
     @IBOutlet weak var schoolSegmentedBtn: UISegmentedControl!
     @IBOutlet weak var tabBarSegmentedBtn: UISegmentedControl!
     
-    
-    
     @IBOutlet weak var classesNumberView: UICollectionView!
     @IBOutlet weak var sunday: UICollectionView!
     @IBOutlet weak var monday: UICollectionView!
     @IBOutlet weak var tuesday: UICollectionView!
     @IBOutlet weak var wednsday: UICollectionView!
     @IBOutlet weak var thuresday: UICollectionView!
+    @IBOutlet weak var segmentedBnHightConstarints: NSLayoutConstraint!
     
     var tableInfoModel : [TableInfoModel]!
     var classesArray = [[[String]]]()
-    var loginViewModel = LoginViewModel()
+    var homaViewModel = HomeViewModel()
     var mobilePhone :String!
     var apiKey :String?
     var classesNumber = [[ClassModel]]()
@@ -52,10 +51,8 @@ class TableHomeViewController: UIViewController {
         super.viewDidLoad()
         collectionArray = [classesNumberView,sunday,monday,tuesday,wednsday,thuresday]
         customUi()
-      
         bindingData()
        
-            
         }
         
 
@@ -63,18 +60,11 @@ class TableHomeViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
         tabBarSegmentedBtn.selectedSegmentIndex = 1
         callApi()
-        if(tableInfoModel == nil){
-
-        }
-
-        else{
-            updateUi()
-            self.updateTableInContainer(index: 0)
-        }
-//
 
     }
     
+    
+    // MARK:Functions :-
     
     func customUi(){
         CustomDesignView.customViewWithShadow(view: dayStackView)
@@ -90,9 +80,7 @@ class TableHomeViewController: UIViewController {
            
         }
         
-        
         for i in collectionArray {
-            
             
             i.delegate = self
             i.dataSource = self
@@ -102,6 +90,69 @@ class TableHomeViewController: UIViewController {
         }
     }
 
+    
+   
+    
+    func updateUi(){
+        teacher.text = teacherWord
+        schoolNames = homaViewModel.schoolNames
+        classesArray = homaViewModel.classesArray
+        classesNumber=homaViewModel.classesNumber
+        day = homaViewModel.day
+        daysArray = homaViewModel.daysArray
+        teacherName.text = "\(hi) \(homaViewModel.teacherName)"
+        connectedWith.text = "\(schoolNames[0])"
+        
+        schoolSegmentedBtn.removeAllSegments()
+        
+        for (index,school) in schoolNames.enumerated()
+       {
+        
+        schoolSegmentedBtn.insertSegment(withTitle: school, at: index, animated: false)
+       }
+        
+        schoolSegmentedBtn.selectedSegmentIndex = 0
+        self.updateTableInContainer(index: 0)
+        
+        if(schoolNames.count>1){
+            
+            schoolSegmentedBtn.alpha = 1
+            segmentedBnHightConstarints.constant = 50
+        }
+     
+    }
+    
+   
+    
+    func updateTableInContainer(index : Int){
+        if(classesArray.count>0 && classesNumber.count>0){
+            subjectsArray = classesArray[index]
+            classNumberArray = classesNumber[index]}
+        for collectionObj in collectionArray {
+            
+            collectionObj.reloadData()
+        }
+    
+        
+    }
+    
+    
+    
+    func callApi(){
+        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .start)
+        
+        let defaults = UserDefaults.standard
+        mobilePhone = defaults.string(forKey: MainLoginViewController.PHONE_KEY)
+        
+        homaViewModel.fetchDataFromApi(phone: mobilePhone)
+        
+    }
+    
+    
+    
+    
+    // MARK:Action Functions :-
+    
 
     @IBAction func schoolSegmentAction(_ sender: Any) {
         
@@ -131,112 +182,6 @@ class TableHomeViewController: UIViewController {
   
     }
     
-    
-    
-    
-    func updateUi(){
-        teacher.text = teacherWord
-        schoolNames.removeAll()
-        classesArray.removeAll()
-        classesNumber.removeAll()
-        for obj in tableInfoModel {
-          
-            teacherName.text =  "\(hi) \(obj.teacher_nickname)"
-            var MappingModel = MappedModel()
-            schoolNames.append(obj.school_name)
-            classesArray.append(MappingModel.converTableModelToClasses(obj))
-            classesNumber.append(obj.classes)
-            day = obj.day
-            daysArray = obj.days
-            
-            
-        }
-        schoolSegmentedBtn.removeAllSegments()
-        
-        for (index,school) in schoolNames.enumerated()
-       {
-        
-        schoolSegmentedBtn.insertSegment(withTitle: school, at: index, animated: false)
-       }
-        
-        
-        schoolSegmentedBtn.selectedSegmentIndex = 0
-        
-        connectedWith.text = "\(schoolNames[0])"
-        
-    }
-    
-    
-    
-    func updateTableInContainer(index : Int){
-        if(classesArray.count>0 && classesNumber.count>0){subjectsArray = classesArray[index]
-            classNumberArray = classesNumber[index]}
-        
-        
-        for collectionObj in collectionArray {
-            
-            collectionObj.reloadData()
-        }
-    
-        
-    }
-    
-
-    func bindingData(){
-        
-        
-        loginViewModel.bindLogingModel = {
-            (error:String? , data:[TableInfoModel]?, netWorkError:String?) ->() in
-            
-            DispatchQueue.main.async { [weak self] in
-                
-                guard let self = self else {return}
-                
-                
-                if let netWorkError = netWorkError {
-                    Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
-                    self.activityIndecator.stopAnimating()
-                    self.activityIndecator.alpha = 0
-                    
-                }
-                
-                
-                
-                if let error = error {
-                    Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
-                    print(error)
-                    
-                    self.activityIndecator.stopAnimating()
-                    self.activityIndecator.alpha = 0
-                    
-                }
-                
-                
-                if let data = data {
-                   self.tableInfoModel = data
-                    self.updateUi()
-                    self.updateTableInContainer(index: 0)
-                    self.activityIndecator.stopAnimating()
-                    self.activityIndecator.alpha = 0
-                    
-                }
-                
-            }
-        }
-    }
-    
-    
-    
-    
-    func callApi(){
-        activityIndecator.startAnimating()
-        activityIndecator.alpha = 1
-        let defaults = UserDefaults.standard
-        mobilePhone = defaults.string(forKey: MainLoginViewController.PHONE_KEY)
-        
-        loginViewModel.fetchDataFromApi(phone: mobilePhone)
-        
-    }
     
     
     @IBAction func minueAction(_ sender: Any) {
@@ -271,6 +216,69 @@ class TableHomeViewController: UIViewController {
         
     }
       
+    
+   
+    
+    
+    
+    
+    // MARK: Binding :-
+    
+    func bindingData(){
+        
+        
+        homaViewModel.bindLogingModel = {
+            (error:String? , data:[TableInfoModel]?, netWorkError:String?) ->() in
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else {return}
+                
+            if let data = data {
+                self.onSucessUpdateView()
+            }
+            
+            
+            if let error = error{
+                self.onFiluer(error: error,netWorkError: nil)
+                
+            }
+            
+            if let netWorkError = netWorkError{
+                self.onFiluer(error: nil, netWorkError: netWorkError)
+            }
+                
+            }
+         
+        }
+    }
+    
+    
+    
+    
+    // MARK: After Binding Functions :-
+    
+    func onSucessUpdateView(){
+        
+         self.tableInfoModel = homaViewModel.data
+         self.updateUi()
+     ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
+        
+    }
+    
+    func onFiluer(error:String? ,netWorkError:String?){
+        if let netWorkError = netWorkError {
+            Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
+        
+        }
+        
+        if let error = error {
+            Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
+          
+        }
+        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
+    
+    }
+    
 }
 
 

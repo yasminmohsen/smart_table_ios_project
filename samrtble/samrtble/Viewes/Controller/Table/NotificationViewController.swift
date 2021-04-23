@@ -16,7 +16,7 @@ class NotificationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var notificationTableResult = [ResultNotification]()
     let notificationViewModel = NotificationViewModel()
-    
+    let refreshControl = UIRefreshControl()
     @IBOutlet weak var segmentedBtnView: UIView!
     
 
@@ -29,14 +29,13 @@ class NotificationViewController: UIViewController {
            
         
         
-        let refreshControl = UIRefreshControl()
+      
        refreshControl.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
 
         tableView.refreshControl = refreshControl
         tableView.delegate = self
         tableView.dataSource = self
-        activityIndecator.alpha = 1
-        activityIndecator.startAnimating()
+        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .start)
        
         
         notificationViewModel.bindNotificationModel = { (error:String? , data:[ResultNotification]?,netWorkError:String?) ->() in
@@ -48,36 +47,22 @@ class NotificationViewController: UIViewController {
                 
                 if let netWorkError = netWorkError {
 
-                    Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
-                    self.activityIndecator.stopAnimating()
-                    self.activityIndecator.alpha = 0
+                    self.onFiluer(error: nil, netWorkError: netWorkError)
                 }
               
                 
                 
                 if let error = error {
                     
-                    self.activityIndecator.startAnimating()
+                    self.onFiluer(error: error, netWorkError: nil)
                 }
                 
                 if let data = data {
-                    self.notificationTableResult.removeAll()
-                    self.activityIndecator.stopAnimating()
-                    self.activityIndecator.alpha = 0
-                    self.notificationTableResult = data
-                    if(self.notificationTableResult.count == 0){
-                        self.noNotificationView.alpha = 1
-                        
-                    }
-                    else{
-                        self.noNotificationView.alpha = 0
-                    }
-                    refreshControl.endRefreshing()
-                    self.tableView.reloadData()
-                    
-                  
-                    
+
+                    self.onSucessUpdateView()
+
                 }
+                    
             }
 
             
@@ -108,68 +93,42 @@ class NotificationViewController: UIViewController {
         
     }
     
-    
-}
-
-
-extension NotificationViewController : UITableViewDelegate,UITableViewDataSource{
-    
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func onSucessUpdateView(){
         
+         
+     ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
         
-        return notificationTableResult[section].data.count
-        
-        
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! NotificationTableViewCell
-        cell.languageCustomUi(cell: cell)
-        cell.schoolLabel.text = notificationTableResult[indexPath.section].data[indexPath.row].title
-        cell.detailsLabel.text = notificationTableResult[indexPath.section].data[indexPath.row].body
-       
-        cell.timeLabel.text = notificationTableResult[indexPath.section].data[indexPath.row].timeCreated
-        CustomButton.customViewWithShadow(view: cell.viewCell)
-        if(indexPath.section == 0 && indexPath.row == 0){
-            //255 253 207
-            cell.viewCell.layer.backgroundColor = UIColor(red: 255/255, green: 253/255, blue: 207/255, alpha: 1.0).cgColor
+        self.notificationTableResult.removeAll()
+        self.notificationTableResult = notificationViewModel.data
+        if(self.notificationTableResult.count == 0){
+            self.noNotificationView.alpha = 1
         }
         else{
-            cell.viewCell.layer.backgroundColor = UIColor.white.cgColor
+            self.noNotificationView.alpha = 0
         }
-        return cell
+        self.refreshControl.endRefreshing()
+        self.tableView.reloadData()
+        
+      
+        
     }
     
+    func onFiluer(error:String? ,netWorkError:String?){
+        if let netWorkError = netWorkError {
+            Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
+        }
+        
+        if let error = error {
+            Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
+          
+        }
+        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
+        self.refreshControl.endRefreshing()
     
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
-
-
     }
-    
-
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return notificationTableResult.count
-    }
-    
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return  notificationTableResult[section].date
-    }
-
-
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-//        view.tintColor = UIColor.black
-        let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = UIColor.black
-        header.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-    }
-
     
 }
+
+
+
+
