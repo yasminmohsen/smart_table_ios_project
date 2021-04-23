@@ -11,7 +11,7 @@ import Network
 class NotificationViewModel {
     
     var resultNotification = [ResultNotification]()
-   
+    
     
     var bindNotificationModel:(_ error:String?,_ data:[ResultNotification]?, _ netWorkError:String?)->()={erro,data,netWorkError in }
     
@@ -49,7 +49,7 @@ class NotificationViewModel {
     
     
     func fetchDataFromApi() {
-      
+        
         InternetCheckConnection.checkIntener(self)
         
     }
@@ -80,11 +80,11 @@ class NotificationViewModel {
             
         }
     }
-
+    
     
 }
-    
-   
+
+
 extension NotificationViewModel :IcheckNetworkConnection{
     func onSucessConnected() {
         
@@ -97,13 +97,13 @@ extension NotificationViewModel :IcheckNetworkConnection{
         self.netWorkError = "no internet connection"
     }
     
-   
+    
 }
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
 

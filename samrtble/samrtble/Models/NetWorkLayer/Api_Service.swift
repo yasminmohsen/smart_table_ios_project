@@ -12,9 +12,9 @@ import SwiftyJSON
 import Foundation
 
 
-    
+
 class ApiService {
-     var phone :String
+    var phone :String
     var type :String
     var apiKey : String?
     var notificationTableModel = [NotificationData]()
@@ -26,10 +26,12 @@ class ApiService {
     }
     
     
+    // MARK:Fetch Data For HomeScreen :-
+    
     func fetchData(completion : @escaping (_ tableModelArray:[TableInfoModel]?,_ error:String?)->())  {
         let apiServiceUrl = ApIServiceUrl(phone: phone, type: type)
         
-         let url = apiServiceUrl.url
+        let url = apiServiceUrl.url
         if let  urlRequest = URL(string: url){
             let request = NSMutableURLRequest(url: urlRequest)
             
@@ -147,7 +149,7 @@ class ApiService {
                         
                         if(!message.isEmpty){
                             
-                         completion(nil,message)
+                            completion(nil,message)
                             print(message)
                         }
                     }
@@ -161,8 +163,8 @@ class ApiService {
             
         }
         else{
-           
-           let error = "Error!"
+            
+            let error = "Error!"
             completion(nil,error)
         }
         

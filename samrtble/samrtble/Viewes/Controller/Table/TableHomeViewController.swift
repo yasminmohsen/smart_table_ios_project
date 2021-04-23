@@ -9,7 +9,7 @@ import UIKit
 import SideMenu
 class TableHomeViewController: UIViewController {
     
-
+    
     @IBOutlet weak var teacher: UILabel!
     @IBOutlet weak var teacherName: UILabel!
     @IBOutlet weak var activityIndecator: UIActivityIndicatorView!
@@ -52,15 +52,15 @@ class TableHomeViewController: UIViewController {
         collectionArray = [classesNumberView,sunday,monday,tuesday,wednsday,thuresday]
         customUi()
         bindingData()
-       
-        }
         
-
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
         tabBarSegmentedBtn.selectedSegmentIndex = 1
         callApi()
-
+        
     }
     
     
@@ -70,14 +70,14 @@ class TableHomeViewController: UIViewController {
         CustomDesignView.customViewWithShadow(view: dayStackView)
         dayStackView.layer.borderColor = UIColor(red: 112/250, green: 112/250, blue: 112/250 ,alpha: 1.0).cgColor
         dayStackView.layer.borderWidth = 0.2
-    
+        
         schoolSegmentedBtn.setSegmentStyle()
         tabBarSegmentedBtn.setSegmentStyle()
         
         for segView in segmentedBtnView{
             CustomDesignView.customViewWithShadow(view: segView)
             segView.layer.borderColor =  UIColor(red: 112/250, green: 112/250, blue: 112/250 ,alpha: 1.0).cgColor
-           
+            
         }
         
         for i in collectionArray {
@@ -89,9 +89,9 @@ class TableHomeViewController: UIViewController {
             
         }
     }
-
     
-   
+    
+    
     
     func updateUi(){
         teacher.text = teacherWord
@@ -106,10 +106,10 @@ class TableHomeViewController: UIViewController {
         schoolSegmentedBtn.removeAllSegments()
         
         for (index,school) in schoolNames.enumerated()
-       {
-        
-        schoolSegmentedBtn.insertSegment(withTitle: school, at: index, animated: false)
-       }
+        {
+            
+            schoolSegmentedBtn.insertSegment(withTitle: school, at: index, animated: false)
+        }
         
         schoolSegmentedBtn.selectedSegmentIndex = 0
         self.updateTableInContainer(index: 0)
@@ -119,10 +119,10 @@ class TableHomeViewController: UIViewController {
             schoolSegmentedBtn.alpha = 1
             segmentedBnHightConstarints.constant = 50
         }
-     
+        
     }
     
-   
+    
     
     func updateTableInContainer(index : Int){
         if(classesArray.count>0 && classesNumber.count>0){
@@ -132,7 +132,7 @@ class TableHomeViewController: UIViewController {
             
             collectionObj.reloadData()
         }
-    
+        
         
     }
     
@@ -153,14 +153,14 @@ class TableHomeViewController: UIViewController {
     
     // MARK:Action Functions :-
     
-
+    
     @IBAction func schoolSegmentAction(_ sender: Any) {
         
-     let index = schoolSegmentedBtn.selectedSegmentIndex
+        let index = schoolSegmentedBtn.selectedSegmentIndex
         if(classesArray.count > 0){
             updateTableInContainer(index: index)
         }
-       
+        
     }
     
     
@@ -172,37 +172,37 @@ class TableHomeViewController: UIViewController {
         switch tabBarSegmentedBtn.selectedSegmentIndex {
         case 0:
             let vc = self.storyboard?.instantiateViewController(identifier: "notificationVC") as! NotificationViewController
-
+            
             self.navigationController?.pushViewController(vc, animated: true)
-               
+            
         default:
-      break
- 
+            break
+            
         }
-  
+        
     }
     
     
     
     @IBAction func minueAction(_ sender: Any) {
         
-       let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! SideMenuNavigationController
-     
+        let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! SideMenuNavigationController
         
-      let language = LanguageOperation.checkLanguage()
+        
+        let language = LanguageOperation.checkLanguage()
         print(language)
         switch language {
         case .arabic:
             menu.leftSide = false
         case .english :
             menu.leftSide = true
-        
+            
         default:
             break
         }
         
         menu.presentationStyle = .menuSlideIn
-    
+        
         CustomDesignView.customMenuShadowView(menu)
         
         present(menu, animated: true, completion: nil)
@@ -215,9 +215,9 @@ class TableHomeViewController: UIViewController {
     @IBAction func unwinToHome(segue: UIStoryboardSegue){
         
     }
-      
     
-   
+    
+    
     
     
     
@@ -233,22 +233,22 @@ class TableHomeViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else {return}
                 
-            if let data = data {
-                self.onSucessUpdateView()
-            }
-            
-            
-            if let error = error{
-                self.onFiluer(error: error,netWorkError: nil)
+                if let data = data {
+                    self.onSucessUpdateView()
+                }
+                
+                
+                if let error = error{
+                    self.onFiluer(error: error,netWorkError: nil)
+                    
+                }
+                
+                if let netWorkError = netWorkError{
+                    self.onFiluer(error: nil, netWorkError: netWorkError)
+                }
                 
             }
             
-            if let netWorkError = netWorkError{
-                self.onFiluer(error: nil, netWorkError: netWorkError)
-            }
-                
-            }
-         
         }
     }
     
@@ -259,24 +259,24 @@ class TableHomeViewController: UIViewController {
     
     func onSucessUpdateView(){
         
-         self.tableInfoModel = homaViewModel.data
-         self.updateUi()
-     ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
+        self.tableInfoModel = homaViewModel.data
+        self.updateUi()
+        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
         
     }
     
     func onFiluer(error:String? ,netWorkError:String?){
         if let netWorkError = netWorkError {
             Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
-        
+            
         }
         
         if let error = error {
             Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
-          
+            
         }
         ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
-    
+        
     }
     
 }

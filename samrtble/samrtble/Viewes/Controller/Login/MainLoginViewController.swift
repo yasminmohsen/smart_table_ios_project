@@ -8,7 +8,7 @@
 import UIKit
 
 class MainLoginViewController: UIViewController {
-
+    
     @IBOutlet weak var activityIndecator: UIActivityIndicatorView!
     
     @IBOutlet weak var phoneView: UIView!
@@ -16,10 +16,10 @@ class MainLoginViewController: UIViewController {
     
     @IBOutlet weak var plusBox: UILabel!
     
-   // @IBOutlet weak var countryCode: UITextField!
+    // @IBOutlet weak var countryCode: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var notFoundLabel: UILabel!
-
+    
     static let PHONE_KEY :String = "phone"
     var loginViewModel :LoginViewModel!
     var mobilePhoneNum : String = ""
@@ -28,50 +28,50 @@ class MainLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         customUi()
-    
+        
         // MARK: Binding :-
+        
+        loginViewModel = LoginViewModel()
+        loginViewModel.bindLogingModel = {
+            (error:String? , result:Result?, netWorkError:String?) ->() in
+            
+            DispatchQueue.main.async {[weak self] in
                 
-                loginViewModel = LoginViewModel()
-                loginViewModel.bindLogingModel = {
-                    (error:String? , result:Result?, netWorkError:String?) ->() in
-                    
-                    DispatchQueue.main.async {[weak self] in
-                        
-                        guard let self = self else {return}
-                        
-                        
-                        if let netWorkError = netWorkError {
-                            self.onFiluer(error: nil, netWorkError: netWorkError)
-                        }
-                        
-                        if let error = error {
-                            self.onFiluer(error: error, netWorkError: nil)
-                          
-                        }
-                        
-                        
-                        if let result = result {
-                            
-                            self.onSucessUpdateView()
-                           
-                            
-                        }
-                        
-                    }
+                guard let self = self else {return}
+                
+                
+                if let netWorkError = netWorkError {
+                    self.onFiluer(error: nil, netWorkError: netWorkError)
                 }
+                
+                if let error = error {
+                    self.onFiluer(error: error, netWorkError: nil)
+                    
+                }
+                
+                
+                if let result = result {
+                    
+                    self.onSucessUpdateView()
+                    
+                    
+                }
+                
+            }
+        }
     }
     
-  
-    override func viewDidLayoutSubviews() {
-     //Creates the bottom border
-           let borderBottom = CALayer()
-            let borderWidth = CGFloat(1.0)
-
-        }
     
-
+    override func viewDidLayoutSubviews() {
+        //Creates the bottom border
+        let borderBottom = CALayer()
+        let borderWidth = CGFloat(1.0)
+        
+    }
+    
+    
     
     // MARK:Functions :-
     
@@ -93,8 +93,8 @@ class MainLoginViewController: UIViewController {
         phoneView.layer.borderWidth = 1.0
         phoneView.layer.cornerRadius = 12
         phoneView.layer.borderColor = UIColor.lightGray.cgColor
-     //   phoneTextField.delegate = self
-       // countryCode.delegate = self
+        //   phoneTextField.delegate = self
+        // countryCode.delegate = self
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
         view.addGestureRecognizer(tap)
@@ -102,27 +102,27 @@ class MainLoginViewController: UIViewController {
     }
     
     ///Save To UserDefults :-
-        func saveToUserDefult(phone:String) {
-            
-            let defaults = UserDefaults.standard
-            defaults.set(phone, forKey: MainLoginViewController.PHONE_KEY)
-            
-            
-        }
+    func saveToUserDefult(phone:String) {
+        
+        let defaults = UserDefaults.standard
+        defaults.set(phone, forKey: MainLoginViewController.PHONE_KEY)
+        
+        
+    }
     
-
-       
-
+    
+    
+    
     
     // MARK: After Binding Functions :-
     
     func onSucessUpdateView(){
         
         self.saveToUserDefult(phone:self.mobilePhoneNum)
-     
+        
         
         var vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController
-
+        
         ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
         
         self.navigationController?.pushViewController(vc, animated: true)
@@ -134,7 +134,7 @@ class MainLoginViewController: UIViewController {
     func onFiluer(error:String? ,netWorkError:String?){
         if let netWorkError = netWorkError {
             Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
-                        
+            
         }
         
         if let error = error {
@@ -146,9 +146,9 @@ class MainLoginViewController: UIViewController {
                 self.notFoundLabel.alpha = 1
                 self.notFoundLabel.text = error
             }
-           
-           
-          
+            
+            
+            
             
         }
         
@@ -157,7 +157,7 @@ class MainLoginViewController: UIViewController {
     
     
     
-   
+    
     
     
     // MARK:Action Functions :-
@@ -166,29 +166,29 @@ class MainLoginViewController: UIViewController {
         view.endEditing(true)
     }
     
-
+    
     @IBAction func loginBtn(_ sender: Any) {
         
         mobilePhoneNum = "\(phoneTextField.text!)"
-         if((phoneTextField.text!.isEmpty)){
-             
+        if((phoneTextField.text!.isEmpty)){
+            
             Alert.showSimpleAlert(title: "Alert", message: "Enter user id", viewRef: self)
-         }
+        }
         
-         else{
-    
-
+        else{
+            
+            
             ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .start)
             loginViewModel.fetchDataFromApi(phone: mobilePhoneNum)
-             
-         }
+            
+        }
         
         
     }
     
 }
 
-   //*****************************************************************************************************//
+//*****************************************************************************************************//
 
 //extension MainLoginViewController : UITextFieldDelegate{
 //

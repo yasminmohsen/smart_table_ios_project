@@ -10,11 +10,11 @@ import SwiftyJSON
 import Network
 
 class LoginViewModel {
-
+    
     var phone:String = ""
     
     
-  
+    
     // MARK:Variables :-
     
     
@@ -34,7 +34,7 @@ class LoginViewModel {
             
             bindLogingModel(nil,result,nil)
         }
-    
+        
     }
     
     
@@ -46,7 +46,7 @@ class LoginViewModel {
         
         
         
-    
+        
     }
     
     
@@ -55,7 +55,7 @@ class LoginViewModel {
     // MARK:Functions :-
     
     func fetchDataFromApi(phone:String) {
-      
+        
         self.phone = phone
         
         InternetCheckConnection.checkIntener(self)
@@ -67,8 +67,8 @@ class LoginViewModel {
     
     
     func fetchData(phone:String){
-
-    let apiService = ApiService(phone: phone, type: "teacher-table")
+        
+        let apiService = ApiService(phone: phone, type: "teacher-table")
         apiService.fetchData { [weak self](tableInfoModelArray, error) in
             
             guard let self = self else{return}
@@ -88,22 +88,22 @@ class LoginViewModel {
         
     }
     
-   
+    
 }
 
 
 extension LoginViewModel:IcheckNetworkConnection{
     func onSucessConnected() {
         print("Internet connection is on.")
-    
-          self.fetchData(phone: phone)
+        
+        self.fetchData(phone: phone)
     }
     
     func onFailurConnected() {
         print("Internet connection is off.")
         self.netWorkError = "no internet connection"
     }
-
+    
     
 }
 

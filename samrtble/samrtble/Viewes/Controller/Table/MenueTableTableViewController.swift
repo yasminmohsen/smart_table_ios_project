@@ -8,15 +8,15 @@
 import UIKit
 import MOLH
 class MenueTableTableViewController: UITableViewController {
-
-  
+    
+    
     @IBOutlet weak var contactUs: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         contactUs.titleLabel?.textAlignment = .center
     }
-
+    
     @IBAction func aboutAppBtn(_ sender: Any) {
     }
     
@@ -45,10 +45,10 @@ class MenueTableTableViewController: UITableViewController {
     @IBAction func languageBtn(_ sender: Any) {
         
         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
-         
-
-         
-         restartApplication()
+        
+        
+        
+        restartApplication()
         
     }
     
@@ -70,24 +70,24 @@ class MenueTableTableViewController: UITableViewController {
     
     
     func restartApplication () {
-     
+        
         let launchScreen = UIStoryboard(name: "Main", bundle: nil)
         var tableViewController = launchScreen.instantiateViewController(withIdentifier: "splashScreen") as! SplashViewController
-
+        
         let navCtrl = UINavigationController(rootViewController:tableViewController)
         //
         guard
             let window = UIApplication.shared.keyWindow,
             let rootViewController = window.rootViewController
-            else {
-                return
+        else {
+            return
         }
- 
+        
         navCtrl.setNavigationBarHidden(true, animated: true)
         UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
             window.rootViewController = navCtrl
         })
-
+        
     }
     
     

@@ -11,7 +11,7 @@ import Network
 
 class HomeViewModel {
     
-
+    
     var classesArray = [[[String]]]()
     var classesNumber = [[ClassModel]]()
     var day :String!
@@ -21,7 +21,7 @@ class HomeViewModel {
     var phone :String = ""
     
     
-  
+    
     // MARK:Variables :-
     
     var bindLogingModel:(_ error:String?,_ data:[TableInfoModel]? , _ networkError :String?)->()={erro,data,newtWorkError in }
@@ -39,7 +39,7 @@ class HomeViewModel {
             
             bindLogingModel(nil,data,nil)
         }
-    
+        
     }
     
     
@@ -50,7 +50,7 @@ class HomeViewModel {
         }
         
         
-    
+        
         
     }
     
@@ -67,12 +67,12 @@ class HomeViewModel {
     
     
     
-
+    
     
     func fetchData(phone:String){
         
-   
-    let apiService = ApiService(phone: phone, type: "teacher-table")
+        
+        let apiService = ApiService(phone: phone, type: "teacher-table")
         apiService.fetchData { (tableInfoModelArray, error) in
             
             if let tableInfoArray = tableInfoModelArray {
@@ -104,7 +104,7 @@ class HomeViewModel {
         
         
     }
-     
+    
     
 }
 
@@ -113,8 +113,8 @@ class HomeViewModel {
 extension HomeViewModel :IcheckNetworkConnection{
     func onSucessConnected() {
         print("Internet connection is on.")
-    
-          self.fetchData(phone: phone)
+        
+        self.fetchData(phone: phone)
     }
     
     func onFailurConnected() {
