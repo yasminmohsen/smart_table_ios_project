@@ -29,6 +29,20 @@ struct ApIService {
     let headerValue = "Accept-Language"
     
     
+    
+    func fetchData(completion : @escaping ([TableInfoModel]?,_ error:String?)->())  {
+    
+        let hello = "error"
+      
+
+        completion(nil,hello)
+        
+        
+    }
+    
+    
+    
+    
 }
 
 
