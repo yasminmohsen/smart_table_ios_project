@@ -61,7 +61,7 @@ class HomeViewModel {
     func fetchDataFromApi(phone:String) {
         self.phone = phone
         weak var weakSelf = self
-        InternetCheckConnection.checkIntener(weakSelf!)
+        InternetCheckConnection().checkIntener(weakSelf!)
         
     }
     

@@ -36,8 +36,7 @@ struct Alert {
         viewRef.present(advancedAlert, animated: true, completion: nil)
         
     }
-    
-    
+
 }
 protocol IView : UIViewController {
 

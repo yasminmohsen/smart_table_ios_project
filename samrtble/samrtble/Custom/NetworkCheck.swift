@@ -13,18 +13,18 @@ class InternetCheckConnection {
     
     
     
-    static func checkIntener(_ iCheckNetworkConnection :IcheckNetworkConnection){
+   func checkIntener(_ iCheckNetworkConnection :IcheckNetworkConnection){
 
-          let monitor = NWPathMonitor(requiredInterfaceType: .wifi)
+       weak var  monitor = NWPathMonitor()
           let queue = DispatchQueue(label: "InternetConnectionMonitor")
                             
 
-                 monitor.pathUpdateHandler = { pathUpdateHandler in
+                 monitor!.pathUpdateHandler = { pathUpdateHandler in
                   if pathUpdateHandler.status == .satisfied {
                                 print("Internet connection is on.")
                             
                     iCheckNetworkConnection.onSucessConnected()
-                    monitor.cancel()
+                    monitor!.cancel()
                                  // self.fetchData(phone: phone)
                 
                             }
@@ -41,7 +41,7 @@ class InternetCheckConnection {
              
              }
                  
-          monitor.start(queue: queue)
+          monitor!.start(queue: queue)
         
         
     }

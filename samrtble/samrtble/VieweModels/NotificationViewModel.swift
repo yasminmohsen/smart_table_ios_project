@@ -52,7 +52,7 @@ class NotificationViewModel {
     func fetchDataFromApi() {
       
         weak var weakSelf = self
-        InternetCheckConnection.checkIntener(weakSelf!)
+        InternetCheckConnection().checkIntener(weakSelf!)
      
         
     }
