@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 import Network
-
+import Alamofire
 class HomeViewModel {
     
     
@@ -60,7 +60,8 @@ class HomeViewModel {
     
     func fetchDataFromApi(phone:String) {
         self.phone = phone
-        InternetCheckConnection.checkIntener(self)
+        weak var weakSelf = self
+        InternetCheckConnection.checkIntener(weakSelf!)
         
     }
     
@@ -113,16 +114,16 @@ class HomeViewModel {
 extension HomeViewModel :IcheckNetworkConnection{
     func onSucessConnected() {
         print("Internet connection is on.")
-        
+
         self.fetchData(phone: phone)
     }
-    
+
     func onFailurConnected() {
         print("Internet connection is off.")
         self.netWorkError = "no internet connection"
     }
-    
-    
+
+
     
     
 }

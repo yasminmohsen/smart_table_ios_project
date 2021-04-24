@@ -24,7 +24,7 @@ class InternetCheckConnection {
                                 print("Internet connection is on.")
                             
                     iCheckNetworkConnection.onSucessConnected()
-                    
+                    monitor.cancel()
                                  // self.fetchData(phone: phone)
                 
                             }
@@ -33,7 +33,7 @@ class InternetCheckConnection {
                                   print("Internet connection is off.")
                                 iCheckNetworkConnection.onFailurConnected()
                                   //self.netWorkError = "no internet connection"
-                        
+                             
                              
                            
                      }

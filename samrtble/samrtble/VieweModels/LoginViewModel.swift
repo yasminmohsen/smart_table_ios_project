@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 import Network
-
+import Alamofire
 class LoginViewModel {
     
     var phone:String = ""
@@ -57,8 +57,15 @@ class LoginViewModel {
     func fetchDataFromApi(phone:String) {
         
         self.phone = phone
-        
-        InternetCheckConnection.checkIntener(self)
+       let isConnecte = NetworkReachabilityManager()?.isReachable ?? false
+        if isConnecte{
+            self.fetchData(phone: phone)
+        }
+        else{
+            print("Internet connection is off.")
+            self.netWorkError = "no internet connection"
+        }
+       
         
         
     }
@@ -92,19 +99,6 @@ class LoginViewModel {
 }
 
 
-extension LoginViewModel:IcheckNetworkConnection{
-    func onSucessConnected() {
-        print("Internet connection is on.")
-        
-        self.fetchData(phone: phone)
-    }
-    
-    func onFailurConnected() {
-        print("Internet connection is off.")
-        self.netWorkError = "no internet connection"
-    }
-    
-    
-}
+
 
 

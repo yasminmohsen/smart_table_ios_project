@@ -8,6 +8,7 @@
 import Foundation
 import SwiftyJSON
 import Network
+import Alamofire
 class NotificationViewModel {
     
     var resultNotification = [ResultNotification]()
@@ -49,8 +50,10 @@ class NotificationViewModel {
     
     
     func fetchDataFromApi() {
-        
-        InternetCheckConnection.checkIntener(self)
+      
+        weak var weakSelf = self
+        InternetCheckConnection.checkIntener(weakSelf!)
+     
         
     }
     
@@ -87,17 +90,17 @@ class NotificationViewModel {
 
 extension NotificationViewModel :IcheckNetworkConnection{
     func onSucessConnected() {
-        
+
         self.fetchData()
-        
+
     }
-    
+
     func onFailurConnected() {
-        
+
         self.netWorkError = "no internet connection"
     }
-    
-    
+
+
 }
 
 

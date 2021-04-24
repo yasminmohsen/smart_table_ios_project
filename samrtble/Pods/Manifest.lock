@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.4.0)
   - Firebase/Analytics (7.9.0):
     - Firebase/Core
   - Firebase/Core (7.9.0):
@@ -85,6 +86,7 @@ PODS:
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - Firebase/Analytics
   - Firebase/Messaging
   - MOLH
@@ -94,6 +96,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -112,6 +115,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   Firebase: d8bd6bd34b4c7ed57bfdd056c66ff5adcdde53ab
   FirebaseAnalytics: 31b1269830dfe16687db3c60b76082c12bd6d527
   FirebaseCore: 0798738ad1ae0fda67e17c7b9081241c431c6859
@@ -129,6 +133,6 @@ SPEC CHECKSUMS:
   SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 43c3409d49c46b4ba0af7ccd951916f0f78f94ff
+PODFILE CHECKSUM: cfcf53cb2f5b9ceaa781ddf970bbe9def781a6cf
 
 COCOAPODS: 1.10.0

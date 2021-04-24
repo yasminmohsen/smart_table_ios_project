@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Alamofire
 
 struct ApIServiceUrl {
     var phone :String = ""
@@ -19,5 +19,6 @@ struct ApIServiceUrl {
     }
     
     
-    let headerValue = "Accept-Language"
+    let arabicHeaderValue = HTTPHeader(name: "Accept-Language", value: "ar")
+//    let headerValue = "Accept-Language"
 }
