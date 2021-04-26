@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MOLHResetable{
         
         FirebaseApp.configure()
         // Override point for customization after application launch.
-       // Messaging.messaging().delegate = self
+       Messaging.messaging().delegate = self
         
         if #available(iOS 10.0, *) {
               // For iOS 10 display notification (sent via APNS)
@@ -179,16 +179,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MOLHResetable{
     }
     // [END ios_10_message_handling]
 
-   /* extension AppDelegate : MessagingDelegate {
+   extension AppDelegate : MessagingDelegate {
       // [START refresh_token]
       func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         print("Firebase registration token: \(String(describing: fcmToken))")
         
         let dataDict:[String: String] = ["token": fcmToken ?? ""]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+        print("----------------------------------")
+        print("fcmToken is \(fcmToken)")
+        print("----------------------------------")
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
       }
       // [END refresh_token]
     }
-*/
+

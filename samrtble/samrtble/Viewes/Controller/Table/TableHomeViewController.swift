@@ -7,6 +7,7 @@
 
 import UIKit
 import SideMenu
+
 class TableHomeViewController: UIViewController {
     
     
@@ -52,7 +53,7 @@ class TableHomeViewController: UIViewController {
         collectionArray = [classesNumberView,sunday,monday,tuesday,wednsday,thuresday]
         customUi()
         bindingData()
-        
+      
     }
     
     
@@ -281,4 +282,6 @@ class TableHomeViewController: UIViewController {
     
 }
 
+
+    
 

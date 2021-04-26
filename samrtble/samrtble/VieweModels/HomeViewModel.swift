@@ -9,6 +9,7 @@ import Foundation
 import SwiftyJSON
 import Network
 import Alamofire
+import Firebase
 class HomeViewModel {
     
     

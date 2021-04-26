@@ -82,6 +82,7 @@ class LoginViewModel {
             
             if let tableInfoArray = tableInfoModelArray {
                 self.result = .sucess
+                
             }
             
             if let error = error{

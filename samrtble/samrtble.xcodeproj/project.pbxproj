@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00B8BFD5FF6B94924B742110 /* Pods_samrtble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA70A3D39E9D98CD477B709 /* Pods_samrtble.framework */; };
+		6C1EA4C62634D451001CC335 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C1EA4C52634D451001CC335 /* GoogleService-Info.plist */; };
 		6C38EC3326189A300093B4DA /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C38EC3226189A300093B4DA /* NotificationModel.swift */; };
 		6C38EC3826189A890093B4DA /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C38EC3726189A890093B4DA /* NotificationViewModel.swift */; };
 		6C38EC4D2618CA620093B4DA /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C38EC4C2618CA620093B4DA /* NotificationTableViewCell.swift */; };
@@ -30,7 +31,6 @@
 		6C6F795A261A280500A92359 /* Myriad Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C53247426177936000CBB1A /* Myriad Pro Regular.ttf */; };
 		6C6F795B261A280500A92359 /* Myriad Pro Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C532478261779D4000CBB1A /* Myriad Pro Semibold.ttf */; };
 		6C6F795C261A280500A92359 /* Myriad Pro Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C532479261779E1000CBB1A /* Myriad Pro Bold.ttf */; };
-		6C6F7961261A2CB700A92359 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F7960261A2CB700A92359 /* GoogleService-Info.plist */; };
 		6C6F798C261A3BB700A92359 /* Myriad Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F798B261A3BAD00A92359 /* Myriad Pro Light.otf */; };
 		6C6F7995261A469500A92359 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F7994261A469100A92359 /* Cairo-Regular.ttf */; };
 		6C6F79E5261C635000A92359 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F79E4261C635000A92359 /* ContactUsViewController.swift */; };
@@ -84,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C1EA4C52634D451001CC335 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C38EC3226189A300093B4DA /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		6C38EC3726189A890093B4DA /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		6C38EC4C2618CA620093B4DA /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		6C6C0245261E05E000DD8C7B /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		6C6F3C152613205B005928EB /* MainLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginViewController.swift; sourceTree = "<group>"; };
 		6C6F3C732613DAE6005928EB /* TableHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHomeViewController.swift; sourceTree = "<group>"; };
-		6C6F7960261A2CB700A92359 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C6F798B261A3BAD00A92359 /* Myriad Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Light.otf"; sourceTree = "<group>"; };
 		6C6F7994261A469100A92359 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
 		6C6F79E4261C635000A92359 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
@@ -384,6 +384,7 @@
 		6CA117D02604B07C006B1AA1 /* samrtble */ = {
 			isa = PBXGroup;
 			children = (
+				6C1EA4C52634D451001CC335 /* GoogleService-Info.plist */,
 				6C5E1E122609DC0800C35700 /* Language */,
 				6C753E10263342E7000D4DFE /* Protcol */,
 				6C6F79ED261D170F00A92359 /* Custom */,
@@ -391,7 +392,6 @@
 				6C7E21002604B61C00B10A74 /* VieweModels */,
 				6C7E21012604B63300B10A74 /* Viewes */,
 				6C7E20FF2604B61300B10A74 /* Models */,
-				6C6F7960261A2CB700A92359 /* GoogleService-Info.plist */,
 				6C53247D2617BD7A000CBB1A /* samrtble.entitlements */,
 				6CA117D12604B07C006B1AA1 /* AppDelegate.swift */,
 				6CA117D32604B07C006B1AA1 /* SceneDelegate.swift */,
@@ -538,10 +538,10 @@
 			files = (
 				6CA117DE2604B07D006B1AA1 /* LaunchScreen.storyboard in Resources */,
 				6C38EC56261926290093B4DA /* Home.storyboard in Resources */,
-				6C6F7961261A2CB700A92359 /* GoogleService-Info.plist in Resources */,
 				6C5E1E182609DC2700C35700 /* Localizable.strings in Resources */,
 				6C6F795B261A280500A92359 /* Myriad Pro Semibold.ttf in Resources */,
 				6C6F795A261A280500A92359 /* Myriad Pro Regular.ttf in Resources */,
+				6C1EA4C62634D451001CC335 /* GoogleService-Info.plist in Resources */,
 				6C753DCC262C331D000D4DFE /* Assets.xcassets in Resources */,
 				6C6F7995261A469500A92359 /* Cairo-Regular.ttf in Resources */,
 				6CA117DB2604B07D006B1AA1 /* Assets.xcassets in Resources */,
@@ -857,14 +857,14 @@
 				CODE_SIGN_ENTITLEMENTS = samrtble/samrtble.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F4R4G95VGA;
+				DEVELOPMENT_TEAM = MV78XVH867;
 				INFOPLIST_FILE = samrtble/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.optimalsoft.samrtble;
+				PRODUCT_BUNDLE_IDENTIFIER = com.optimalsoft.samrtable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -881,14 +881,14 @@
 				CODE_SIGN_ENTITLEMENTS = samrtble/samrtble.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F4R4G95VGA;
+				DEVELOPMENT_TEAM = MV78XVH867;
 				INFOPLIST_FILE = samrtble/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.optimalsoft.samrtble;
+				PRODUCT_BUNDLE_IDENTIFIER = com.optimalsoft.samrtable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
