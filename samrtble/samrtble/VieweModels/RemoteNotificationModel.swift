@@ -6,40 +6,32 @@
 //
 
 import Foundation
+import UIKit
 
-class RemoteNotificationModel {
+class RemoteNotificationViewModel {
     
+    static var FCMTOKEN_KEY = "fcm_token_key"
+
     
-    
-    static func sendTokenToApi(_ token :String){
-        
-        
-        let api = ""
-        if let url = URL(string: api){
-            
-            let requset = NSMutableURLRequest(url: url)
-            requset.httpMethod = ""
-            let session = URLSession.shared
-            let task = session.dataTask(with: requset as URLRequest) { (data, response, error) in
+    func fetchRemoteNotification() {
+        if let phone = UserDefaults.standard.string(forKey: MainLoginViewController.PHONE_KEY){
+            if let fcmToken = UserDefaults.standard.string(forKey: RemoteNotificationViewModel.FCMTOKEN_KEY){
+
+            let apiService = ApiService(phone: phone, type: "fcm-token")
+                
+                apiService.fetchRemOteNotification(completeion: { (result) in
+         
+                    print("-----------------\n result is : \(result)\n-----------------------")
+                    
+                }, fcmToken: fcmToken)
                 
                 
-                
-            }
-                
-            
-            
-            
-            
+
+        }
+       
         }
         
-        
-        
-        
-        
-        
     }
-    
-    
     
     
     

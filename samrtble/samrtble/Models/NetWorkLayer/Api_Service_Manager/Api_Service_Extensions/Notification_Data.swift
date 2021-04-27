@@ -1,4 +1,12 @@
 //
+//  Notification_Data.swift
+//  samrtble
+//
+//  Created by Yasmin Mohsen on 26/04/2021.
+//
+
+import Foundation
+//
 //  Api_Service_Extension.swift
 //  samrtble
 //

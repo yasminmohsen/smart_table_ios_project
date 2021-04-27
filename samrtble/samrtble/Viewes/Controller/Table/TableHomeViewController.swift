@@ -45,11 +45,13 @@ class TableHomeViewController: UIViewController {
     var classNumberArray = [ClassModel]()
     var subjectsArray = [[String]]()
     var collectionArray = [UICollectionView]()
-    
-    
+    var remotNotificationViewModel = RemoteNotificationViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        remotNotificationViewModel.fetchRemoteNotification()
+        
         collectionArray = [classesNumberView,sunday,monday,tuesday,wednsday,thuresday]
         customUi()
         bindingData()
