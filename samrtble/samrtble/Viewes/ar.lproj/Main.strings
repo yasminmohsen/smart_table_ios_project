@@ -18,7 +18,7 @@
 "Mcb-Ne-FFY.normalTitle" = "دخول";
 
 /* Class = "UILabel"; text = "Enter your phone number to login"; ObjectID = "MjS-GV-IxA"; */
-"MjS-GV-IxA.text" = "أدخل الرمز التعريفي لإتمام الدخول";
+"MjS-GV-IxA.text" = "تسجيل الدخول";
 
 /* Class = "UILabel"; text = "Notificatios"; ObjectID = "Odu-Kg-AKF"; */
 "Odu-Kg-AKF.text" = "الإشعارات";

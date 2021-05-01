@@ -25,31 +25,47 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
               switch collectionView {
               case sunday:
                 if(checkColoredItem() == .coloredSunday){
-                    sunday.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
+                    changeColor(collectionView: sunday, change: true)
+                }
+                else {
+                    changeColor(collectionView: sunday, change: false)
                 }
                 cell.customCell(text: subjectsArray[indexPath.column][indexPath.row])
                 
               case monday:
                 if(checkColoredItem() == .coloredMonday){
-                    monday.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
+                    changeColor(collectionView: monday, change: true)
+                }
+                else {
+                    changeColor(collectionView: monday, change: false)
                 }
              
                 cell.customCell(text: subjectsArray[indexPath.column+1][indexPath.row])
                 
               case tuesday:
                 if(checkColoredItem() == .coloredTuesday){
-                    tuesday.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
-                }
+                changeColor(collectionView: tuesday, change: true)
+            }
+            else {
+                changeColor(collectionView: tuesday, change: false)
+            }
              
                   cell.customCell(text: subjectsArray[indexPath.column+2][indexPath.row])
               case wednsday:
                 if(checkColoredItem() == .coloredWednsday){
-                    wednsday.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
-                }
+            changeColor(collectionView: wednsday, change: true)
+        }
+        else {
+            changeColor(collectionView: wednsday, change: false)
+        }
                   cell.customCell(text: subjectsArray[indexPath.column+3][indexPath.row])
               case thuresday:
+
                 if(checkColoredItem() == .coloredThursday){
-                    thuresday.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
+                    changeColor(collectionView: thuresday, change: true)
+                }
+                else {
+                    changeColor(collectionView: thuresday, change: false)
                 }
                   cell.customCell(text: subjectsArray[indexPath.column+4][indexPath.row])
               case classesNumberView:
@@ -116,6 +132,16 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
     
     
     
+    func changeColor(collectionView :UICollectionView ,change:Bool) {
+        
+        if(change == true){
+            collectionView.layer.backgroundColor = Colors.getColor(type: .customBej)[0].cgColor
+        }
+        else{
+            collectionView.layer.backgroundColor = UIColor.white.cgColor
+        }
+        
+    }
     
     
     
