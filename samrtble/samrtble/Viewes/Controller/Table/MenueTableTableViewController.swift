@@ -32,9 +32,9 @@ class MenueTableTableViewController: UITableViewController {
     
     
     @IBAction func rateUsBtn(_ sender: Any) {
-        var appId = "com.optimalsoft.samrtble"
-        https://itunes.apple.com/us/app/urbanspoon/id284708449
-        if let url = URL(string: "itms-apps://apple.com/app/\(appId)") {
+        var appId = "1565596183"
+        //itms-apps://apple.com/app/\(appId)
+        if let url = URL(string: "http://itunes.apple.com/app/\(appId)") {
             UIApplication.shared.open(url)
         }
     }
