@@ -13,6 +13,9 @@ struct TableInfoModel : Codable {
    var teacher_name: String
    var teacher_nickname: String
    var teacher_assigned_count: String
+    var enable_time: Bool
+    var current_class: String?
+   var next_class: String?
    var teacher_cells: [TableCellModel]
    var days:[String]
    var classes :[ClassModel]

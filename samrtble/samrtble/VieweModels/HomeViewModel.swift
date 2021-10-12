@@ -20,6 +20,8 @@ class HomeViewModel {
     var schoolNames = [String]()
     var teacherName = ""
     var phone :String = ""
+    var currentClass :String = ""
+    var nextClass :String = ""
     
     
     
@@ -87,11 +89,14 @@ class HomeViewModel {
                     self.classesArray.append(MappingModel.converTableModelToClasses(obj))
                     self.classesNumber.append(obj.classes)
                     self.day = obj.day
+                    self.currentClass = obj.current_class ?? ""
+                    self.nextClass = obj.next_class ?? ""
                     self.daysArray = obj.days
+        
                 }
+                
                 self.teacherName = tableInfoArray[0].teacher_name
                 self.data = tableInfoArray
-                
             }
             
             

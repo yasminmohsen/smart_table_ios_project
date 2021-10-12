@@ -72,6 +72,11 @@ class ApiService {
                          let teacher_name = tableInfoObj["teacher_name"].string ?? ""
                          let teacher_nickname = tableInfoObj["teacher_nickname"].string ?? ""
                          let teacher_assigned_coun = tableInfoObj["teacher_assigned_count"].string ?? ""
+                        
+                        let enableTime = tableInfoObj["enable_time"].boolValue ?? false
+                        let currentClass = tableInfoObj["current_class"].string ?? ""
+                        let nextClass = tableInfoObj["next_class"].string ?? ""
+                        
                          let teacherCellsArray =  tableInfoObj["teacher_cells"].array ?? nil
                          let coloredDay = tableInfoObj["day"].string ?? ""
                          let time = tableInfoObj["time"].string ?? ""
@@ -122,7 +127,8 @@ class ApiService {
                              
                          }
                          
-                         var tableObj = TableInfoModel(school_name: school_name, school_system: school_system, school_system_text: school_system_text, teacher_name: teacher_name, teacher_nickname: teacher_nickname, teacher_assigned_count: teacher_assigned_coun, teacher_cells: CellsModelArray, days: dayModelArray, classes: classesModelArray,date: date ,time: time,day: coloredDay )
+                        var tableObj = TableInfoModel(school_name: school_name, school_system: school_system, school_system_text: school_system_text, teacher_name: teacher_name, teacher_nickname: teacher_nickname, teacher_assigned_count: teacher_assigned_coun,enable_time:enableTime,current_class:currentClass
+                        , next_class: nextClass,teacher_cells: CellsModelArray, days: dayModelArray, classes: classesModelArray,date: date ,time: time,day: coloredDay )
                          
                          tableModelArray.append(tableObj)
                          

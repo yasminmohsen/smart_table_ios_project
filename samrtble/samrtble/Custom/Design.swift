@@ -98,7 +98,7 @@ public class GradientButton: UIButton {
     public override class var layerClass: AnyClass         { CAGradientLayer.self }
     private var gradientLayer: CAGradientLayer             { layer as! CAGradientLayer }
 
-    @IBInspectable public var startColor = #colorLiteral(red: 0.1490196078, green: 0.6039215686, blue: 0.6431372549, alpha: 1) { didSet { updateColors() } }
+    @IBInspectable public var startColor = #colorLiteral(red: 0.168627451, green: 0.6666666667, blue: 0.9254901961, alpha: 1) { didSet { updateColors() } }
     @IBInspectable public var endColor = #colorLiteral(red: 0.2039215686, green: 0.7529411765, blue: 0.768627451, alpha: 1)   { didSet { updateColors() } }
 
     // expose startPoint and endPoint to IB

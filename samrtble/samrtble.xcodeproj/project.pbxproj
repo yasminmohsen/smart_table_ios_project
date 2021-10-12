@@ -407,10 +407,10 @@
 				6C5E1E122609DC0800C35700 /* Language */,
 				6C753E10263342E7000D4DFE /* Protcol */,
 				6C6F79ED261D170F00A92359 /* Custom */,
-				6C753DF02632F0A0000D4DFE /* Pojo */,
 				6C7E21002604B61C00B10A74 /* VieweModels */,
 				6C7E21012604B63300B10A74 /* Viewes */,
 				6C7E20FF2604B61300B10A74 /* Models */,
+				6C753DF02632F0A0000D4DFE /* Pojo */,
 				6C53247D2617BD7A000CBB1A /* samrtble.entitlements */,
 				6CA117D12604B07C006B1AA1 /* AppDelegate.swift */,
 				6CA117D32604B07C006B1AA1 /* SceneDelegate.swift */,
@@ -877,7 +877,7 @@
 				CODE_SIGN_ENTITLEMENTS = samrtble/samrtble.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 2.02;
 				DEVELOPMENT_TEAM = MV78XVH867;
 				INFOPLIST_FILE = samrtble/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -885,6 +885,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = com.optimalsoft.samrtable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -902,7 +903,7 @@
 				CODE_SIGN_ENTITLEMENTS = samrtble/samrtble.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 2.02;
 				DEVELOPMENT_TEAM = MV78XVH867;
 				INFOPLIST_FILE = samrtble/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -910,6 +911,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = com.optimalsoft.samrtable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

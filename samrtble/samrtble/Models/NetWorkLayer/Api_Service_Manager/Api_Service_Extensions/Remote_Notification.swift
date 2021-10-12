@@ -43,8 +43,11 @@ extension ApiService{
             
             
             print(response.data)
-            let json = try?JSON(data: response.data!)
-            print(json)
+            if let data = response.data{
+                let json = try?JSON(data: response.data!)
+                print(json)
+            }
+           
             //completeion(response.data)
             
             

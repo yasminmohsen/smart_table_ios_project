@@ -13,8 +13,15 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 7
         
+        if(tableInfoModel.count>0){
+            return tableInfoModel[0].classes.count
+        }
+        else{
+            return 1
+        }
+        
+//        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -85,13 +92,25 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
         {
         
-        
+        var heightSize :Int = 0
+        if tableInfoModel.count > 0{
+            
+            if tableInfoModel[0].classes.count > 0 {
+                
+                heightSize = 600 / tableInfoModel[0].classes.count
+             
+                
+            }
+            
+        }
         if(collectionView == classesNumberView){
-            return CGSize(width: 30.0, height: 55.0)
+          
+           
+            return CGSize(width: 30, height: heightSize)
         }
         else{
-            
-            return CGSize(width: 120.0, height: 55.0)
+
+            return CGSize(width: 60, height: heightSize)
         }
         
           

@@ -29,7 +29,7 @@ class TableHomeViewController: UIViewController {
     @IBOutlet weak var thuresday: UICollectionView!
     @IBOutlet weak var segmentedBnHightConstarints: NSLayoutConstraint!
     
-    var tableInfoModel : [TableInfoModel]!
+    var tableInfoModel = [TableInfoModel]()
     var classesArray = [[[String]]]()
     var homaViewModel = HomeViewModel()
     var mobilePhone :String!
@@ -46,7 +46,8 @@ class TableHomeViewController: UIViewController {
     var subjectsArray = [[String]]()
     var collectionArray = [UICollectionView]()
     var remotNotificationViewModel = RemoteNotificationViewModel()
-    
+    let refreshControl = UIRefreshControl()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,16 +57,34 @@ class TableHomeViewController: UIViewController {
         customUi()
         bindingData()
       
-    }
+    
+           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        self.scrollView.addSubview(refreshControl) // not required
+        
+//        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+//           swipeDown.direction = .down
+//        swipeDown.set
+//           self.view.addGestureRecognizer(swipeDown)
+        
+        }
+
+        @objc func refresh(_ sender: AnyObject) {
+            callApi()
+        }
+
+   
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
         tabBarSegmentedBtn.selectedSegmentIndex = 1
         callApi()
+  
         
     }
     
+    @IBOutlet weak var scrollView: UIScrollView!
     
     // MARK:Functions :-
     
@@ -97,15 +116,39 @@ class TableHomeViewController: UIViewController {
     
     
     func updateUi(){
-        teacher.text = teacherWord
+      
         schoolNames = homaViewModel.schoolNames
         classesArray = homaViewModel.classesArray
         classesNumber=homaViewModel.classesNumber
         day = homaViewModel.day
         daysArray = homaViewModel.daysArray
         teacherName.text = "\(hi) \(homaViewModel.teacherName)"
-        connectedWith.text = "\(schoolNames[0])"
+
+        if(homaViewModel.currentClass.isEmpty && homaViewModel.nextClass.isEmpty ) {
+       connectedWith.text = ""
+        }
+
+        else if (homaViewModel.currentClass.isEmpty) {
+            
+            connectedWith.text = "\(homaViewModel.nextClass)"
+        }
+        else if(homaViewModel.nextClass.isEmpty){
+            
+            connectedWith.text = "\(homaViewModel.currentClass)"
+            
+        }
+        else{
+            connectedWith.text = "\(homaViewModel.currentClass) \r\r\(homaViewModel.nextClass)"
+        }
         
+        
+        
+        
+        teacher.text = """
+\(teacherWord)
+
+\(schoolNames[0])
+"""
         schoolSegmentedBtn.removeAllSegments()
         
         for (index,school) in schoolNames.enumerated()
@@ -261,7 +304,7 @@ class TableHomeViewController: UIViewController {
     // MARK: After Binding Functions :-
     
     func onSucessUpdateView(){
-        
+        refreshControl.endRefreshing()
         self.tableInfoModel = homaViewModel.data
         self.updateUi()
         ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)

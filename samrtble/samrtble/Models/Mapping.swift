@@ -14,7 +14,10 @@ class MappedModel {
         var nameArray = [[String]]()
      
             let numbers = tableInfo.teacher_cells
-            let chunkSize = 7
+        let classNumbers = tableInfo.classes.count
+        /***/
+        let chunkSize = classNumbers
+        /***/
             let chunks = stride(from: 0, to: numbers.count, by: chunkSize).map {
                 Array(numbers[$0..<min($0 + chunkSize, numbers.count)])
             }
