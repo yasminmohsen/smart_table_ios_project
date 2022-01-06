@@ -30,7 +30,7 @@ class TableHomeViewController: UIViewController {
     @IBOutlet weak var segmentedBnHightConstarints: NSLayoutConstraint!
     
     var tableInfoModel = [TableInfoModel]()
-    var classesArray = [[[String]]]()
+    var classesArray = [[[(String,Bool)]]]()
     var homaViewModel = HomeViewModel()
     var mobilePhone :String!
     var apiKey :String?
@@ -43,7 +43,7 @@ class TableHomeViewController: UIViewController {
     let school = "school".localized
     let teacherWord = "Teacher in".localized
     var classNumberArray = [ClassModel]()
-    var subjectsArray = [[String]]()
+    var subjectsArray = [[(String,Bool)]]()
     var collectionArray = [UICollectionView]()
     var remotNotificationViewModel = RemoteNotificationViewModel()
     let refreshControl = UIRefreshControl()

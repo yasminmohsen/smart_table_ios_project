@@ -27,6 +27,29 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TableCollectionViewCell
+        
+        let classInfo = "Class info :".localized
+        let classTime = "Class Time".localized
+        
+        cell.alertAction = { msg in
+            
+            
+            Alert.showSimpleAlert(title: "Waiting class", message: "\(classInfo) \r \(msg)", viewRef: self)
+            
+        }
+        
+        
+        cell.alertTimeAction = { msg in
+            
+            
+            Alert.showSimpleAlert(title: "Class Time", message: "\(msg)", viewRef: self)
+            
+        }
+        
+        
+        
+        
+        
         if (subjectsArray.count > 0){
 
               switch collectionView {
@@ -37,7 +60,7 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
                 else {
                     changeColor(collectionView: sunday, change: false)
                 }
-                cell.customCell(text: subjectsArray[indexPath.column][indexPath.row])
+                cell.customCell(text: subjectsArray[indexPath.column][indexPath.row].0, isWaiting: subjectsArray[indexPath.column][indexPath.row].1,showTime: false, classModel: nil)
                 
               case monday:
                 if(checkColoredItem() == .coloredMonday){
@@ -47,7 +70,7 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
                     changeColor(collectionView: monday, change: false)
                 }
              
-                cell.customCell(text: subjectsArray[indexPath.column+1][indexPath.row])
+                cell.customCell(text: subjectsArray[indexPath.column+1][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+1][indexPath.row].1,showTime: false, classModel: nil)
                 
               case tuesday:
                 if(checkColoredItem() == .coloredTuesday){
@@ -57,7 +80,7 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
                 changeColor(collectionView: tuesday, change: false)
             }
              
-                  cell.customCell(text: subjectsArray[indexPath.column+2][indexPath.row])
+                cell.customCell(text: subjectsArray[indexPath.column+2][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+2][indexPath.row].1,showTime: false, classModel: nil)
               case wednsday:
                 if(checkColoredItem() == .coloredWednsday){
             changeColor(collectionView: wednsday, change: true)
@@ -65,7 +88,7 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
         else {
             changeColor(collectionView: wednsday, change: false)
         }
-                  cell.customCell(text: subjectsArray[indexPath.column+3][indexPath.row])
+                cell.customCell(text: subjectsArray[indexPath.column+3][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+3][indexPath.row].1,showTime: false, classModel: nil)
               case thuresday:
 
                 if(checkColoredItem() == .coloredThursday){
@@ -74,9 +97,11 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
                 else {
                     changeColor(collectionView: thuresday, change: false)
                 }
-                  cell.customCell(text: subjectsArray[indexPath.column+4][indexPath.row])
+//                subjectsArray[indexPath.column+4][4].1 = true
+//                subjectsArray[indexPath.column+4][0].1 = true
+                cell.customCell(text: subjectsArray[indexPath.column+4][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+4][indexPath.row].1,showTime: false, classModel: nil)
               case classesNumberView:
-                cell.customCell(text: "\(classNumberArray[indexPath.row].number)") 
+                cell.customCell(text: "\(classNumberArray[indexPath.row].number)", isWaiting: false,showTime: true, classModel: classNumberArray[indexPath.row])
               default:
                   break
               }

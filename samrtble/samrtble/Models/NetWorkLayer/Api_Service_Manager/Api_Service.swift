@@ -37,7 +37,7 @@ class ApiService {
         if(LanguageOperation.checkLanguage() == .arabic){
             headerValue = apiServiceUrl.arabicHeaderValue
              request = AF.request(url, method: .get, headers: [headerValue!])
-           
+    
         }
         else{
             headerValue = nil
@@ -92,10 +92,10 @@ class ApiService {
                                  let class_number = teacherCellObj["class_number"].int ?? 0
                                  var cell_text =  teacherCellObj["cell_text"].string ?? "-"
                                  let isWaiting = teacherCellObj["is_waiting"].boolValue ?? false
-                                 if (isWaiting == true){
-                                     cell_text = "-"
-                                 }
-                                 
+//                                 if (isWaiting == true){
+//                                     cell_text = 
+//                                 }
+//                                 
                                  
                                  var obj = TableCellModel(day: day, class_number: class_number, cell_text: cell_text,isWaiting: isWaiting)
                                  CellsModelArray.append(obj)

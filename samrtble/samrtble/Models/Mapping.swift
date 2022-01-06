@@ -10,8 +10,8 @@ import Foundation
 
 class MappedModel {
     
-     func converTableModelToClasses(_ tableInfo:TableInfoModel) -> [[String]] {
-        var nameArray = [[String]]()
+    func converTableModelToClasses(_ tableInfo:TableInfoModel) -> [[(String,Bool)]] {
+        var nameArray = [[(String,Bool)]]()
      
             let numbers = tableInfo.teacher_cells
         let classNumbers = tableInfo.classes.count
@@ -22,7 +22,7 @@ class MappedModel {
                 Array(numbers[$0..<min($0 + chunkSize, numbers.count)])
             }
   
-        nameArray = chunks.map({$0.map({$0.cell_text!})})
+        nameArray = chunks.map({$0.map({($0.cell_text!,$0.isWaiting)})})
         
         return nameArray
     }

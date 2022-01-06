@@ -877,7 +877,7 @@
 				CODE_SIGN_ENTITLEMENTS = samrtble/samrtble.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.02;
+				CURRENT_PROJECT_VERSION = 2.03;
 				DEVELOPMENT_TEAM = MV78XVH867;
 				INFOPLIST_FILE = samrtble/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -885,7 +885,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.02;
+				MARKETING_VERSION = 1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = com.optimalsoft.samrtable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -903,7 +903,7 @@
 				CODE_SIGN_ENTITLEMENTS = samrtble/samrtble.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.02;
+				CURRENT_PROJECT_VERSION = 2.03;
 				DEVELOPMENT_TEAM = MV78XVH867;
 				INFOPLIST_FILE = samrtble/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -911,7 +911,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.02;
+				MARKETING_VERSION = 1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = com.optimalsoft.samrtable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

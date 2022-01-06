@@ -13,7 +13,7 @@ import Firebase
 class HomeViewModel {
     
     
-    var classesArray = [[[String]]]()
+    var classesArray = [[[(String,Bool)]]]()
     var classesNumber = [[ClassModel]]()
     var day :String!
     var daysArray = [String]()

@@ -23,3 +23,9 @@
 "Enter user id" = "أدخل أسم المستخدم";
 "Enter Id" = "أدخل الرمز التعريفي";
 "no internet connection"="لا يوجد إتصال بالنت";
+"Waiting" = "إنتظار";
+"Waiting class" = "حصة الإنتظار";
+"Class info :" = "معلومات الحصة :";
+"Class Time" = "وقت الحصة";
+ "From"= "من";
+  "To" = "إلى";
