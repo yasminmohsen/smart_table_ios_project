@@ -54,53 +54,32 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
 
               switch collectionView {
               case sunday:
-                if(checkColoredItem() == .coloredSunday){
-                    changeColor(collectionView: sunday, change: true)
-                }
-                else {
-                    changeColor(collectionView: sunday, change: false)
-                }
+                
+                checkChangingColor(coloredDay:.coloredSunday, collectionView:sunday)
                 cell.customCell(text: subjectsArray[indexPath.column][indexPath.row].0, isWaiting: subjectsArray[indexPath.column][indexPath.row].1,showTime: false, classModel: nil)
                 
               case monday:
-                if(checkColoredItem() == .coloredMonday){
-                    changeColor(collectionView: monday, change: true)
-                }
-                else {
-                    changeColor(collectionView: monday, change: false)
-                }
-             
+
+                checkChangingColor(coloredDay:.coloredMonday, collectionView:monday)
                 cell.customCell(text: subjectsArray[indexPath.column+1][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+1][indexPath.row].1,showTime: false, classModel: nil)
                 
               case tuesday:
-                if(checkColoredItem() == .coloredTuesday){
-                changeColor(collectionView: tuesday, change: true)
-            }
-            else {
-                changeColor(collectionView: tuesday, change: false)
-            }
-             
+
+             checkChangingColor(coloredDay:.coloredTuesday, collectionView:tuesday)
                 cell.customCell(text: subjectsArray[indexPath.column+2][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+2][indexPath.row].1,showTime: false, classModel: nil)
+                
               case wednsday:
-                if(checkColoredItem() == .coloredWednsday){
-            changeColor(collectionView: wednsday, change: true)
-        }
-        else {
-            changeColor(collectionView: wednsday, change: false)
-        }
+                
+             checkChangingColor(coloredDay:.coloredWednsday, collectionView:wednsday)
                 cell.customCell(text: subjectsArray[indexPath.column+3][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+3][indexPath.row].1,showTime: false, classModel: nil)
+                
               case thuresday:
 
-                if(checkColoredItem() == .coloredThursday){
-                    changeColor(collectionView: thuresday, change: true)
-                }
-                else {
-                    changeColor(collectionView: thuresday, change: false)
-                }
-//                subjectsArray[indexPath.column+4][4].1 = true
-//                subjectsArray[indexPath.column+4][0].1 = true
+                checkChangingColor(coloredDay:.coloredThursday, collectionView:thuresday)
                 cell.customCell(text: subjectsArray[indexPath.column+4][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+4][indexPath.row].1,showTime: false, classModel: nil)
+                
               case classesNumberView:
+                
                 cell.customCell(text: "\(classNumberArray[indexPath.row].number)", isWaiting: false,showTime: true, classModel: classNumberArray[indexPath.row])
               default:
                   break
@@ -185,6 +164,18 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
             collectionView.layer.backgroundColor = UIColor.white.cgColor
         }
         
+    }
+    
+    
+    
+    
+    func checkChangingColor(coloredDay:ColoredDay, collectionView:UICollectionView){
+        if(checkColoredItem() == coloredDay){
+            changeColor(collectionView: collectionView, change: true)
+        }
+        else {
+            changeColor(collectionView: collectionView, change: false)
+        }
     }
     
     
