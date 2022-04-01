@@ -101,7 +101,7 @@ class NotificationViewController: UIViewController {
         
         self.notificationTableResult.removeAll()
         self.notificationTableResult = notificationViewModel.data
-        if(self.notificationTableResult.count == 0){
+        if(self.notificationTableResult.count < 0){
             self.noNotificationView.alpha = 1
         }
         else{

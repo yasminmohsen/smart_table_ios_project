@@ -16,7 +16,8 @@ extension NotificationViewController : UITableViewDelegate,UITableViewDataSource
         
         
         return notificationTableResult[section].data.count
-        
+//        return 1
+
         
     }
     
@@ -26,8 +27,13 @@ extension NotificationViewController : UITableViewDelegate,UITableViewDataSource
         cell.languageCustomUi(cell: cell)
         cell.schoolLabel.text = notificationTableResult[indexPath.section].data[indexPath.row].title
         cell.detailsLabel.text = notificationTableResult[indexPath.section].data[indexPath.row].body
-       
+
         cell.timeLabel.text = notificationTableResult[indexPath.section].data[indexPath.row].timeCreated
+        
+//        cell.schoolLabel.text = "title title title title titletitle title title title title"
+//        cell.detailsLabel.text = "But I must explain to you how all this mistaken idea of denouncing pleasure and praising "
+//
+//        cell.timeLabel.text = "timeCreated "
         CustomButton.customViewWithShadow(view: cell.viewCell)
         if(indexPath.section == 0 && indexPath.row == 0){
             //255 253 207
@@ -41,21 +47,23 @@ extension NotificationViewController : UITableViewDelegate,UITableViewDataSource
     
     
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
-
-
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 130
+//
+//
+//    }
     
 
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return notificationTableResult.count
+//        return 1
     }
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return  notificationTableResult[section].date
+//        return  "notificationTableResult[section].date"
     }
 
 
