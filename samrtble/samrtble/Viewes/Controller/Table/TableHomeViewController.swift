@@ -28,6 +28,7 @@ class TableHomeViewController: UIViewController {
     @IBOutlet weak var wednsday: UICollectionView!
     @IBOutlet weak var thuresday: UICollectionView!
     @IBOutlet weak var segmentedBnHightConstarints: NSLayoutConstraint!
+    @IBOutlet weak var noDataFound: UIView!
     
     var tableInfoModel = [TableInfoModel]()
     var classesArray = [[[(String,Bool)]]]()
@@ -165,7 +166,13 @@ class TableHomeViewController: UIViewController {
             schoolSegmentedBtn.alpha = 1
             segmentedBnHightConstarints.constant = 50
         }
-        
+        if(self.classesArray.count > 0){
+            self.noDataFound.alpha = 0
+        }
+        else{
+            self.noDataFound.alpha = 1
+
+        }
     }
     
     
