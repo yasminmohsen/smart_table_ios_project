@@ -1030,35 +1030,39 @@
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.072683210958677164" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </activityIndicatorView>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eS-2y-ONc">
+                                        <rect key="frame" x="0.0" y="0.0" width="406" height="651"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes found yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8be-n9-aAG">
+                                                <rect key="frame" x="112.5" y="215.5" width="181" height="20"/>
+                                                <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
+                                                <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="8be-n9-aAG" firstAttribute="centerY" secondItem="1eS-2y-ONc" secondAttribute="centerY" constant="-100" id="0s4-1s-qNt"/>
+                                            <constraint firstItem="8be-n9-aAG" firstAttribute="centerX" secondItem="1eS-2y-ONc" secondAttribute="centerX" id="xJN-2A-cEx"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="AH6-TI-oro" firstAttribute="centerX" secondItem="PJS-vc-FvH" secondAttribute="centerX" id="4d6-OY-PX6"/>
+                                    <constraint firstItem="1eS-2y-ONc" firstAttribute="leading" secondItem="PJS-vc-FvH" secondAttribute="leading" id="9FX-F7-lHP"/>
                                     <constraint firstItem="AH6-TI-oro" firstAttribute="leading" secondItem="PJS-vc-FvH" secondAttribute="leading" id="9n4-EU-Rxp"/>
                                     <constraint firstAttribute="trailing" secondItem="AH6-TI-oro" secondAttribute="trailing" id="Bbx-4H-qah"/>
                                     <constraint firstItem="C4U-RR-W0j" firstAttribute="centerY" secondItem="PJS-vc-FvH" secondAttribute="centerY" id="EEn-Xe-Qp8"/>
                                     <constraint firstAttribute="bottom" secondItem="AH6-TI-oro" secondAttribute="bottom" constant="43" id="EL9-Ae-PbN"/>
+                                    <constraint firstAttribute="trailing" secondItem="1eS-2y-ONc" secondAttribute="trailing" id="Jc9-8H-c2Y"/>
                                     <constraint firstItem="C4U-RR-W0j" firstAttribute="centerX" secondItem="PJS-vc-FvH" secondAttribute="centerX" id="XJ0-Wf-P3t"/>
+                                    <constraint firstAttribute="bottom" secondItem="1eS-2y-ONc" secondAttribute="bottom" id="Zzq-fo-Mqz"/>
+                                    <constraint firstItem="1eS-2y-ONc" firstAttribute="top" secondItem="PJS-vc-FvH" secondAttribute="top" id="hBV-KZ-osc"/>
                                     <constraint firstItem="C4U-RR-W0j" firstAttribute="centerY" secondItem="PJS-vc-FvH" secondAttribute="centerY" id="mmL-sv-mdp"/>
                                     <constraint firstItem="AH6-TI-oro" firstAttribute="top" secondItem="PJS-vc-FvH" secondAttribute="top" constant="8" id="o6o-12-k8F"/>
                                     <constraint firstItem="AH6-TI-oro" firstAttribute="centerX" secondItem="C4U-RR-W0j" secondAttribute="centerX" id="q5D-Xm-y1P"/>
                                 </constraints>
                             </scrollView>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eS-2y-ONc">
-                                <rect key="frame" x="0.0" y="245" width="406" height="592"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes found yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8be-n9-aAG">
-                                        <rect key="frame" x="112.5" y="286" width="181" height="20"/>
-                                        <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
-                                        <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="8be-n9-aAG" firstAttribute="centerY" secondItem="1eS-2y-ONc" secondAttribute="centerY" id="0s4-1s-qNt"/>
-                                    <constraint firstItem="8be-n9-aAG" firstAttribute="centerX" secondItem="1eS-2y-ONc" secondAttribute="centerX" id="xJN-2A-cEx"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmB-tQ-hJ8" userLabel="BtnView">
                                 <rect key="frame" x="16" y="783" width="374" height="54"/>
                                 <subviews>
@@ -1098,12 +1102,9 @@
                             <constraint firstItem="oZ0-2H-VFp" firstAttribute="top" secondItem="zeN-LA-xRB" secondAttribute="top" constant="40" id="8fx-ch-5ml"/>
                             <constraint firstItem="ZmB-tQ-hJ8" firstAttribute="leading" secondItem="rqv-Bt-gCO" secondAttribute="leading" constant="16" id="9qq-Eq-g7U"/>
                             <constraint firstItem="DpF-vF-AIv" firstAttribute="leading" secondItem="zeN-LA-xRB" secondAttribute="leading" constant="12" id="BPO-3n-9A9"/>
-                            <constraint firstAttribute="trailing" secondItem="1eS-2y-ONc" secondAttribute="trailing" id="BeZ-Pr-njc"/>
                             <constraint firstItem="ts1-D8-4sT" firstAttribute="top" secondItem="oZ0-2H-VFp" secondAttribute="bottom" constant="17" id="Fvr-D4-6BM"/>
                             <constraint firstItem="Td8-hi-AEw" firstAttribute="top" secondItem="zeN-LA-xRB" secondAttribute="top" constant="40" id="HC4-pg-lgy"/>
-                            <constraint firstItem="1eS-2y-ONc" firstAttribute="leading" secondItem="zeN-LA-xRB" secondAttribute="leading" id="HP8-87-4ph"/>
                             <constraint firstItem="zeN-LA-xRB" firstAttribute="bottom" secondItem="ZmB-tQ-hJ8" secondAttribute="bottom" constant="25" id="IOx-Kn-NfX"/>
-                            <constraint firstItem="1eS-2y-ONc" firstAttribute="top" secondItem="DpF-vF-AIv" secondAttribute="bottom" constant="4" id="IsC-nh-HzS"/>
                             <constraint firstAttribute="trailing" secondItem="ZmB-tQ-hJ8" secondAttribute="trailing" constant="16" id="Lv1-lW-6Es"/>
                             <constraint firstAttribute="trailing" secondItem="PJS-vc-FvH" secondAttribute="trailing" id="M6H-8E-m98"/>
                             <constraint firstItem="Wa9-dq-kJ9" firstAttribute="top" secondItem="ts1-D8-4sT" secondAttribute="bottom" constant="17" id="PaZ-EX-rya"/>
@@ -1114,7 +1115,6 @@
                             <constraint firstItem="gay-5F-dzO" firstAttribute="leading" secondItem="rqv-Bt-gCO" secondAttribute="leading" constant="16" id="Xpy-Hw-Oc4"/>
                             <constraint firstItem="Td8-hi-AEw" firstAttribute="leading" secondItem="zeN-LA-xRB" secondAttribute="leading" constant="16" id="gf5-RR-Ioy"/>
                             <constraint firstItem="zeN-LA-xRB" firstAttribute="bottom" secondItem="PJS-vc-FvH" secondAttribute="bottom" constant="64" id="jkA-yF-eek"/>
-                            <constraint firstItem="1eS-2y-ONc" firstAttribute="bottom" secondItem="ZmB-tQ-hJ8" secondAttribute="bottom" id="kBC-sd-BQI"/>
                             <constraint firstAttribute="trailing" secondItem="gay-5F-dzO" secondAttribute="trailing" constant="16" id="oCv-mw-690"/>
                             <constraint firstItem="ts1-D8-4sT" firstAttribute="centerX" secondItem="rqv-Bt-gCO" secondAttribute="centerX" id="ued-sk-pP1"/>
                         </constraints>

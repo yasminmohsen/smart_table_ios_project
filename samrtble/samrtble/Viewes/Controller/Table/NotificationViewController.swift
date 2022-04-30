@@ -101,11 +101,11 @@ class NotificationViewController: UIViewController {
         
         self.notificationTableResult.removeAll()
         self.notificationTableResult = notificationViewModel.data
-        if(self.notificationTableResult.count < 0){
-            self.noNotificationView.alpha = 1
+        if(self.notificationTableResult.count > 0){
+            self.noNotificationView.alpha = 0
         }
         else{
-            self.noNotificationView.alpha = 0
+            self.noNotificationView.alpha = 1
         }
         self.refreshControl.endRefreshing()
         self.tableView.reloadData()
