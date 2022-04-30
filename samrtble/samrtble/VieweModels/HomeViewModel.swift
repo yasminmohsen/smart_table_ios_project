@@ -84,10 +84,12 @@ class HomeViewModel {
                 self.classesArray.removeAll()
                 self.classesNumber.removeAll()
                 for obj in tableInfoArray{
-                    var MappingModel = MappedModel()
+                    let MappingModel = MappedModel()
                     self.schoolNames.append(obj.school_name)
-                    self.classesArray.append(MappingModel.converTableModelToClasses(obj))
-                    self.classesNumber.append(obj.classes)
+                    if obj.classes.count > 0 {
+                        self.classesArray.append(MappingModel.converTableModelToClasses(obj))
+                        self.classesNumber.append(obj.classes)
+                    }
                     self.day = obj.day
                     self.currentClass = obj.current_class ?? ""
                     self.nextClass = obj.next_class ?? ""

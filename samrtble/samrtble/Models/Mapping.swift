@@ -18,9 +18,9 @@ class MappedModel {
         /***/
         let chunkSize = classNumbers
         /***/
-            let chunks = stride(from: 0, to: numbers.count, by: chunkSize).map {
-                Array(numbers[$0..<min($0 + chunkSize, numbers.count)])
-            }
+        let chunks = stride(from: 0, to: numbers.count, by: chunkSize).map {
+            Array(numbers[$0..<min($0 + chunkSize, numbers.count)])
+        }
   
         nameArray = chunks.map({$0.map({($0.cell_text!,$0.isWaiting)})})
         
