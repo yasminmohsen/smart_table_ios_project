@@ -461,6 +461,7 @@
 				6CA117CB2604B07C006B1AA1 /* Frameworks */,
 				6CA117CC2604B07C006B1AA1 /* Resources */,
 				C8E9D8B57931314BE8975C0D /* [CP] Embed Pods Frameworks */,
+				4EAABD5D281EF24400765A11 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -587,6 +588,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4EAABD5D281EF24400765A11 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		82516E72E956FC2898FD051D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -877,7 +895,8 @@
 				CODE_SIGN_ENTITLEMENTS = samrtble/samrtble.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = MV78XVH867;
 				INFOPLIST_FILE = samrtble/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -903,7 +922,7 @@
 				CODE_SIGN_ENTITLEMENTS = samrtble/samrtble.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = MV78XVH867;
 				INFOPLIST_FILE = samrtble/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

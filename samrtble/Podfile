@@ -11,5 +11,6 @@ pod 'MOLH'
 pod 'SideMenu'
 pod 'Firebase/Analytics'
 pod 'Firebase/Messaging'
+pod 'Firebase/Crashlytics', '~> 7.9.0'
  pod 'Alamofire', '~> 5.2'
 end
