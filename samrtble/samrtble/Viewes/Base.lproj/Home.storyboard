@@ -1033,8 +1033,8 @@
                                     <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eS-2y-ONc">
                                         <rect key="frame" x="0.0" y="0.0" width="406" height="651"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No classes found yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8be-n9-aAG">
-                                                <rect key="frame" x="112.5" y="215.5" width="181" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8be-n9-aAG">
+                                                <rect key="frame" x="139.5" y="215.5" width="127.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1349,7 +1349,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiL-9a-JJP">
-                                <rect key="frame" x="160" y="182" width="94.5" height="20"/>
+                                <rect key="frame" x="160" y="182" width="94" height="20"/>
                                 <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
