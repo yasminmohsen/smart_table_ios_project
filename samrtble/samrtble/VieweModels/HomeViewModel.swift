@@ -13,7 +13,7 @@ import Firebase
 class HomeViewModel {
     
     
-    var classesArray = [[[(String,Bool)]]]()
+    var classesArray = [[[(String,Bool, String?, String?,Bool?)]]]()
     var classesNumber = [[ClassModel]]()
     var day :String!
     var daysArray = [String]()
@@ -114,7 +114,26 @@ class HomeViewModel {
         
     }
     
-    
+    func confirmWaitingClass(link: String) {
+        guard let phone = UserDefaults.standard.string(forKey: MainLoginViewController.PHONE_KEY) else { return  }
+        
+        let service = ConfirmWaitingClassesService()
+        
+        service.confirmWaitingClassAsync(url: link) { (success, error) in
+            
+            
+            if let success = success {
+                
+                
+            }
+            if let error = error {
+                
+                self.error = error
+            }
+            
+        }
+
+    }
 }
 
 

@@ -46,7 +46,9 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
             
         }
         
-        
+        cell.confirmWaitingClassAction = { link in
+            self.homaViewModel.confirmWaitingClass(link: link)
+        }
         
         
         
@@ -56,31 +58,51 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
               case sunday:
                 
                 checkChangingColor(coloredDay:.coloredSunday, collectionView:sunday)
-                cell.customCell(text: subjectsArray[indexPath.column][indexPath.row].0, isWaiting: subjectsArray[indexPath.column][indexPath.row].1,showTime: false, classModel: nil)
+                cell.customCell(text: subjectsArray[indexPath.column][indexPath.row].0,
+                                isWaiting: subjectsArray[indexPath.column][indexPath.row].1,
+                                confirmLink: subjectsArray[indexPath.column][indexPath.row].2,
+                                wcPriority: subjectsArray[indexPath.column][indexPath.row].3,
+                                confirmed: subjectsArray[indexPath.column][indexPath.row].4,showTime: false, classModel: nil)
                 
               case monday:
 
                 checkChangingColor(coloredDay:.coloredMonday, collectionView:monday)
-                cell.customCell(text: subjectsArray[indexPath.column+1][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+1][indexPath.row].1,showTime: false, classModel: nil)
+                cell.customCell(text: subjectsArray[indexPath.column+1][indexPath.row].0,
+                                isWaiting: subjectsArray[indexPath.column+1][indexPath.row].1,
+                                confirmLink: subjectsArray[indexPath.column+1][indexPath.row].2,
+                                wcPriority: subjectsArray[indexPath.column+1][indexPath.row].3,
+                                confirmed: subjectsArray[indexPath.column+1][indexPath.row].4,showTime: false, classModel: nil)
                 
               case tuesday:
 
              checkChangingColor(coloredDay:.coloredTuesday, collectionView:tuesday)
-                cell.customCell(text: subjectsArray[indexPath.column+2][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+2][indexPath.row].1,showTime: false, classModel: nil)
+                cell.customCell(text: subjectsArray[indexPath.column+2][indexPath.row].0,
+                                isWaiting: subjectsArray[indexPath.column+2][indexPath.row].1,
+                                confirmLink: subjectsArray[indexPath.column+2][indexPath.row].2,
+                                wcPriority: subjectsArray[indexPath.column+2][indexPath.row].3,
+                                confirmed: subjectsArray[indexPath.column+2][indexPath.row].4,showTime: false, classModel: nil)
                 
               case wednsday:
                 
              checkChangingColor(coloredDay:.coloredWednsday, collectionView:wednsday)
-                cell.customCell(text: subjectsArray[indexPath.column+3][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+3][indexPath.row].1,showTime: false, classModel: nil)
+                cell.customCell(text: subjectsArray[indexPath.column+3][indexPath.row].0,
+                                isWaiting: subjectsArray[indexPath.column+3][indexPath.row].1,
+                                confirmLink: subjectsArray[indexPath.column+3][indexPath.row].2,
+                                wcPriority: subjectsArray[indexPath.column+3][indexPath.row].3,
+                                confirmed: subjectsArray[indexPath.column+3][indexPath.row].4,showTime: false, classModel: nil)
                 
               case thuresday:
 
                 checkChangingColor(coloredDay:.coloredThursday, collectionView:thuresday)
-                cell.customCell(text: subjectsArray[indexPath.column+4][indexPath.row].0, isWaiting: subjectsArray[indexPath.column+4][indexPath.row].1,showTime: false, classModel: nil)
+                cell.customCell(text: subjectsArray[indexPath.column+4][indexPath.row].0,
+                                isWaiting: subjectsArray[indexPath.column+4][indexPath.row].1,
+                                confirmLink: subjectsArray[indexPath.column+4][indexPath.row].2,
+                                wcPriority: subjectsArray[indexPath.column+4][indexPath.row].3,
+                                confirmed: subjectsArray[indexPath.column+4][indexPath.row].4,showTime: false, classModel: nil)
                 
               case classesNumberView:
                 
-                cell.customCell(text: "\(classNumberArray[indexPath.row].number)", isWaiting: false,showTime: true, classModel: classNumberArray[indexPath.row])
+                  cell.customCell(text: "\(classNumberArray[indexPath.row].number)", isWaiting: false,confirmLink:nil,wcPriority:nil,confirmed:nil,showTime: true, classModel: classNumberArray[indexPath.row])
               default:
                   break
               }

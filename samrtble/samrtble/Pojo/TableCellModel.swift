@@ -14,5 +14,7 @@ var day: String
 var class_number:Int
 var cell_text: String?
 var isWaiting :Bool
-
+var confirm_link: String?
+var wc_priority: String?
+var confirmed :Bool?
 }

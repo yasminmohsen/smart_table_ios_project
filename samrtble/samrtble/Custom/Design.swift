@@ -61,7 +61,7 @@ enum ColorsName {
     case customBej
     case customGrayBorderColor
     case customOrangeCell
-    
+    case teal
 }
 
 
@@ -84,6 +84,8 @@ class Colors{
             return [UIColor(red: 112/250, green: 112/250, blue: 112/250 ,alpha: 1.0)]
         case .customOrangeCell:
             return [#colorLiteral(red: 0.8862745098, green: 0.4156862745, blue: 0.1725490196, alpha: 1)]
+        case .teal:
+            return [#colorLiteral(red: 0.1949220002, green: 0.7924607992, blue: 0.7306439281, alpha: 1)]
             
         default:
             break

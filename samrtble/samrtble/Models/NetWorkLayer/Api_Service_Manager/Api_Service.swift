@@ -92,12 +92,16 @@ class ApiService {
                                  let class_number = teacherCellObj["class_number"].int ?? 0
                                  var cell_text =  teacherCellObj["cell_text"].string ?? "-"
                                  let isWaiting = teacherCellObj["is_waiting"].boolValue ?? false
+                                 let confirm_link = teacherCellObj["confirm_link"].string
+                                 let wc_priority = teacherCellObj["wc_priority"].string
+                                 let confirmed = teacherCellObj["confirmed"].boolValue ?? false
+
 //                                 if (isWaiting == true){
 //                                     cell_text = 
 //                                 }
 //                                 
                                  
-                                 var obj = TableCellModel(day: day, class_number: class_number, cell_text: cell_text,isWaiting: isWaiting)
+                                 var obj = TableCellModel(day: day, class_number: class_number, cell_text: cell_text,isWaiting: isWaiting,confirm_link: confirm_link, wc_priority: wc_priority, confirmed: confirmed)
                                  CellsModelArray.append(obj)
                                  
                              }

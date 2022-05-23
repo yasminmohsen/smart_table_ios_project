@@ -31,7 +31,7 @@ class TableHomeViewController: UIViewController {
     @IBOutlet weak var noDataFound: UIView!
     
     var tableInfoModel = [TableInfoModel]()
-    var classesArray = [[[(String,Bool)]]]()
+    var classesArray = [[[(String,Bool, String?, String?,Bool?)]]]()
     var homaViewModel = HomeViewModel()
     var mobilePhone :String!
     var apiKey :String?
@@ -44,7 +44,7 @@ class TableHomeViewController: UIViewController {
     let school = "school".localized
     let teacherWord = "Teacher in".localized
     var classNumberArray = [ClassModel]()
-    var subjectsArray = [[(String,Bool)]]()
+    var subjectsArray = [[(String,Bool, String?, String?,Bool?)]]()
     var collectionArray = [UICollectionView]()
     var remotNotificationViewModel = RemoteNotificationViewModel()
     let refreshControl = UIRefreshControl()
