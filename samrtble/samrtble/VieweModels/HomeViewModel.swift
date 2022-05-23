@@ -124,7 +124,7 @@ class HomeViewModel {
             
             if let success = success {
                 
-                
+                self.fetchDataFromApi(phone: phone)
             }
             if let error = error {
                 

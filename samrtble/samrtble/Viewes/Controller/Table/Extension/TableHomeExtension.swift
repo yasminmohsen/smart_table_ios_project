@@ -46,7 +46,8 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
             
         }
         
-        cell.confirmWaitingClassAction = { link in
+        cell.confirmWaitingClassAction = { [self] link in
+            ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: self.activityIndecator, status: .start)
             self.homaViewModel.confirmWaitingClass(link: link)
         }
         
