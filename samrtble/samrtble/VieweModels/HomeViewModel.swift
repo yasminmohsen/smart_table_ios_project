@@ -28,6 +28,7 @@ class HomeViewModel {
     // MARK:Variables :-
     
     var bindLogingModel:(_ error:String?,_ data:[TableInfoModel]? , _ networkError :String?)->()={erro,data,newtWorkError in }
+    var openInfoClass:(_ msg:String)->()={msg in }
     var error :String = "" {
         
         didSet{
@@ -114,7 +115,7 @@ class HomeViewModel {
         
     }
     
-    func confirmWaitingClass(link: String) {
+    func confirmWaitingClass(link: String, msg: String) {
         guard let phone = UserDefaults.standard.string(forKey: MainLoginViewController.PHONE_KEY) else { return  }
         
         let service = ConfirmWaitingClassesService()
@@ -125,6 +126,7 @@ class HomeViewModel {
             if let success = success {
                 
                 self.fetchDataFromApi(phone: phone)
+                self.openInfoClass(msg)
             }
             if let error = error {
                 

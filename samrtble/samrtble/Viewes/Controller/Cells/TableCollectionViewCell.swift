@@ -13,7 +13,7 @@ class TableCollectionViewCell: UICollectionViewCell {
     
     var alertAction :((_ msg:String)->Void)?
     var alertTimeAction :((_ msgTime:String)->Void)?
-    var confirmWaitingClassAction :((_ link:String)->Void)?
+    var confirmWaitingClassAction :((_ link:String, _ msg: String)->Void)?
     var msg = ""
     var confirmLink: String? = ""
     var msgTime = ""
@@ -105,7 +105,7 @@ class TableCollectionViewCell: UICollectionViewCell {
     @objc func confirmWaitingClass(){
         if let confirmWaitingClassAction = confirmWaitingClassAction{
             guard let link = confirmLink else { return }
-            confirmWaitingClassAction(link)
+            confirmWaitingClassAction(link,msg)
         }
     }
     

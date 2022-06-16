@@ -303,6 +303,10 @@ class TableHomeViewController: UIViewController {
             }
             
         }
+        
+        homaViewModel.openInfoClass = {(msg:String) ->() in
+            Alert.showSimpleAlert(title: "Class Time", message: "\(msg)", viewRef: self)
+        }
     }
     
     
