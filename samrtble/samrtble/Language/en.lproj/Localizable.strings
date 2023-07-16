@@ -18,3 +18,10 @@
 "Class Time" =  "Class Time";
  "From"= "From";
   "To" = "To";
+"Sat" =  "Sat.";
+"Sun" = "Sun.";
+"Mon" = "Mon.";
+"Tues" = "Tues.";
+"Wed" = "Wed.";
+"Thur" = "Thur.";
+"Fri" = "Fri.";

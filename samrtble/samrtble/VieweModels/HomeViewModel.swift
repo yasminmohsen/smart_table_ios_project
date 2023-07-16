@@ -74,7 +74,7 @@ class HomeViewModel {
     
     
     
-    func fetchData(phone:String){
+    func fetchData(phone:String) {
         
         
         let apiService = ApiService(phone: phone, type: "teacher-table")

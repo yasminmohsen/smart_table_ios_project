@@ -15,3 +15,4 @@ enum ColoredDay {
     case coloredThursday
     case non
 }
+

@@ -10,6 +10,11 @@ import SideMenu
 
 class TableHomeViewController: UIViewController {
     
+    @IBOutlet weak var day1: UILabel!
+    @IBOutlet weak var day3: UILabel!
+    @IBOutlet weak var day2: UILabel!
+    @IBOutlet weak var day4: UILabel!
+    @IBOutlet weak var day5: UILabel!
     
     @IBOutlet weak var teacher: UILabel!
     @IBOutlet weak var teacherName: UILabel!
@@ -47,13 +52,14 @@ class TableHomeViewController: UIViewController {
     var subjectsArray = [[(String,Bool, String?, String?,Bool?)]]()
     var collectionArray = [UICollectionView]()
     var remotNotificationViewModel = RemoteNotificationViewModel()
+    var weekDaysArray: [UILabel] = []
     let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         remotNotificationViewModel.fetchRemoteNotification()
-        
+        weekDaysArray = [day1, day2, day3, day4, day5]
         collectionArray = [classesNumberView,sunday,monday,tuesday,wednsday,thuresday]
         customUi()
         bindingData()
@@ -116,13 +122,16 @@ class TableHomeViewController: UIViewController {
     
     
     
-    func updateUi(){
+    func updateUi() {
       
         schoolNames = homaViewModel.schoolNames
         classesArray = homaViewModel.classesArray
         classesNumber=homaViewModel.classesNumber
         day = homaViewModel.day
         daysArray = homaViewModel.daysArray
+        for (i, day) in daysArray.enumerated() {
+            weekDaysArray[i].text = day.localized
+        }
         teacherName.text = "\(hi) \(homaViewModel.teacherName)"
 
         if(homaViewModel.currentClass.isEmpty && homaViewModel.nextClass.isEmpty ) {
@@ -161,7 +170,7 @@ class TableHomeViewController: UIViewController {
         schoolSegmentedBtn.selectedSegmentIndex = 0
         self.updateTableInContainer(index: 0)
         
-        if(schoolNames.count>1){
+        if(schoolNames.count>1) {
             
             schoolSegmentedBtn.alpha = 1
             segmentedBnHightConstarints.constant = 50

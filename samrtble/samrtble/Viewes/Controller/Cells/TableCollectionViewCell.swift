@@ -11,10 +11,11 @@ class TableCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
     
     
-    var alertAction :((_ msg:String)->Void)?
+    var alertAction :((_ msg:String, _ isWaiting: Bool)->Void)?
     var alertTimeAction :((_ msgTime:String)->Void)?
     var confirmWaitingClassAction :((_ link:String, _ msg: String)->Void)?
     var msg = ""
+    var isWaiting: Bool = false
     var confirmLink: String? = ""
     var msgTime = ""
     let from = "From".localized
@@ -32,9 +33,12 @@ class TableCollectionViewCell: UICollectionViewCell {
             self.label.text = wcPriority
         }
         msg = text
+        self.isWaiting = isWaiting
         self.confirmLink = confirmLink
-        
-        if(isWaiting){
+        let geastureRecognizer = UITapGestureRecognizer(target: self, action: #selector(popUpAlert))
+        self.addGestureRecognizer(geastureRecognizer)
+
+        if(isWaiting) {
             
             self.backgroundColor = Colors.getColor(type: .customOrangeCell)[0]
             self.layer.cornerRadius = 6
@@ -46,8 +50,6 @@ class TableCollectionViewCell: UICollectionViewCell {
             }
 
             if wcPriority == nil || confirmed == true {
-                let geastureRecognizer = UITapGestureRecognizer(target: self, action: #selector(popUpAlert))
-                self.addGestureRecognizer(geastureRecognizer)
             }
 
 
@@ -56,7 +58,6 @@ class TableCollectionViewCell: UICollectionViewCell {
         else{
             
             self.backgroundColor = .clear
-            
         }
         
         if wcPriority != nil {
@@ -84,17 +85,16 @@ class TableCollectionViewCell: UICollectionViewCell {
         }
         
         
-        
     }
     
     
     @objc func popUpAlert(){
         
         
-        if let alertAction = alertAction{
+        if let alertAction = alertAction {
             
             
-            alertAction(msg)
+            alertAction(msg, isWaiting)
         }
         
         

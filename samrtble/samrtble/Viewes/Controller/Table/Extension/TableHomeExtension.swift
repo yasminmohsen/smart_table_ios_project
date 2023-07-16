@@ -31,10 +31,10 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
         let classInfo = "Class info :".localized
         let classTime = "Class Time".localized
         
-        cell.alertAction = { msg in
+        cell.alertAction = { msg, isWaiting in
             
             
-            Alert.showSimpleAlert(title: "Waiting class", message: "\(classInfo) \r \(msg)", viewRef: self)
+            Alert.showSimpleAlert(title: "\(isWaiting ? "Waiting class".localized : classInfo)", message: "\(isWaiting ? classInfo : "") \r \(msg)", viewRef: self)
             
         }
         
@@ -53,7 +53,7 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
         
         
         
-        if (subjectsArray.count > 0){
+        if (subjectsArray.count > 0) {
 
               switch collectionView {
               case sunday:

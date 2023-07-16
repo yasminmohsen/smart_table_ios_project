@@ -3,7 +3,7 @@
 "02h-8L-4Dc.text" = "بإمكانكم التواصل عبر الايميل:";
 
 /* Class = "UILabel"; text = "Sun."; ObjectID = "05e-70-yJB"; */
-"05e-70-yJB.text" = "الأحد";
+//"05e-70-yJB.text" = "الأحد";
 
 /* Class = "UILabel"; text = "Contact Us"; ObjectID = "0Gl-nL-jqj"; */
 "0Gl-nL-jqj.text" = "اتصل بنا";
@@ -15,7 +15,7 @@
 "CHW-Nn-Nmd.normalTitle" = "English";
 
 /* Class = "UILabel"; text = "Mon."; ObjectID = "Idx-9T-lMu"; */
-"Idx-9T-lMu.text" = "الأثنين";
+//"Idx-9T-lMu.text" = "الأثنين";
 
 /* Class = "UILabel"; text = "No Notifications"; ObjectID = "N4g-zc-EkC"; */
 "N4g-zc-EkC.text" = "لا يوجد إشعارات";
@@ -33,16 +33,16 @@
 "T02-5a-k9W.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "TXb-uP-c13"; */
-"TXb-uP-c13.text" = "Label";
+//"TXb-uP-c13.text" = "Label";
 
 /* Class = "UILabel"; text = "Tues."; ObjectID = "U2r-AR-UKf"; */
-"U2r-AR-UKf.text" = "الثلاثاء";
+//"U2r-AR-UKf.text" = "الثلاثاء";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "UC4-0V-Wke"; */
-"UC4-0V-Wke.text" = "Label";
+//"UC4-0V-Wke.text" = "Label";
 
 /* Class = "UILabel"; text = "Wed."; ObjectID = "UR3-Zf-UZA"; */
-"UR3-Zf-UZA.text" = "الأربعاء";
+//"UR3-Zf-UZA.text" = "الأربعاء";
 
 /* Class = "UITextView"; text = "Content"; ObjectID = "UX1-dp-Pg2"; */
 "UX1-dp-Pg2.text" = "نص الرسالة";
@@ -72,7 +72,7 @@
 "hHe-QS-2LS.text" = "Label";
 
 /* Class = "UILabel"; text = "Thur."; ObjectID = "nws-QF-7Gs"; */
-"nws-QF-7Gs.text" = "الخميس";
+//"nws-QF-7Gs.text" = "الخميس";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "o8m-gz-qXm"; */
 "o8m-gz-qXm.text" = "Label";
