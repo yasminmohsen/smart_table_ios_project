@@ -15,7 +15,6 @@ class TableHomeViewController: UIViewController {
     @IBOutlet weak var day2: UILabel!
     @IBOutlet weak var day4: UILabel!
     @IBOutlet weak var day5: UILabel!
-    
     @IBOutlet weak var teacher: UILabel!
     @IBOutlet weak var teacherName: UILabel!
     @IBOutlet weak var activityIndecator: UIActivityIndicatorView!
@@ -25,15 +24,15 @@ class TableHomeViewController: UIViewController {
     @IBOutlet weak var dayStackView: UIStackView!
     @IBOutlet weak var schoolSegmentedBtn: UISegmentedControl!
     @IBOutlet weak var tabBarSegmentedBtn: UISegmentedControl!
-    
     @IBOutlet weak var classesNumberView: UICollectionView!
     @IBOutlet weak var sunday: UICollectionView!
     @IBOutlet weak var monday: UICollectionView!
     @IBOutlet weak var tuesday: UICollectionView!
-    @IBOutlet weak var wednsday: UICollectionView!
-    @IBOutlet weak var thuresday: UICollectionView!
+    @IBOutlet weak var wednesday: UICollectionView!
+    @IBOutlet weak var thursday: UICollectionView!
     @IBOutlet weak var segmentedBnHightConstarints: NSLayoutConstraint!
     @IBOutlet weak var noDataFound: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var tableInfoModel = [TableInfoModel]()
     var classesArray = [[[(String,Bool, String?, String?,Bool?)]]]()
@@ -54,59 +53,39 @@ class TableHomeViewController: UIViewController {
     var remotNotificationViewModel = RemoteNotificationViewModel()
     var weekDaysArray: [UILabel] = []
     let refreshControl = UIRefreshControl()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         remotNotificationViewModel.fetchRemoteNotification()
         weekDaysArray = [day1, day2, day3, day4, day5]
-        collectionArray = [classesNumberView,sunday,monday,tuesday,wednsday,thuresday]
+        collectionArray = [classesNumberView,sunday,monday,tuesday,wednesday,thursday]
         customUi()
         bindingData()
-      
-    
-           refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         self.scrollView.addSubview(refreshControl) // not required
         
-//        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-//           swipeDown.direction = .down
-//        swipeDown.set
-//           self.view.addGestureRecognizer(swipeDown)
-        
-        }
-
-        @objc func refresh(_ sender: AnyObject) {
-            callApi()
-        }
-
-   
+    }
     
-    
+    @objc func refresh(_ sender: AnyObject) {
+        callApi()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
         tabBarSegmentedBtn.selectedSegmentIndex = 1
         callApi()
-  
-        
     }
-    
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    // MARK:Functions :-
     
     func customUi(){
         CustomDesignView.customViewWithShadow(view: dayStackView)
         dayStackView.layer.borderColor = UIColor(red: 112/250, green: 112/250, blue: 112/250 ,alpha: 1.0).cgColor
         dayStackView.layer.borderWidth = 0.2
-        
         schoolSegmentedBtn.setSegmentStyle()
         tabBarSegmentedBtn.setSegmentStyle()
-        
         for segView in segmentedBtnView{
             CustomDesignView.customViewWithShadow(view: segView)
             segView.layer.borderColor =  UIColor(red: 112/250, green: 112/250, blue: 112/250 ,alpha: 1.0).cgColor
-            
         }
         
         for i in collectionArray {
@@ -119,11 +98,7 @@ class TableHomeViewController: UIViewController {
         }
     }
     
-    
-    
-    
     func updateUi() {
-      
         schoolNames = homaViewModel.schoolNames
         classesArray = homaViewModel.classesArray
         classesNumber=homaViewModel.classesNumber
@@ -133,11 +108,11 @@ class TableHomeViewController: UIViewController {
             weekDaysArray[i].text = day.localized
         }
         teacherName.text = "\(hi) \(homaViewModel.teacherName)"
-
+        
         if(homaViewModel.currentClass.isEmpty && homaViewModel.nextClass.isEmpty ) {
-       connectedWith.text = ""
+            connectedWith.text = ""
         }
-
+        
         else if (homaViewModel.currentClass.isEmpty) {
             
             connectedWith.text = "\(homaViewModel.nextClass)"
@@ -150,23 +125,16 @@ class TableHomeViewController: UIViewController {
         else{
             connectedWith.text = "\(homaViewModel.currentClass) \r\r\(homaViewModel.nextClass)"
         }
-        
-        
-        
-        
         teacher.text = """
-\(teacherWord)
-
+ \(teacherWord)
 \(schoolNames[0])
 """
         schoolSegmentedBtn.removeAllSegments()
-        
         for (index,school) in schoolNames.enumerated()
         {
             
             schoolSegmentedBtn.insertSegment(withTitle: school, at: index, animated: false)
         }
-        
         schoolSegmentedBtn.selectedSegmentIndex = 0
         self.updateTableInContainer(index: 0)
         
@@ -175,17 +143,14 @@ class TableHomeViewController: UIViewController {
             schoolSegmentedBtn.alpha = 1
             segmentedBnHightConstarints.constant = 50
         }
-        if(self.classesArray.count > 0){
+        if(self.classesArray.count > 0) {
             self.noDataFound.alpha = 0
         }
-        else{
+        else {
             self.noDataFound.alpha = 1
-
+            
         }
     }
-    
-    
-    
     func updateTableInContainer(index : Int){
         if(classesArray.count>0 && classesNumber.count>0){
             subjectsArray = classesArray[index]
@@ -194,11 +159,7 @@ class TableHomeViewController: UIViewController {
             
             collectionObj.reloadData()
         }
-        
-        
     }
-    
-    
     
     func callApi(){
         ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .start)
@@ -210,12 +171,6 @@ class TableHomeViewController: UIViewController {
         
     }
     
-    
-    
-    
-    // MARK:Action Functions :-
-    
-    
     @IBAction func schoolSegmentAction(_ sender: Any) {
         
         let index = schoolSegmentedBtn.selectedSegmentIndex
@@ -224,10 +179,6 @@ class TableHomeViewController: UIViewController {
         }
         
     }
-    
-    
-    
-    
     @IBAction func tabBarAction(_ sender: Any) {
         print(tabBarSegmentedBtn.selectedSegmentIndex)
         
@@ -243,14 +194,8 @@ class TableHomeViewController: UIViewController {
         }
         
     }
-    
-    
-    
     @IBAction func minueAction(_ sender: Any) {
-        
         let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! SideMenuNavigationController
-        
-        
         let language = LanguageOperation.checkLanguage()
         print(language)
         switch language {
@@ -269,26 +214,14 @@ class TableHomeViewController: UIViewController {
         
         present(menu, animated: true, completion: nil)
         
-        
     }
-    
-    
-    
     @IBAction func unwinToHome(segue: UIStoryboardSegue){
         
     }
     
-    
-    
-    
-    
-    
-    
     // MARK: Binding :-
     
     func bindingData(){
-        
-        
         homaViewModel.bindLogingModel = {
             (error:String? , data:[TableInfoModel]?, netWorkError:String?) ->() in
             
@@ -298,28 +231,20 @@ class TableHomeViewController: UIViewController {
                 if let data = data {
                     self.onSucessUpdateView()
                 }
-                
-                
                 if let error = error{
                     self.onFiluer(error: error,netWorkError: nil)
-                    
                 }
                 
                 if let netWorkError = netWorkError{
                     self.onFiluer(error: nil, netWorkError: netWorkError)
                 }
-                
             }
             
         }
-        
         homaViewModel.openInfoClass = {(msg:String) ->() in
             Alert.showSimpleAlert(title: "Class Time", message: "\(msg)", viewRef: self)
         }
     }
-    
-    
-    
     
     // MARK: After Binding Functions :-
     
@@ -334,19 +259,16 @@ class TableHomeViewController: UIViewController {
     func onFiluer(error:String? ,netWorkError:String?){
         if let netWorkError = netWorkError {
             Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
-            
         }
-        
         if let error = error {
             Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
             
         }
         ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
-        
     }
     
 }
 
 
-    
+
 

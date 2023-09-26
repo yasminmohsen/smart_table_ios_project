@@ -6,8 +6,8 @@
 //
 
 import Foundation
+
 struct ClassModel :Codable {
-    
     var number: Int
     var start_time: String
     var end_time: String

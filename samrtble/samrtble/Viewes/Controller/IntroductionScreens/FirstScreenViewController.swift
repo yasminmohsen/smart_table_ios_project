@@ -9,83 +9,53 @@ import UIKit
 
 
 class FirstScreenViewController: UIViewController {
-
+    
     @IBOutlet weak var skipBtn: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
-    
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var descriotionLabel: UILabel!
     static let GO_LOGIN = "goLogin"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        
-   
         titleLabel.textColor = Colors.getColor(type: .customGreen)[0]
         skipBtn.setTitle("Skip".localized, for: .normal)
-        
-        
-
         CustomDesignView.customPageController(pageControl)
-     
-       
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
-        
         leftSwipe.direction = .left
-            self.view.addGestureRecognizer(leftSwipe)
-
+        self.view.addGestureRecognizer(leftSwipe)
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
-        
         rightSwipe.direction = .right
-            self.view.addGestureRecognizer(rightSwipe)
+        self.view.addGestureRecognizer(rightSwipe)
         CheckUserDeafaults()
-        
-      
-        
     }
-  
-
-        
-    
     override func viewDidLayoutSubviews() {
-      
+        
     }
     
     func CheckUserDeafaults()  {
         let defaults = UserDefaults.standard
         if(defaults.string(forKey: MainLoginViewController.PHONE_KEY) != nil){
-            var vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController 
-            
-               // vc.tableInfoModel = loginViewModelData
-           
-            
+            var vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController
             self.navigationController?.pushViewController(vc, animated: true)
             
-        
-        
+        }
         
     }
-    
-    }
-
-    
     
     @objc func swipe(gesture :UISwipeGestureRecognizer) {
         let lang = LanguageOperation.checkLanguage()
         let vc = storyboard?.instantiateViewController(identifier: "secondVc") as! SecondScreenViewController
         switch gesture.direction {
         case .right:
-            
             switch lang {
             case .arabic:
                 self.navigationController?.pushViewController(vc, animated: true)
-        
+                
             default:
                 break
             }
-            
             
         case .left:
             
@@ -96,26 +66,12 @@ class FirstScreenViewController: UIViewController {
             default:
                 break
             }
-            
-            
-            
-            
         default:
             break
         }
-        
-        
-        
-        
-       
-        
-        
-        
     }
     
     @IBAction func skip(_ sender: Any) {
-        
-        
         let defults = UserDefaults.standard
         defults.setValue("goLogin", forKey: FirstScreenViewController.GO_LOGIN)
     }

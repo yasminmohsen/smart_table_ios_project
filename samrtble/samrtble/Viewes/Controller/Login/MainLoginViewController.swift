@@ -10,21 +10,16 @@ import UIKit
 class MainLoginViewController: UIViewController {
     
     @IBOutlet weak var activityIndecator: UIActivityIndicatorView!
-    
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var enteraYourMobileLabel: UILabel!
-    
     @IBOutlet weak var plusBox: UILabel!
-    
     // @IBOutlet weak var countryCode: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var notFoundLabel: UILabel!
-    
     static let PHONE_KEY :String = "phone"
     var loginViewModel :LoginViewModel!
     var mobilePhoneNum : String = ""
     var tableInfo : [TableInfoModel]!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +45,8 @@ class MainLoginViewController: UIViewController {
                     self.onFiluer(error: error, netWorkError: nil)
                     
                 }
-                
-                
                 if let result = result {
-                    
                     self.onSucessUpdateView()
-                    
-                    
                 }
                 
             }
@@ -70,10 +60,6 @@ class MainLoginViewController: UIViewController {
         let borderWidth = CGFloat(1.0)
         
     }
-    
-    
-    
-    // MARK:Functions :-
     
     func customUi(){
         let lang = LanguageOperation.checkLanguage()
@@ -107,11 +93,7 @@ class MainLoginViewController: UIViewController {
         let defaults = UserDefaults.standard
         defaults.set(phone, forKey: MainLoginViewController.PHONE_KEY)
         
-        
     }
-    
-    
-    
     
     
     // MARK: After Binding Functions :-
@@ -130,7 +112,6 @@ class MainLoginViewController: UIViewController {
         
     }
     
-    
     func onFiluer(error:String? ,netWorkError:String?){
         if let netWorkError = netWorkError {
             Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
@@ -146,21 +127,9 @@ class MainLoginViewController: UIViewController {
                 self.notFoundLabel.alpha = 1
                 self.notFoundLabel.text = error
             }
-            
-            
-            
-            
         }
-        
         ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
     }
-    
-    
-    
-    
-    
-    
-    // MARK:Action Functions :-
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -168,21 +137,18 @@ class MainLoginViewController: UIViewController {
     
     
     @IBAction func loginBtn(_ sender: Any) {
-        
         mobilePhoneNum = "\(phoneTextField.text!)"
         if((phoneTextField.text!.isEmpty)){
             
             Alert.showSimpleAlert(title: "Alert", message: "Enter user id", viewRef: self)
         }
         
-        else{
-            
+        else {
             
             ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .start)
             loginViewModel.fetchDataFromApi(phone: mobilePhoneNum)
             
         }
-        
         
     }
     

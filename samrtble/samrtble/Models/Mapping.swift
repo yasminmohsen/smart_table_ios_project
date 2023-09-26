@@ -12,8 +12,7 @@ class MappedModel {
     
     func converTableModelToClasses(_ tableInfo:TableInfoModel) -> [[(String,Bool, String?, String?,Bool?)]] {
         var nameArray = [[(String,Bool, String?, String?,Bool?)]]()
-     
-            let numbers = tableInfo.teacher_cells
+        let numbers = tableInfo.teacher_cells
         let classNumbers = tableInfo.classes.count
         /***/
         let chunkSize = classNumbers
@@ -21,11 +20,8 @@ class MappedModel {
         let chunks = stride(from: 0, to: numbers.count, by: chunkSize).map {
             Array(numbers[$0..<min($0 + chunkSize, numbers.count)])
         }
-  
         nameArray = chunks.map({$0.map({($0.cell_text!,$0.isWaiting, $0.confirm_link, $0.wc_priority, $0.confirmed)})})
-        
         return nameArray
     }
     
-   
 }

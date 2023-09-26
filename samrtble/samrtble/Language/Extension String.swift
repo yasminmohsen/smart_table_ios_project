@@ -9,13 +9,10 @@ import Foundation
 
 
 extension String {
-    
-    
     var localized : String{
         return NSLocalizedString(self, comment: "")
     }
 }
-
 
 extension String {
     var decodingUnicodeCharacters: String { applyingTransform(.init("Hex-Any"), reverse: false) ?? "" }

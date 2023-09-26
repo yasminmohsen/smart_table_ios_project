@@ -12,17 +12,12 @@ import Alamofire
 class NotificationViewModel {
     
     var resultNotification = [ResultNotification]()
-    
-    
     var bindNotificationModel:(_ error:String?,_ data:[ResultNotification]?, _ netWorkError:String?)->()={erro,data,netWorkError in }
-    
     var error :String = "" {
-        
         didSet{
             
             bindNotificationModel(error, nil,nil)
         }
-        
     }
     var data : [ResultNotification]! {
         
@@ -32,45 +27,25 @@ class NotificationViewModel {
         }
         
     }
-    
-    
-    
     var netWorkError :String = ""{
-        
         didSet{
             
             bindNotificationModel(nil,nil,netWorkError)
-            
-            
         }
         
     }
     
-    
-    
-    
     func fetchDataFromApi() {
-      
-        weak var weakSelf = self
-        InternetCheckConnection().checkIntener(weakSelf!)
-     
-        
+        let internetCheckConnection = InternetCheckConnection()
+        internetCheckConnection.iCheckNetworkConnection = self
+        internetCheckConnection.checkInternet()
     }
-    
-    
-    
-    
-    
     
     func fetchData(){
         
         guard let phone = UserDefaults.standard.string(forKey: MainLoginViewController.PHONE_KEY) else { return  }
-        
         let apiService = ApiService(phone: phone, type: "notif-history")
-        
         apiService.fetchNotificationData { (notificationData, error) in
-            
-            
             if let resultNotif = notificationData {
                 
                 self.data = resultNotif
@@ -83,24 +58,17 @@ class NotificationViewModel {
             
         }
     }
-    
-    
 }
 
 
 extension NotificationViewModel :IcheckNetworkConnection{
-    func onSucessConnected() {
-
+    func onSuccessConnected() {
         self.fetchData()
-
     }
-
-    func onFailurConnected() {
-
+    
+    func onFailureConnected() {
         self.netWorkError = "no internet connection"
     }
-
-
 }
 
 

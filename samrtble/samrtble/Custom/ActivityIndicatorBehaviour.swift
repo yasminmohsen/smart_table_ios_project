@@ -22,16 +22,12 @@ class ActivityIndecatorBehaviour {
             break
         }
         
-        
     }
     
 }
 
 
 enum ActivityIndicatorStatus {
-    
     case start
     case stop
-    
-    
 }

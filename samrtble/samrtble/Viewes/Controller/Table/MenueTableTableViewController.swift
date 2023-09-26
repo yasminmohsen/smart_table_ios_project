@@ -9,50 +9,33 @@ import UIKit
 import MOLH
 class MenueTableTableViewController: UITableViewController {
     
-    
     @IBOutlet weak var contactUs: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         contactUs.titleLabel?.textAlignment = .center
     }
     
-    @IBAction func aboutAppBtn(_ sender: Any) {
-    }
-    
-    
+    @IBAction func aboutAppBtn(_ sender: Any) {}
     @IBAction func contactUsBtn(_ sender: Any) {
-        
         let vc = self.storyboard?.instantiateViewController(identifier: "contactUsVc") as! ContactUsViewController
         
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
     
-    
-    
     @IBAction func rateUsBtn(_ sender: Any) {
-        var appId = "1565596183"
+        let appId = "1565596183"
         //itms-apps://apple.com/app/\(appId)
         if let url = URL(string: "http://itunes.apple.com/app/\(appId)") {
             UIApplication.shared.open(url)
         }
     }
     
-    
-    
-    
     @IBAction func languageBtn(_ sender: Any) {
         
         MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
-        
-        
-        
         restartApplication()
-        
     }
-    
-    
     
     @IBAction func logoutBtn(_ sender: Any) {
         
@@ -65,15 +48,9 @@ class MenueTableTableViewController: UITableViewController {
         }
     }
     
-    
-    
-    
-    
     func restartApplication () {
-        
         let launchScreen = UIStoryboard(name: "Main", bundle: nil)
         var tableViewController = launchScreen.instantiateViewController(withIdentifier: "splashScreen") as! SplashViewController
-        
         let navCtrl = UINavigationController(rootViewController:tableViewController)
         //
         guard
@@ -82,14 +59,10 @@ class MenueTableTableViewController: UITableViewController {
         else {
             return
         }
-        
         navCtrl.setNavigationBarHidden(true, animated: true)
         UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {
             window.rootViewController = navCtrl
         })
         
     }
-    
-    
-    
 }

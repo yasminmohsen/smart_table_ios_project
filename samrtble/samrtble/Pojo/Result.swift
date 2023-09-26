@@ -6,7 +6,8 @@
 //
 
 import Foundation
+
 enum Result {
-    case sucess
+    case success
     case error
 }

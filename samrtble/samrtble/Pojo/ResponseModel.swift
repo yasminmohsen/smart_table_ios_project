@@ -6,13 +6,9 @@
 //
 
 import Foundation
+
 struct Response: Codable {
-    
     var success: Bool
     var data: [TableInfoModel]
     var message: String
-    
-    
-    
-    
 }

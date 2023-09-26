@@ -11,14 +11,8 @@ import Alamofire
 struct ApIServiceUrl {
     var phone :String = ""
     var type :String = ""
-    
-     var url :String {
-        
-       "https://www.smartble.net/api/\(type)/\(phone)/"
-        
+    var url :String {
+        "https://www.smartble.net/api/\(type)/\(phone)/"
     }
-    
-    
     let arabicHeaderValue = HTTPHeader(name: "Accept-Language", value: "ar")
-//    let headerValue = "Accept-Language"
 }

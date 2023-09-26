@@ -10,27 +10,21 @@ import UIKit
 class SecondScreenViewController: UIViewController {
     @IBOutlet weak var skipBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var descriotionLabel: UILabel!
-    
     @IBOutlet weak var pageControl: UIPageControl!
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-       titleLabel.textColor = Colors.getColor(type: .customGreen)[0]
+        
+        titleLabel.textColor = Colors.getColor(type: .customGreen)[0]
         skipBtn.setTitle("Skip".localized, for: .normal)
-        
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
-        
         leftSwipe.direction = .left
-            self.view.addGestureRecognizer(leftSwipe)
-
+        self.view.addGestureRecognizer(leftSwipe)
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
-        
         rightSwipe.direction = .right
-            self.view.addGestureRecognizer(rightSwipe)
+        self.view.addGestureRecognizer(rightSwipe)
         CustomDesignView.customPageController(pageControl)
-   }
+    }
     
     @objc func swipe(gesture :UISwipeGestureRecognizer) {
         let lang = LanguageOperation.checkLanguage()
@@ -44,19 +38,17 @@ class SecondScreenViewController: UIViewController {
             case .english :
                 
                 self.navigationController?.popViewController(animated: true)
-            
+                
             default:
                 break
             }
-            
-            
         case .left:
             
             switch lang {
-            
+                
             case .arabic:
                 self.navigationController?.popViewController(animated: true)
-            
+                
             case .english:
                 
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -64,26 +56,13 @@ class SecondScreenViewController: UIViewController {
                 break
             }
             
-            
-            
-            
         default:
             break
         }
-        
-        
-        
-        
-       
-        
-        
-        
     }
     
     
     @IBAction func skip(_ sender: Any) {
-        
-        
         let defults = UserDefaults.standard
         defults.setValue("goLogin", forKey: FirstScreenViewController.GO_LOGIN)
     }

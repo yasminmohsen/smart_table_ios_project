@@ -17,11 +17,7 @@ struct NotificationResponse: Codable {
 
 // MARK: - NotificationData
 struct NotificationData: Codable {
-    
-   
     let title, body, actionID ,dateCreated, timeCreated: String
-//    let dateCreated:Date
-    
     let priority,clickAction: String?
     
     enum CodingKeys: String, CodingKey {
@@ -32,14 +28,9 @@ struct NotificationData: Codable {
         case dateCreated = "date_created"
         case timeCreated = "time_created"
     }
-    
-    
 }
 
-
 struct ResultNotification {
- 
-    
     var date : String
     var data : [NotificationData]
 }

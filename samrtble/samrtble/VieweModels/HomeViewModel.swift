@@ -12,7 +12,6 @@ import Alamofire
 import Firebase
 class HomeViewModel {
     
-    
     var classesArray = [[[(String,Bool, String?, String?,Bool?)]]]()
     var classesNumber = [[ClassModel]]()
     var day :String!
@@ -22,15 +21,9 @@ class HomeViewModel {
     var phone :String = ""
     var currentClass :String = ""
     var nextClass :String = ""
-    
-    
-    
-    // MARK:Variables :-
-    
     var bindLogingModel:(_ error:String?,_ data:[TableInfoModel]? , _ networkError :String?)->()={erro,data,newtWorkError in }
     var openInfoClass:(_ msg:String)->()={msg in }
     var error :String = "" {
-        
         didSet{
             
             bindLogingModel(error, nil,nil)
@@ -53,30 +46,19 @@ class HomeViewModel {
             bindLogingModel(nil,nil,netWorkError)
         }
         
-        
-        
-        
     }
     
     
-    
-    // MARK:Functions :-
+    // MARK: -Functions :-
     
     func fetchDataFromApi(phone:String) {
         self.phone = phone
-        weak var weakSelf = self
-        InternetCheckConnection().checkIntener(weakSelf!)
-        
+        let internetCheckConnection = InternetCheckConnection()
+        internetCheckConnection.iCheckNetworkConnection = self
+        internetCheckConnection.checkInternet()
     }
     
-    
-    
-    
-    
-    
     func fetchData(phone:String) {
-        
-        
         let apiService = ApiService(phone: phone, type: "teacher-table")
         apiService.fetchData { (tableInfoModelArray, error) in
             
@@ -95,7 +77,7 @@ class HomeViewModel {
                     self.currentClass = obj.current_class ?? ""
                     self.nextClass = obj.next_class ?? ""
                     self.daysArray = obj.days
-        
+                    
                 }
                 
                 self.teacherName = tableInfoArray[0].teacher_name
@@ -111,8 +93,6 @@ class HomeViewModel {
             
         }
         
-        
-        
     }
     
     func confirmWaitingClass(link: String, msg: String) {
@@ -121,8 +101,6 @@ class HomeViewModel {
         let service = ConfirmWaitingClassesService()
         
         service.confirmWaitingClassAsync(url: link) { (success, error) in
-            
-            
             if let success = success {
                 
                 self.fetchDataFromApi(phone: phone)
@@ -134,25 +112,21 @@ class HomeViewModel {
             }
             
         }
-
+        
     }
 }
 
 
 
 extension HomeViewModel :IcheckNetworkConnection{
-    func onSucessConnected() {
+    func onSuccessConnected() {
         print("Internet connection is on.")
-
+        
         self.fetchData(phone: phone)
     }
-
-    func onFailurConnected() {
+    
+    func onFailureConnected() {
         print("Internet connection is off.")
         self.netWorkError = "no internet connection"
     }
-
-
-    
-    
 }

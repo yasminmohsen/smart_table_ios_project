@@ -6,9 +6,8 @@
 //
 
 import Foundation
-protocol IcheckNetworkConnection  {
-    
-    func onSucessConnected()
-    func onFailurConnected()
 
+protocol IcheckNetworkConnection: AnyObject  {
+    func onSuccessConnected()
+    func onFailureConnected()
 }

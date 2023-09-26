@@ -9,19 +9,15 @@ import Foundation
 import UIKit
 
 extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
-  
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        
         if(tableInfoModel.count>0){
             return tableInfoModel[0].classes.count
         }
         else{
             return 1
         }
-        
-//        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -32,32 +28,19 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
         let classTime = "Class Time".localized
         
         cell.alertAction = { msg, isWaiting in
-            
-            
             Alert.showSimpleAlert(title: "\(isWaiting ? "Waiting class".localized : classInfo)", message: "\(isWaiting ? classInfo : "") \r \(msg)", viewRef: self)
-            
         }
-        
-        
         cell.alertTimeAction = { msg in
-            
-            
             Alert.showSimpleAlert(title: "Class Time", message: "\(msg)", viewRef: self)
-            
         }
-        
         cell.confirmWaitingClassAction = { [self] link, msg in
             ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: self.activityIndecator, status: .start)
             self.homaViewModel.confirmWaitingClass(link: link, msg: msg)
         }
-        
-        
-        
         if (subjectsArray.count > 0) {
-
-              switch collectionView {
-              case sunday:
-                
+            
+            switch collectionView {
+            case sunday:
                 checkChangingColor(coloredDay:.coloredSunday, collectionView:sunday)
                 cell.customCell(text: subjectsArray[indexPath.column][indexPath.row].0,
                                 isWaiting: subjectsArray[indexPath.column][indexPath.row].1,
@@ -65,8 +48,7 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
                                 wcPriority: subjectsArray[indexPath.column][indexPath.row].3,
                                 confirmed: subjectsArray[indexPath.column][indexPath.row].4,showTime: false, classModel: nil)
                 
-              case monday:
-
+            case monday:
                 checkChangingColor(coloredDay:.coloredMonday, collectionView:monday)
                 cell.customCell(text: subjectsArray[indexPath.column+1][indexPath.row].0,
                                 isWaiting: subjectsArray[indexPath.column+1][indexPath.row].1,
@@ -74,50 +56,44 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
                                 wcPriority: subjectsArray[indexPath.column+1][indexPath.row].3,
                                 confirmed: subjectsArray[indexPath.column+1][indexPath.row].4,showTime: false, classModel: nil)
                 
-              case tuesday:
-
-             checkChangingColor(coloredDay:.coloredTuesday, collectionView:tuesday)
+            case tuesday:
+                checkChangingColor(coloredDay:.coloredTuesday, collectionView:tuesday)
                 cell.customCell(text: subjectsArray[indexPath.column+2][indexPath.row].0,
                                 isWaiting: subjectsArray[indexPath.column+2][indexPath.row].1,
                                 confirmLink: subjectsArray[indexPath.column+2][indexPath.row].2,
                                 wcPriority: subjectsArray[indexPath.column+2][indexPath.row].3,
                                 confirmed: subjectsArray[indexPath.column+2][indexPath.row].4,showTime: false, classModel: nil)
                 
-              case wednsday:
-                
-             checkChangingColor(coloredDay:.coloredWednsday, collectionView:wednsday)
+            case wednesday:
+                checkChangingColor(coloredDay:.coloredWednsday, collectionView:wednesday)
                 cell.customCell(text: subjectsArray[indexPath.column+3][indexPath.row].0,
                                 isWaiting: subjectsArray[indexPath.column+3][indexPath.row].1,
                                 confirmLink: subjectsArray[indexPath.column+3][indexPath.row].2,
                                 wcPriority: subjectsArray[indexPath.column+3][indexPath.row].3,
                                 confirmed: subjectsArray[indexPath.column+3][indexPath.row].4,showTime: false, classModel: nil)
                 
-              case thuresday:
-
-                checkChangingColor(coloredDay:.coloredThursday, collectionView:thuresday)
+            case thursday:
+                checkChangingColor(coloredDay:.coloredThursday, collectionView:thursday)
                 cell.customCell(text: subjectsArray[indexPath.column+4][indexPath.row].0,
                                 isWaiting: subjectsArray[indexPath.column+4][indexPath.row].1,
                                 confirmLink: subjectsArray[indexPath.column+4][indexPath.row].2,
                                 wcPriority: subjectsArray[indexPath.column+4][indexPath.row].3,
                                 confirmed: subjectsArray[indexPath.column+4][indexPath.row].4,showTime: false, classModel: nil)
                 
-              case classesNumberView:
-                
-                  cell.customCell(text: "\(classNumberArray[indexPath.row].number)", isWaiting: false,confirmLink:nil,wcPriority:nil,confirmed:nil,showTime: true, classModel: classNumberArray[indexPath.row])
-              default:
-                  break
-              }
-           
+            case classesNumberView:
+                cell.customCell(text: "\(classNumberArray[indexPath.row].number)", isWaiting: false,confirmLink:nil,wcPriority:nil,confirmed:nil,showTime: true, classModel: classNumberArray[indexPath.row])
+            default:
+                break
+            }
         }
         
         return cell
         
-}
+    }
     
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-        {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         var heightSize :Int = 0
         if tableInfoModel.count > 0{
@@ -125,28 +101,22 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
             if tableInfoModel[0].classes.count > 0 {
                 
                 heightSize = 600 / tableInfoModel[0].classes.count
-             
-                
             }
-            
         }
         if(collectionView == classesNumberView){
-          
-           
+            
+            
             return CGSize(width: 30, height: heightSize)
         }
-        else{
-
+        else {
+            
             return CGSize(width: 60, height: heightSize)
         }
         
-          
-        }
-    
-    
+    }
     
     func checkColoredItem() -> ColoredDay {
-    
+        
         if(daysArray != nil){
             for (index ,dayObj) in daysArray.enumerated() {
                 
@@ -167,16 +137,11 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
                     }
                     
                 }
-
+                
             }
         }
-        
-       
         return .non
     }
-    
-    
-    
     
     func changeColor(collectionView :UICollectionView ,change:Bool) {
         
@@ -189,9 +154,6 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
         
     }
     
-    
-    
-    
     func checkChangingColor(coloredDay:ColoredDay, collectionView:UICollectionView){
         if(checkColoredItem() == coloredDay){
             changeColor(collectionView: collectionView, change: true)
@@ -200,8 +162,5 @@ extension TableHomeViewController :UICollectionViewDelegate , UICollectionViewDa
             changeColor(collectionView: collectionView, change: false)
         }
     }
-    
-    
-    
     
 }

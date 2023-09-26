@@ -10,18 +10,10 @@ import MessageUI
 class ContactUsViewController: UIViewController ,UITextViewDelegate,UITextFieldDelegate{
     
     @IBOutlet weak var youCanContactLabel: UILabel!
-    
-    
     @IBOutlet weak var infoLabel: UILabel!
-    
-    
-    
     @IBOutlet weak var backBtn: UIButton!
-    
     @IBOutlet weak var sendBtn: GradientButton!
-    
     @IBOutlet weak var userNameTextField: UITextField!
-    
     @IBOutlet weak var contentTextArea: UITextView!
     var keyBoardFlag = false
     
@@ -48,48 +40,31 @@ class ContactUsViewController: UIViewController ,UITextViewDelegate,UITextFieldD
         }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        
         view.addGestureRecognizer(tap)
-    
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.backItem?.title = ""
-        
         
     }
     
     @objc func back(sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated:true)
     }
-
-    // MARK: KeyBoardDismiss :-
     
+    // MARK: KeyBoardDismiss :-
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        
-        
         textView.text = ""
         textView.textColor = UIColor.black
-        
     }
-    
-    
-    
     @IBAction func sendButton(_ sender: Any) {
-        
-        
         sendEmail()
     }
     
-    
-    
-    
-    
     // MARK: KeyBoardNotificationForTextField :-
-    
     
     func registerForKeyboardNotifications() {
         
@@ -117,10 +92,6 @@ class ContactUsViewController: UIViewController ,UITextViewDelegate,UITextFieldD
         
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0,
                                          bottom: keyboardSize.height, right: 0.0)
-        
-        
-        
-        
         self.view.frame.origin.y =  -200
         navigationController?.navigationBar.alpha = 1
     }
@@ -128,17 +99,12 @@ class ContactUsViewController: UIViewController ,UITextViewDelegate,UITextFieldD
     
      
     @objc func keyboardWillBeHidden(_ notification:
-                                        NSNotification) {
+                                    NSNotification) {
         let contentInsets = UIEdgeInsets.zero
-        
         self.view.frame.origin.y = 0
         navigationController?.navigationBar.alpha = 0
         
     }
-    
-    
-    
-    
     
 }
 
@@ -154,7 +120,6 @@ extension ContactUsViewController :MFMailComposeViewControllerDelegate {
         }
         let mailComposer = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
-        
         if (contentTextArea.text.count > 0 && userNameTextField.text!.count > 0 ) {
             mailComposer.setToRecipients(["info@smartble.com"])
             mailComposer.setSubject("Clients issue")
@@ -165,8 +130,6 @@ extension ContactUsViewController :MFMailComposeViewControllerDelegate {
             
             Alert.showSimpleAlert(title: "Invalid email", message: "Fill empty fields", viewRef: self)
         }
-        
-        
         
     }
     

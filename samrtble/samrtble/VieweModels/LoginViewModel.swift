@@ -12,21 +12,12 @@ import Alamofire
 class LoginViewModel {
     
     var phone:String = ""
-    
-    
-    
-    // MARK:Variables :-
-    
-    
     var bindLogingModel:(_ error:String?,_ result:Result?, _ networkError :String?)->()={erro,result,newtWorkError in }
-    
     var error :String = "" {
-        
         didSet{
             
             bindLogingModel(error, nil,nil)
         }
-        
     }
     var result : Result! {
         
@@ -37,27 +28,20 @@ class LoginViewModel {
         
     }
     
-    
     var netWorkError :String = "" {
         
         didSet{
             bindLogingModel(nil,nil,netWorkError)
         }
         
-        
-        
-        
     }
     
     
-    
-    
-    // MARK:Functions :-
+    // MARK: - Functions :-
     
     func fetchDataFromApi(phone:String) {
-        
         self.phone = phone
-       let isConnecte = NetworkReachabilityManager()?.isReachable ?? false
+        let isConnecte = NetworkReachabilityManager()?.isReachable ?? false
         if isConnecte{
             self.fetchData(phone: phone)
         }
@@ -65,13 +49,8 @@ class LoginViewModel {
             print("Internet connection is off.")
             self.netWorkError = "no internet connection"
         }
-       
-        
         
     }
-    
-    
-    
     
     func fetchData(phone:String){
         
@@ -81,7 +60,7 @@ class LoginViewModel {
             guard let self = self else{return}
             
             if let tableInfoArray = tableInfoModelArray {
-                self.result = .sucess
+                self.result = .success
                 
             }
             
@@ -92,10 +71,7 @@ class LoginViewModel {
             
         }
         
-        
-        
     }
-    
     
 }
 

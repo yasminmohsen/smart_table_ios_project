@@ -8,9 +8,8 @@
 import UIKit
 
 class TableCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var label: UILabel!
-    
-    
     var alertAction :((_ msg:String, _ isWaiting: Bool)->Void)?
     var alertTimeAction :((_ msgTime:String)->Void)?
     var confirmWaitingClassAction :((_ link:String, _ msg: String)->Void)?
@@ -20,8 +19,8 @@ class TableCollectionViewCell: UICollectionViewCell {
     var msgTime = ""
     let from = "From".localized
     let to = "To".localized
-    func customCell (text:String,isWaiting:Bool,confirmLink:String?,wcPriority:String?,confirmed:Bool?,showTime:Bool,classModel:ClassModel?){
-        
+    
+    func customCell (text:String,isWaiting:Bool,confirmLink:String?,wcPriority:String?,confirmed:Bool?,showTime:Bool,classModel:ClassModel?) {
         self.label.lineBreakMode = .byWordWrapping
         self.label.numberOfLines = 0
         self.label.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
@@ -37,29 +36,22 @@ class TableCollectionViewCell: UICollectionViewCell {
         self.confirmLink = confirmLink
         let geastureRecognizer = UITapGestureRecognizer(target: self, action: #selector(popUpAlert))
         self.addGestureRecognizer(geastureRecognizer)
-
         if(isWaiting) {
-            
             self.backgroundColor = Colors.getColor(type: .customOrangeCell)[0]
             self.layer.cornerRadius = 6
-             self.clipsToBounds = false
+            self.clipsToBounds = false
             if wcPriority == nil {
                 self.label.text = "-"
             } else {
                 self.label.text = wcPriority
             }
-
             if wcPriority == nil || confirmed == true {
             }
-
-
-            
         }
         else{
             
             self.backgroundColor = .clear
         }
-        
         if wcPriority != nil {
             if confirmed == true {
                 self.backgroundColor = Colors.getColor(type: .teal)[0]
@@ -68,8 +60,6 @@ class TableCollectionViewCell: UICollectionViewCell {
                 self.addGestureRecognizer(geastureRecognizer)
             }
         }
-        
-        
         if(showTime){
             
             if let classModel = classModel{
@@ -79,28 +69,14 @@ class TableCollectionViewCell: UICollectionViewCell {
                 self.addGestureRecognizer(geastureRecognizer)
                 
             }
-            
-            
-            
         }
-        
-        
     }
-    
     
     @objc func popUpAlert(){
-        
-        
         if let alertAction = alertAction {
-            
-            
             alertAction(msg, isWaiting)
         }
-        
-        
-        
     }
-    
     
     @objc func confirmWaitingClass(){
         if let confirmWaitingClassAction = confirmWaitingClassAction{
@@ -109,22 +85,12 @@ class TableCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    
-    
-    
-    
     @objc func popUpTimeAlert(){
-        
-        
         if let alertTimeAction = alertTimeAction{
             
             
             alertTimeAction(msgTime)
         }
         
-        
-        
     }
-    
-    
 }
