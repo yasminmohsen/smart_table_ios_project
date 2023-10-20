@@ -12,8 +12,7 @@ class MainLoginViewController: UIViewController {
     @IBOutlet weak var activityIndecator: UIActivityIndicatorView!
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var enteraYourMobileLabel: UILabel!
-    @IBOutlet weak var plusBox: UILabel!
-    // @IBOutlet weak var countryCode: UITextField!
+ 
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var notFoundLabel: UILabel!
     static let PHONE_KEY :String = "phone"
