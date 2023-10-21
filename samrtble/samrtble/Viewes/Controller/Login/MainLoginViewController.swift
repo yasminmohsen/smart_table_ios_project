@@ -7,22 +7,41 @@
 
 import UIKit
 
+enum LoginType {
+    case withId
+    case withUserName
+}
 class MainLoginViewController: UIViewController {
     
     @IBOutlet weak var activityIndecator: UIActivityIndicatorView!
-    @IBOutlet weak var phoneView: UIView!
-    @IBOutlet weak var enteraYourMobileLabel: UILabel!
- 
-    @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var notFoundLabel: UILabel!
+    @IBOutlet weak var userNameView: UIView!
+    @IBOutlet weak var passwordView: UIView!
+
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var userNameErrorLabel: UILabel!
+    @IBOutlet weak var passwordErrorLabel: UILabel!
+    
+    @IBOutlet weak var forgetPasswordButton: UIButton!
+    @IBOutlet weak var passwordTitleLabel: UILabel!
+    @IBOutlet weak var withIDButton: UIButton!
+    
+    @IBOutlet weak var loginTitleLabel: UILabel!
+    @IBOutlet weak var withUserNameButton: UIButton!
+    
+    @IBOutlet weak var passwordStakView: UIStackView!
     static let PHONE_KEY :String = "phone"
     var loginViewModel :LoginViewModel!
     var mobilePhoneNum : String = ""
     var tableInfo : [TableInfoModel]!
+    var loginType = LoginType.withId
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
         customUi()
         
         // MARK: Binding :-
@@ -60,29 +79,72 @@ class MainLoginViewController: UIViewController {
         
     }
     
+    private func setupUI() {
+        setupRadioButtons()
+        
+        userNameLabel.text =  loginType == .withId ? "Login ID".localized : "Username".localized
+        userNameTextField.placeholder =  loginType == .withId ? "Enter Id".localized : "Enter your name".localized
+        
+        passwordTitleLabel.text = "Password".localized
+        passwordTextField.placeholder = "Enter your password ...".localized
+        
+        loginTitleLabel.text = "Select login type".localized
+        forgetPasswordButton.setTitle("FORGOT PASSWORD".localized, for: .normal)
+        
+     
+        userNameView.applyPrimaryTextFieldStyle()
+        passwordView.applyPrimaryTextFieldStyle()
+    }
+    
     func customUi(){
-        let lang = LanguageOperation.checkLanguage()
-        switch lang {
-        case .arabic:
-            enteraYourMobileLabel.textAlignment = .right
-            phoneTextField.textAlignment = .right
-        default:
-            enteraYourMobileLabel.textAlignment = .left
-            phoneTextField.textAlignment = .left
-        }
+//        let lang = LanguageOperation.checkLanguage()
+//        switch lang {
+//        case .arabic:
+//            enteraYourMobileLabel.textAlignment = .right
+//            phoneTextField.textAlignment = .right
+//        default:
+//            enteraYourMobileLabel.textAlignment = .left
+//            phoneTextField.textAlignment = .left
+//        }
+       
+   
+//        phoneTextField.setLeftPaddingPoints(10)
+//        phoneTextField.setRightPaddingPoints(10)
         
-        phoneTextField.placeholder = "Enter Id".localized
-        phoneTextField.setLeftPaddingPoints(10)
-        phoneTextField.setRightPaddingPoints(10)
-        
-        phoneView.layer.borderWidth = 1.0
-        phoneView.layer.cornerRadius = 12
-        phoneView.layer.borderColor = UIColor.lightGray.cgColor
-        //   phoneTextField.delegate = self
-        // countryCode.delegate = self
+      
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         
         view.addGestureRecognizer(tap)
+        
+    }
+    
+    private func setupRadioButtons() {
+        // deselected state
+        withIDButton.setTitleColor(.darkGrey, for: .normal)
+        withIDButton.setImage(UIImage(named: "unselected-radio"), for: .normal)
+        
+        withUserNameButton.setTitleColor(.darkGrey, for: .normal)
+        withUserNameButton.setImage(UIImage(named: "unselected-radio"), for: .normal)
+        
+
+        // selected state
+        withIDButton.setTitleColor(.primaryGreen, for: .selected)
+        withIDButton.setImage(UIImage(named: "selected-radio"), for: .selected)
+        
+        withUserNameButton.setTitleColor(.primaryGreen, for: .selected)
+        withUserNameButton.setImage(UIImage(named: "selected-radio"), for: .selected)
+        
+        withIDButton.setTitle("With ID".localized, for: .normal)
+        withUserNameButton.setTitle("With username".localized, for: .normal)
+        
+        
+        let spacing: CGFloat = 7
+        withIDButton.configuration?.imagePadding = spacing
+        withUserNameButton.configuration?.imagePadding = spacing
+        
+        // initailization
+        withIDButton.isSelected = true
+
         
     }
     
@@ -123,8 +185,8 @@ class MainLoginViewController: UIViewController {
                 Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
             }
             else{
-                self.notFoundLabel.alpha = 1
-                self.notFoundLabel.text = error
+                self.errorLabel.alpha = 1
+                self.errorLabel.text = error
             }
         }
         ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
@@ -136,8 +198,8 @@ class MainLoginViewController: UIViewController {
     
     
     @IBAction func loginBtn(_ sender: Any) {
-        mobilePhoneNum = "\(phoneTextField.text!)"
-        if((phoneTextField.text!.isEmpty)){
+        mobilePhoneNum = "\(userNameTextField.text!)"
+        if((userNameTextField.text!.isEmpty)){
             
             Alert.showSimpleAlert(title: "Alert", message: "Enter user id", viewRef: self)
         }
@@ -149,6 +211,22 @@ class MainLoginViewController: UIViewController {
             
         }
         
+    }
+    
+    @IBAction func didTapForgetPassword(_ sender: Any) {
+        
+    }
+    
+    @IBAction func didTapWithIdButton(_ sender: Any) {
+        withIDButton.isSelected = true
+        withUserNameButton.isSelected = false
+        loginType = .withId
+    }
+    
+    @IBAction func didTapWithUserNameButton(_ sender: Any) {
+        withUserNameButton.isSelected = true
+        withIDButton.isSelected = false
+        loginType = .withUserName
     }
     
 }

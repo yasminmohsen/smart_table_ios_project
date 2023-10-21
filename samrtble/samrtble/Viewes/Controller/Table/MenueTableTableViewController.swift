@@ -42,7 +42,7 @@ class MenueTableTableViewController: UITableViewController {
         Alert.showAdvanceedAlert(title: "Alert", message: "Do you want to log out ?", viewRef: self) {
             UserDefaults.standard.set(nil, forKey: MainLoginViewController.PHONE_KEY)
             let launchScreen = UIStoryboard(name: "Main", bundle: nil)
-            var vc = launchScreen.instantiateViewController(withIdentifier: "loginVc") as! LoginViewController
+            var vc = launchScreen.instantiateViewController(withIdentifier: "MainLoginViewController") as! MainLoginViewController
             self.navigationController?.pushViewController(vc, animated: true)
             
         }

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		00B8BFD5FF6B94924B742110 /* Pods_samrtble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA70A3D39E9D98CD477B709 /* Pods_samrtble.framework */; };
+		292FB2F42AE40769009523EC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292FB2F22AE40769009523EC /* RegistrationViewController.swift */; };
+		292FB2F52AE40769009523EC /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 292FB2F32AE40769009523EC /* RegistrationViewController.xib */; };
+		29476DCB2AE43C57006C48DA /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29476DC92AE43C57006C48DA /* ForgetPasswordViewController.swift */; };
+		29476DCC2AE43C57006C48DA /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29476DCA2AE43C57006C48DA /* ForgetPasswordViewController.xib */; };
 		4E0B313E283BB7AF00A16751 /* ConfirmWaitingClassesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B313D283BB7AF00A16751 /* ConfirmWaitingClassesService.swift */; };
 		6C1EA4C62634D451001CC335 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C1EA4C52634D451001CC335 /* GoogleService-Info.plist */; };
 		6C1EA4CB2636D7D5001CC335 /* Remote_Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1EA4CA2636D7D5001CC335 /* Remote_Notification.swift */; };
@@ -38,7 +42,6 @@
 		6C6F7995261A469500A92359 /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F7994261A469100A92359 /* Cairo-Regular.ttf */; };
 		6C6F79E5261C635000A92359 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F79E4261C635000A92359 /* ContactUsViewController.swift */; };
 		6C6F79EF261D173000A92359 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F79EE261D173000A92359 /* Alert.swift */; };
-		6C6F79FC261D245700A92359 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F79FB261D245700A92359 /* LoginViewController.swift */; };
 		6C753DCC262C331D000D4DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C753DCB262C331D000D4DFE /* Assets.xcassets */; };
 		6C753DD4262C64B2000D4DFE /* RemoteNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C753DD3262C64B2000D4DFE /* RemoteNotificationModel.swift */; };
 		6C753DFA2632F7C0000D4DFE /* ApiServiceUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C753DF92632F7C0000D4DFE /* ApiServiceUrl.swift */; };
@@ -86,6 +89,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		292FB2F22AE40769009523EC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		292FB2F32AE40769009523EC /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		29476DC92AE43C57006C48DA /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		29476DCA2AE43C57006C48DA /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
 		4E0B313D283BB7AF00A16751 /* ConfirmWaitingClassesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmWaitingClassesService.swift; sourceTree = "<group>"; };
 		6C1EA4C52634D451001CC335 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C1EA4CA2636D7D5001CC335 /* Remote_Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remote_Notification.swift; sourceTree = "<group>"; };
@@ -121,7 +128,6 @@
 		6C6F7994261A469100A92359 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
 		6C6F79E4261C635000A92359 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		6C6F79EE261D173000A92359 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		6C6F79FB261D245700A92359 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6C753DCB262C331D000D4DFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../../../../Downloads/new AppIcons/Assets.xcassets"; sourceTree = "<group>"; };
 		6C753DD3262C64B2000D4DFE /* RemoteNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNotificationModel.swift; sourceTree = "<group>"; };
 		6C753DF92632F7C0000D4DFE /* ApiServiceUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceUrl.swift; sourceTree = "<group>"; };
@@ -186,6 +192,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		292FB2F12AE4070C009523EC /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				292FB2F22AE40769009523EC /* RegistrationViewController.swift */,
+				292FB2F32AE40769009523EC /* RegistrationViewController.xib */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		29476DC82AE43C29006C48DA /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				29476DC92AE43C57006C48DA /* ForgetPasswordViewController.swift */,
+				29476DCA2AE43C57006C48DA /* ForgetPasswordViewController.xib */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
 		3C568E3D40B971FD34AE004D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				6C6F3C152613205B005928EB /* MainLoginViewController.swift */,
-				6C6F79FB261D245700A92359 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -345,6 +368,8 @@
 		6C7E21022604B63E00B10A74 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				29476DC82AE43C29006C48DA /* ForgetPassword */,
+				292FB2F12AE4070C009523EC /* Registration */,
 				6C6F79E3261C632800A92359 /* Menue */,
 				6C6BF9AD26165EC800A8A3EB /* Login */,
 				6C6BF9A926165E9B00A8A3EB /* IntroductionScreens */,
@@ -559,6 +584,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29476DCC2AE43C57006C48DA /* ForgetPasswordViewController.xib in Resources */,
 				6CA117DE2604B07D006B1AA1 /* LaunchScreen.storyboard in Resources */,
 				6C38EC56261926290093B4DA /* Home.storyboard in Resources */,
 				6C5E1E182609DC2700C35700 /* Localizable.strings in Resources */,
@@ -569,6 +595,7 @@
 				6C6F7995261A469500A92359 /* Cairo-Regular.ttf in Resources */,
 				6CA117DB2604B07D006B1AA1 /* Assets.xcassets in Resources */,
 				6CA117D92604B07C006B1AA1 /* Main.storyboard in Resources */,
+				292FB2F52AE40769009523EC /* RegistrationViewController.xib in Resources */,
 				6C6F798C261A3BB700A92359 /* Myriad Pro Light.otf in Resources */,
 				6C6F795C261A280500A92359 /* Myriad Pro Bold.ttf in Resources */,
 			);
@@ -668,6 +695,7 @@
 				6C5E1E202609DC5000C35700 /* Extension String.swift in Sources */,
 				6C753E02263321E0000D4DFE /* HomeViewModel.swift in Sources */,
 				6C7E21552604BB1900B10A74 /* Mapping.swift in Sources */,
+				292FB2F42AE40769009523EC /* RegistrationViewController.swift in Sources */,
 				6C753E0726333AB2000D4DFE /* ActivityIndicatorBehaviour.swift in Sources */,
 				6C7E21D72606155800B10A74 /* Api_Service.swift in Sources */,
 				6C6C0246261E05E000DD8C7B /* AboutAppViewController.swift in Sources */,
@@ -675,6 +703,7 @@
 				6CC307DA262628320097FA06 /* TableHomeExtension.swift in Sources */,
 				6C7E21C92606133700B10A74 /* LoginViewModel.swift in Sources */,
 				6C5E1E2C2609E3F500C35700 /* SplashViewController.swift in Sources */,
+				29476DCB2AE43C57006C48DA /* ForgetPasswordViewController.swift in Sources */,
 				6C6F79E5261C635000A92359 /* ContactUsViewController.swift in Sources */,
 				6C6750E52611155100DB22F6 /* SecondScreenViewController.swift in Sources */,
 				6C38EC522619179D0093B4DA /* CustomDesignView.swift in Sources */,
@@ -683,7 +712,6 @@
 				6C38EC3826189A890093B4DA /* NotificationViewModel.swift in Sources */,
 				6C6BF9BA2616763100A8A3EB /* MenueTableTableViewController.swift in Sources */,
 				6C92D8A0262590B4001059F5 /* TableCollectionViewCell.swift in Sources */,
-				6C6F79FC261D245700A92359 /* LoginViewController.swift in Sources */,
 				6C753DD4262C64B2000D4DFE /* RemoteNotificationModel.swift in Sources */,
 				6C38EC3326189A300093B4DA /* NotificationModel.swift in Sources */,
 				6C6BF94D2615077C00A8A3EB /* NotificationViewController.swift in Sources */,

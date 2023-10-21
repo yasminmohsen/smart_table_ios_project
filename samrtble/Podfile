@@ -6,7 +6,7 @@ target 'samrtble' do
   use_frameworks!
 
 pod 'SpreadsheetView'
-pod 'SwiftyJSON', '~> 4.0'
+pod 'SwiftyJSON'
 pod 'MOLH'
 pod 'SideMenu'
 pod 'Firebase/Analytics'

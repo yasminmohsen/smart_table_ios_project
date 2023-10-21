@@ -25,7 +25,7 @@ class SplashViewController: UIViewController {
                 
                 if let checkValue = UserDefaults.standard.string(forKey: FirstScreenViewController.GO_LOGIN){
                     
-                    let  vc = self.storyboard?.instantiateViewController(withIdentifier: "loginVc")as! LoginViewController
+                    let  vc = self.storyboard?.instantiateViewController(withIdentifier: "MainLoginViewController")as! MainLoginViewController
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
                 else{

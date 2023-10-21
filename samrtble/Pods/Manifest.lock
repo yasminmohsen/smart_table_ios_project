@@ -92,7 +92,7 @@ PODS:
   - PromisesObjC (1.2.12)
   - SideMenu (6.5.0)
   - SpreadsheetView (0.9.1)
-  - SwiftyJSON (4.3.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
@@ -102,7 +102,7 @@ DEPENDENCIES:
   - MOLH
   - SideMenu
   - SpreadsheetView
-  - SwiftyJSON (~> 4.0)
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -143,8 +143,8 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
-  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 201925eca44f24366a88997389f1ea3913861a06
+PODFILE CHECKSUM: 86eab62833e83e03c67d26156839035e3c8e9cf3
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.12.1

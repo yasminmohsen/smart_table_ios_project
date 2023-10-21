@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 import Network
 import Alamofire
 class NotificationViewModel {

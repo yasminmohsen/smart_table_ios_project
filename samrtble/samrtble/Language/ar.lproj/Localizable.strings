@@ -36,3 +36,19 @@
  "Wed" = "اربعاء";
  "Thur" = "خميس";
  "Fri" = "جمعة";
+
+// MARK: - Authentication
+"Password" = "كلمة المرور";
+"Username" = "اسم المستخدم";
+"Enter your name" = "... ادخل الاسم";
+"Enter your password ..." = "... ادخل كلمة المرور";
+"Select login type" = "حدد وسيلة التسجيل";
+"Register" = "تسجيل";
+"Enter your email ..." = "... ادخل البريد";
+"Teacher registration" = "تسجيل معلم";
+"Restore your password" = "استعادة كلمة المرور";
+"Enter your email and a password recovery link will be delivered directly to your inbox" = "ادخل بريدك الإلكتروني وسصلك رابط استعادة كلمة مرور مباشرة الى بريدك الوارد";
+"Send" = "إرسال";
+"With ID" = "الرمز";
+"With username" = "اسم المستخدم";
+"FORGOT PASSWORD" = "نسيت كلمة المرور";

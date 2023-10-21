@@ -25,3 +25,19 @@
 "Wed" = "Wed.";
 "Thur" = "Thur.";
 "Fri" = "Fri.";
+
+// MARK: - Authentication
+"Password" = "Password";
+"Username" = "Username";
+"Enter your name" = "Enter your name";
+"Enter your password ..." = "Enter your password ...";
+"Select login type" = "Select login type";
+"Register" = "Register";
+"Enter your email ..." = "Enter your email ...";
+"Teacher registration" = "Teacher registration";
+"Restore your password" = "Restore your password";
+"Enter your email and a password recovery link will be delivered directly to your inbox" = "Enter your email and a password recovery link will be delivered directly to your inbox";
+"Send" = "Send";
+"With ID" = "With ID";
+"With username" = "With username";
+"FORGOT PASSWORD" = "FORGOT PASSWORD";
