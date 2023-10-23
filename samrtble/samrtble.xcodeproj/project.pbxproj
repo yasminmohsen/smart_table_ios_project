@@ -12,6 +12,7 @@
 		292FB2F52AE40769009523EC /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 292FB2F32AE40769009523EC /* RegistrationViewController.xib */; };
 		29476DCB2AE43C57006C48DA /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29476DC92AE43C57006C48DA /* ForgetPasswordViewController.swift */; };
 		29476DCC2AE43C57006C48DA /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29476DCA2AE43C57006C48DA /* ForgetPasswordViewController.xib */; };
+		29476DCE2AE47103006C48DA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29476DCD2AE47103006C48DA /* NetworkManager.swift */; };
 		4E0B313E283BB7AF00A16751 /* ConfirmWaitingClassesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B313D283BB7AF00A16751 /* ConfirmWaitingClassesService.swift */; };
 		6C1EA4C62634D451001CC335 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C1EA4C52634D451001CC335 /* GoogleService-Info.plist */; };
 		6C1EA4CB2636D7D5001CC335 /* Remote_Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1EA4CA2636D7D5001CC335 /* Remote_Notification.swift */; };
@@ -93,6 +94,7 @@
 		292FB2F32AE40769009523EC /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		29476DC92AE43C57006C48DA /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		29476DCA2AE43C57006C48DA /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
+		29476DCD2AE47103006C48DA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4E0B313D283BB7AF00A16751 /* ConfirmWaitingClassesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmWaitingClassesService.swift; sourceTree = "<group>"; };
 		6C1EA4C52634D451001CC335 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C1EA4CA2636D7D5001CC335 /* Remote_Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remote_Notification.swift; sourceTree = "<group>"; };
@@ -368,10 +370,10 @@
 		6C7E21022604B63E00B10A74 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6C6BF9AD26165EC800A8A3EB /* Login */,
 				29476DC82AE43C29006C48DA /* ForgetPassword */,
 				292FB2F12AE4070C009523EC /* Registration */,
 				6C6F79E3261C632800A92359 /* Menue */,
-				6C6BF9AD26165EC800A8A3EB /* Login */,
 				6C6BF9A926165E9B00A8A3EB /* IntroductionScreens */,
 				6C6F3C782613DAEE005928EB /* Table */,
 				6C7E21842604BCC800B10A74 /* Cells */,
@@ -402,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				6C1EA4D02636E45F001CC335 /* Api_Service_Manager */,
+				29476DCD2AE47103006C48DA /* NetworkManager.swift */,
 			);
 			path = NetWorkLayer;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29476DCE2AE47103006C48DA /* NetworkManager.swift in Sources */,
 				6C6F3C742613DAE6005928EB /* TableHomeViewController.swift in Sources */,
 				6C6750DA260E6F1B00DB22F6 /* FirstScreenViewController.swift in Sources */,
 				6C6750D5260E6C6400DB22F6 /* Design.swift in Sources */,

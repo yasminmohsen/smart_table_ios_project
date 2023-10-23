@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MOLHResetable{
     let gcmMessageIDKey = "gcm.message_id"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         FirebaseApp.configure()
         // Override point for customization after application launch.
         Messaging.messaging().delegate = self

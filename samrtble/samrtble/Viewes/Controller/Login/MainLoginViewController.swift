@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 enum LoginType {
     case withId
@@ -13,6 +14,7 @@ enum LoginType {
 }
 class MainLoginViewController: UIViewController {
     
+    @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var activityIndecator: UIActivityIndicatorView!
     @IBOutlet weak var userNameView: UIView!
     @IBOutlet weak var passwordView: UIView!
@@ -38,15 +40,17 @@ class MainLoginViewController: UIViewController {
     var mobilePhoneNum : String = ""
     var tableInfo : [TableInfoModel]!
     var loginType = LoginType.withId
+    private var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginViewModel = LoginViewModel()
         setupUI()
         customUi()
-        
+        viewModelBinding()
         // MARK: Binding :-
         
-        loginViewModel = LoginViewModel()
+      
         loginViewModel.bindLogingModel = {
             (error:String? , result:Result?, netWorkError:String?) ->() in
             
@@ -71,29 +75,40 @@ class MainLoginViewController: UIViewController {
         }
     }
     
-    
-    override func viewDidLayoutSubviews() {
-        //Creates the bottom border
-        let borderBottom = CALayer()
-        let borderWidth = CGFloat(1.0)
-        
-    }
-    
     private func setupUI() {
         setupRadioButtons()
-        
-        userNameLabel.text =  loginType == .withId ? "Login ID".localized : "Username".localized
-        userNameTextField.placeholder =  loginType == .withId ? "Enter Id".localized : "Enter your name".localized
-        
+        setupUserNameTextField()
+    
         passwordTitleLabel.text = "Password".localized
         passwordTextField.placeholder = "Enter your password ...".localized
         
         loginTitleLabel.text = "Select login type".localized
         forgetPasswordButton.setTitle("FORGOT PASSWORD".localized, for: .normal)
         
-     
+        titleView.layer.cornerRadius = 8
+        
         userNameView.applyPrimaryTextFieldStyle()
         passwordView.applyPrimaryTextFieldStyle()
+    }
+    
+    private func setupUserNameTextField() {
+        userNameLabel.text =  loginType == .withId ? "Login ID".localized : "Username".localized
+        userNameTextField.placeholder =  loginType == .withId ? "Enter Id".localized : "Enter your name".localized
+    }
+    
+    private func viewModelBinding() {
+        loginViewModel
+            .unRegisteredUserPublisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in self?.navigateToRegisterScreen()})
+            .store(in: &cancellables)
+    }
+    
+    
+    private func navigateToRegisterScreen() {
+        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
+        let registerVC = RegistrationViewController()
+        navigationController?.pushViewController(registerVC, animated: true)
     }
     
     func customUi(){
@@ -198,35 +213,42 @@ class MainLoginViewController: UIViewController {
     
     
     @IBAction func loginBtn(_ sender: Any) {
-        mobilePhoneNum = "\(userNameTextField.text!)"
+        errorLabel.isHidden = true
+        mobilePhoneNum = "\(userNameTextField.text ?? "")"
         if((userNameTextField.text!.isEmpty)){
-            
             Alert.showSimpleAlert(title: "Alert", message: "Enter user id", viewRef: self)
-        }
-        
-        else {
+        } else {
             
             ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .start)
-            loginViewModel.fetchDataFromApi(phone: mobilePhoneNum)
-            
+            if loginType == .withUserName {
+                loginViewModel.login(with: userNameTextField.text ?? "", password: passwordTextField.text ?? "")
+            } else {  // .withId
+                loginViewModel.register(with: userNameTextField.text ?? "")
+            }
         }
         
     }
     
     @IBAction func didTapForgetPassword(_ sender: Any) {
-        
+        let forgetPasswordVC = ForgetPasswordViewController()
+        navigationController?.pushViewController(forgetPasswordVC, animated: true)
     }
     
     @IBAction func didTapWithIdButton(_ sender: Any) {
         withIDButton.isSelected = true
         withUserNameButton.isSelected = false
         loginType = .withId
+        setupUserNameTextField()
+        passwordStakView.isHidden = true
     }
     
     @IBAction func didTapWithUserNameButton(_ sender: Any) {
         withUserNameButton.isSelected = true
         withIDButton.isSelected = false
         loginType = .withUserName
+        setupUserNameTextField()
+        passwordStakView.isHidden = false
+        
     }
     
 }
