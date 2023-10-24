@@ -27,7 +27,7 @@ class ApiService {
     func fetchData(completion : @escaping (_ tableModelArray:[TableInfoModel]?,_ error:String?)->())  {
         let apiServiceUrl = ApIServiceUrl(phone: phone, type: type)
         let request :Alamofire.DataRequest!
-        let url = apiServiceUrl.url
+        let url = AppService.fetchTableData.url
         var headerValue:HTTPHeader?
         if(LanguageOperation.checkLanguage() == .arabic){
             headerValue = apiServiceUrl.arabicHeaderValue

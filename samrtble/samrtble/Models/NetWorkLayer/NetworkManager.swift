@@ -14,6 +14,9 @@ enum AppService {
     case login(user: User)
     case register(user: User)
     case forgetPassword(email: String)
+    case fetchTableData
+    case fetchNotificationHistory
+    
     var url: URL {
         switch self {
         case .login:
@@ -22,6 +25,11 @@ enum AppService {
             return  URL(string: "https://www.smartble.net/teacher-mobile/register/")!
         case .forgetPassword:
             return URL(string: "https://www.smartble.net/teacher-mobile/reset-password/")!
+        case .fetchTableData:
+            return URL(string: "https://www.smartble.net/teacher-mobile/table/")!
+        case .fetchNotificationHistory:
+            return URL(string: "https://www.smartble.net/teacher-mobile/notif-history/")!
+            
         }
     }
     
@@ -29,6 +37,8 @@ enum AppService {
         switch self {
         case .login, .register, .forgetPassword:
             return "POST"
+        case .fetchTableData, .fetchNotificationHistory:
+            return "GET"
         }
     }
 
@@ -54,6 +64,8 @@ enum AppService {
                 "email": email
             ]
             return try? JSONSerialization.data(withJSONObject: parameters)
+        case .fetchTableData, .fetchNotificationHistory:
+            return nil
         }
     }
     
@@ -69,8 +81,6 @@ enum AppService {
         request.httpMethod = service.httpMethod
         request.method = .post
         request.httpBody = service.body
-        
-        
         request.allHTTPHeaderFields = service.headers
         return request
     }
@@ -83,7 +93,7 @@ enum NetworkError: Error {
     case invalidData
     case decodingError(Error)
     case notRegisteredBefore(String)
-    case registeredBefore
+    case registeredBefore(String)
 }
 
 class LoggingDelegate: NSObject, URLSessionDelegate {

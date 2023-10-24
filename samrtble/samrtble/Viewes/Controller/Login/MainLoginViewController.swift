@@ -107,7 +107,7 @@ class MainLoginViewController: UIViewController {
     
     private func navigateToRegisterScreen() {
         ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
-        let registerVC = RegistrationViewController()
+        let registerVC = RegistrationViewController(userCode: userNameTextField.text ?? "")
         navigationController?.pushViewController(registerVC, animated: true)
     }
     
