@@ -8,6 +8,7 @@
 import UIKit
 
 class ForgetPasswordViewController: UIViewController {
+    @IBOutlet weak var activityIndicatore: UIActivityIndicatorView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailView: UIView!
     
@@ -27,6 +28,7 @@ class ForgetPasswordViewController: UIViewController {
     
     private func setupUI() {
         emailView.applyPrimaryTextFieldStyle()
+        emailTextField.placeholder = "Enter your email ...".localized
     }
     
     @IBAction func didTapSendButton(_ sender: Any) {

@@ -19,14 +19,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController" customModule="samrtble" customModuleProvider="target">
             <connections>
-                <outlet property="emailErrorLable" destination="AYU-ay-AE5" id="sUS-9d-4pZ"/>
+                <outlet property="activityIndicatore" destination="HTX-NK-IhQ" id="De0-4f-qac"/>
                 <outlet property="emailTextField" destination="i3T-ui-g6P" id="qZW-Vh-vXZ"/>
                 <outlet property="emailView" destination="NzD-eQ-6TR" id="qTR-6d-9A1"/>
                 <outlet property="errorLabel" destination="hZ8-IS-emf" id="osz-kd-Ths"/>
-                <outlet property="passwordErrorLable" destination="TRx-Ol-6Oj" id="0U8-Uy-Xz3"/>
                 <outlet property="passwordTextField" destination="cFA-NG-3ba" id="2x1-Oj-G6R"/>
                 <outlet property="passwordView" destination="qTF-t0-Yib" id="sN5-oI-flX"/>
-                <outlet property="userNameErrorLable" destination="vYO-mQ-2ML" id="CYR-n8-cpM"/>
                 <outlet property="userNameTextField" destination="pK8-Uv-4yI" id="v0v-Se-W5t"/>
                 <outlet property="userNameView" destination="xWH-0B-9Y9" id="ERA-xn-zGj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -120,15 +118,6 @@
                                                                 <constraint firstItem="b7F-Tq-jU3" firstAttribute="leading" secondItem="xWH-0B-9Y9" secondAttribute="leading" constant="16" id="MJJ-6D-n56"/>
                                                             </constraints>
                                                         </view>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="This filed can't be empty" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYO-mQ-2ML">
-                                                            <rect key="frame" x="0.0" y="93" width="361" height="24"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="24" id="PXg-6v-y93"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="14"/>
-                                                            <color key="textColor" red="0.74901960779999999" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="YOX-t7-Bp3">
@@ -146,7 +135,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-pz-QKG">
                                                                     <rect key="frame" x="16" y="0.0" width="329" height="50"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="password-icon" translatesAutoresizingMaskIntoConstraints="NO" id="b6q-QS-9gZ">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="email-icon" translatesAutoresizingMaskIntoConstraints="NO" id="b6q-QS-9gZ">
                                                                             <rect key="frame" x="0.0" y="13" width="24" height="24"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="24" id="HtW-oH-QuX"/>
@@ -154,7 +143,7 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i3T-ui-g6P">
-                                                                            <rect key="frame" x="34" y="4" width="261" height="42"/>
+                                                                            <rect key="frame" x="34" y="4" width="295" height="42"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
@@ -165,13 +154,6 @@
                                                                             <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="21"/>
                                                                             <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                                         </textField>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="eye-icon" translatesAutoresizingMaskIntoConstraints="NO" id="6VS-oQ-h70">
-                                                                            <rect key="frame" x="305" y="13" width="24" height="24"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="24" id="Mnc-o2-Mhe"/>
-                                                                                <constraint firstAttribute="height" constant="24" id="jTm-4P-Aki"/>
-                                                                            </constraints>
-                                                                        </imageView>
                                                                     </subviews>
                                                                 </stackView>
                                                             </subviews>
@@ -184,15 +166,6 @@
                                                                 <constraint firstAttribute="bottom" secondItem="ihf-pz-QKG" secondAttribute="bottom" id="mza-M5-9R9"/>
                                                             </constraints>
                                                         </view>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="This filed can't be empty" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYU-ay-AE5">
-                                                            <rect key="frame" x="0.0" y="93" width="361" height="24"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="24" id="9Bu-5G-3jz"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="14"/>
-                                                            <color key="textColor" red="0.74901960779999999" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="3Nh-D7-qiB">
@@ -227,15 +200,20 @@
                                                                             <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="21"/>
-                                                                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                                         </textField>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="eye-icon" translatesAutoresizingMaskIntoConstraints="NO" id="R7a-Vh-yWU">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1X-Mh-BlL">
                                                                             <rect key="frame" x="305" y="13" width="24" height="24"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="24" id="Hol-hX-E4I"/>
-                                                                                <constraint firstAttribute="width" constant="24" id="OWa-Bp-CNt"/>
+                                                                                <constraint firstAttribute="height" constant="24" id="0bT-dV-Kmf"/>
+                                                                                <constraint firstAttribute="width" constant="24" id="PVq-29-nYn"/>
                                                                             </constraints>
-                                                                        </imageView>
+                                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                            <state key="normal" image="eye-icon"/>
+                                                                            <connections>
+                                                                                <action selector="didTapEyeButton:" destination="-1" eventType="touchUpInside" id="9YH-OO-76z"/>
+                                                                            </connections>
+                                                                        </button>
                                                                     </subviews>
                                                                 </stackView>
                                                             </subviews>
@@ -248,15 +226,6 @@
                                                                 <constraint firstAttribute="height" constant="50" id="rg7-Fq-yku"/>
                                                             </constraints>
                                                         </view>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="This filed can't be empty" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRx-Ol-6Oj">
-                                                            <rect key="frame" x="0.0" y="93" width="361" height="24"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="24" id="h1Z-Xz-9QS"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="14"/>
-                                                            <color key="textColor" red="0.74901960779999999" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -321,6 +290,15 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="g5x-rW-ryz"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="9X6-zv-eig"/>
                 </scrollView>
+                <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="HTX-NK-IhQ">
+                    <rect key="frame" x="174" y="403.66666666666669" width="45" height="45"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="JRZ-nh-g0j"/>
+                        <constraint firstAttribute="height" constant="45" id="hmd-xF-qc6"/>
+                    </constraints>
+                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Pnn-wL-etP"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -334,6 +312,8 @@
                 <constraint firstAttribute="bottom" secondItem="ibA-2d-Xju" secondAttribute="bottom" id="Vb0-gr-Md8"/>
                 <constraint firstAttribute="trailing" secondItem="odF-KW-O16" secondAttribute="trailing" id="Vmd-f3-dhn"/>
                 <constraint firstItem="ibA-2d-Xju" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YnK-60-Bw2"/>
+                <constraint firstItem="HTX-NK-IhQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mg8-Y5-UdP"/>
+                <constraint firstItem="HTX-NK-IhQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="qIG-Ca-gRS"/>
                 <constraint firstAttribute="trailing" secondItem="ibA-2d-Xju" secondAttribute="trailing" id="uBL-C1-aI2"/>
             </constraints>
             <point key="canvasLocation" x="38.931297709923662" y="-7.746478873239437"/>
@@ -345,6 +325,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="email-icon" width="24" height="24"/>
         <image name="eye-icon" width="24" height="24"/>
         <image name="gradient_down" width="375" height="206"/>
         <image name="password-icon" width="24" height="24"/>

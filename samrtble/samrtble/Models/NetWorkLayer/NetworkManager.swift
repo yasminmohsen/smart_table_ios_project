@@ -16,6 +16,8 @@ enum AppService {
     case forgetPassword(email: String)
     case fetchTableData
     case fetchNotificationHistory
+    case updateFcmToken
+    case deleteAccount
     
     var url: URL {
         switch self {
@@ -29,13 +31,16 @@ enum AppService {
             return URL(string: "https://www.smartble.net/teacher-mobile/table/")!
         case .fetchNotificationHistory:
             return URL(string: "https://www.smartble.net/teacher-mobile/notif-history/")!
-            
+        case .updateFcmToken:
+            return URL(string: "https://www.smartble.net/teacher-mobile/update-fcm-token/")!
+        case .deleteAccount:
+            return URL(string: "https://www.smartble.net/teacher-mobile/delete-my-account/")!
         }
     }
     
     var httpMethod: String {
         switch self {
-        case .login, .register, .forgetPassword:
+        case .login, .register, .forgetPassword, .updateFcmToken, .deleteAccount:
             return "POST"
         case .fetchTableData, .fetchNotificationHistory:
             return "GET"
@@ -50,6 +55,7 @@ enum AppService {
                 "password": user.password
             ]
             return try? JSONSerialization.data(withJSONObject: parameters)
+            
         case .register(let user):
             let parameters: [String: Any] = [
                 "user_code": user.code,
@@ -64,16 +70,33 @@ enum AppService {
                 "email": email
             ]
             return try? JSONSerialization.data(withJSONObject: parameters)
-        case .fetchTableData, .fetchNotificationHistory:
+            
+        case .updateFcmToken:
+            let parameters: [String: Any] = [
+                "fcm_token": UserDefaults.standard.string(forKey: RemoteNotificationViewModel.FCMTOKEN_KEY) ?? ""
+            ]
+            return try? JSONSerialization.data(withJSONObject: parameters)
+            
+        case .fetchTableData, .fetchNotificationHistory, .deleteAccount:
             return nil
         }
     }
     
     var headers: [String: String]? {
-         [
-            "Accept-Language": LanguageOperation.checkLanguage() == .arabic ? "ar":"en",
-            "Content-Type": "application/json"
-        ]
+        switch self {
+        case .fetchTableData, .fetchNotificationHistory, .deleteAccount:
+        return [
+                "Accept-Language": LanguageOperation.checkLanguage() == .arabic ? "ar":"en",
+                "Content-Type": "application/json",
+                "auth-token": UserDefaults.standard.string(forKey: USER_TOKEN) ?? ""
+            ]
+        default:
+          return [
+                "Accept-Language": LanguageOperation.checkLanguage() == .arabic ? "ar":"en",
+                "Content-Type": "application/json"
+            ]
+        }
+        
     }
     
     static func makeURLRequest(service: AppService) -> URLRequest {
@@ -109,57 +132,46 @@ class LoggingDelegate: NSObject, URLSessionDelegate {
 }
 
 
+struct ErrorResponse: Decodable {
+    let error: String
+}
+
+struct RegistrationResponse: Decodable {
+    let token: String
+}
 
 
 class NetworkManager {
     
-    static  func login(appService: AppService) async throws -> Bool {
-        let (data, response) = try await URLSession.shared.data(for: AppService.makeURLRequest(service: appService))
+    static  func login(appService: AppService) async throws -> RegistrationResponse? {
+        let config = URLSessionConfiguration.default
+        config.urlCache = nil
+        let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
+
+        let (data, response) = try await session.data(for: AppService.makeURLRequest(service: appService))
         if  let response = response as? HTTPURLResponse {
             print("💥💥💥",response.statusCode)
             if (200...299).contains(response.statusCode)  {
-                return true
+                let response = try? NetworkManager.handleResponseData(data: data, type: RegistrationResponse.self)
+                return response
             }else {
-                throw NetworkError.invalidData
+                if let errorMessage = try? NetworkManager.handleResponseData(data: data, type: ErrorResponse.self) {
+                    throw NetworkError.withMessage(errorMessage.error)
+                } else {
+                    throw NetworkError.withMessage("Unknown Error")
+                }
             }
         } else {
             throw NetworkError.invalidData
         }
     }
     
-    static func register(appService: AppService) async throws  -> Bool  {
+    static func register(appService: AppService) async throws  -> RegistrationResponse?  {
         
-
         let config = URLSessionConfiguration.default
         config.urlCache = nil
         let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
-//
-//
-//        let user = User(code: "00350", userName: "", password: "", email: "")
-//
-//        let url = URL(string: "https://www.smartble.net/teacher-mobile/register/")!
-//
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "POST"
-//
-//        // Set headers
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.setValue("ar", forHTTPHeaderField: "Accept-Language")
-//
-//        // Create request body
-//        let requestBody: [String: Any] = [
-//            "user_code": user.code,
-//            "username": user.userName,
-//            "password": user.password,
-//            "email": user.email
-//        ]
-//
-//        do {
-//            request.httpBody = try JSONSerialization.data(withJSONObject: requestBody)
-//        } catch {
-//            throw NetworkError.invalidResponse
-//        }
-        
+
         let (data, response) = try await session.data(for: AppService.makeURLRequest(service: appService))
         
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -168,18 +180,19 @@ class NetworkManager {
         print("🚀:--------", httpResponse.statusCode)
         if (200...299).contains(httpResponse.statusCode) {
             // Successful response
-            return true
-        } else if httpResponse.statusCode == 409 {
+            let response = try? NetworkManager.handleResponseData(data: data, type: RegistrationResponse.self)
+            return response
+        } else if httpResponse.statusCode == 400 {
             // Handle 409 conflict error
-            if let errorMessage = String(data: data, encoding: .utf8) {
-                throw NetworkError.notRegisteredBefore(errorMessage)
+            if let errorMessage = try? NetworkManager.handleResponseData(data: data, type: ErrorResponse.self) {
+                throw NetworkError.notRegisteredBefore(errorMessage.error)
             } else {
                 throw NetworkError.withMessage("Unknown Error")
             }
-        } else if httpResponse.statusCode == 400 {
+        } else if httpResponse.statusCode == 409 {
             // Handle 400 bad request error
-            if let errorMessage = String(data: data, encoding: .utf8) {
-                throw NetworkError.withMessage(errorMessage)
+            if let errorMessage = try? NetworkManager.handleResponseData(data: data, type: ErrorResponse.self) {
+                throw NetworkError.withMessage(errorMessage.error)
             } else {
                 throw NetworkError.withMessage("Unknown Error")
             }
@@ -189,6 +202,38 @@ class NetworkManager {
         }
     }
     
+    static func deleteAccount(appService: AppService) async throws  -> Bool  {
+        
+        let config = URLSessionConfiguration.default
+        config.urlCache = nil
+        let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
+        
+        let (data, response) = try await session.data(for: AppService.makeURLRequest(service: appService))
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NetworkError.invalidResponse
+        }
+        print("🚀:-------->", httpResponse.statusCode)
+        if (200...299).contains(httpResponse.statusCode) {
+            return true
+        } else {
+            if let errorMessage = try? NetworkManager.handleResponseData(data: data, type: ErrorResponse.self) {
+                throw NetworkError.withMessage(errorMessage.error)
+            } else {
+                throw NetworkError.withMessage("Unknown Error")
+            }
+        }
+    }
+    
+    static func handleResponseData<T: Decodable>(data: Data,type: T.Type) throws -> T {
+        let decoder = JSONDecoder()
+        do {
+            let errorResponse = try decoder.decode(type.self, from: data)
+            return errorResponse
+        } catch {
+            throw error
+        }
+    }
     
     static  func forgetPassword(appService: AppService) async throws -> Bool {
         let (data, response) = try await URLSession.shared.data(for: AppService.makeURLRequest(service: appService))
@@ -196,7 +241,7 @@ class NetworkManager {
             print("💥💥💥",response.statusCode)
             if (200...299).contains(response.statusCode)  {
                 return true
-            }else {
+            } else {
                 throw NetworkError.invalidData
             }
         } else {

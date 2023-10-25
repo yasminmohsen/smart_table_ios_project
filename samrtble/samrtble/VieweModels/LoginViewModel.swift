@@ -10,11 +10,13 @@ import Network
 import Alamofire
 import Combine
 
+var USER_TOKEN = "SMART_TABLE_TOKEN"
 class LoginViewModel {
     
     let userRegisteredBeforePublisher = PassthroughSubject<Void, Never>()
     let unRegisteredUserPublisher = PassthroughSubject<Void, Never>()
-
+    let showErrorPublisher = PassthroughSubject<String, Never>()
+    
     var phone:String = ""
     var bindLogingModel:(_ error:String?,_ result:Result?, _ networkError :String?)->()={erro,result,newtWorkError in }
     var error :String = "" {
@@ -40,42 +42,50 @@ class LoginViewModel {
         
     }
     
+    var userCode: String?
     
     // MARK: - Functions :-
     
     func login(with userName: String, password: String) {
-        Task {
+        Task { [weak self] in
+            guard let self else { return }
             do {
-             let isSuccess =  try await NetworkManager.login(appService: .login(user: User(code: "", userName: userName, password: password, email: "")))
-                
-                if isSuccess {
-                    fetchDataFromApi(phone: userName)
+                if let response =  try await NetworkManager.login(appService: .login(user: User(code: "", userName: userName, password: password, email: ""))) {
+                    self.saveTokenToUserDefult(token: response.token)
+                    self.fetchDataFromApi(phone: userName)
                 }
-                
+            } catch NetworkError.withMessage(let message) {
+                self.showErrorPublisher.send(message)
             } catch (let error) {
                 print(error)
             }
         }
     }
     
-    func register(with userName: String) {
+    func register(with userCode: String, userName: String = "", password: String = "", email: String = "") {
         Task { [weak self] in
             guard let self else { return }
             do {
-                let isSuccess =  try await NetworkManager.register(appService: .register(user: User(code: userName, userName: "", password: "", email: "")))
-                
-                if isSuccess {
-                        
+                if let response =  try await NetworkManager.register(appService: .register(user: User(code: userCode, userName: userName, password: password, email: email))) {
+                    self.saveTokenToUserDefult(token: response.token)
+                    self.fetchDataFromApi(phone: userName)
                 }
-                
+
             } catch NetworkError.notRegisteredBefore(let error) {
                 self.unRegisteredUserPublisher.send()
+                self.showErrorPublisher.send(error)
             } catch NetworkError.registeredBefore {
                 self.userRegisteredBeforePublisher.send()
+            }  catch NetworkError.withMessage(let message) {
+                self.showErrorPublisher.send(message)
             }  catch {
-                print(error)
+                self.showErrorPublisher.send(error.localizedDescription)
             }
         }
+    }
+    
+    func saveTokenToUserDefult(token:String) {
+        UserDefaults.standard.set(token, forKey: USER_TOKEN)
     }
     
     func fetchDataFromApi(phone:String) {
@@ -100,14 +110,10 @@ class LoginViewModel {
             
             if let tableInfoArray = tableInfoModelArray {
                 self.result = .success
-                
             }
-            
             if let error = error{
-                
                 self.error = error
             }
-            
         }
         
     }

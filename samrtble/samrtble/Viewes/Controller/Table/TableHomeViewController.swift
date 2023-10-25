@@ -196,6 +196,7 @@ class TableHomeViewController: UIViewController {
     }
     @IBAction func minueAction(_ sender: Any) {
         let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! SideMenuNavigationController
+        menu.sideMenuDelegate = self
         let language = LanguageOperation.checkLanguage()
         print(language)
         switch language {
@@ -272,3 +273,18 @@ class TableHomeViewController: UIViewController {
 
 
 
+extension TableHomeViewController : SideMenuNavigationControllerDelegate {
+    func sideMenuDidDisappear(menu: SideMenuNavigationController, animated: Bool) {
+        if logoutClicked {
+            logout()
+        }
+    }
+    
+    private func logout() {
+//        UserDefaults.standard.set(nil, forKey: MainLoginViewController.PHONE_KEY)
+//        UserDefaults.standard.set(nil, forKey: USER_TOKEN)
+
+        let asd = ForgetPasswordViewController()
+        navigationController?.setViewControllers([asd], animated: true)
+    }
+}

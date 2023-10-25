@@ -149,7 +149,7 @@
         <!--Navigation Controller-->
         <scene sceneID="q8P-Zn-D0J">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4wV-Gl-ibc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4wV-Gl-ibc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0WZ-li-Ezc">
@@ -351,13 +351,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e6A-Py-bWm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="766"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6A-Py-bWm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4hq-Vc-n9Q">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hq-Vc-n9Q">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="776"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="gradient_down" translatesAutoresizingMaskIntoConstraints="NO" id="8gP-fk-oyH">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="gradient_down" translatesAutoresizingMaskIntoConstraints="NO" id="8gP-fk-oyH">
                                                 <rect key="frame" x="0.0" y="586" width="414" height="206"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="0Jx-ye-9Lq">
@@ -532,15 +532,20 @@
                                                                                         <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="21"/>
-                                                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                                                     </textField>
-                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="eye-icon" translatesAutoresizingMaskIntoConstraints="NO" id="mUl-et-cUa">
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msj-za-T5y">
                                                                                         <rect key="frame" x="326" y="13" width="24" height="24"/>
                                                                                         <constraints>
-                                                                                            <constraint firstAttribute="width" constant="24" id="CSK-I8-Een"/>
-                                                                                            <constraint firstAttribute="height" constant="24" id="dTz-KU-iBP"/>
+                                                                                            <constraint firstAttribute="width" constant="24" id="SWZ-IZ-pWM"/>
+                                                                                            <constraint firstAttribute="height" constant="24" id="tO3-mK-u7U"/>
                                                                                         </constraints>
-                                                                                    </imageView>
+                                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                                        <state key="normal" image="eye-icon"/>
+                                                                                        <connections>
+                                                                                            <action selector="didTapEyeButton:" destination="b27-jK-SUG" eventType="touchUpInside" id="CK4-7x-70Z"/>
+                                                                                        </connections>
+                                                                                    </button>
                                                                                 </subviews>
                                                                             </stackView>
                                                                         </subviews>
@@ -603,15 +608,6 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xa6-5P-qEh">
-                                                <rect key="frame" x="184.5" y="11" width="45" height="516"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="45" id="Xqm-zy-dMk"/>
-                                                    <constraint firstAttribute="height" constant="45" id="v8Y-UN-iQz"/>
-                                                </constraints>
-                                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -619,10 +615,9 @@
                                             <constraint firstItem="8gP-fk-oyH" firstAttribute="leading" secondItem="4hq-Vc-n9Q" secondAttribute="leading" id="80t-nl-DJA"/>
                                             <constraint firstAttribute="trailing" secondItem="v6H-BB-j8h" secondAttribute="trailing" constant="16" id="BIc-GJ-eSq"/>
                                             <constraint firstItem="0Jx-ye-9Lq" firstAttribute="top" secondItem="4hq-Vc-n9Q" secondAttribute="top" constant="32" id="EG6-31-5CA"/>
-                                            <constraint firstItem="xa6-5P-qEh" firstAttribute="centerX" secondItem="4hq-Vc-n9Q" secondAttribute="centerX" id="Hkn-M8-fy8"/>
                                             <constraint firstItem="0Jx-ye-9Lq" firstAttribute="leading" secondItem="4hq-Vc-n9Q" secondAttribute="leading" constant="60" id="MWE-Ta-RPc"/>
-                                            <constraint firstItem="xa6-5P-qEh" firstAttribute="centerY" secondItem="4hq-Vc-n9Q" secondAttribute="centerY" id="NEh-OL-lPb"/>
                                             <constraint firstItem="v6H-BB-j8h" firstAttribute="top" secondItem="0Jx-ye-9Lq" secondAttribute="bottom" constant="34" id="PIM-C0-4GY"/>
+                                            <constraint firstAttribute="bottom" secondItem="v6H-BB-j8h" secondAttribute="bottom" priority="250" constant="174" id="St5-xN-Z5e"/>
                                             <constraint firstAttribute="bottom" secondItem="8gP-fk-oyH" secondAttribute="bottom" constant="-16" id="cdM-fI-rJX"/>
                                             <constraint firstItem="v6H-BB-j8h" firstAttribute="leading" secondItem="4hq-Vc-n9Q" secondAttribute="leading" constant="16" id="uVb-sF-wm5"/>
                                             <constraint firstAttribute="trailing" secondItem="0Jx-ye-9Lq" secondAttribute="trailing" constant="60" id="wiW-Bt-5q5"/>
@@ -639,13 +634,24 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="aGy-NQ-PnK"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="3Nx-zG-kac"/>
                             </scrollView>
+                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xa6-5P-qEh">
+                                <rect key="frame" x="184.5" y="336.5" width="45" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="Xqm-zy-dMk"/>
+                                    <constraint firstAttribute="height" constant="45" id="v8Y-UN-iQz"/>
+                                </constraints>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BNI-eC-g3A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="e6A-Py-bWm" secondAttribute="bottom" id="7iX-bB-8aU"/>
                             <constraint firstItem="e6A-Py-bWm" firstAttribute="leading" secondItem="uFC-XZ-qbo" secondAttribute="leading" id="Hj2-gR-6qP"/>
+                            <constraint firstItem="xa6-5P-qEh" firstAttribute="centerY" secondItem="uFC-XZ-qbo" secondAttribute="centerY" id="St2-QT-Rr2"/>
                             <constraint firstAttribute="trailing" secondItem="e6A-Py-bWm" secondAttribute="trailing" id="fqR-XZ-S0M"/>
+                            <constraint firstItem="xa6-5P-qEh" firstAttribute="centerX" secondItem="uFC-XZ-qbo" secondAttribute="centerX" id="kPE-Fr-2P9"/>
                             <constraint firstItem="e6A-Py-bWm" firstAttribute="top" secondItem="uFC-XZ-qbo" secondAttribute="top" id="ygn-Ea-gCU"/>
                         </constraints>
                     </view>

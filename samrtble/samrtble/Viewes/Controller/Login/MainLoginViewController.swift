@@ -36,7 +36,7 @@ class MainLoginViewController: UIViewController {
     
     @IBOutlet weak var passwordStakView: UIStackView!
     static let PHONE_KEY :String = "phone"
-    var loginViewModel :LoginViewModel!
+    var loginViewModel = LoginViewModel()
     var mobilePhoneNum : String = ""
     var tableInfo : [TableInfoModel]!
     var loginType = LoginType.withId
@@ -44,35 +44,12 @@ class MainLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginViewModel = LoginViewModel()
+        
         setupUI()
         customUi()
         viewModelBinding()
         // MARK: Binding :-
-        
-      
-        loginViewModel.bindLogingModel = {
-            (error:String? , result:Result?, netWorkError:String?) ->() in
-            
-            DispatchQueue.main.async {[weak self] in
-                
-                guard let self = self else {return}
-                
-                
-                if let netWorkError = netWorkError {
-                    self.onFiluer(error: nil, netWorkError: netWorkError)
-                }
-                
-                if let error = error {
-                    self.onFiluer(error: error, netWorkError: nil)
-                    
-                }
-                if let result = result {
-                    self.onSucessUpdateView()
-                }
-                
-            }
-        }
+
     }
     
     private func setupUI() {
@@ -102,13 +79,46 @@ class MainLoginViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in self?.navigateToRegisterScreen()})
             .store(in: &cancellables)
+        
+        loginViewModel
+            .showErrorPublisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] in self?.showError(message: $0)})
+            .store(in: &cancellables)
+        
+        loginViewModel.bindLogingModel = { [weak self] (error:String? , result:Result?, netWorkError:String?) ->()  in
+            
+            DispatchQueue.main.async {[weak self] in
+                
+                guard let self = self else {return}
+                
+                
+                if let netWorkError = netWorkError {
+                    self.onFiluer(error: nil, netWorkError: netWorkError)
+                }
+                
+                if let error = error {
+                    self.onFiluer(error: error, netWorkError: nil)
+                    
+                }
+                if let result = result {
+                    self.onSucessUpdateView()
+                }
+                
+            }
+        }
     }
     
+    private func showError(message: String) {
+        errorLabel.text = message
+        errorLabel.isHidden = false
+        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
+    }
     
     private func navigateToRegisterScreen() {
         ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .stop)
-        let registerVC = RegistrationViewController(userCode: userNameTextField.text ?? "")
-        navigationController?.pushViewController(registerVC, animated: true)
+        let registerVC = RegistrationViewController(userCode: loginViewModel.userCode ?? "")
+        self.navigationController?.pushViewController(registerVC, animated: true)
     }
     
     func customUi(){
@@ -223,6 +233,7 @@ class MainLoginViewController: UIViewController {
             if loginType == .withUserName {
                 loginViewModel.login(with: userNameTextField.text ?? "", password: passwordTextField.text ?? "")
             } else {  // .withId
+                loginViewModel.userCode = userNameTextField.text ?? ""
                 loginViewModel.register(with: userNameTextField.text ?? "")
             }
         }
@@ -230,6 +241,7 @@ class MainLoginViewController: UIViewController {
     }
     
     @IBAction func didTapForgetPassword(_ sender: Any) {
+        errorLabel.isHidden = true
         let forgetPasswordVC = ForgetPasswordViewController()
         navigationController?.pushViewController(forgetPasswordVC, animated: true)
     }
@@ -240,6 +252,8 @@ class MainLoginViewController: UIViewController {
         loginType = .withId
         setupUserNameTextField()
         passwordStakView.isHidden = true
+        userNameTextField.text = ""
+        errorLabel.isHidden = true
     }
     
     @IBAction func didTapWithUserNameButton(_ sender: Any) {
@@ -248,9 +262,14 @@ class MainLoginViewController: UIViewController {
         loginType = .withUserName
         setupUserNameTextField()
         passwordStakView.isHidden = false
-        
+        passwordTextField.text = ""
+        userNameTextField.text = ""
+        errorLabel.isHidden = true
     }
     
+    @IBAction func didTapEyeButton(_ sender: Any) {
+        passwordTextField.isSecureTextEntry.toggle()
+    }
 }
 
 //*****************************************************************************************************//
