@@ -12,6 +12,11 @@ class ForgetPasswordViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailView: UIView!
     
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var sendButton: GradientButton!
+    @IBOutlet weak var errorLabel: UILabel!
     init() {
         super.init(nibName: String(describing: type(of: self)), bundle: nil)
     }
@@ -20,7 +25,7 @@ class ForgetPasswordViewController: UIViewController {
         super.init(coder: coder)
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -29,33 +34,60 @@ class ForgetPasswordViewController: UIViewController {
     private func setupUI() {
         emailView.applyPrimaryTextFieldStyle()
         emailTextField.placeholder = "Enter your email ...".localized
+        backButton.setTitle("Back".localized, for: .normal)
+        sendButton.setTitle("Send".localized, for: .normal)
+        titleLabel.text = "Restore your password".localized
+        subtitleLabel.text = "Enter your email and a password recovery link will be delivered directly to your inbox".localized
+        
     }
     
     @IBAction func didTapSendButton(_ sender: Any) {
-        Task {  [weak self] in
-            guard let self else { return }
-            do {
-                let success = try await NetworkManager.forgetPassword(appService: .forgetPassword(email: emailTextField.text ?? ""))
-                print("Registration Successful: \(success)")
-    
-                DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-                    Alert.showAdvanceedAlert(title: "Alert".localized, message: "Please check your email".localized, viewRef: self) {  [weak self] in
+        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndicatore, status: .start)
+        errorLabel.isHidden = true
+        if isEmailValid(emailTextField.text ?? "") {
+            Task {  [weak self] in
+                guard let self else { return }
+                do {
+                    let success = try await NetworkManager.forgetPassword(appService: .forgetPassword(email: emailTextField.text ?? ""))
+                    print("Registration Successful: \(success)")
+                    
+                    DispatchQueue.main.async { [weak self] in
                         guard let self else { return }
-                        self.navigationController?.popViewController(animated: true)
+                        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: self.activityIndicatore, status: .stop)
+                        Alert.showSimpleConfirmationAlert(title: "Alert".localized, message: "Please check your email".localized, viewRef: self) {  [weak self] in
+                            guard let self else { return }
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                } catch(let error) {
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self else { return }
+                        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: self.activityIndicatore, status: .stop)
+                        errorLabel.isHidden = false
+                        switch error {
+                        case NetworkError.withMessage(let error):
+                            errorLabel.text = error
+                        default:
+                            errorLabel.text = "UnKnown Error".localized
+                        }
                     }
                 }
-            } catch(let error) {
-                switch error {
-                    
-                default:
-                    print("Unknown Error")
-                }
             }
+        } else {
+            ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndicatore, status: .stop)
+            errorLabel.isHidden = false
+            errorLabel.text = "Please valid email".localized
         }
     }
     
     @IBAction func didTapBackButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    
+    func isEmailValid(_ email: String) -> Bool {
+        let emailRegex = #"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$"#
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: email)
     }
 }

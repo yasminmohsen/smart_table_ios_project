@@ -95,7 +95,7 @@ class HomeViewModel {
     }
     
     func confirmWaitingClass(link: String, msg: String) {
-        guard let phone = UserDefaults.standard.string(forKey: MainLoginViewController.PHONE_KEY) else { return  }
+        guard let phone = UserDefaults.standard.string(forKey: LoginViewController.PHONE_KEY) else { return  }
         
         let service = ConfirmWaitingClassesService()
         

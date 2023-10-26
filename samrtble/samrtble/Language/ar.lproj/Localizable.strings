@@ -40,14 +40,15 @@
 // MARK: - Authentication
 "Password" = "كلمة المرور";
 "Username" = "اسم المستخدم";
-"Enter your name" = "... ادخل الاسم";
-"Enter your password ..." = "... ادخل كلمة المرور";
+"Email"="البريد الإلكتروني";
+"Enter your name" = " ادخل الاسم";
+"Enter your password ..." = " ادخل كلمة المرور";
 "Select login type" = "حدد وسيلة التسجيل";
 "Register" = "تسجيل";
-"Enter your email ..." = "... ادخل البريد";
+"Enter your email ..." = " ادخل البريد الإلكتروني";
 "Teacher registration" = "تسجيل معلم";
 "Restore your password" = "استعادة كلمة المرور";
-"Enter your email and a password recovery link will be delivered directly to your inbox" = "ادخل بريدك الإلكتروني وسصلك رابط استعادة كلمة مرور مباشرة الى بريدك الوارد";
+"Enter your email and a password recovery link will be delivered directly to your inbox" = "ادخل بريدك الإلكتروني وسيصلك رابط استعادة كلمة مرور مباشرة الى بريدك الوارد";
 "Send" = "إرسال";
 "With ID" = "الرمز";
 "With username" = "اسم المستخدم";
@@ -55,3 +56,9 @@
 "Delete Account"="حذف الحساب";
 "Do you want to Delete your account!?"=" هل تريد حذف الحساب الخاص بك ؟!";
 "Alert"="تنبيه";
+"Please valid email"="برجاء ادخال بريد إلكتروني صحيح";
+"Unknown Error"="حدث خطأ غير متوقع";
+"Login ID"="الرمز التعريفي";
+"Login"="دخول";
+"Please check your email"="برجاء فحص البريد الإلكتروني الخاص بك";
+"Ok"="حسناً";

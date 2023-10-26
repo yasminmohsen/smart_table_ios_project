@@ -9,7 +9,13 @@ import UIKit
 import Combine
 
 class RegistrationViewController: UIViewController {
+    @IBOutlet weak var passwordLabel: UILabel!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var registerButton: GradientButton!
+    @IBOutlet weak var balckButton: UIButton!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var activityIndicatore: UIActivityIndicatorView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var userNameView: UIView!
@@ -23,7 +29,7 @@ class RegistrationViewController: UIViewController {
     var userCode: String?
     var loginViewModel :LoginViewModel?
     private var cancellables = Set<AnyCancellable>()
-
+    
     init(userCode: String) {
         loginViewModel = LoginViewModel()
         self.userCode = userCode
@@ -47,7 +53,7 @@ class RegistrationViewController: UIViewController {
     private func viewModelBinding() {
         loginViewModel?.bindLogingModel = {
             (error:String? , result:Result?, netWorkError:String?) ->() in
-            DispatchQueue.main.async {[weak self] in
+            DispatchQueue.main.async { [weak self] in
                 guard let self = self else {return}
                 if let netWorkError = netWorkError {
                     self.onFiluer(error: nil, netWorkError: netWorkError)
@@ -72,6 +78,13 @@ class RegistrationViewController: UIViewController {
         userNameView.applyPrimaryTextFieldStyle()
         passwordView.applyPrimaryTextFieldStyle()
         emailView.applyPrimaryTextFieldStyle()
+        passwordLabel.text = "Password".localized
+        userNameLabel.text = "Username".localized
+        emailLabel.text = "Email".localized
+        balckButton.setTitle("Back".localized, for: .normal)
+        registerButton.setTitle("Register".localized, for: .normal)
+        titleLabel.text = "Teacher registration".localized
+        
         userNameTextField.placeholder = "Enter your name".localized
         passwordTextField.placeholder = "Enter your password ...".localized
         emailTextField.placeholder = "Enter your email ...".localized
@@ -79,15 +92,16 @@ class RegistrationViewController: UIViewController {
     
     func onSucessUpdateView(){
         self.saveToUserDefult(phone: loginViewModel?.userCode ?? "")
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController
         ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndicatore, status: .stop)
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
+    
     ///Save To UserDefults :-
     func saveToUserDefult(phone:String) {
         let defaults = UserDefaults.standard
-        defaults.set(phone, forKey: MainLoginViewController.PHONE_KEY)
+        defaults.set(phone, forKey: LoginViewController.PHONE_KEY)
     }
     
     func onFiluer(error:String? ,netWorkError:String?){
@@ -118,6 +132,7 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func didTapRegisterButton(_ sender: Any) {
+        ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndicatore, status: .start)
         let password = passwordTextField.text ?? ""
         let email = emailTextField.text ?? ""
         let userName = userNameTextField.text ?? ""
@@ -127,29 +142,28 @@ class RegistrationViewController: UIViewController {
         
         if validationCondition {
             loginViewModel?.register(with: userCode ?? "", userName: userName, password: password, email: email)
+        } else {
+            ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndicatore, status: .stop)
+            showError(message: "Please fill all fields".localized)  
         }
     }
- 
+    
     private func showError(message: String) {
-        errorLabel.text = message
-        errorLabel.isHidden = false
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            self.errorLabel.text = message
+            self.errorLabel.isHidden = false
+            ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: self.activityIndicatore, status: .stop)
+        }
     }
     
     func isPasswordValid(_ password: String) -> Bool {
-        if password.isEmpty {
-            showError(message: "Please fill all fields".localized)
-            return false
-        }
         let passwordRegex = #"^(?=.*\d)[A-Za-z\d]{8,}$"#
         let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
         return passwordPredicate.evaluate(with: password)
     }
     
     func isEmailValid(_ email: String) -> Bool {
-        if email.isEmpty {
-            showError(message: "Please fill all fields".localized)
-            return false
-        }
         let emailRegex = #"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$"#
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return emailPredicate.evaluate(with: email)
@@ -157,7 +171,6 @@ class RegistrationViewController: UIViewController {
     
     func isUserNameValid(_ userName: String) -> Bool {
         if userName.isEmpty {
-            showError(message: "Please fill all fields".localized)
             return false
         }
         return true

@@ -13,6 +13,8 @@
 		29476DCB2AE43C57006C48DA /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29476DC92AE43C57006C48DA /* ForgetPasswordViewController.swift */; };
 		29476DCC2AE43C57006C48DA /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29476DCA2AE43C57006C48DA /* ForgetPasswordViewController.xib */; };
 		29476DCE2AE47103006C48DA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29476DCD2AE47103006C48DA /* NetworkManager.swift */; };
+		299DB5F42AE972E800DC5045 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299DB5F22AE972E800DC5045 /* LoginViewController.swift */; };
+		299DB5F52AE972E800DC5045 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299DB5F32AE972E800DC5045 /* LoginViewController.xib */; };
 		4E0B313E283BB7AF00A16751 /* ConfirmWaitingClassesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B313D283BB7AF00A16751 /* ConfirmWaitingClassesService.swift */; };
 		6C1EA4C62634D451001CC335 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C1EA4C52634D451001CC335 /* GoogleService-Info.plist */; };
 		6C1EA4CB2636D7D5001CC335 /* Remote_Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1EA4CA2636D7D5001CC335 /* Remote_Notification.swift */; };
@@ -34,7 +36,6 @@
 		6C6BF9BA2616763100A8A3EB /* MenueTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BF9B92616763100A8A3EB /* MenueTableTableViewController.swift */; };
 		6C6BF9C426167F1200A8A3EB /* ColoredDayEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BF9C326167F1200A8A3EB /* ColoredDayEnum.swift */; };
 		6C6C0246261E05E000DD8C7B /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6C0245261E05E000DD8C7B /* AboutAppViewController.swift */; };
-		6C6F3C162613205C005928EB /* MainLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F3C152613205B005928EB /* MainLoginViewController.swift */; };
 		6C6F3C742613DAE6005928EB /* TableHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F3C732613DAE6005928EB /* TableHomeViewController.swift */; };
 		6C6F795A261A280500A92359 /* Myriad Pro Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C53247426177936000CBB1A /* Myriad Pro Regular.ttf */; };
 		6C6F795B261A280500A92359 /* Myriad Pro Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C532478261779D4000CBB1A /* Myriad Pro Semibold.ttf */; };
@@ -95,6 +96,8 @@
 		29476DC92AE43C57006C48DA /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		29476DCA2AE43C57006C48DA /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
 		29476DCD2AE47103006C48DA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		299DB5F22AE972E800DC5045 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		299DB5F32AE972E800DC5045 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		4E0B313D283BB7AF00A16751 /* ConfirmWaitingClassesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmWaitingClassesService.swift; sourceTree = "<group>"; };
 		6C1EA4C52634D451001CC335 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C1EA4CA2636D7D5001CC335 /* Remote_Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remote_Notification.swift; sourceTree = "<group>"; };
@@ -124,7 +127,6 @@
 		6C6BF9B92616763100A8A3EB /* MenueTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenueTableTableViewController.swift; sourceTree = "<group>"; };
 		6C6BF9C326167F1200A8A3EB /* ColoredDayEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredDayEnum.swift; sourceTree = "<group>"; };
 		6C6C0245261E05E000DD8C7B /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
-		6C6F3C152613205B005928EB /* MainLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginViewController.swift; sourceTree = "<group>"; };
 		6C6F3C732613DAE6005928EB /* TableHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHomeViewController.swift; sourceTree = "<group>"; };
 		6C6F798B261A3BAD00A92359 /* Myriad Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Myriad Pro Light.otf"; sourceTree = "<group>"; };
 		6C6F7994261A469100A92359 /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
@@ -262,7 +264,8 @@
 		6C6BF9AD26165EC800A8A3EB /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				6C6F3C152613205B005928EB /* MainLoginViewController.swift */,
+				299DB5F22AE972E800DC5045 /* LoginViewController.swift */,
+				299DB5F32AE972E800DC5045 /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -371,8 +374,8 @@
 			isa = PBXGroup;
 			children = (
 				6C6BF9AD26165EC800A8A3EB /* Login */,
-				29476DC82AE43C29006C48DA /* ForgetPassword */,
 				292FB2F12AE4070C009523EC /* Registration */,
+				29476DC82AE43C29006C48DA /* ForgetPassword */,
 				6C6F79E3261C632800A92359 /* Menue */,
 				6C6BF9A926165E9B00A8A3EB /* IntroductionScreens */,
 				6C6F3C782613DAEE005928EB /* Table */,
@@ -592,6 +595,7 @@
 				6C38EC56261926290093B4DA /* Home.storyboard in Resources */,
 				6C5E1E182609DC2700C35700 /* Localizable.strings in Resources */,
 				6C6F795B261A280500A92359 /* Myriad Pro Semibold.ttf in Resources */,
+				299DB5F52AE972E800DC5045 /* LoginViewController.xib in Resources */,
 				6C6F795A261A280500A92359 /* Myriad Pro Regular.ttf in Resources */,
 				6C1EA4C62634D451001CC335 /* GoogleService-Info.plist in Resources */,
 				6C753DCC262C331D000D4DFE /* Assets.xcassets in Resources */,
@@ -693,7 +697,6 @@
 				6C7E21392604B8CB00B10A74 /* TableInfoModel.swift in Sources */,
 				6C753E122633430F000D4DFE /* NetworkConnectionProtcol.swift in Sources */,
 				6C5E1DFF2609D6B100C35700 /* language.swift in Sources */,
-				6C6F3C162613205C005928EB /* MainLoginViewController.swift in Sources */,
 				6C753E0C263342D7000D4DFE /* NetworkCheck.swift in Sources */,
 				6C753DFA2632F7C0000D4DFE /* ApiServiceUrl.swift in Sources */,
 				6C5E1E202609DC5000C35700 /* Extension String.swift in Sources */,
@@ -724,6 +727,7 @@
 				6CA117D22604B07C006B1AA1 /* AppDelegate.swift in Sources */,
 				6C7E21462604BA7000B10A74 /* ClassModel.swift in Sources */,
 				4E0B313E283BB7AF00A16751 /* ConfirmWaitingClassesService.swift in Sources */,
+				299DB5F42AE972E800DC5045 /* LoginViewController.swift in Sources */,
 				6C6750EA2611156000DB22F6 /* ThirdScreenViewController.swift in Sources */,
 				6CAD278026072C1E00BBED74 /* ResponseModel.swift in Sources */,
 				6C1EA4CB2636D7D5001CC335 /* Remote_Notification.swift in Sources */,
@@ -931,7 +935,7 @@
 				CODE_SIGN_ENTITLEMENTS = samrtble/samrtble.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = MV78XVH867;
 				INFOPLIST_FILE = samrtble/Info.plist;
@@ -940,7 +944,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.09;
+				MARKETING_VERSION = 1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.optimalsoft.samrtable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -958,7 +962,7 @@
 				CODE_SIGN_ENTITLEMENTS = samrtble/samrtble.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MV78XVH867;
 				INFOPLIST_FILE = samrtble/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
@@ -966,7 +970,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.09;
+				MARKETING_VERSION = 1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.optimalsoft.samrtable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

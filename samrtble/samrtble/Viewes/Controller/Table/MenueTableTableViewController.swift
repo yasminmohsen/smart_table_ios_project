@@ -13,7 +13,7 @@ class MenueTableTableViewController: UITableViewController {
     @IBOutlet weak var contactUs: UIButton!
     
     @IBOutlet weak var deleteAccountButton: UIButton!
-     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         logoutClicked = false
@@ -75,7 +75,7 @@ class MenueTableTableViewController: UITableViewController {
     }
     
     @IBAction func logoutBtn(_ sender: Any) {
-     
+        
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
             Alert.showAdvanceedAlert(title: "Alert", message: "Do you want to log out ?", viewRef: self) { [weak self] in

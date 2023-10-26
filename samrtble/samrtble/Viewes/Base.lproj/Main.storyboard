@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8zK-Xe-Fji">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8zK-Xe-Fji">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -90,7 +90,6 @@
                                 </state>
                                 <connections>
                                     <action selector="skip:" destination="hP3-Y3-YSc" eventType="touchUpInside" id="PV9-nB-LkD"/>
-                                    <segue destination="b27-jK-SUG" kind="push" id="1ED-FK-JML"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="secondScreen" translatesAutoresizingMaskIntoConstraints="NO" id="lu7-oA-sJx">
@@ -180,7 +179,6 @@
                                 </state>
                                 <connections>
                                     <action selector="skip:" destination="zGW-fm-eTU" eventType="touchUpInside" id="niW-g7-K6n"/>
-                                    <segue destination="b27-jK-SUG" kind="push" id="fc9-N9-Quj"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ThirdScreen" translatesAutoresizingMaskIntoConstraints="NO" id="2yY-Pc-Tbi">
@@ -234,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbs-uQ-uNg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="38"/>
+            <point key="canvasLocation" x="972" y="38"/>
         </scene>
         <!--Third Screen View Controller-->
         <scene sceneID="gIh-BE-OnW">
@@ -286,7 +284,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="start:" destination="0Cu-c3-NVo" eventType="touchUpInside" id="Ozh-yW-eUU"/>
-                                                    <segue destination="b27-jK-SUG" kind="push" id="2bb-lI-Pjz"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -341,345 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yzu-zv-xJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="54"/>
-        </scene>
-        <!--Main Login View Controller-->
-        <scene sceneID="rOE-9h-oUI">
-            <objects>
-                <viewController storyboardIdentifier="MainLoginViewController" id="b27-jK-SUG" customClass="MainLoginViewController" customModule="samrtble" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uFC-XZ-qbo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6A-Py-bWm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="718"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4hq-Vc-n9Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="776"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="gradient_down" translatesAutoresizingMaskIntoConstraints="NO" id="8gP-fk-oyH">
-                                                <rect key="frame" x="0.0" y="586" width="414" height="206"/>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Login" translatesAutoresizingMaskIntoConstraints="NO" id="0Jx-ye-9Lq">
-                                                <rect key="frame" x="60" y="32" width="294" height="195"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="195" id="QkR-jz-GlQ"/>
-                                                </constraints>
-                                            </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="v6H-BB-j8h">
-                                                <rect key="frame" x="16" y="261" width="382" height="341"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0J7-pT-sxy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="56"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Select login type" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbb-I7-NM3">
-                                                                <rect key="frame" x="101" y="15.5" width="180.5" height="25"/>
-                                                                <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="25"/>
-                                                                <color key="textColor" name="primary-dark"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" name="primary-gray"/>
-                                                        <constraints>
-                                                            <constraint firstItem="Fbb-I7-NM3" firstAttribute="centerY" secondItem="0J7-pT-sxy" secondAttribute="centerY" id="5TG-3q-Tds"/>
-                                                            <constraint firstAttribute="height" constant="56" id="fsV-iy-0HE"/>
-                                                            <constraint firstItem="Fbb-I7-NM3" firstAttribute="centerX" secondItem="0J7-pT-sxy" secondAttribute="centerX" id="nNq-Ve-piy"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="show error here !" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gf-zm-Anr">
-                                                        <rect key="frame" x="0.0" y="66.5" width="382" height="0.0"/>
-                                                        <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="14"/>
-                                                        <color key="textColor" red="0.74901960779999999" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kEh-Pv-TLw">
-                                                        <rect key="frame" x="0.0" y="77" width="382" height="28"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsU-lt-tSN">
-                                                                <rect key="frame" x="0.0" y="0.0" width="109.5" height="28"/>
-                                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="20"/>
-                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" title="With ID" image="unselected-radio"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="unselected-radio" title="With ID">
-                                                                    <fontDescription key="titleFontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="20"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="didTapWithIdButton:" destination="b27-jK-SUG" eventType="touchUpInside" id="8rR-EH-5jZ"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pe-O3-oXT">
-                                                                <rect key="frame" x="139.5" y="0.0" width="174.5" height="28"/>
-                                                                <fontDescription key="fontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="20"/>
-                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" title="With username" image="selected-radio"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="selected-radio" title="With username">
-                                                                    <fontDescription key="titleFontDescription" name="MyriadPro-Regular" family="Myriad Pro" pointSize="20"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="didTapWithUserNameButton:" destination="b27-jK-SUG" eventType="touchUpInside" id="ZFk-oZ-W4W"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="bsU-lt-tSN" secondAttribute="bottom" id="Gcb-0S-y85"/>
-                                                            <constraint firstItem="6pe-O3-oXT" firstAttribute="leading" secondItem="bsU-lt-tSN" secondAttribute="trailing" constant="30" id="IsY-X3-qoN"/>
-                                                            <constraint firstItem="6pe-O3-oXT" firstAttribute="top" secondItem="kEh-Pv-TLw" secondAttribute="top" id="Ng1-VP-bMG"/>
-                                                            <constraint firstItem="bsU-lt-tSN" firstAttribute="top" secondItem="kEh-Pv-TLw" secondAttribute="top" id="bU0-3G-eVh"/>
-                                                            <constraint firstAttribute="bottom" secondItem="6pe-O3-oXT" secondAttribute="bottom" id="rLb-IR-Tkb"/>
-                                                            <constraint firstItem="bsU-lt-tSN" firstAttribute="leading" secondItem="kEh-Pv-TLw" secondAttribute="leading" id="sbm-R3-vxN"/>
-                                                            <constraint firstAttribute="height" constant="28" id="ytO-4C-mBA"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ne1-Bd-W5B">
-                                                        <rect key="frame" x="0.0" y="126" width="382" height="93"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="dlm-0W-Umh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="93"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Username" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfw-JZ-udd">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="25"/>
-                                                                        <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="25"/>
-                                                                        <color key="textColor" red="0.35574526140000001" green="0.59253965040000001" blue="0.62215192090000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDs-Hb-wau">
-                                                                        <rect key="frame" x="0.0" y="43" width="382" height="50"/>
-                                                                        <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9gq-qh-NYi">
-                                                                                <rect key="frame" x="16" y="0.0" width="350" height="50"/>
-                                                                                <subviews>
-                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="username-icon" translatesAutoresizingMaskIntoConstraints="NO" id="loW-MH-jNS">
-                                                                                        <rect key="frame" x="0.0" y="13" width="24" height="24"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="height" constant="24" id="EVo-8A-PPh"/>
-                                                                                            <constraint firstAttribute="width" constant="24" id="ZYc-I5-Zc6"/>
-                                                                                        </constraints>
-                                                                                    </imageView>
-                                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eRp-gE-yEm">
-                                                                                        <rect key="frame" x="34" y="4" width="316" height="42"/>
-                                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="height" constant="42" id="mnv-le-bMR"/>
-                                                                                        </constraints>
-                                                                                        <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
-                                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="21"/>
-                                                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                                                    </textField>
-                                                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="username-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Eot-nw-vic">
-                                                                                        <rect key="frame" x="350" y="13" width="24" height="24"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" constant="24" id="Nbp-QL-LmS"/>
-                                                                                            <constraint firstAttribute="height" constant="24" id="tVT-bj-GY7"/>
-                                                                                        </constraints>
-                                                                                    </imageView>
-                                                                                </subviews>
-                                                                            </stackView>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="bottom" secondItem="9gq-qh-NYi" secondAttribute="bottom" id="0Qv-S9-fay"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="9gq-qh-NYi" secondAttribute="trailing" constant="16" id="I3c-M0-MP3"/>
-                                                                            <constraint firstItem="9gq-qh-NYi" firstAttribute="top" secondItem="mDs-Hb-wau" secondAttribute="top" id="Npk-lr-SCn"/>
-                                                                            <constraint firstAttribute="height" constant="50" id="bHr-ev-G6e"/>
-                                                                            <constraint firstItem="9gq-qh-NYi" firstAttribute="leading" secondItem="mDs-Hb-wau" secondAttribute="leading" constant="16" id="zBT-gP-RvW"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="This filed can't be empty" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thj-Zp-sTs">
-                                                                        <rect key="frame" x="0.0" y="93" width="382" height="24"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="24" id="Kc7-4c-s2d"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="14"/>
-                                                                        <color key="textColor" red="0.74901960779999999" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-8a-PKy">
-                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="68"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Password" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTH-iG-UkM">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="0.0"/>
-                                                                        <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="25"/>
-                                                                        <color key="textColor" red="0.35574526140000001" green="0.59253965040000001" blue="0.62215192090000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bK2-zh-uzn">
-                                                                        <rect key="frame" x="0.0" y="18" width="382" height="50"/>
-                                                                        <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vZ1-eQ-Pak">
-                                                                                <rect key="frame" x="16" y="0.0" width="350" height="50"/>
-                                                                                <subviews>
-                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="password-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Quh-yR-hpV">
-                                                                                        <rect key="frame" x="0.0" y="13" width="24" height="24"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" constant="24" id="Gs7-gA-O3o"/>
-                                                                                            <constraint firstAttribute="height" constant="24" id="kzl-Jf-2uR"/>
-                                                                                        </constraints>
-                                                                                    </imageView>
-                                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQh-Yl-dmt">
-                                                                                        <rect key="frame" x="34" y="4" width="282" height="42"/>
-                                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="height" constant="42" id="YRN-aP-1qM"/>
-                                                                                        </constraints>
-                                                                                        <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
-                                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="21"/>
-                                                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                                                                                    </textField>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msj-za-T5y">
-                                                                                        <rect key="frame" x="326" y="13" width="24" height="24"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" constant="24" id="SWZ-IZ-pWM"/>
-                                                                                            <constraint firstAttribute="height" constant="24" id="tO3-mK-u7U"/>
-                                                                                        </constraints>
-                                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                                        <state key="normal" image="eye-icon"/>
-                                                                                        <connections>
-                                                                                            <action selector="didTapEyeButton:" destination="b27-jK-SUG" eventType="touchUpInside" id="CK4-7x-70Z"/>
-                                                                                        </connections>
-                                                                                    </button>
-                                                                                </subviews>
-                                                                            </stackView>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <constraints>
-                                                                            <constraint firstItem="vZ1-eQ-Pak" firstAttribute="top" secondItem="bK2-zh-uzn" secondAttribute="top" id="M7R-P7-5kc"/>
-                                                                            <constraint firstItem="vZ1-eQ-Pak" firstAttribute="leading" secondItem="bK2-zh-uzn" secondAttribute="leading" constant="16" id="WFV-E1-inz"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="vZ1-eQ-Pak" secondAttribute="bottom" id="cX4-jv-iFj"/>
-                                                                            <constraint firstAttribute="height" constant="50" id="kvg-Fv-Dx3"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="vZ1-eQ-Pak" secondAttribute="trailing" constant="16" id="n94-Mo-M4M"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="This filed can't be empty" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWr-WH-Xvn">
-                                                                        <rect key="frame" x="0.0" y="68" width="382" height="24"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="24" id="c7d-fi-aTq"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" name="MyriadPro-Semibold" family="Myriad Pro" pointSize="14"/>
-                                                                        <color key="textColor" red="0.74901960779999999" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9A-GA-CUd">
-                                                        <rect key="frame" x="0.0" y="240" width="382" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="462-c2-mb0"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="16"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="FORGOT PASSWORD">
-                                                            <color key="titleColor" red="0.74901960779999999" green="0.20784313730000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="didTapForgetPassword:" destination="b27-jK-SUG" eventType="touchUpInside" id="caD-Dl-sLf"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKe-fh-lg5" customClass="GradientButton" customModule="samrtble" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="291" width="382" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="RSs-Jf-H40"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="MyriadPro-Bold" family="Myriad Pro" pointSize="21"/>
-                                                        <state key="normal" title="Login">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="12"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="loginBtn:" destination="b27-jK-SUG" eventType="touchUpInside" id="toP-D5-upB"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="8gP-fk-oyH" secondAttribute="trailing" id="7ZA-Y0-8jc"/>
-                                            <constraint firstItem="8gP-fk-oyH" firstAttribute="leading" secondItem="4hq-Vc-n9Q" secondAttribute="leading" id="80t-nl-DJA"/>
-                                            <constraint firstAttribute="trailing" secondItem="v6H-BB-j8h" secondAttribute="trailing" constant="16" id="BIc-GJ-eSq"/>
-                                            <constraint firstItem="0Jx-ye-9Lq" firstAttribute="top" secondItem="4hq-Vc-n9Q" secondAttribute="top" constant="32" id="EG6-31-5CA"/>
-                                            <constraint firstItem="0Jx-ye-9Lq" firstAttribute="leading" secondItem="4hq-Vc-n9Q" secondAttribute="leading" constant="60" id="MWE-Ta-RPc"/>
-                                            <constraint firstItem="v6H-BB-j8h" firstAttribute="top" secondItem="0Jx-ye-9Lq" secondAttribute="bottom" constant="34" id="PIM-C0-4GY"/>
-                                            <constraint firstAttribute="bottom" secondItem="v6H-BB-j8h" secondAttribute="bottom" priority="250" constant="174" id="St5-xN-Z5e"/>
-                                            <constraint firstAttribute="bottom" secondItem="8gP-fk-oyH" secondAttribute="bottom" constant="-16" id="cdM-fI-rJX"/>
-                                            <constraint firstItem="v6H-BB-j8h" firstAttribute="leading" secondItem="4hq-Vc-n9Q" secondAttribute="leading" constant="16" id="uVb-sF-wm5"/>
-                                            <constraint firstAttribute="trailing" secondItem="0Jx-ye-9Lq" secondAttribute="trailing" constant="60" id="wiW-Bt-5q5"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="4hq-Vc-n9Q" firstAttribute="bottom" secondItem="aGy-NQ-PnK" secondAttribute="bottom" constant="776" id="D5s-v8-ZTs"/>
-                                    <constraint firstItem="4hq-Vc-n9Q" firstAttribute="trailing" secondItem="aGy-NQ-PnK" secondAttribute="trailing" constant="414" id="Er7-dY-e3c"/>
-                                    <constraint firstItem="4hq-Vc-n9Q" firstAttribute="width" secondItem="e6A-Py-bWm" secondAttribute="width" id="JIl-7p-ElE"/>
-                                    <constraint firstItem="4hq-Vc-n9Q" firstAttribute="top" secondItem="aGy-NQ-PnK" secondAttribute="top" id="V5E-bx-dNG"/>
-                                    <constraint firstItem="4hq-Vc-n9Q" firstAttribute="leading" secondItem="aGy-NQ-PnK" secondAttribute="leading" id="rqE-qk-NSb"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="aGy-NQ-PnK"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="3Nx-zG-kac"/>
-                            </scrollView>
-                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="xa6-5P-qEh">
-                                <rect key="frame" x="184.5" y="336.5" width="45" height="45"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="Xqm-zy-dMk"/>
-                                    <constraint firstAttribute="height" constant="45" id="v8Y-UN-iQz"/>
-                                </constraints>
-                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="BNI-eC-g3A"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="e6A-Py-bWm" secondAttribute="bottom" id="7iX-bB-8aU"/>
-                            <constraint firstItem="e6A-Py-bWm" firstAttribute="leading" secondItem="uFC-XZ-qbo" secondAttribute="leading" id="Hj2-gR-6qP"/>
-                            <constraint firstItem="xa6-5P-qEh" firstAttribute="centerY" secondItem="uFC-XZ-qbo" secondAttribute="centerY" id="St2-QT-Rr2"/>
-                            <constraint firstAttribute="trailing" secondItem="e6A-Py-bWm" secondAttribute="trailing" id="fqR-XZ-S0M"/>
-                            <constraint firstItem="xa6-5P-qEh" firstAttribute="centerX" secondItem="uFC-XZ-qbo" secondAttribute="centerX" id="kPE-Fr-2P9"/>
-                            <constraint firstItem="e6A-Py-bWm" firstAttribute="top" secondItem="uFC-XZ-qbo" secondAttribute="top" id="ygn-Ea-gCU"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="BC7-pF-8jz"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="776"/>
-                    <connections>
-                        <outlet property="activityIndecator" destination="xa6-5P-qEh" id="azc-9n-j2V"/>
-                        <outlet property="errorLabel" destination="3gf-zm-Anr" id="aty-Sp-ClW"/>
-                        <outlet property="forgetPasswordButton" destination="a9A-GA-CUd" id="a4t-0M-iLL"/>
-                        <outlet property="loginTitleLabel" destination="Fbb-I7-NM3" id="9Ol-bj-yek"/>
-                        <outlet property="passwordErrorLabel" destination="IWr-WH-Xvn" id="e3D-JP-DHD"/>
-                        <outlet property="passwordStakView" destination="2ho-8a-PKy" id="p9Y-Oq-VVb"/>
-                        <outlet property="passwordTextField" destination="EQh-Yl-dmt" id="Kx4-08-4XB"/>
-                        <outlet property="passwordTitleLabel" destination="aTH-iG-UkM" id="Vkg-y3-JNF"/>
-                        <outlet property="passwordView" destination="bK2-zh-uzn" id="ofU-rA-IKV"/>
-                        <outlet property="titleView" destination="0J7-pT-sxy" id="7pD-Kg-h1T"/>
-                        <outlet property="userNameErrorLabel" destination="thj-Zp-sTs" id="gu0-2x-5Q7"/>
-                        <outlet property="userNameLabel" destination="nfw-JZ-udd" id="6gi-EM-cGA"/>
-                        <outlet property="userNameTextField" destination="eRp-gE-yEm" id="6SE-dV-hgd"/>
-                        <outlet property="userNameView" destination="mDs-Hb-wau" id="Uv7-Eh-wWB"/>
-                        <outlet property="withIDButton" destination="bsU-lt-tSN" id="auO-N6-ARa"/>
-                        <outlet property="withUserNameButton" destination="6pe-O3-oXT" id="GZb-YH-p2s"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AJd-UF-UXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2672" y="38"/>
+            <point key="canvasLocation" x="1687" y="38"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gnU-6t-V5S">
@@ -719,32 +378,14 @@
         <designable name="D40-gx-vc2">
             <size key="intrinsicContentSize" width="60" height="33"/>
         </designable>
-        <designable name="oKe-fh-lg5">
-            <size key="intrinsicContentSize" width="54" height="33"/>
-        </designable>
     </designables>
-    <inferredMetricsTieBreakers>
-        <segue reference="2bb-lI-Pjz"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="FourthScreen" width="303" height="210.5"/>
-        <image name="Login" width="289.5" height="219.5"/>
         <image name="Logo" width="378.5" height="363.5"/>
         <image name="ThirdScreen" width="280.5" height="210.5"/>
-        <image name="eye-icon" width="24" height="24"/>
         <image name="gradient_Up" width="375" height="155"/>
         <image name="gradient_down" width="375" height="206"/>
-        <image name="password-icon" width="24" height="24"/>
         <image name="secondScreen" width="280.5" height="212.5"/>
-        <image name="selected-radio" width="24" height="24"/>
-        <image name="unselected-radio" width="24" height="24"/>
-        <image name="username-icon" width="24" height="24"/>
-        <namedColor name="primary-dark">
-            <color red="0.21600000560283661" green="0.27799999713897705" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="primary-gray">
-            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

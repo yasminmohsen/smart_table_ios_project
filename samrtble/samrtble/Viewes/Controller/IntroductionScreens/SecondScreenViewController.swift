@@ -65,6 +65,8 @@ class SecondScreenViewController: UIViewController {
     @IBAction func skip(_ sender: Any) {
         let defults = UserDefaults.standard
         defults.setValue("goLogin", forKey: FirstScreenViewController.GO_LOGIN)
+        let  vc = LoginViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

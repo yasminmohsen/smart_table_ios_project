@@ -42,7 +42,7 @@ class NotificationViewModel {
     
     func fetchData(){
         
-        guard let phone = UserDefaults.standard.string(forKey: MainLoginViewController.PHONE_KEY) else { return  }
+        guard let phone = UserDefaults.standard.string(forKey: LoginViewController.PHONE_KEY) else { return  }
         let apiService = ApiService(phone: phone, type: "notif-history")
         apiService.fetchNotificationData { (notificationData, error) in
             if let resultNotif = notificationData {

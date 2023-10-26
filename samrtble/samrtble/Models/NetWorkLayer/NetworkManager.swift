@@ -183,14 +183,14 @@ class NetworkManager {
             let response = try? NetworkManager.handleResponseData(data: data, type: RegistrationResponse.self)
             return response
         } else if httpResponse.statusCode == 400 {
-            // Handle 409 conflict error
+            // Handle 400 conflict error
             if let errorMessage = try? NetworkManager.handleResponseData(data: data, type: ErrorResponse.self) {
                 throw NetworkError.notRegisteredBefore(errorMessage.error)
             } else {
                 throw NetworkError.withMessage("Unknown Error")
             }
         } else if httpResponse.statusCode == 409 {
-            // Handle 400 bad request error
+            // Handle 409 bad request error
             if let errorMessage = try? NetworkManager.handleResponseData(data: data, type: ErrorResponse.self) {
                 throw NetworkError.withMessage(errorMessage.error)
             } else {
@@ -236,13 +236,22 @@ class NetworkManager {
     }
     
     static  func forgetPassword(appService: AppService) async throws -> Bool {
-        let (data, response) = try await URLSession.shared.data(for: AppService.makeURLRequest(service: appService))
+        let config = URLSessionConfiguration.default
+        config.urlCache = nil
+        let session = URLSession(configuration: config, delegate: nil, delegateQueue: nil)
+        
+        let (data, response) = try await session.data(for: AppService.makeURLRequest(service: appService))
+        
         if  let response = response as? HTTPURLResponse {
             print("💥💥💥",response.statusCode)
             if (200...299).contains(response.statusCode)  {
                 return true
             } else {
-                throw NetworkError.invalidData
+                if let errorMessage = try? NetworkManager.handleResponseData(data: data, type: ErrorResponse.self) {
+                    throw NetworkError.withMessage(errorMessage.error)
+                } else {
+                    throw NetworkError.withMessage("Unknown Error".localized)
+                }
             }
         } else {
             throw NetworkError.invalidData

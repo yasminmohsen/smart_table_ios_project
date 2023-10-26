@@ -31,6 +31,15 @@ struct Alert {
         
     }
     
+    static func showSimpleConfirmationAlert(title: String,message: String, viewRef: UIViewController, actionClosure:@escaping()->Void) {
+        
+        let advancedAlert = UIAlertController(title: title.localized, message: message.localized, preferredStyle: UIAlertController.Style.alert)
+        advancedAlert.addAction(UIAlertAction(title: "Ok".localized, style: .default, handler: {
+            action in
+            actionClosure()
+        }))
+        viewRef.present(advancedAlert, animated: true, completion: nil)
+    }
 }
 
 protocol IView : UIViewController {}

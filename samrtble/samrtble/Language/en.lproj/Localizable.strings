@@ -29,11 +29,12 @@
 // MARK: - Authentication
 "Password" = "Password";
 "Username" = "Username";
+"Email"="Email";
 "Enter your name" = "Enter your name";
-"Enter your password ..." = "Enter your password ...";
+"Enter your password ..." = "Enter your password";
 "Select login type" = "Select login type";
 "Register" = "Register";
-"Enter your email ..." = "Enter your email ...";
+"Enter your email ..." = "Enter your email";
 "Teacher registration" = "Teacher registration";
 "Restore your password" = "Restore your password";
 "Enter your email and a password recovery link will be delivered directly to your inbox" = "Enter your email and a password recovery link will be delivered directly to your inbox";
@@ -44,3 +45,9 @@
 "Delete Account"="Delete Account";
 "Do you want to Delete your account!?"="Do you want to Delete your account ?!";
 "Alert"="Alert";
+"Please valid email"="Please enter valid email";
+"Unknown Error"="Unknown Error";
+"Login ID"="Login ID";
+"Login"="Login";
+"Please check your email"="Please check your email";
+"Ok"="Ok";
