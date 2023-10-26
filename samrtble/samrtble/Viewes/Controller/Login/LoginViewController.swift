@@ -210,14 +210,14 @@ class LoginViewController: UIViewController {
     
     func onFiluer(error:String? ,netWorkError:String?){
         if let netWorkError = netWorkError {
-            Alert.showSimpleAlert(title: "Alert", message: netWorkError, viewRef: self)
+            Alert.showSimpleAlert(title: "Alert".localized, message: netWorkError, viewRef: self)
             
         }
         
         if let error = error {
             if error == "Error!"{
                 print(error)
-                Alert.showSimpleAlert(title: "Alert", message: error, viewRef: self)
+                Alert.showSimpleAlert(title: "Alert".localized, message: error, viewRef: self)
             }
             else{
                 self.errorLabel.alpha = 1
@@ -236,7 +236,7 @@ class LoginViewController: UIViewController {
         errorLabel.isHidden = true
         userCode = "\(userNameTextField.text ?? "")"
         if((userNameTextField.text!.isEmpty)){
-            Alert.showSimpleAlert(title: "Alert", message: "Enter user id", viewRef: self)
+            Alert.showSimpleAlert(title: "Alert".localized, message: "valid_field".localized, viewRef: self)
         } else {
             
             ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndecator, status: .start)
