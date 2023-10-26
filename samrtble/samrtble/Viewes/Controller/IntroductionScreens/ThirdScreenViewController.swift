@@ -55,6 +55,8 @@ class ThirdScreenViewController: UIViewController {
         
         let defults = UserDefaults.standard
         defults.setValue("goLogin", forKey: FirstScreenViewController.GO_LOGIN)
+        let  vc = LoginViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

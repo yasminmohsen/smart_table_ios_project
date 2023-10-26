@@ -36,8 +36,9 @@ class FirstScreenViewController: UIViewController {
     
     func CheckUserDeafaults()  {
         let defaults = UserDefaults.standard
-        if(defaults.string(forKey: MainLoginViewController.PHONE_KEY) != nil){
-            var vc = self.storyboard?.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController
+        if(defaults.string(forKey: LoginViewController.PHONE_KEY) != nil){
+            let storyboard = UIStoryboard(name: "Main", bundle: .main)
+            var vc = storyboard.instantiateViewController(withIdentifier: "TableHome")as! TableHomeViewController
             self.navigationController?.pushViewController(vc, animated: true)
             
         }
@@ -74,6 +75,9 @@ class FirstScreenViewController: UIViewController {
     @IBAction func skip(_ sender: Any) {
         let defults = UserDefaults.standard
         defults.setValue("goLogin", forKey: FirstScreenViewController.GO_LOGIN)
+        
+        let  vc = LoginViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

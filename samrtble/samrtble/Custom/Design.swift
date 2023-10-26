@@ -14,7 +14,19 @@ enum CustomFonts : String{
     
 }
 
+extension UIColor {
+    static var darkGrey = #colorLiteral(red: 0.6392156863, green: 0.6392156863, blue: 0.6392156863, alpha: 1)
+    static var primaryGreen = #colorLiteral(red: 0.2039215686, green: 0.7529411765, blue: 0.768627451, alpha: 1)
+}
+
 extension UIView {
+    
+    func applyPrimaryTextFieldStyle() {
+        layer.borderWidth = 1.0
+        layer.cornerRadius = 12
+        layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
     @discardableResult
     func applyGradient(colours: [UIColor]) -> CAGradientLayer {
         return self.applyGradient(colours: colours, locations: nil)

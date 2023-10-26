@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "gradient_down.png",
+      "filename" : "Clip path group.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "gradient_down@2x.png",
+      "filename" : "Clip path group-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "gradient_down@3x.png",
+      "filename" : "Clip path group-3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

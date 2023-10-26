@@ -15,19 +15,18 @@ extension ApiService{
     
     func fetchRemOteNotification (completeion:@escaping (_ result:String)->() ,fcmToken:String) {
         let apiServiceUrl = ApIServiceUrl(phone: phone, type: type)
-        let url = apiServiceUrl.url
         let request :Alamofire.DataRequest!
-        var parameters = ["fcm_token":fcmToken,
-                          "package_name":"com.optimalsoft.samrtable"]
+        let url = AppService.updateFcmToken.url
+        
         var headerValue:HTTPHeader?
-        if(LanguageOperation.checkLanguage() == .arabic){
-            headerValue = apiServiceUrl.arabicHeaderValue
-            request = AF.request(url, method: .post, parameters: parameters, encoding:JSONEncoding.default, headers: [headerValue!])
-        }
-        else {
-            headerValue = nil
-            request = AF.request(url, method: .post, parameters: parameters,encoding:JSONEncoding.default)
-        }
+        var header1 = HTTPHeader(name: "auth-token", value: UserDefaults.standard.string(forKey: USER_TOKEN) ?? "")
+        
+        headerValue = HTTPHeader(name: "Accept-Language", value: LanguageOperation.checkLanguage() == .arabic ? "ar":"en")
+        
+        var header2 = HTTPHeader(name: "package_name", value:"com.optimalsoft.samrtable")
+        
+        request = AF.request(url, method: .get, headers: [headerValue!,header1,header2])
+     
         request.responseJSON { (response) in
             print(response.data)
             if let data = response.data{

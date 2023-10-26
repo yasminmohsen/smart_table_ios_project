@@ -15,17 +15,14 @@ extension ApiService{
     
     func fetchNotificationData (completion :@escaping (_ resultNotifData:[ResultNotification]?,_ error:String?)->()){
         let apiServiceUrl = ApIServiceUrl(phone: phone, type: type)
-        let url = apiServiceUrl.url
         let request :Alamofire.DataRequest!
+        let url = AppService.fetchNotificationHistory.url
         var headerValue:HTTPHeader?
-        if(LanguageOperation.checkLanguage() == .arabic){
-            headerValue = apiServiceUrl.arabicHeaderValue
-            request = AF.request(url, method: .get, headers: [headerValue!])
-        }
-        else {
-            headerValue = nil
-            request = AF.request(url, method: .get)
-        }
+        var haear1 = HTTPHeader(name: "auth-token", value: UserDefaults.standard.string(forKey: USER_TOKEN) ?? "")
+        
+        headerValue = HTTPHeader(name: "Accept-Language", value: LanguageOperation.checkLanguage() == .arabic ? "ar":"en")
+        
+        request = AF.request(url, method: .get, headers: [headerValue!,haear1])
         request.responseJSON { [self] (response) in
             print(response.data)
             if let apiData = response.data {
