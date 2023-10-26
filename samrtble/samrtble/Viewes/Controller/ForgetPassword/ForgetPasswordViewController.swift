@@ -63,12 +63,12 @@ class ForgetPasswordViewController: UIViewController {
                     DispatchQueue.main.async { [weak self] in
                         guard let self else { return }
                         ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: self.activityIndicatore, status: .stop)
-                        errorLabel.isHidden = false
+                        self.errorLabel.isHidden = false
                         switch error {
                         case NetworkError.withMessage(let error):
-                            errorLabel.text = error
+                            self.errorLabel.text = error
                         default:
-                            errorLabel.text = "UnKnown Error".localized
+                            self.errorLabel.text = "UnKnown Error".localized
                         }
                     }
                 }
