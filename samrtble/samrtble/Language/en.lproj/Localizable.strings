@@ -51,4 +51,6 @@
 "Login"="Login";
 "Please check your email"="Please check your email";
 "Ok"="Ok";
-"valid_field" = "Please enter valid filed";
+"valid_field" = "Please enter valid data";
+"Password must be at least 8 characters" = "Password must be at least 8 characters";
+"Email is not correct"="Email is not correct";

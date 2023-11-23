@@ -138,13 +138,17 @@ class RegistrationViewController: UIViewController {
         let userName = userNameTextField.text ?? ""
         errorLabel.isHidden = true
         
-        let validationCondition = isPasswordValid(password) && isEmailValid(email) && isUserNameValid(userName)
+        let validationEmptyCondition = !password.isEmpty && !email.isEmpty && !userName.isEmpty
         
-        if validationCondition {
-            loginViewModel?.register(with: userCode ?? "", userName: userName, password: password, email: email)
+       let validationCondition = isPasswordValid(password) && isEmailValid(email)
+        
+        if validationEmptyCondition  {
+            if validationCondition {
+                loginViewModel?.register(with: userCode ?? "", userName: userName, password: password, email: email)
+            }
         } else {
             ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndicatore, status: .stop)
-            showError(message: "Please fill all fields".localized)  
+            showError(message: "Please fill all fields".localized)
         }
     }
     
@@ -158,15 +162,27 @@ class RegistrationViewController: UIViewController {
     }
     
     func isPasswordValid(_ password: String) -> Bool {
-        let passwordRegex = #"^(?=.*\d)[A-Za-z\d]{8,}$"#
-        let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
-        return passwordPredicate.evaluate(with: password)
+        let condition =  password.count >= 8
+        
+        if condition == false {
+            ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndicatore, status: .stop)
+            showError(message: "Password must be at least 8 characters".localized)
+        }
+
+        return condition
     }
     
     func isEmailValid(_ email: String) -> Bool {
         let emailRegex = #"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$"#
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        return emailPredicate.evaluate(with: email)
+        let condition = emailPredicate.evaluate(with: email)
+        
+        if condition == false {
+            ActivityIndecatorBehaviour.activityIndecatorAction(activityIndecator: activityIndicatore, status: .stop)
+            showError(message: "Email is not correct".localized)
+        }
+        
+        return condition
     }
     
     func isUserNameValid(_ userName: String) -> Bool {

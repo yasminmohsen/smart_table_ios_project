@@ -63,3 +63,5 @@
 "Please check your email"="برجاء فحص البريد الإلكتروني الخاص بك";
 "Ok"="حسناً";
 "valid_field" = "الرجاء ادخال بيانات صحيحه";
+"Password must be at least 8 characters" = "كلمة المرور يجب ان لا تقل عن ثمانية احرف";
+"Email is not correct"="البريد الإلكتيروني غير صحيح";
