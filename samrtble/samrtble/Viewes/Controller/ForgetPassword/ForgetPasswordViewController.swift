@@ -39,6 +39,14 @@ class ForgetPasswordViewController: UIViewController {
         titleLabel.text = "Restore your password".localized
         subtitleLabel.text = "Enter your email and a password recovery link will be delivered directly to your inbox".localized
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func didTapSendButton(_ sender: Any) {

@@ -88,8 +88,15 @@ class RegistrationViewController: UIViewController {
         userNameTextField.placeholder = "Enter your name".localized
         passwordTextField.placeholder = "Enter your password ...".localized
         emailTextField.placeholder = "Enter your email ...".localized
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        view.addGestureRecognizer(tap)
+        
     }
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     func onSucessUpdateView(){
         self.saveToUserDefult(phone: loginViewModel?.userCode ?? "")
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
