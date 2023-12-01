@@ -174,9 +174,14 @@ class LoginViewController: UIViewController {
         
         
         let spacing: CGFloat = 7
-        withIDButton.configuration?.imagePadding = spacing
-        withUserNameButton.configuration?.imagePadding = spacing
-        
+        if #available(iOS 15.0, *) {
+            withIDButton.configuration?.imagePadding = spacing
+            withUserNameButton.configuration?.imagePadding = spacing
+        } else {
+            withIDButton.contentEdgeInsets = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+            withUserNameButton.contentEdgeInsets = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        }
+     
         // initailization
         withIDButton.isSelected = true
         
