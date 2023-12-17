@@ -13,6 +13,7 @@ import SwiftyJSON
 
 extension ApiService{
     
+    
     func fetchRemOteNotification (completeion:@escaping (_ result:String)->() ,fcmToken:String) {
         let apiServiceUrl = ApIServiceUrl(phone: phone, type: type)
         let request :Alamofire.DataRequest!

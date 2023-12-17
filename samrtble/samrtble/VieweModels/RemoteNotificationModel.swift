@@ -25,4 +25,16 @@ class RemoteNotificationViewModel {
         }
         
     }
+    
+    func updateFCMToken() {
+       Task {
+           do {
+               let _ =  try await NetworkManager.makeRequest(request: .updateFcmToken, modelType: String.self)
+           } catch NetworkError.withMessage(let message) {
+               print(message)
+           } catch (let error) {
+               print(error)
+           }
+       }
+   }
 }

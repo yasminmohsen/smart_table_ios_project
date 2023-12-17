@@ -57,7 +57,7 @@ class TableHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        remotNotificationViewModel.fetchRemoteNotification()
+        remotNotificationViewModel.updateFCMToken()
         weekDaysArray = [day1, day2, day3, day4, day5]
         collectionArray = [classesNumberView,sunday,monday,tuesday,wednesday,thursday]
         customUi()

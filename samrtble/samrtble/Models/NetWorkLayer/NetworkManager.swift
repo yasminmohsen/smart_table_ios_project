@@ -37,7 +37,7 @@ enum AppService {
             return URL(string: "https://www.smartble.net/teacher-mobile/delete-my-account/")!
         }
     }
-    
+
     var httpMethod: String {
         switch self {
         case .login, .register, .forgetPassword, .updateFcmToken, .deleteAccount:
@@ -84,7 +84,7 @@ enum AppService {
     
     var headers: [String: String]? {
         switch self {
-        case .fetchTableData, .fetchNotificationHistory, .deleteAccount:
+        case .fetchTableData, .fetchNotificationHistory, .deleteAccount, .updateFcmToken:
         return [
                 "Accept-Language": LanguageOperation.checkLanguage() == .arabic ? "ar":"en",
                 "Content-Type": "application/json",
@@ -258,7 +258,8 @@ class NetworkManager {
         }
     }
     
-    func makeRequest<T: Decodable>(request: AppService, modelType: T.Type) async throws -> T {
+    
+    static func makeRequest<T: Decodable>(request: AppService, modelType: T.Type) async throws -> T {
         let (data, response) = try await URLSession.shared.data(for: AppService.makeURLRequest(service: request))
       
        if  let response = response as? HTTPURLResponse{
